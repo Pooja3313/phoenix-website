@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyGetInTouch from "@/components/StickyGetInTouch";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const [visible, setVisible] = useState(false);
@@ -73,7 +74,7 @@ const OurJourney = () => {
         <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(var(--accent)/0.06),transparent_50%)]" />
-          <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+          <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <AnimatedSection>
               <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Your Journey</p>
@@ -81,7 +82,7 @@ const OurJourney = () => {
                 The Phoenix <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Journey</span>
               </h1>
               <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-                Your business is an <span className="font-handwritten text-xl text-primary highlighter-mark">expedition</span> — and we are your steadfast companions throughout the entire voyage.
+                Your business is an <span className="font-handwritten text-xl text-primary highlighter-mark">expedition</span> â and we are your steadfast companions throughout the entire voyage.
               </p>
             </AnimatedSection>
           </div>
@@ -140,9 +141,12 @@ const OurJourney = () => {
             <AnimatedSection>
               <h2 className="text-3xl font-bold mb-4">Ready to Start Your <span className="font-handwritten text-4xl">Journey</span> With Us?</h2>
               <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Join over 1,000 businesses who trust Phoenix Finserv with their financial future.</p>
-              <a href="/contact" className="inline-flex items-center gap-2 bg-card text-foreground hover:bg-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 group mt-2 shadow-lg hover:shadow-xl hover:scale-105">
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-card text-foreground hover:bg-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 group mt-2 shadow-lg hover:shadow-xl hover:scale-105"
+              >
                 Get in Touch <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </NavLink>
             </AnimatedSection>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import { ShieldCheck, Home, Building2, PiggyBank, FileText, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const services = [
   {
@@ -34,6 +35,14 @@ const services = [
   },
 ];
 
+const serviceRoutes: Record<string, string> = {
+  Protection: "/protection",
+  Mortgage: "/mortgage",
+  "Commercial Lending": "/commercial-lending",
+  Pensions: "/pensions",
+  "Wills & Estate Planning": "/wills-estate-planning",
+};
+
 const ServicesSection = () => {
   const [visible, setVisible] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -65,6 +74,11 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const isPrimary = service.color === "primary";
             const isHovered = hoveredIdx === index;
+            const href = serviceRoutes[service.title] ?? "#";
+            const linkClassName = `inline-flex items-center gap-2 font-semibold text-sm hover:gap-3 transition-all ${
+              isPrimary ? "text-primary" : "text-accent"
+            }`;
+
             return (
               <div
                 key={service.title}
@@ -93,11 +107,9 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-5">{service.description}</p>
-                <a href="#" className={`inline-flex items-center gap-2 font-semibold text-sm hover:gap-3 transition-all ${
-                  isPrimary ? 'text-primary' : 'text-accent'
-                }`}>
+                <NavLink to={href} className={linkClassName}>
                   Learn More <ArrowRight size={16} />
-                </a>
+                </NavLink>
               </div>
             );
           })}

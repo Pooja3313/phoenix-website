@@ -9,6 +9,8 @@ import AboutSection from "@/components/AboutSection";
 import StatsCounter from "@/components/StatsCounter";
 import DedicatedTeam from "@/components/DedicatedTeam";
 import MissionVision from "@/components/MissionVision";
+import LogoSlider from "@/components/LogoSlider";
+
 
 const Home = () => {
   return (
@@ -21,6 +23,7 @@ const Home = () => {
       <DedicatedTeam />
       <PoundAnimation />
       <TestimonialSection />
+      <LogoSlider />
       <MissionVision />
 
       <WhyChooseUs />

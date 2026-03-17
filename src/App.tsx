@@ -10,6 +10,7 @@ import YourJourney from "./pages/YourJourney";
 import JoinOurNetwork from "./pages/JoinOurNetwork";
 import Careers from "./pages/Careers";
 import ReferAFriend from "./pages/ReferAFriend";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -18,6 +19,17 @@ import FairTreatment from "./pages/FairTreatment";
 import NetworkSelfEmployedAdviser from "./pages/NetworkSelfEmployedAdviser";
 import NetworkIntroducer from "./pages/NetworkIntroducer";
 import NetworkAppointedRepresentative from "./pages/NetworkAppointedRepresentative";
+import Newsletter from "./pages/Newsletter";
+import WillsEstatePlanning from "./pages/services/WillsEstatePlanning";
+import Pensions from "./pages/services/Pensions";
+import CommercialLending from "./pages/services/CommercialLending";
+import Mortgage from "./pages/services/Mortgage";
+import Protection from "./pages/services/Protection";
+import ProtectionSubService from "./pages/services/ProtectionSubService";
+import MortgageCalculator from "./pages/services/MortgageCalculator";
+import MortgageSubService from "./pages/services/MortgageSubService";
+import CommercialLendingSubService from "./pages/services/CommercialLendingSubService";
+import ProtectionServicePage from "./pages/PersonalProtectionPage";
 
 
 const queryClient = new QueryClient();
@@ -43,8 +55,11 @@ const App = () => (
               path="/network/self-employed-adviser"
               element={<NetworkSelfEmployedAdviser />}
             />
+             <Route path="/refer-a-friend" element={<ReferAFriend />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/refer-a-friend" element={<ReferAFriend />} />
+             <Route path="/newsletter" element={<Newsletter />} />
+           
+            <Route path="/contact" element={<Contact />} />
 
             <Route
               path="/terms-and-conditions"
@@ -57,6 +72,19 @@ const App = () => (
             />
             <Route path="/fair-treatment" element={<FairTreatment />} />
             <Route path="*" element={<NotFound />} />
+
+            {/* Service main pages */}
+            <Route path="/protection" element={<Protection />} />
+            <Route path="/mortgage" element={<Mortgage />} />
+            <Route path="/commercial-lending" element={<CommercialLending />} />
+            <Route path="/pensions/:slug" element={<Pensions />} />
+            <Route path="/wills-estate-planning" element={<WillsEstatePlanning />} />
+            {/* Service sub-pages (slug routes; calculator before :slug for mortgage) */}
+            {/* <Route path="/services/protection/:slug" element={<ProtectionSubService />} /> */}
+            <Route path="/protection/:slug" element={<ProtectionServicePage />} />
+            <Route path="/mortgage/calculator" element={<MortgageCalculator />} />
+            <Route path="/mortgage/:slug" element={<MortgageSubService />} />
+            <Route path="/commercial-lending/:slug" element={<CommercialLendingSubService />} />
           </Route>
         </Routes>
       </BrowserRouter>

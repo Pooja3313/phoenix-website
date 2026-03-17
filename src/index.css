@@ -102,6 +102,24 @@
   }
 }
 
+/* Hide scrollbar but keep vertical scroll (mobile menu etc) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header top bar: xs,sm = full width rect (gray). md+ = curved */
+.header-top-bar {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+@media (min-width: 768px) {
+  .header-top-bar {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
+  }
+}
 
 /* PRIDE card slide animations */
   @keyframes pride-slide-down {

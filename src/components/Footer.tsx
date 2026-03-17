@@ -131,6 +131,7 @@
 
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -149,6 +150,7 @@ const Footer = () => {
     { name: "Terms & Conditions", href: "/terms-and-conditions" },
     { name: "Complaints Procedure", href: "/complaints-procedure" },
     { name: "Fair Treatment of Customers", href: "/fair-treatment" },
+    { name: "Financial Ombudsman Service", href: "/financial-ombudsman-service" },
   ];
 
   return (
@@ -263,10 +265,10 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/10 pt-6 pb-4">
           <div className="flex flex-wrap items-center justify-center gap-6">
             {policyLinks.map((link) => (
-              <a key={link.name} href={link.href} className="flex items-center gap-2 text-xs text-primary-foreground/50 hover:text-primary transition-colors">
+              <NavLink key={link.name} to={link.href} className="flex items-center gap-2 text-xs text-primary-foreground/50 hover:text-primary transition-colors">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 {link.name}
-              </a>
+              </NavLink>
             ))}
           </div>
         </div>
