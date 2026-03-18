@@ -21,6 +21,7 @@ import NetworkIntroducer from "./pages/NetworkIntroducer";
 import NetworkAppointedRepresentative from "./pages/NetworkAppointedRepresentative";
 import Newsletter from "./pages/Newsletter";
 import WillsEstatePlanning from "./pages/services/WillsEstatePlanning";
+import WillsEstatePlanningSubService from "./pages/services/WillsEstatePlanningSubService";
 import Pensions from "./pages/services/Pensions";
 import CommercialLending from "./pages/services/CommercialLending";
 import Mortgage from "./pages/services/Mortgage";
@@ -29,8 +30,8 @@ import ProtectionSubService from "./pages/services/ProtectionSubService";
 import MortgageCalculator from "./pages/services/MortgageCalculator";
 import MortgageSubService from "./pages/services/MortgageSubService";
 import CommercialLendingSubService from "./pages/services/CommercialLendingSubService";
-import ProtectionServicePage from "./pages/PersonalProtectionPage";
-
+// import ProtectionServicePage from "./pages/ProtectionPage";
+// import ProtectionSubServiceDetailPage from "./components/ProtectionSubServiceDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -55,10 +56,10 @@ const App = () => (
               path="/network/self-employed-adviser"
               element={<NetworkSelfEmployedAdviser />}
             />
-             <Route path="/refer-a-friend" element={<ReferAFriend />} />
+            <Route path="/refer-a-friend" element={<ReferAFriend />} />
             <Route path="/careers" element={<Careers />} />
-             <Route path="/newsletter" element={<Newsletter />} />
-           
+            <Route path="/newsletter" element={<Newsletter />} />
+
             <Route path="/contact" element={<Contact />} />
 
             <Route
@@ -77,14 +78,34 @@ const App = () => (
             <Route path="/protection" element={<Protection />} />
             <Route path="/mortgage" element={<Mortgage />} />
             <Route path="/commercial-lending" element={<CommercialLending />} />
+            <Route path="/pensions" element={<Pensions />} />
+            <Route
+              path="/wills-estate-planning"
+              element={<WillsEstatePlanning />}
+            />
             <Route path="/pensions/:slug" element={<Pensions />} />
-            <Route path="/wills-estate-planning" element={<WillsEstatePlanning />} />
+
             {/* Service sub-pages (slug routes; calculator before :slug for mortgage) */}
             {/* <Route path="/services/protection/:slug" element={<ProtectionSubService />} /> */}
-            <Route path="/protection/:slug" element={<ProtectionServicePage />} />
-            <Route path="/mortgage/calculator" element={<MortgageCalculator />} />
+            {/* <Route path="/protection/:slug" element={<ProtectionSubServiceDetailPage />} /> */}
+            <Route
+              path="/protection/:slug"
+              element={<ProtectionSubService />}
+            />
+
+            <Route
+              path="/mortgage/calculator"
+              element={<MortgageCalculator />}
+            />
             <Route path="/mortgage/:slug" element={<MortgageSubService />} />
-            <Route path="/commercial-lending/:slug" element={<CommercialLendingSubService />} />
+            <Route
+              path="/commercial-lending/:slug"
+              element={<CommercialLendingSubService />}
+            />
+            <Route
+              path="/wills-estate-planning/:slug"
+              element={<WillsEstatePlanningSubService />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

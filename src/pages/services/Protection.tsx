@@ -89,6 +89,57 @@ const Protection = () => {
           </div>
         </section>
 
+
+        {/* <section className="py-20 bg-background">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+   
+      <div>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Why Choose Phoenix Finserv for your{" "}
+          <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
+            Protection Plan?
+          </span>
+        </h2>
+
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          At Phoenix Finserv, we specialise in helping people understand the financial risks they face and protect themselves and their families from the financial impacts of illness, injury and death. We also help our customers buy and protect their homes and business premises and to manage their accumulated wealth.
+        </p>
+
+        <p className="text-muted-foreground leading-relaxed">
+          Illness or injury can occur at any time and the problems that follow can be as unexpected as the illness or the injury itself. We will help you work out what measures you can put in place to protect yourself and the people who rely on you most from the financial consequences that might follow. Having the right cover in place offers great peace of mind in an uncertain world.
+        </p>
+      </div>
+
+     
+      <div className="relative flex justify-center">
+        <div className="relative w-80 h-80 md:w-96 md:h-96">
+          
+          <img
+            src="/your-image.jpg" 
+            alt="Protection Plan"
+            className="w-full h-full object-cover rounded-full border-4 border-phoenix-light-orange shadow-2xl"
+          />
+
+       
+          <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full animate-float"></div>
+
+          <div
+            className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/10 rounded-full animate-float"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+
+       
+        <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+          <Heart size={32} className="text-accent" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> */}
+
         {/* What We Offer - Tabbed */}
         <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30" ref={ref}>
           <div className="container mx-auto px-4">

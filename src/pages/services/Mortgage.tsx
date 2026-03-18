@@ -29,7 +29,7 @@ const Mortgage = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -85,11 +85,11 @@ const Mortgage = () => {
                 Find Your Best <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Mortgage Deal</span> in Seconds
               </h2>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                Our intelligent tools do the hard work for you â analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
+                Our intelligent tools do the hard work for you Ã¢ÂÂ analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              <NavLink to="/services/mortgage/calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
+              <NavLink to="/mortgage/calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
                 <Calculator size={40} className="text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Mortgage Calculator</h3>
                 <p className="text-muted-foreground text-sm">Calculate your monthly repayments, compare rates, and find the deal that's right for you.</p>
@@ -121,7 +121,7 @@ const Mortgage = () => {
                 return (
                   <NavLink
                     key={item.slug}
-                    to={`/services/mortgage/${item.slug}`}
+                    to={`/mortgage/${item.slug}`}
                     className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-accent/30 block ${
                       visible ? 'animate-float-up' : 'opacity-0'
                     }`}

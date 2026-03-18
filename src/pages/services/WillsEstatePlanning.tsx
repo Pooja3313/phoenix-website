@@ -44,7 +44,7 @@ const WillsEstatePlanning = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">ÃÂ£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -74,7 +74,7 @@ const WillsEstatePlanning = () => {
                   While no one wants to think about a time when they might not be around, it needs to be considered for the sake of your loved ones. Without having wills or trusts or some kind of estate planning in place, your assets might not be distributed in the way you wish.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Despite this fact, figures show more than 60% of people in the UK don't have a current will â something that puts their beneficiaries at risk. Failing to set up a trust or will and testament can have a major impact on your loved ones, so it's prudent to have a plan. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.
+                  Despite this fact, figures show more than 60% of people in the UK don't have a current will Ã¢ÂÂ something that puts their beneficiaries at risk. Failing to set up a trust or will and testament can have a major impact on your loved ones, so it's prudent to have a plan. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.
                 </p>
               </div>
               <div className="relative">
@@ -100,10 +100,11 @@ const WillsEstatePlanning = () => {
             </div>
             <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {offerings.map((item, index) => (
-                <div
+                <NavLink
                   key={item.title}
-                  className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-primary/30 ${
-                    visible ? 'animate-float-up' : 'opacity-0'
+                  to="/contact"
+                  className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-primary/30 block ${
+                    visible ? "animate-float-up" : "opacity-0"
                   }`}
                   style={{ animationDelay: `${index * 0.12}s` }}
                 >
@@ -111,9 +112,16 @@ const WillsEstatePlanning = () => {
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <item.icon size={26} className="text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                    {item.description}
+                  </p>
+                  <div className="flex items-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Learn More <ArrowRight size={16} />
+                  </div>
+                </NavLink>
               ))}
             </div>
           </div>

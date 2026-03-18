@@ -1,10 +1,21 @@
-import type { ServiceItem } from "./protectionData";
+export interface ServiceItem {
+  slug: string;
+  title: string;
+  heroSubtitle: string;
+  heroDescription: string;
+  whyTitle: string;
+  whyContent: string[];
+  features: { title: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
+  ctaTitle: string;
+  ctaDescription: string;
+}
 
 export const mortgageServices: ServiceItem[] = [
   {
     slug: "buy-to-let-mortgage",
     title: "Buy to Let Mortgage",
-    category: "Mortgage",
+   
     heroSubtitle: "Mortgage",
     heroDescription: "Whether you're new to property investment or an experienced landlord, explore the financial freedom offered by buy-to-let mortgages, with competitive rates and lucrative investment opportunities in the UK property market.",
     whyTitle: "Why Choose Phoenix Finserv for Buy to Let Mortgages?",
@@ -25,7 +36,7 @@ export const mortgageServices: ServiceItem[] = [
   {
     slug: "first-time-buyer-mortgage",
     title: "First Time Buyer Mortgage",
-    category: "Mortgage",
+   
     heroSubtitle: "Mortgage",
     heroDescription: "Buying your first home is an exciting step and Phoenix Finserv is here to guide you through it. We'll explain how first-time buyer mortgages work, what to consider, and the steps involved.",
     whyTitle: "Why Choose Phoenix Finserv for First Time Buyer Mortgages?",
@@ -46,7 +57,7 @@ export const mortgageServices: ServiceItem[] = [
   {
     slug: "residential-mortgage",
     title: "Residential Mortgage",
-    category: "Mortgage",
+   
     heroSubtitle: "Mortgage",
     heroDescription: "Start your journey to home ownership with support from Phoenix Finserv. We work with a wide range of UK lenders to help you find a suitable mortgage and guide you through the process with confidence.",
     whyTitle: "Why Choose Phoenix Finserv for Residential Mortgages?",
@@ -67,7 +78,7 @@ export const mortgageServices: ServiceItem[] = [
   {
     slug: "remortgage",
     title: "Remortgage",
-    category: "Mortgage",
+   
     heroSubtitle: "Mortgage",
     heroDescription: "Optimise your finances with a remortgage. The Phoenix Finserv team can help you find competitive rates, flexible terms and expert guidance to achieve your financial goals.",
     whyTitle: "Why Choose Phoenix Finserv for Remortgaging?",
@@ -86,3 +97,5 @@ export const mortgageServices: ServiceItem[] = [
     ctaDescription: "Don't stay on a rate that's costing you money. Our advisers can help you find a better deal. Book your free remortgage review today."
   },
 ];
+
+

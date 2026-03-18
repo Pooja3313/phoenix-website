@@ -31,7 +31,7 @@ const CommercialLending = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-phoenix-gray-light/40 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -61,7 +61,7 @@ const CommercialLending = () => {
                   Commercial financing can be used for the full spectrum of needs, empowering businesses to get ahead in a competitive marketplace. Our team of financial advisers helps clients obtain the funding they require for an array of reasons:
                 </p>
                 <ul className="space-y-2 text-muted-foreground text-sm">
-                  {["Expansion into new locations or markets", "Acquiring new machinery and upgrading equipment", "Managing cash flow during seasonal fluctuations", "Renovating or expanding existing premises", "Covering unexpected emergency expenses", "Bridging and auction purchases", "Property purchase â both owner occupied and investments", "Property development finance"].map(item => (
+                  {["Expansion into new locations or markets", "Acquiring new machinery and upgrading equipment", "Managing cash flow during seasonal fluctuations", "Renovating or expanding existing premises", "Covering unexpected emergency expenses", "Bridging and auction purchases", "Property purchase Ã¢ÂÂ both owner occupied and investments", "Property development finance"].map(item => (
                     <li key={item} className="flex items-start gap-2">
                       <ArrowRight size={14} className="text-primary mt-1 shrink-0" />
                       {item}
@@ -99,7 +99,7 @@ const CommercialLending = () => {
                 return (
                   <NavLink
                     key={item.slug}
-                    to={`/services/commercial-lending/${item.slug}`}
+                    to={`/commercial-lending/${item.slug}`}
                     className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-primary/30 block ${
                       visible ? 'animate-float-up' : 'opacity-0'
                     }`}

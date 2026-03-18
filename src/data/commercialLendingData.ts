@@ -1,10 +1,21 @@
-import type { ServiceItem } from "./protectionData";
+export interface ServiceItem {
+  slug: string;
+  title: string;
+  heroSubtitle: string;
+  heroDescription: string;
+  whyTitle: string;
+  whyContent: string[];
+  features: { title: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
+  ctaTitle: string;
+  ctaDescription: string;
+}
 
 export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "bridging-loan",
     title: "Bridging Loans",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Explore bridging loans with Phoenix Finserv for quick access to capital for property purchases, renovations or investments. Short-term financing to bridge the gap between transactions.",
     whyTitle: "Why Choose Phoenix Finserv for Bridging Loans?",
@@ -25,7 +36,7 @@ export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "business-finance",
     title: "Business Finance",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Secure tailored business loans for your needs, ideal for growth and expansion. Unlock capital for your business today with flexible repayment options suited to your cash flow.",
     whyTitle: "Why Choose Phoenix Finserv for Business Finance?",
@@ -46,7 +57,7 @@ export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "property-development-finance",
     title: "Property Development Finance",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Explore property development finance options tailored to your projects. Secure funding for your development plans effortlessly, from ground-up builds to conversions and refurbishments.",
     whyTitle: "Why Choose Phoenix Finserv for Development Finance?",
@@ -67,7 +78,7 @@ export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "asset-finance",
     title: "Asset Finance",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Access asset finance solutions for your business needs, from equipment purchases to vehicle leasing. Drive your business forward with ease and preserve your working capital.",
     whyTitle: "Why Choose Phoenix Finserv for Asset Finance?",
@@ -88,7 +99,7 @@ export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "buy-to-let-finance",
     title: "Buy to Let Finance",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Discover buy-to-let finance options for property investments. Secure financing tailored to your unique rental property goals and portfolio expansion plans.",
     whyTitle: "Why Choose Phoenix Finserv for Buy to Let Finance?",
@@ -109,7 +120,7 @@ export const commercialLendingServices: ServiceItem[] = [
   {
     slug: "commercial-mortgage",
     title: "Commercial Mortgage",
-    category: "Commercial Lending",
+    
     heroSubtitle: "Commercial Lending",
     heroDescription: "Unlock growth opportunities with commercial mortgages. Access financing for business premises, whether owner-occupied or investment properties, with competitive rates and flexible terms.",
     whyTitle: "Why Choose Phoenix Finserv for Commercial Mortgages?",

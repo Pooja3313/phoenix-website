@@ -34,21 +34,21 @@ const protectionColumns: NavColumn[] = [
     title: "Personal Protection",
     items: personalProtectionServices.map((s) => ({
       name: s.title,
-      href: `/services/protection/${s.slug}`,
+      href: `protection/${s.slug}`,
     })),
   },
   {
     title: "Business Protection",
     items: businessProtectionServices.map((s) => ({
       name: s.title,
-      href: `/services/protection/${s.slug}`,
+      href: `protection/${s.slug}`,
     })),
   },
   {
     title: "Home Insurance",
     items: homeInsuranceServices.map((s) => ({
       name: s.title,
-      href: `/services/protection/${s.slug}`,
+      href: `protection/${s.slug}`,
     })),
   },
 ];
@@ -57,10 +57,10 @@ const mortgageColumn: NavColumn[] = [
   {
     title: "Mortgage Services",
     items: [
-      { name: "Mortgage Calculators", href: "/services/mortgage/calculator" },
+      { name: "Mortgage Calculators", href: "/mortgage/calculator" },
       ...mortgageServices.map((s) => ({
         name: s.title,
-        href: `/services/mortgage/${s.slug}`,
+        href: `/mortgage/${s.slug}`,
       })),
     ],
   },
@@ -71,7 +71,7 @@ const commercialLendingColumn: NavColumn[] = [
     title: "Commercial Lending",
     items: commercialLendingServices.map((s) => ({
       name: s.title,
-      href: `/services/commercial-lending/${s.slug}`,
+      href: `/commercial-lending/${s.slug}`,
     })),
   },
 ];
@@ -80,10 +80,10 @@ const pensionsColumn: NavColumn[] = [
   {
     title: "Pensions",
     items: [
-      { name: "State Pension", href: "/services/pensions" },
-      { name: "Defined Benefits Pensions", href: "/services/pensions" },
-      { name: "Private Pensions", href: "/services/pensions" },
-      { name: "Pension Drawdown", href: "/services/pensions" },
+      { name: "State Pension", href: "/pensions" },
+      { name: "Defined Benefits Pensions", href: "/pensions" },
+      { name: "Private Pensions", href: "/pensions" },
+      { name: "Pension Drawdown", href: "/pensions" },
     ],
   },
 ];
@@ -92,10 +92,16 @@ const willsColumn: NavColumn[] = [
   {
     title: "Wills & Estate Planning",
     items: [
-      { name: "Will Writing", href: "/services/wills-estate-planning" },
-      { name: "Inheritance Tax Planning", href: "/services/wills-estate-planning" },
-      { name: "Trust Planning", href: "/services/wills-estate-planning" },
-      { name: "Lasting Power of Attorney", href: "/services/wills-estate-planning" },
+      { name: "Will Writing", href: "/wills-estate-planning/will-writing" },
+      { name: "Trust Planning", href: "/wills-estate-planning/trust-planning" },
+      {
+        name: "Lasting Power of Attorney",
+        href: "/wills-estate-planning/power-of-attorney",
+      },
+      {
+        name: "Inheritance Tax Planning",
+        href: "/wills-estate-planning/inheritance-tax-planning",
+      },
     ],
   },
 ];
@@ -103,27 +109,27 @@ const willsColumn: NavColumn[] = [
 export const serviceGroupsNav: ServiceGroupNav[] = [
   {
     name: "Protection",
-    href: "/services/protection",
+    href: "/protection",
     columns: protectionColumns,
   },
   {
     name: "Mortgage",
-    href: "/services/mortgage",
+    href: "/mortgage",
     columns: mortgageColumn,
   },
   {
     name: "Commercial Lending",
-    href: "/services/commercial-lending",
+    href: "/commercial-lending",
     columns: commercialLendingColumn,
   },
   {
     name: "Pensions",
-    href: "/services/pensions",
+    href: "/pensions",
     columns: pensionsColumn,
   },
   {
     name: "Wills & Estate Planning",
-    href: "/services/wills-estate-planning",
+    href: "/wills-estate-planning",
     columns: willsColumn,
   },
 ];

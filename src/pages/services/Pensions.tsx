@@ -24,7 +24,7 @@ const offerings = [
 const faqs = [
   {
     question: "Do I need financial advice on how to cash in my pension pot?",
-    answer: "If your pension pot is worth ÃÂ£30,000 or more, it's strongly recommended to seek regulated financial advice before making any withdrawal decisions. Our advisers can help you understand tax implications and ensure you make the most of your savings.",
+    answer: "If your pension pot is worth £30,000 or more, it's strongly recommended to seek regulated financial advice before making any withdrawal decisions. Our advisers can help you understand tax implications and ensure you make the most of your savings.",
   },
   {
     question: "What is the difference between an SIPP and a personal pension?",
@@ -59,7 +59,7 @@ const Pensions = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">ÃÂ£</div>
+          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -86,7 +86,7 @@ const Pensions = () => {
                   Why Choose Phoenix Finserv for your <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">Pension Planning?</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  According to Age UK, around half of people aged 40Ã¢ÂÂ64 may not have enough savings to retire comfortably when they reach state pension age. Without additional pension arrangements in place, you could face financial challenges later in life.
+                  According to Age UK, around half of people aged 40£-64£ may not have enough savings to retire comfortably when they reach state pension age. Without additional pension arrangements in place, you could face financial challenges later in life.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   At Phoenix Finserv, we help you explore private pension options that support your long-term financial well-being. Our team has extensive experience in the pension sector and can guide you through your choices, helping you avoid common mistakes and plan confidently for retirement.

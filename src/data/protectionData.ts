@@ -7,6 +7,7 @@ export interface ServiceItem {
   whyTitle: string;
   whyContent: string[];
   features: { title: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
   ctaTitle: string;
   ctaDescription: string;
 }

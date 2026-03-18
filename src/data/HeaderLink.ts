@@ -14,6 +14,9 @@ export interface ServiceGroup {
   columns: ServiceColumn[];
 }
 
+import { mortgageServices } from "./mortgageData";
+import { commercialLendingServices } from "./commercialLendingData";
+
 export const serviceGroupsNav: ServiceGroup[] = [
   {
     name: "Protection",
@@ -70,11 +73,11 @@ export const serviceGroupsNav: ServiceGroup[] = [
       {
         title: "Mortgage Services",
         items: [
-          { name: "First Time Buyer", href: "/mortgage/first-time-buyer" },
-          { name: "Remortgage", href: "/mortgage/remortgage" },
-          { name: "Buy to Let", href: "/mortgage/buy-to-let" },
-          { name: "Help to Buy", href: "/mortgage/help-to-buy" },
-          { name: "Equity Release", href: "/mortgage/equity-release" },
+          { name: "Mortgage Calculator", href: "/mortgage/calculator" },
+          ...mortgageServices.map((s) => ({
+            name: s.title,
+            href: `/mortgage/${s.slug}`,
+          })),
         ],
       },
     ],
@@ -85,12 +88,10 @@ export const serviceGroupsNav: ServiceGroup[] = [
     columns: [
       {
         title: "Commercial Services",
-        items: [
-          { name: "Business Loans", href: "/commercial-lending/business-loans" },
-          { name: "Commercial Mortgages", href: "/commercial-lending/commercial-mortgages" },
-          { name: "Development Finance", href: "/commercial-lending/development-finance" },
-          { name: "Bridging Loans", href: "/commercial-lending/bridging-loans" },
-        ],
+        items: commercialLendingServices.map((s) => ({
+          name: s.title,
+          href: `/commercial-lending/${s.slug}`,
+        })),
       },
     ],
   },
@@ -119,8 +120,14 @@ export const serviceGroupsNav: ServiceGroup[] = [
         items: [
           { name: "Will Writing", href: "/wills-estate-planning/will-writing" },
           { name: "Trust Planning", href: "/wills-estate-planning/trust-planning" },
-          { name: "Power of Attorney", href: "/wills-estate-planning/power-of-attorney" },
-          { name: "Inheritance Tax Planning", href: "/wills-estate-planning/inheritance-tax" },
+          {
+            name: "Lasting Power of Attorney",
+            href: "/wills-estate-planning/power-of-attorney",
+          },
+          {
+            name: "Inheritance Tax Planning",
+            href: "/wills-estate-planning/inheritance-tax-planning",
+          },
         ],
       },
     ],
