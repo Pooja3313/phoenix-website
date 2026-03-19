@@ -38,7 +38,7 @@ const MortgageCalculator = () => {
       <main>
         {/* Hero */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Tools</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">

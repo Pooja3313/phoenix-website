@@ -85,7 +85,7 @@ const Mortgage = () => {
                 Find Your Best <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Mortgage Deal</span> in Seconds
               </h2>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                Our intelligent tools do the hard work for you Ã¢ÂÂ analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
+                Our intelligent tools do the hard work for you â analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">

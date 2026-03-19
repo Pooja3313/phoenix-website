@@ -163,6 +163,28 @@
     position: relative;
     display: inline-block;
   }
+
+  /* Thick green handmade-style underline (marker/doodle look) */
+  .handmade-green-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .handmade-green-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -4px;
+    right: -4px;
+    height: 14px; /* thicker / taller line */
+    background: #10b981; /* emerald green */
+    border-radius: 999px;
+    transform: rotate(-1.2deg) scaleX(1.02);
+    transform-origin: left center;
+    z-index: -1;
+    box-shadow:
+      0 2px 4px rgb(16 185 129 / 0.45),
+      0 0 0 1px rgb(16 185 129 / 0.25);
+  }
   .pen-underline::after {
     content: '';
     position: absolute;

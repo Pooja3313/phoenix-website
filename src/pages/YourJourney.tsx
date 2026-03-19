@@ -74,7 +74,7 @@ const OurJourney = () => {
         <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(var(--accent)/0.06),transparent_50%)]" />
-          <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <AnimatedSection>
               <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Your Journey</p>
@@ -82,7 +82,7 @@ const OurJourney = () => {
                 The Phoenix <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Journey</span>
               </h1>
               <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-                Your business is an <span className="font-handwritten text-xl text-primary highlighter-mark">expedition</span> â and we are your steadfast companions throughout the entire voyage.
+                Your business is an <span className="font-handwritten text-xl text-primary highlighter-mark">expedition</span> — and we are your steadfast companions throughout the entire voyage.
               </p>
             </AnimatedSection>
           </div>

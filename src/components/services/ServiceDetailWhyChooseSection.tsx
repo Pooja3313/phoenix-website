@@ -19,8 +19,9 @@ const ServiceDetailWhyChooseSection = ({
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
-                {whyTitle}
+              {prefix && <span>{prefix} </span>}
+              <span className="font-handwritten text-4xl md:text-5xl text-primary handmade-green-underline">
+                {slugWord}
               </span>
             </h2>
             {whyContent.map((para, i) => (

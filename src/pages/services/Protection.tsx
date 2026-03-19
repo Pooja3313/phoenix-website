@@ -40,7 +40,7 @@ const Protection = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="absolute bottom-10 left-10 w-4 h-4 rounded-full bg-accent/20 animate-bounce" style={{ animationDelay: '0.5s' }} />
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>

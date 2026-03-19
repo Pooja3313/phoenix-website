@@ -61,7 +61,7 @@ const CommercialLending = () => {
                   Commercial financing can be used for the full spectrum of needs, empowering businesses to get ahead in a competitive marketplace. Our team of financial advisers helps clients obtain the funding they require for an array of reasons:
                 </p>
                 <ul className="space-y-2 text-muted-foreground text-sm">
-                  {["Expansion into new locations or markets", "Acquiring new machinery and upgrading equipment", "Managing cash flow during seasonal fluctuations", "Renovating or expanding existing premises", "Covering unexpected emergency expenses", "Bridging and auction purchases", "Property purchase Ã¢ÂÂ both owner occupied and investments", "Property development finance"].map(item => (
+                  {["Expansion into new locations or markets", "Acquiring new machinery and upgrading equipment", "Managing cash flow during seasonal fluctuations", "Renovating or expanding existing premises", "Covering unexpected emergency expenses", "Bridging and auction purchases", "Property purchase â both owner occupied and investments", "Property development finance"].map(item => (
                     <li key={item} className="flex items-start gap-2">
                       <ArrowRight size={14} className="text-primary mt-1 shrink-0" />
                       {item}

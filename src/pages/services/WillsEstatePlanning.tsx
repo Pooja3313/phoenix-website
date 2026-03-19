@@ -44,7 +44,7 @@ const WillsEstatePlanning = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">ÃÂ£</div>
+          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -74,7 +74,7 @@ const WillsEstatePlanning = () => {
                   While no one wants to think about a time when they might not be around, it needs to be considered for the sake of your loved ones. Without having wills or trusts or some kind of estate planning in place, your assets might not be distributed in the way you wish.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Despite this fact, figures show more than 60% of people in the UK don't have a current will Ã¢ÂÂ something that puts their beneficiaries at risk. Failing to set up a trust or will and testament can have a major impact on your loved ones, so it's prudent to have a plan. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.
+                  Despite this fact, figures show more than 60% of people in the UK don't have a current will â something that puts their beneficiaries at risk. Failing to set up a trust or will and testament can have a major impact on your loved ones, so it's prudent to have a plan. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.
                 </p>
               </div>
               <div className="relative">
