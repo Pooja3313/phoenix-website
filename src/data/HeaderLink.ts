@@ -98,18 +98,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
   {
     name: "Pensions",
     href: "/pensions",
-    columns: [
-      {
-        title: "Pension Services",
-        items: [
-          { name: "Personal Pensions", href: "/pensions/personal" },
-          { name: "Workplace Pensions", href: "/pensions/workplace" },
-          { name: "SIPP", href: "/pensions/sipp" },
-          { name: "Pension Review", href: "/pensions/review" },
-          { name: "Retirement Planning", href: "/pensions/retirement-planning" },
-        ],
-      },
-    ],
+    columns: [],
   },
   {
     name: "Wills & Estate Planning",

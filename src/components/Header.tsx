@@ -698,6 +698,9 @@ const Header = () => {
             <div className="relative hidden lg:flex items-center justify-center w-full">
               <div className="inline-flex flex-wrap items-center justify-center gap-2.5 w-fit rounded-2xl bg-phoenix-orange px-5 py-1.5 shadow-md ring-1 ring-black/5 mx-auto">
                 {serviceGroupsNav.map((group) => {
+                  const hasDropdown = group.columns.some(
+                    (col) => col.items.length > 0,
+                  );
                   const isGroupActive =
                     path === group.href ||
                     path.startsWith(group.href + "/") ||
@@ -713,8 +716,8 @@ const Header = () => {
                   <div
                     key={group.name}
                     className="relative overflow-visible"
-                    onMouseEnter={() => setOpenServiceBar(group.name)}
-                    onMouseLeave={() => setOpenServiceBar(null)}
+                    onMouseEnter={() => hasDropdown && setOpenServiceBar(group.name)}
+                    onMouseLeave={() => hasDropdown && setOpenServiceBar(null)}
                   >
                     <div
                       className={`min-w-[5.5rem] px-3 py-1 text-[13px] font-semibold rounded-lg transition-all flex items-center justify-center gap-1 ${
@@ -730,27 +733,29 @@ const Header = () => {
                       >
                         {group.name}
                       </NavLink>
-                      <button
-                        type="button"
-                        className="shrink-0 flex items-center justify-center"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setOpenServiceBar(
-                            openServiceBar === group.name ? null : group.name,
-                          );
-                        }}
-                        aria-label={`${group.name} services`}
-                      >
-                        <ChevronDown
-                          size={12}
-                          className={`shrink-0 transition-transform ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
+                      {hasDropdown && (
+                        <button
+                          type="button"
+                          className="shrink-0 flex items-center justify-center"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setOpenServiceBar(
+                              openServiceBar === group.name ? null : group.name,
+                            );
+                          }}
+                          aria-label={`${group.name} services`}
+                        >
+                          <ChevronDown
+                            size={12}
+                            className={`shrink-0 transition-transform ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
                     </div>
-                    {isOpen && (
+                    {hasDropdown && isOpen && (
                       <div className="absolute top-full mt-0.5 bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2 min-w-[220px] z-[100] max-h-[70vh] flex flex-col animate-dropdown-from-top origin-top">
                         <div className="py-1 overflow-y-auto flex-1 min-h-0">
                           {group.columns.map((col) => {
@@ -851,33 +856,67 @@ const Header = () => {
                 {/* <div className="px-4 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   Services
                 </div> */}
-                {serviceGroupsNav.map((group) => (
-                  <div key={group.name}>
-                    <button
-                      onClick={() => setMobileExpanded(mobileExpanded === group.name ? null : group.name)}
-                      className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-foreground hover:text-phoenix-orange transition-colors rounded-md hover:bg-phoenix-orange/5"
-                    >
-                      {group.name}
-                      <ChevronDown size={16} className={`transition-transform ${mobileExpanded === group.name ? "rotate-180" : ""}`} />
-                    </button>
-                    {mobileExpanded === group.name && (
-                      <div className="ml-4 border-l-2 border-phoenix-orange/30 pl-3">
-                        {group.columns.flatMap((col) =>
-                          col.items.map((item) => (
-                            <NavLink
-                              key={item.href}
-                              to={item.href}
-                              className="block px-3 py-2 text-sm text-muted-foreground hover:text-phoenix-orange"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {item.name}
-                            </NavLink>
-                          ))
-                        )}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {serviceGroupsNav.map((group) => {
+                  const hasDropdown = group.columns.some(
+                    (col) => col.items.length > 0,
+                  );
+
+                  if (!hasDropdown) {
+                    return (
+                      <NavLink
+                        key={group.name}
+                        to={group.href}
+                        className={({ isActive }) =>
+                          `block px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                            isActive
+                              ? "text-phoenix-orange bg-phoenix-orange/10"
+                              : "text-foreground hover:text-phoenix-orange hover:bg-phoenix-orange/5"
+                          }`
+                        }
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {group.name}
+                      </NavLink>
+                    );
+                  }
+
+                  return (
+                    <div key={group.name}>
+                      <button
+                        onClick={() =>
+                          setMobileExpanded(
+                            mobileExpanded === group.name ? null : group.name,
+                          )
+                        }
+                        className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-foreground hover:text-phoenix-orange transition-colors rounded-md hover:bg-phoenix-orange/5"
+                      >
+                        {group.name}
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform ${
+                            mobileExpanded === group.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {mobileExpanded === group.name && (
+                        <div className="ml-4 border-l-2 border-phoenix-orange/30 pl-3">
+                          {group.columns.flatMap((col) =>
+                            col.items.map((item) => (
+                              <NavLink
+                                key={item.href}
+                                to={item.href}
+                                className="block px-3 py-2 text-sm text-muted-foreground hover:text-phoenix-orange"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {item.name}
+                              </NavLink>
+                            )),
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
 
               {navLinksAfterServices.map((link) => (
