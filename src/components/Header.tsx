@@ -470,7 +470,9 @@
 
 
 import { NavLink } from "react-router-dom";
-import { Mail, Phone, Linkedin, ChevronDown, Menu, X } from "lucide-react";
+import { Mail, Phone, ChevronDown, Menu, X } from "lucide-react";
+import { BrandLinkedInIcon } from "@/components/icons/BrandSocialIcons";
+import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 import { Button } from "@/components/ui/button";
 import RightSidebar from "./RightSidebar";
 import { useState, useRef, useCallback, useEffect } from "react";
@@ -491,6 +493,16 @@ const Header = () => {
   const networkRef = useRef<HTMLDivElement>(null);
   const orangeBarRef = useRef<HTMLDivElement>(null);
 
+  /** Hover-open for service dropdowns only at lg+; sm/md use chevron / click-outside (avoids gap + touch issues). */
+  const [serviceHoverEnabled, setServiceHoverEnabled] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setServiceHoverEnabled(mql.matches);
+    sync();
+    mql.addEventListener("change", sync);
+    return () => mql.removeEventListener("change", sync);
+  }, []);
+
   useEffect(() => {
 
     // Desktop services: keep relevant dropdown open on its own pages
@@ -504,11 +516,16 @@ const Header = () => {
       path.startsWith("/join-our-network") || path.startsWith("/network/");
     setNetworkOpen(isNetworkRoute);
 
-    // Mobile: always close on navigation
     setMobileMenuOpen(false);
-    setMobileExpanded(null);
-    setMobileNetworkOpen(false);
   }, [path]);
+
+  /** Collapse service / network accordions whenever the drawer closes so reopening shows closed panels (active = orange text only). */
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      setMobileExpanded(null);
+      setMobileNetworkOpen(false);
+    }
+  }, [mobileMenuOpen]);
 
   const closeOrangeBar = useCallback(() => setOpenServiceBar(null), []);
   const closeNetwork = useCallback(() => setNetworkOpen(false), []);
@@ -524,18 +541,31 @@ const Header = () => {
           <div className="header-top-bar relative bg-gray-300 text-phoenix-gray flex items-center h-9 sm:h-8 flex-shrink-0 border-b border-phoenix-gray/10 pl-5 sm:pl-4 pr-2 sm:pr-4 min-h-[2.25rem] md:hidden w-full">
             <div className="flex items-center justify-between gap-2 sm:gap-3 text-xs sm:text-sm w-full min-w-0">
               <div className="flex items-center gap-5 sm:gap-3 min-w-0 shrink">
-                <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-center gap-1 sm:gap-1.5 hover:text-phoenix-orange transition-colors shrink-0" aria-label="Email">
+                <NavLink
+                  to="mailto:accountants@phoenix-accountancy.co.uk"
+                  className="flex items-center gap-1 sm:gap-1.5 hover:text-phoenix-orange transition-colors shrink-0"
+                  aria-label="Email"
+                >
                   <Mail size={12} className="shrink-0" />
                   <span className="hidden sm:inline truncate sm:whitespace-normal">accountants@phoenix-accountancy.co.uk</span>
-                </a>
-                <a href="tel:+442079932737" className="flex items-center gap-1 sm:gap-1.5 hover:text-phoenix-orange transition-colors shrink-0 whitespace-nowrap">
+                </NavLink>
+                <NavLink
+                  to="tel:+442079932737"
+                  className="flex items-center gap-1 sm:gap-1.5 hover:text-phoenix-orange transition-colors shrink-0 whitespace-nowrap"
+                >
                   <Phone size={12} className="shrink-0" />
                   <span>+44 (0) 2079 932 737</span>
-                </a>
+                </NavLink>
               </div>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-phoenix-orange transition-colors shrink-0" aria-label="LinkedIn">
-                <Linkedin size={16} />
-              </a>
+              <NavLink
+                to={PHOENIX_LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-phoenix-orange transition-colors shrink-0"
+                aria-label="LinkedIn"
+              >
+                <BrandLinkedInIcon size={16} aria-hidden />
+              </NavLink>
             </div>
           </div>
 
@@ -564,17 +594,29 @@ const Header = () => {
               {/* md+ only: gray line with curve */}
               <div className="header-top-bar relative bg-phoenix-gray-light text-phoenix-gray hidden md:flex items-center justify-end h-8 flex-shrink-0 border-b border-phoenix-gray/10 pr-4 sm:pr-6 lg:pr-8">
                 <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5 text-xs sm:text-sm pl-4 w-full">
-                  <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-center gap-1.5 hover:text-phoenix-orange transition-colors shrink-0">
+                  <NavLink
+                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    className="flex items-center gap-1.5 hover:text-phoenix-orange transition-colors shrink-0"
+                  >
                     <Mail size={12} className="shrink-0" />
                     <span>accountants@phoenix-accountancy.co.uk</span>
-                  </a>
-                  <a href="tel:+442079932737" className="flex items-center gap-1.5 hover:text-phoenix-orange transition-colors shrink-0">
+                  </NavLink>
+                  <NavLink
+                    to="tel:+442079932737"
+                    className="flex items-center gap-1.5 hover:text-phoenix-orange transition-colors shrink-0"
+                  >
                     <Phone size={12} className="shrink-0" />
                     <span>+44 (0) 2079 932 737</span>
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-phoenix-orange transition-colors shrink-0" aria-label="LinkedIn">
-                    <Linkedin size={16} />
-                  </a>
+                  </NavLink>
+                  <NavLink
+                    to={PHOENIX_LINKEDIN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-phoenix-orange transition-colors shrink-0"
+                    aria-label="LinkedIn"
+                  >
+                    <BrandLinkedInIcon size={16} aria-hidden />
+                  </NavLink>
                 </div>
               </div>
 
@@ -692,11 +734,14 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Second row: 5 services - font thoda Home se chota, width/space thoda, height same */}
-        <div ref={orangeBarRef} className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-2">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-            <div className="relative hidden lg:flex items-center justify-center w-full">
-              <div className="inline-flex flex-wrap items-center justify-center gap-2.5 w-fit rounded-2xl bg-phoenix-orange px-5 py-1.5 shadow-md ring-1 ring-black/5 mx-auto">
+        {/* Five services orange bar: md+ only (xs and sm use hamburger) */}
+        <div
+          ref={orangeBarRef}
+          className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-2 hidden md:block"
+        >
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex justify-center">
+            <div className="relative flex items-center justify-center w-full">
+              <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5 w-full sm:w-fit max-w-full rounded-xl sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 lg:px-5 shadow-md ring-1 ring-black/5 mx-auto">
                 {serviceGroupsNav.map((group) => {
                   const hasDropdown = group.columns.some(
                     (col) => col.items.length > 0,
@@ -716,11 +761,17 @@ const Header = () => {
                   <div
                     key={group.name}
                     className="relative overflow-visible"
-                    onMouseEnter={() => hasDropdown && setOpenServiceBar(group.name)}
-                    onMouseLeave={() => hasDropdown && setOpenServiceBar(null)}
+                    onMouseEnter={() =>
+                      serviceHoverEnabled &&
+                      hasDropdown &&
+                      setOpenServiceBar(group.name)
+                    }
+                    onMouseLeave={() =>
+                      serviceHoverEnabled && hasDropdown && setOpenServiceBar(null)
+                    }
                   >
                     <div
-                      className={`min-w-[5.5rem] px-3 py-1 text-[13px] font-semibold rounded-lg transition-all flex items-center justify-center gap-1 ${
+                      className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] px-1.5 sm:px-2.5 lg:px-3 py-1 text-[11px] sm:text-xs lg:text-[13px] font-semibold rounded-md sm:rounded-lg transition-all flex items-center justify-center gap-0.5 sm:gap-1 ${
                         isGroupActive || isOpen
                           ? "bg-white text-phoenix-orange shadow-sm"
                           : "text-white hover:bg-white/15"
@@ -756,7 +807,8 @@ const Header = () => {
                       )}
                     </div>
                     {hasDropdown && isOpen && (
-                      <div className="absolute top-full mt-0.5 bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2 min-w-[220px] z-[100] max-h-[70vh] flex flex-col animate-dropdown-from-top origin-top">
+                      <div className="absolute left-0 top-full z-[100] pt-1 sm:min-w-[220px] max-w-[min(100vw-1rem,280px)]">
+                        <div className="bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2 min-w-[220px] max-h-[70vh] flex flex-col animate-dropdown-from-top origin-top">
                         <div className="py-1 overflow-y-auto flex-1 min-h-0">
                           {group.columns.map((col) => {
                             const titleLower = col.title.toLowerCase();
@@ -799,6 +851,7 @@ const Header = () => {
                           })}
                         </div>
                         <div className="h-1.5 w-full rounded-b-xl bg-gradient-to-r from-phoenix-green via-phoenix-orange to-phoenix-green shrink-0" />
+                        </div>
                       </div>
                     )}
                   </div>
@@ -829,33 +882,78 @@ const Header = () => {
               ))}
 
               <div>
-                <button
-                  onClick={() => setMobileNetworkOpen(!mobileNetworkOpen)}
-                  className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-foreground hover:text-phoenix-orange transition-colors rounded-md hover:bg-phoenix-orange/5"
-                >
-                  Join Our Network
-                  <ChevronDown size={16} className={`transition-transform ${mobileNetworkOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mobileNetworkOpen && (
-                  <div className="ml-4 border-l-2 border-phoenix-orange/30 pl-3">
-                    {networkDropdown.map((item) => (
-                      <NavLink
-                        key={item.href}
-                        to={item.href}
-                        className="block px-3 py-2 text-sm text-muted-foreground hover:text-phoenix-orange"
-                        onClick={() => setMobileMenuOpen(false)}
+                {(() => {
+                  const networkRouteActive =
+                    path.startsWith("/join-our-network") ||
+                    path.startsWith("/network/");
+                  const networkTitleOrange =
+                    networkRouteActive || mobileNetworkOpen;
+                  return (
+                    <>
+                      <button
+                        type="button"
+                        className={`flex w-full items-center justify-between gap-2 px-4 py-2.5 text-sm font-medium rounded-md text-left ${
+                          networkTitleOrange
+                            ? "text-phoenix-orange"
+                            : "text-foreground"
+                        }`}
+                        onClick={() => setMobileNetworkOpen((open) => !open)}
+                        aria-expanded={mobileNetworkOpen}
                       >
-                        {item.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
+                        <span>Join Our Network</span>
+                        <ChevronDown
+                          size={16}
+                          className={`shrink-0 transition-transform ${
+                            networkTitleOrange ? "text-phoenix-orange" : ""
+                          } ${mobileNetworkOpen ? "rotate-180" : ""}`}
+                          aria-hidden
+                        />
+                      </button>
+                      {mobileNetworkOpen && (
+                        <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-phoenix-orange/30 pl-3">
+                          <div className="rounded-lg border border-phoenix-gray-light/60 bg-background p-1 shadow-sm">
+                            <NavLink
+                              to="/join-our-network"
+                              className="block px-3 py-2 text-sm rounded-md font-semibold text-phoenix-orange"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setMobileNetworkOpen(false);
+                              }}
+                            >
+                              Join Our Network
+                            </NavLink>
+                            {networkDropdown.map((item) => {
+                              const itemActive =
+                                path === item.href ||
+                                path.startsWith(`${item.href}/`);
+                              return (
+                                <NavLink
+                                  key={item.href}
+                                  to={item.href}
+                                  className={`block border-l-2 px-3 py-2 text-sm rounded-md transition-colors ${
+                                    itemActive
+                                      ? "border-phoenix-orange bg-phoenix-orange/10 font-semibold text-phoenix-orange"
+                                      : "border-transparent text-muted-foreground hover:bg-phoenix-orange/5 hover:text-phoenix-orange"
+                                  }`}
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMobileNetworkOpen(false);
+                                  }}
+                                >
+                                  {item.name}
+                                </NavLink>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
 
-              <div>
-                {/* <div className="px-4 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Services
-                </div> */}
+              {/* xs-sm: five services in drawer; md+ orange header bar */}
+              <div className="md:hidden">
                 {serviceGroupsNav.map((group) => {
                   const hasDropdown = group.columns.some(
                     (col) => col.items.length > 0,
@@ -880,38 +978,75 @@ const Header = () => {
                     );
                   }
 
+                  const groupActive =
+                    path === group.href ||
+                    path.startsWith(`${group.href}/`);
+                  const serviceTitleOrange =
+                    groupActive || mobileExpanded === group.name;
+
                   return (
                     <div key={group.name}>
                       <button
+                        type="button"
+                        className={`flex w-full items-center justify-between gap-2 px-4 py-2.5 text-sm font-medium rounded-md text-left ${
+                          serviceTitleOrange
+                            ? "text-phoenix-orange"
+                            : "text-foreground"
+                        }`}
                         onClick={() =>
-                          setMobileExpanded(
-                            mobileExpanded === group.name ? null : group.name,
+                          setMobileExpanded((prev) =>
+                            prev === group.name ? null : group.name,
                           )
                         }
-                        className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-foreground hover:text-phoenix-orange transition-colors rounded-md hover:bg-phoenix-orange/5"
+                        aria-expanded={mobileExpanded === group.name}
                       >
-                        {group.name}
+                        <span>{group.name}</span>
                         <ChevronDown
                           size={16}
-                          className={`transition-transform ${
-                            mobileExpanded === group.name ? "rotate-180" : ""
-                          }`}
+                          className={`shrink-0 transition-transform ${
+                            serviceTitleOrange ? "text-phoenix-orange" : ""
+                          } ${mobileExpanded === group.name ? "rotate-180" : ""}`}
+                          aria-hidden
                         />
                       </button>
                       {mobileExpanded === group.name && (
-                        <div className="ml-4 border-l-2 border-phoenix-orange/30 pl-3">
-                          {group.columns.flatMap((col) =>
-                            col.items.map((item) => (
-                              <NavLink
-                                key={item.href}
-                                to={item.href}
-                                className="block px-3 py-2 text-sm text-muted-foreground hover:text-phoenix-orange"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {item.name}
-                              </NavLink>
-                            )),
-                          )}
+                        <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-phoenix-orange/30 pl-3">
+                          <div className="rounded-lg border border-phoenix-gray-light/60 bg-background p-1 shadow-sm">
+                            <NavLink
+                              to={group.href}
+                              className="block px-3 py-2 text-sm rounded-md font-semibold text-phoenix-orange"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setMobileExpanded(null);
+                              }}
+                            >
+                              {group.name}
+                            </NavLink>
+                            {group.columns.flatMap((col) =>
+                              col.items.map((item) => {
+                                const itemActive =
+                                  path === item.href ||
+                                  path.startsWith(`${item.href}/`);
+                                return (
+                                  <NavLink
+                                    key={item.href}
+                                    to={item.href}
+                                    className={`block border-l-2 px-3 py-2 text-sm rounded-md transition-colors ${
+                                      itemActive
+                                        ? "border-phoenix-orange bg-phoenix-orange/10 font-semibold text-phoenix-orange"
+                                        : "border-transparent text-muted-foreground hover:bg-phoenix-orange/5 hover:text-phoenix-orange"
+                                    }`}
+                                    onClick={() => {
+                                      setMobileMenuOpen(false);
+                                      setMobileExpanded(null);
+                                    }}
+                                  >
+                                    {item.name}
+                                  </NavLink>
+                                );
+                              }),
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -934,8 +1069,13 @@ const Header = () => {
                 </NavLink>
               ))}
 
-              <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full mt-3 bg-phoenix-orange hover:bg-phoenix-orange-dark text-white">
+              {/* xs only: Contact in drawer; sm+ uses header button */}
+              <NavLink
+                to="/contact"
+                className="mt-3 block sm:hidden"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-phoenix-orange hover:bg-phoenix-orange-dark text-white">
                   Contact Us
                 </Button>
               </NavLink>

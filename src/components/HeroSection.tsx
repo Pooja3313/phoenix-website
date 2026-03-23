@@ -1,7 +1,6 @@
 // import { Button } from "@/components/ui/button";
 // import { ArrowRight } from "lucide-react";
 
-
 // ________________OLD HOMEPAGE___________________________//
 // const HeroSection = () => {
 //   return (
@@ -68,9 +67,6 @@
 //   );
 // };
 
-
-
-
 // export default HeroSection;
 
 // import { ArrowRight, Sparkles } from "lucide-react";
@@ -90,7 +86,7 @@
 //       <div className="absolute bottom-10 left-10 text-primary/5 text-[120px] font-bold animate-pound-rotate select-none pointer-events-none" style={{ animationDelay: '2s' }}>
 //         �
 //       </div>
-      
+
 //       {/* Floating particles */}
 //       <div className="absolute top-1/4 right-1/3 w-2 h-2 rounded-full bg-primary/20 animate-bounce" style={{ animationDuration: '3s' }} />
 //       <div className="absolute top-2/3 right-1/4 w-3 h-3 rounded-full bg-accent/20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
@@ -140,8 +136,11 @@
 
 // export default HeroSection;
 
-
 import { ArrowRight, Sparkles, Phone } from "lucide-react";
+import { NavLink } from "react-router-dom";
+
+const WHATSAPP_ADVISOR_URL =
+  "https://wa.me/918488891091?text=Hi%20Phoenix%20Finserv%20team%2C%20I%20would%20like%20to%20speak%20with%20an%20adviser%20about%20financial%20planning.";
 
 const HeroSection = () => {
   return (
@@ -153,46 +152,87 @@ const HeroSection = () => {
 
       {/* Animated pound symbols ? visible on light bg */}
       <div className="absolute top-20 right-20 text-phoenix-orange-light text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-         £
+        £
       </div>
-      <div className="absolute bottom-10 left-10 text-phoenix-orange-light text-[120px] font-bold animate-pound-rotate select-none pointer-events-none" style={{ animationDelay: '2s' }}>
-         £
+      <div
+        className="absolute bottom-10 left-10 text-phoenix-orange-light text-[120px] font-bold animate-pound-rotate select-none pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      >
+        £
       </div>
 
       {/* Floating particles */}
-      <div className="absolute top-1/4 right-1/3 w-2 h-2 rounded-full bg-primary/20 animate-bounce" style={{ animationDuration: '3s' }} />
-      <div className="absolute top-2/3 right-1/4 w-3 h-3 rounded-full bg-phoenix-green/20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+      <div
+        className="absolute top-1/4 right-1/3 w-2 h-2 rounded-full bg-primary/20 animate-bounce"
+        style={{ animationDuration: "3s" }}
+      />
+      <div
+        className="absolute top-2/3 right-1/4 w-3 h-3 rounded-full bg-phoenix-green/20 animate-bounce"
+        style={{ animationDuration: "4s", animationDelay: "1s" }}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-phoenix-green-light/80 backdrop-blur-sm border border-phoenix-green/20 rounded-full px-4 py-2 mb-6 animate-float-up" style={{ animationDelay: '0.1s' }}>
+          <div
+            className="inline-flex items-center gap-2 bg-phoenix-green-light/80 backdrop-blur-sm border border-phoenix-green/20 rounded-full px-4 py-2 mb-6 animate-float-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             <Sparkles size={14} className="text-phoenix-green" />
-            <span className="text-phoenix-black text-sm font-medium">Phoenix Finserv - Helping Secure Dreams</span>
+            <span className="text-phoenix-black text-sm font-medium">
+              Phoenix Finserv - Helping Secure Dreams
+            </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-phoenix-black leading-tight mb-6 animate-float-up" style={{ animationDelay: '0.3s' }}>
+          <h1
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-phoenix-black leading-tight mb-6 animate-float-up font-handwritten"
+            style={{ animationDelay: "0.3s" }}
+          >
             Best Solution to{" "}
-            <span className="highlighter-mark text-phoenix-black">Manage</span>{" "}
+            <span className="highlighter-mark1 text-phoenix-black font-handwritten text-5xl md:text-6xl lg:text-7xl">
+              Manage
+            </span>{" "}
             Your Finance &{" "}
-            <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-phoenix-black pen-underline">
+            <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-phoenix-black pen-underline2">
               Accounting
             </span>
           </h1>
 
-          <p className="text-lg text-phoenix-gray mb-10 max-w-xl leading-relaxed animate-float-up" style={{ animationDelay: '0.5s' }}>
-            From protection and mortgages to pensions and estate planning ? we provide expert
-            financial advice to secure your future and your family's dreams.
+          <p
+            className="text-lg text-phoenix-gray mb-10 max-w-xl leading-relaxed animate-float-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            From protection and mortgages to pensions and estate planning ? we
+            provide expert financial advice to secure your future and your
+            family's dreams.
           </p>
 
-          <div className="flex flex-wrap gap-4 animate-float-up" style={{ animationDelay: '0.7s' }}>
-            <a href="#contact" className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-green text-primary-foreground font-semibold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <div
+            className="flex flex-wrap gap-4 animate-float-up"
+            style={{ animationDelay: "0.7s" }}
+          >
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-green text-primary-foreground font-semibold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            >
               Get a Free Quote
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-            <a href="tel:+442079932737" className="inline-flex items-center gap-2 border-2 border-phoenix-black/20 text-phoenix-black hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 backdrop-blur-sm group">
-              <Phone size={20} className="text-phoenix-green group-hover:text-phoenix-green" />
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-transform"
+                size={20}
+              />
+            </NavLink>
+            <NavLink
+              to={WHATSAPP_ADVISOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-phoenix-black/20 text-phoenix-black hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 backdrop-blur-sm group"
+              aria-label="Chat on WhatsApp with adviser"
+            >
+              <Phone
+                size={20}
+                className="text-phoenix-green group-hover:text-phoenix-green"
+              />
               Talk to Advisor
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -200,7 +240,10 @@ const HeroSection = () => {
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 60" fill="none" className="w-full">
-          <path d="M0 60L60 52C120 44 240 28 360 22C480 16 600 20 720 26C840 32 960 40 1080 42C1200 44 1320 40 1380 38L1440 36V60H0Z" fill="hsl(var(--background))" />
+          <path
+            d="M0 60L60 52C120 44 240 28 360 22C480 16 600 20 720 26C840 32 960 40 1080 42C1200 44 1320 40 1380 38L1440 36V60H0Z"
+            fill="hsl(var(--background))"
+          />
         </svg>
       </div>
     </section>
@@ -208,7 +251,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
 
 // import { ArrowRight, Sparkles, Phone } from "lucide-react";
 
@@ -237,7 +279,7 @@ export default HeroSection;
 //           <div className="max-w-3xl flex-1">
 //             <div className="inline-flex items-center gap-2 bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2 mb-6 animate-float-up" style={{ animationDelay: '0.1s' }}>
 //               <Sparkles size={14} className="text-accent" />
-//               <span className="text-foreground text-sm font-medium">Phoenix Finserv — Helping Secure Dreams</span>
+//               <span className="text-foreground text-sm font-medium">Phoenix Finserv �?? Helping Secure Dreams</span>
 //             </div>
 
 //             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-float-up" style={{ animationDelay: '0.3s' }}>
@@ -250,7 +292,7 @@ export default HeroSection;
 //             </h1>
 
 //             <p className="text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed animate-float-up" style={{ animationDelay: '0.5s' }}>
-//               From protection and mortgages to pensions and estate planning — we provide expert
+//               From protection and mortgages to pensions and estate planning �?? we provide expert
 //               financial advice to secure your future and your family's dreams.
 //             </p>
 
@@ -273,7 +315,7 @@ export default HeroSection;
 //               <rect x="50" y="60" width="40" height="55" rx="4" stroke="hsl(var(--phoenix-gray)/0.3)" strokeWidth="2" fill="none" />
 //               <rect x="55" y="65" width="30" height="20" rx="2" fill="hsl(var(--phoenix-gray-light))" />
 //               <rect x="55" y="90" width="30" height="20" rx="2" fill="hsl(var(--phoenix-gray-light))" />
-              
+
 //               {/* Clock on wall */}
 //               <circle cx="620" cy="80" r="22" stroke="hsl(var(--phoenix-gray)/0.4)" strokeWidth="2" fill="hsl(var(--background))" />
 //               <line x1="620" y1="80" x2="620" y2="65" stroke="hsl(var(--phoenix-gray))" strokeWidth="2" strokeLinecap="round" />
@@ -286,7 +328,7 @@ export default HeroSection;
 //                 <rect x="72" y="340" width="8" height="50" rx="2" fill="hsl(var(--phoenix-gray))" />
 //                 <rect x="60" y="330" width="70" height="8" rx="3" fill="hsl(var(--phoenix-gray))" />
 //                 <path d="M65 330 L65 280 Q65 270 75 270 L75 330" fill="none" stroke="hsl(var(--phoenix-gray))" strokeWidth="3" />
-                
+
 //                 {/* Body - orange shirt */}
 //                 <rect x="72" y="240" width="50" height="60" rx="10" fill="hsl(var(--primary))" />
 //                 {/* Arms */}
@@ -295,7 +337,7 @@ export default HeroSection;
 //                 {/* Hands */}
 //                 <circle cx="148" cy="248" r="5" fill="hsl(var(--phoenix-gray-light))" />
 //                 <circle cx="58" cy="259" r="5" fill="hsl(var(--phoenix-gray-light))" />
-                
+
 //                 {/* Head */}
 //                 <circle cx="97" cy="210" r="24" fill="hsl(var(--phoenix-gray-light))" />
 //                 {/* Hair */}
@@ -309,7 +351,7 @@ export default HeroSection;
 //                 <rect x="82" y="205" width="14" height="12" rx="6" stroke="hsl(var(--foreground))" strokeWidth="1.5" fill="none" />
 //                 <rect x="100" y="205" width="14" height="12" rx="6" stroke="hsl(var(--foreground))" strokeWidth="1.5" fill="none" />
 //                 <line x1="96" y1="211" x2="100" y2="211" stroke="hsl(var(--foreground))" strokeWidth="1.5" />
-                
+
 //                 {/* Laptop on desk */}
 //                 <rect x="70" y="310" width="55" height="5" rx="2" fill="hsl(var(--phoenix-gray))" />
 //                 <rect x="75" y="290" width="45" height="22" rx="3" fill="hsl(var(--phoenix-gray))" />
@@ -324,7 +366,7 @@ export default HeroSection;
 //                 {/* Shoes */}
 //                 <rect x="214" y="390" width="20" height="8" rx="4" fill="hsl(var(--foreground))" />
 //                 <rect x="236" y="390" width="20" height="8" rx="4" fill="hsl(var(--foreground))" />
-                
+
 //                 {/* Body - green shirt */}
 //                 <rect x="210" y="250" width="55" height="65" rx="12" fill="hsl(var(--accent))" />
 //                 {/* Collar */}
@@ -335,7 +377,7 @@ export default HeroSection;
 //                 {/* Hands */}
 //                 <circle cx="196" cy="262" r="5" fill="hsl(var(--phoenix-gray-light))" />
 //                 <circle cx="295" cy="242" r="5" fill="hsl(var(--phoenix-gray-light))" />
-                
+
 //                 {/* Head */}
 //                 <circle cx="237" cy="218" r="26" fill="hsl(var(--phoenix-gray-light))" />
 //                 {/* Hair - short */}
@@ -345,7 +387,7 @@ export default HeroSection;
 //                 <circle cx="246" cy="218" r="2.5" fill="hsl(var(--foreground))" />
 //                 {/* Smile */}
 //                 <path d="M228 228 Q237 235 246 228" fill="none" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-                
+
 //                 {/* Laptop on desk */}
 //                 <rect x="205" y="310" width="55" height="5" rx="2" fill="hsl(var(--phoenix-gray))" />
 //                 <rect x="210" y="290" width="45" height="22" rx="3" fill="hsl(var(--phoenix-gray))" />
@@ -369,7 +411,7 @@ export default HeroSection;
 //                 {/* Shoes - heels */}
 //                 <rect x="356" y="390" width="18" height="8" rx="3" fill="hsl(var(--foreground))" />
 //                 <rect x="378" y="390" width="18" height="8" rx="3" fill="hsl(var(--foreground))" />
-                
+
 //                 {/* Body - teal top */}
 //                 <rect x="348" y="250" width="55" height="45" rx="10" fill="hsl(var(--accent)/0.8)" />
 //                 {/* Skirt / lower body */}
@@ -382,7 +424,7 @@ export default HeroSection;
 //                 <circle cx="428" cy="237" r="5" fill="hsl(var(--phoenix-gray-light))" />
 //                 {/* Handbag */}
 //                 <rect x="325" y="282" width="12" height="18" rx="3" fill="hsl(var(--foreground)/0.8)" />
-                
+
 //                 {/* Head */}
 //                 <circle cx="375" cy="218" r="24" fill="hsl(var(--phoenix-gray-light))" />
 //                 {/* Long hair */}
@@ -406,7 +448,7 @@ export default HeroSection;
 //                 <rect x="520" y="340" width="8" height="50" rx="2" fill="hsl(var(--phoenix-gray))" />
 //                 <rect x="505" y="330" width="70" height="8" rx="3" fill="hsl(var(--phoenix-gray))" />
 //                 <path d="M570 330 L570 280 Q570 270 560 270 L560 330" fill="none" stroke="hsl(var(--phoenix-gray))" strokeWidth="3" />
-                
+
 //                 {/* Body - coral/orange dress */}
 //                 <rect x="510" y="248" width="50" height="55" rx="10" fill="hsl(var(--primary)/0.85)" />
 //                 {/* Arms */}
@@ -415,7 +457,7 @@ export default HeroSection;
 //                 {/* Hands */}
 //                 <circle cx="496" cy="264" r="5" fill="hsl(var(--phoenix-gray-light))" />
 //                 <circle cx="585" cy="260" r="5" fill="hsl(var(--phoenix-gray-light))" />
-                
+
 //                 {/* Head */}
 //                 <circle cx="535" cy="216" r="24" fill="hsl(var(--phoenix-gray-light))" />
 //                 {/* Hair - updo */}
@@ -426,14 +468,14 @@ export default HeroSection;
 //                 <circle cx="544" cy="216" r="2.5" fill="hsl(var(--foreground))" />
 //                 {/* Smile */}
 //                 <path d="M526 226 Q535 232 544 226" fill="none" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-                
+
 //                 {/* Coffee cup in hand */}
 //                 <rect x="580" y="248" width="14" height="18" rx="4" fill="hsl(var(--phoenix-gold))" />
 //                 <rect x="578" y="245" width="18" height="4" rx="2" fill="hsl(var(--phoenix-gold))" />
 //                 {/* Steam */}
 //                 <path d="M585 240 Q588 232 585 225" stroke="hsl(var(--phoenix-gray)/0.4)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
 //                 <path d="M590 238 Q593 230 590 222" stroke="hsl(var(--phoenix-gray)/0.3)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                
+
 //                 {/* Laptop on desk */}
 //                 <rect x="510" y="310" width="55" height="5" rx="2" fill="hsl(var(--phoenix-gray))" />
 //                 <rect x="515" y="290" width="45" height="22" rx="3" fill="hsl(var(--phoenix-gray))" />

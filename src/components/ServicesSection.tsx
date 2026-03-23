@@ -63,7 +63,7 @@ const ServicesSection = () => {
         <div className="text-center mb-14">
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Customised Financial <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Solutions</span>
+            Customised Financial <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Solutions</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
             It's sometimes not that easy to deal with the complexities involved with personal finances. With a professional financial adviser by your side, it becomes truly easy.

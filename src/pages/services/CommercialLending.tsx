@@ -35,7 +35,7 @@ const CommercialLending = () => {
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Commercial <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary highlighter-mark">Lending</span>
+              Commercial <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Lending</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Drive your business forward with strategic lending designed to unlock opportunities, strengthen growth and build financial resilience.
@@ -87,7 +87,7 @@ const CommercialLending = () => {
             <div className="text-center mb-14">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Our <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Commercial</span> Solutions
+                Our <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Commercial</span> Solutions
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Commercial financing is suitable for a wide range of individuals and organisations, whether SMEs, property developers, non-profit organisations or large corporations.

@@ -47,7 +47,7 @@ const PoundAnimation = () => {
           <div className={`flex-1 ${visible ? 'animate-float-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Financial Excellence</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Money, Our <span className="font-handwritten text-4xl md:text-5xl text-primary">Expertise</span>
+              Your Money, Our <span className="font-handwritten text-4xl md:text-5xl text-primary  hand-circle">Expertise</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               With over 15 years of experience in the financial services industry, Phoenix Finserv

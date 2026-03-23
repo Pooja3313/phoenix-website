@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
@@ -24,7 +25,16 @@ const PrivacyPolicy = () => {
             <div className="animate-float-up" style={{ animationDelay: '0.1s' }}>
               <h3 className="text-xl font-bold text-primary mb-3">Who are we?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Phoenix Finserv is authorised and regulated by the Financial Conduct Authority. You can check this on the Financial Services Register by visiting <a href="https://register.fca.org.uk/s/" className="text-primary hover:underline font-semibold" target="_blank" rel="noopener noreferrer">www.register.fca.org.uk</a> or by contacting the FCA on 0800 111 6768.
+                Phoenix Finserv is authorised and regulated by the Financial Conduct Authority. You can check this on the Financial Services Register by visiting{" "}
+                <NavLink
+                  to="https://register.fca.org.uk/s/"
+                  className="text-primary hover:underline font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.register.fca.org.uk
+                </NavLink>{" "}
+                or by contacting the FCA on 0800 111 6768.
               </p>
             </div>
 
@@ -89,9 +99,9 @@ const PrivacyPolicy = () => {
               <h3 className="text-xl font-bold text-primary mb-3">What are your rights surrounding your personal information?</h3>
               <p className="text-muted-foreground leading-relaxed">Your enhanced rights under the GDPR include:</p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mt-3">
-                <li><span className="font-semibold text-foreground">The right of access</span> – we will provide a copy of your personal data within 30 days of requests.</li>
-                <li><span className="font-semibold text-foreground">The right to rectification</span> – you may ask us to rectify any of your personal data which you believe is inaccurate or incomplete.</li>
-                <li><span className="font-semibold text-foreground">The right to erasure</span> – you have the right to request for us to delete all records of your personal data.</li>
+                <li><span className="font-semibold text-foreground">The right of access</span> ? we will provide a copy of your personal data within 30 days of requests.</li>
+                <li><span className="font-semibold text-foreground">The right to rectification</span> ? you may ask us to rectify any of your personal data which you believe is inaccurate or incomplete.</li>
+                <li><span className="font-semibold text-foreground">The right to erasure</span> ? you have the right to request for us to delete all records of your personal data.</li>
               </ul>
             </div>
 
@@ -108,8 +118,18 @@ const PrivacyPolicy = () => {
                 If you have any questions or comments, please contact:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mt-3">
-                <li>By Phone: <a href="tel:+442079932737" className="text-primary hover:underline">+44 (0) 2079 932 737</a></li>
-                <li>By Email: <a href="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline">accountants@phoenix-accountancy.co.uk</a></li>
+                <li>
+                  By Phone:{" "}
+                  <NavLink to="tel:+442079932737" className="text-primary hover:underline">
+                    +44 (0) 2079 932 737
+                  </NavLink>
+                </li>
+                <li>
+                  By Email:{" "}
+                  <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline">
+                    accountants@phoenix-accountancy.co.uk
+                  </NavLink>
+                </li>
                 <li>By Writing: London, United Kingdom</li>
               </ul>
             </div>

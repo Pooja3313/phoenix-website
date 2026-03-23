@@ -3,15 +3,50 @@ import { Shield } from "lucide-react";
 interface ServiceDetailWhyChooseSectionProps {
   whyTitle: string;
   whyContent: string[];
+  /** Override highlight span classes (default: primary orange text + green pen-underline image) */
+  highlightClassName?: string;
 }
+
+/** Split title after "for ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¦" so the full service name is highlighted (not only the last word). */
+function splitWhyTitle(whyTitle: string): { prefix: string; highlight: string } {
+  if (whyTitle.startsWith("Why Plan for ")) {
+    return {
+      prefix: "Why Plan for ",
+      highlight: whyTitle.slice("Why Plan for ".length),
+    };
+  }
+  if (whyTitle.startsWith("Why Arrange a ")) {
+    return {
+      prefix: "Why Arrange a ",
+      highlight: whyTitle.slice("Why Arrange a ".length),
+    };
+  }
+  const yourIdx = whyTitle.indexOf(" for your ");
+  if (yourIdx !== -1) {
+    return {
+      prefix: whyTitle.slice(0, yourIdx + " for your ".length),
+      highlight: whyTitle.slice(yourIdx + " for your ".length),
+    };
+  }
+  const forIdx = whyTitle.indexOf(" for ");
+  if (forIdx !== -1) {
+    return {
+      prefix: whyTitle.slice(0, forIdx + " for ".length),
+      highlight: whyTitle.slice(forIdx + " for ".length),
+    };
+  }
+  return { prefix: "", highlight: whyTitle };
+}
+
+const HIGHLIGHT_DEFAULT =
+  "font-handwritten text-4xl md:text-5xl text-primary pen-underline";
 
 const ServiceDetailWhyChooseSection = ({
   whyTitle,
   whyContent,
+  highlightClassName = HIGHLIGHT_DEFAULT,
 }: ServiceDetailWhyChooseSectionProps) => {
-  const words = whyTitle.split(" ");
-  const slugWord = words.pop() || "";
-  const prefix = words.join(" ");
+  const { prefix, highlight } = splitWhyTitle(whyTitle);
 
   return (
     <section className="py-20 bg-background">
@@ -19,9 +54,9 @@ const ServiceDetailWhyChooseSection = ({
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              {prefix && <span>{prefix} </span>}
-              <span className="font-handwritten text-4xl md:text-5xl text-primary handmade-green-underline">
-                {slugWord}
+              {prefix ? <span>{prefix}</span> : null}
+              <span className={highlightClassName}>
+                {highlight}
               </span>
             </h2>
             {whyContent.map((para, i) => (

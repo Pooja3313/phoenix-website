@@ -1,6 +1,7 @@
 
 import { Award, PoundSterling, Users, Search, Settings, Zap, Send, Phone, Mail } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const [visible, setVisible] = useState(false);
@@ -61,7 +62,7 @@ const NetworkIntroducer = () => {
                   Partnership Built Around <span className="font-handwritten text-3xl text-primary highlighter-mark">Your Business</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  If you are a professional — such as an accountant, Independent Financial Adviser (IFA), mortgage adviser, solicitor or estate agent — Phoenix Finserv has an opportunity for you to become an introducer for financial services. You identify clients who could benefit from financial advice, and we manage the process from start to finish, providing value to your client and generating additional income for you on every successful referral.
+                  If you are a professional ? such as an accountant, Independent Financial Adviser (IFA), mortgage adviser, solicitor or estate agent ? Phoenix Finserv has an opportunity for you to become an introducer for financial services. You identify clients who could benefit from financial advice, and we manage the process from start to finish, providing value to your client and generating additional income for you on every successful referral.
                 </p>
               </div>
             </AnimatedSection>
@@ -118,12 +119,18 @@ const NetworkIntroducer = () => {
                 <h2 className="text-3xl font-bold mb-4">Start an Introducer <span className="font-handwritten text-4xl">Partnership</span></h2>
                 <p className="text-primary-foreground/80 mb-6">If you feel a referral partnership could support your business and your clients, we'd be happy to talk.</p>
                 <div className="space-y-4">
-                  <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  <NavLink
+                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Mail size={18} /> accountants@phoenix-accountancy.co.uk
-                  </a>
-                  <a href="tel:+442079932737" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  </NavLink>
+                  <NavLink
+                    to="tel:+442079932737"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Phone size={18} /> +44 (0) 2079 932 737
-                  </a>
+                  </NavLink>
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.2}>

@@ -70,7 +70,8 @@ const ValuesSection = () => {
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-3">Our Core Values</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             We Take{" "}
-            <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">P.R.I.D.E.</span>
+
+            <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">P.R.I.D.E.</span>
             {" "}In Our Work
           </h2>
         </div>

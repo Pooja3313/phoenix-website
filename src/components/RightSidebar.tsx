@@ -1,4 +1,12 @@
-import { X, Mail, Phone, MapPin, Clock, Linkedin, Facebook, Twitter, Instagram } from "lucide-react";
+import { X, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import {
+  BrandFacebookIcon,
+  BrandInstagramIcon,
+  BrandLinkedInIcon,
+  BrandTwitterIcon,
+} from "@/components/icons/BrandSocialIcons";
+import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 
 interface RightSidebarProps {
   open: boolean;
@@ -48,7 +56,7 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
           <div className="mb-8">
             <h3 className="text-lg font-bold text-foreground mb-4">Get in Touch</h3>
             <div className="space-y-4">
-              <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-start gap-3 group">
+              <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-start gap-3 group">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-phoenix-green-light transition-colors">
                   <Mail size={18} className="text-primary group-hover:text-phoenix-green transition-colors" />
                 </div>
@@ -56,9 +64,9 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
                   <span className="text-xs text-muted-foreground">Email</span>
                   <p className="text-sm text-foreground">accountants@phoenix-accountancy.co.uk</p>
                 </div>
-              </a>
+              </NavLink>
 
-              <a href="tel:+442079932737" className="flex items-start gap-3 group">
+              <NavLink to="tel:+442079932737" className="flex items-start gap-3 group">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-phoenix-green-light transition-colors">
                   <Phone size={18} className="text-primary group-hover:text-phoenix-green transition-colors" />
                 </div>
@@ -66,7 +74,7 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
                   <span className="text-xs text-muted-foreground">Phone</span>
                   <p className="text-sm text-foreground">+44 (0) 2079 932 737</p>
                 </div>
-              </a>
+              </NavLink>
 
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -84,7 +92,7 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
                 </div>
                 <div>
                   <span className="text-xs text-muted-foreground">Working Hours</span>
-                  <p className="text-sm text-foreground">Mon–Fri: 9:00 AM – 6:00 PM</p>
+                  <p className="text-sm text-foreground">MonÃ¢ÂÂFri: 9:00 AM Ã¢ÂÂ 6:00 PM</p>
                 </div>
               </div>
             </div>
@@ -94,20 +102,32 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
           <div className="mb-8">
             <h3 className="text-lg font-bold text-foreground mb-4">Follow Us</h3>
             <div className="flex gap-3">
-              {[
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Facebook, label: "Facebook" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Instagram, label: "Instagram" },
-              ].map(({ icon: Icon, label }) => (
-                <a
+              <NavLink
+                to={PHOENIX_LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce"
+                aria-label="LinkedIn"
+              >
+                <BrandLinkedInIcon size={18} aria-hidden />
+              </NavLink>
+              {(
+                [
+                  { Icon: BrandFacebookIcon, label: "Facebook" },
+                  { Icon: BrandTwitterIcon, label: "Twitter" },
+                  { Icon: BrandInstagramIcon, label: "Instagram" },
+                ] as const
+              ).map(({ Icon, label }) => (
+                <NavLink
                   key={label}
-                  href="#"
+                  to="."
                   className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce"
-                  aria-label={label}
+                  aria-label={`${label} (link coming soon)`}
+                  onClick={(e) => e.preventDefault()}
+                  onAuxClick={(e) => e.preventDefault()}
                 >
-                  <Icon size={18} />
-                </a>
+                  <Icon size={18} aria-hidden />
+                </NavLink>
               ))}
             </div>
           </div>

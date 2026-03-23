@@ -63,9 +63,9 @@ const StatsCounter = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-14">
-          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Our Impact</p>
+          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2"></p>
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-            Numbers That <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">Speak</span>
+            Numbers That <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Speak</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">

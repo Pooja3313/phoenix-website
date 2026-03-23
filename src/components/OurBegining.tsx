@@ -45,15 +45,15 @@ const OurBegining = () => {
  
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-phoenix-gray-dark text-primary-foreground overflow-hidden">
+        <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.1),transparent_60%)]" />
           <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Our Story</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 ">
               The Phoenix <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Journey</span>
             </h1>
-            <p className="text-primary-foreground/70 max-w-xl mx-auto">
+            <p className="text-muted-foreground max-w-xl mx-auto">
               From humble beginnings to a trusted financial services firm — our story of growth, trust, and excellence.
             </p>
           </div>

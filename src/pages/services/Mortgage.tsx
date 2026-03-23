@@ -33,7 +33,7 @@ const Mortgage = () => {
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary highlighter-mark">Mortgage</span> Solutions
+              <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Mortgage</span> Solutions
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Shape a future of stability and comfort with trusted mortgage guidance designed to turn aspirations into lasting reality.
@@ -82,7 +82,7 @@ const Mortgage = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Find Your Best <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Mortgage Deal</span> in Seconds
+                Find Your Best <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Mortgage Deal</span> in Seconds
               </h2>
               <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
                 Our intelligent tools do the hard work for you â analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
@@ -112,7 +112,7 @@ const Mortgage = () => {
             <div className="text-center mb-14">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Our <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Mortgage</span> Services
+                Our <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Mortgage</span> Services
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">

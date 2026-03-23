@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StickyGetInTouch from "@/components/StickyGetInTouch";
 import { ArrowRight, Shield, Briefcase, Handshake, Settings, FileCheck, GraduationCap, PenTool, Rocket, Send, Phone, Mail } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const [visible, setVisible] = useState(false);
@@ -30,14 +31,14 @@ const steps = [
   { icon: FileCheck, title: "Fill Application Form", description: "Your first step starts with a simple application form, helping us understand your background and experience." },
   { icon: GraduationCap, title: "Document Verification", description: "A document review will be conducted to ensure compliance and regulatory requirements are met." },
   { icon: Briefcase, title: "Attend Induction", description: "Join a structured induction session where we walk you through internal systems, process & software trainings." },
-  { icon: PenTool, title: "Complete Required Exams", description: "Complete assessments or qualifications to meet regulatory requirements — we guide you through every step." },
+  { icon: PenTool, title: "Complete Required Exams", description: "Complete assessments or qualifications to meet regulatory requirements ? we guide you through every step." },
   { icon: Handshake, title: "Sign Agreement", description: "We sign a clear and straightforward agreement to formalise the relationship." },
   { icon: Rocket, title: "Start Doing Business", description: "You're ready to start your financial advisory business with confidence and backing from a trusted firm." },
 ];
 
 const testimonials = [
   { name: "Kakarlapudi Varma", role: "Financial Adviser", text: "It's been a while since I started working with Phoenix Finserv as a financial analyst. I have nothing but positives to say about the team. Incredibly supportive work culture, and the team is always embracing and encouraging each other." },
-  { name: "Geerish Ganesh Mandrekar", role: "Protection & Mortgage Consultant", text: "Best company to deal with. The support and systems available make it easy to focus on what matters most — serving clients." },
+  { name: "Geerish Ganesh Mandrekar", role: "Protection & Mortgage Consultant", text: "Best company to deal with. The support and systems available make it easy to focus on what matters most ? serving clients." },
   { name: "Larisa Golea-Udvar", role: "Protection & Mortgage Consultant", text: "Great systems to use for my business. As an adviser I have all systems which I can use to quote my clients. I like the weekly trainings and the help from compliance." },
 ];
 
@@ -73,7 +74,7 @@ const NetworkAppointedRepresentative = () => {
                 The Phoenix Finserv <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Advantage</span>
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Our Appointed Representatives are not just partners — they are the ones building and growing successful financial advisory businesses.
+                Our Appointed Representatives are not just partners ? they are the ones building and growing successful financial advisory businesses.
               </p>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -157,12 +158,18 @@ const NetworkAppointedRepresentative = () => {
                 <h2 className="text-3xl font-bold mb-4">Become an AR With <span className="font-handwritten text-4xl">Phoenix Finserv</span>?</h2>
                 <p className="text-primary-foreground/80 mb-6">Partner with us to grow your financial advisory business under your brand name with the right balance of independence and regulatory support.</p>
                 <div className="space-y-4">
-                  <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  <NavLink
+                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Mail size={18} /> accountants@phoenix-accountancy.co.uk
-                  </a>
-                  <a href="tel:+442079932737" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  </NavLink>
+                  <NavLink
+                    to="tel:+442079932737"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Phone size={18} /> +44 (0) 2079 932 737
-                  </a>
+                  </NavLink>
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.2}>

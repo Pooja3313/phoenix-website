@@ -555,7 +555,10 @@
 // export default DedicatedTeam;
 
 import { useEffect, useRef, useState } from "react";
-import { Quote, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { BrandLinkedInIcon } from "@/components/icons/BrandSocialIcons";
+import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 
 const teamMembers = [
   {
@@ -662,7 +665,7 @@ const DedicatedTeam = () => {
 
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             We may not be local, but we are only ever a{" "}
-            <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">
+            <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">
               phone call
             </span>{" "}
             away
@@ -741,9 +744,15 @@ const DedicatedTeam = () => {
                     </div>
 
                     <div className="px-6 pb-6 flex items-center gap-2">
-                      <a href="#" className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce">
-                        <Linkedin size={14} />
-                      </a>
+                      <NavLink
+                        to={PHOENIX_LINKEDIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Phoenix on LinkedIn"
+                        className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce"
+                      >
+                        <BrandLinkedInIcon size={14} aria-hidden />
+                      </NavLink>
                     </div>
 
                   </div>

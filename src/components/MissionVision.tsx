@@ -1,5 +1,6 @@
 import { Target, Eye, Rocket, BarChart3, Lightbulb, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const MissionVision = () => {
   const [visible, setVisible] = useState(false);
@@ -25,7 +26,7 @@ const MissionVision = () => {
         <div className="text-center mb-16">
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">What Drives Us</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Our <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Purpose</span> & Direction
+            Our <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Purpose</span> & Direction
           </h2>
         </div>
 
@@ -101,10 +102,13 @@ const MissionVision = () => {
 
         {/* CTA */}
         <div className={`text-center mt-12 ${visible ? 'animate-float-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <a href="#contact" className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <NavLink
+            to="/#contact"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+          >
             Get a Quote
             <Rocket size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          </NavLink>
         </div>
       </div>
     </section>

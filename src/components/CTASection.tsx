@@ -16,11 +16,17 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-lg px-8 py-6 shadow-xl group">
+          <Button
+            size="lg"
+            className="border-2 border-transparent bg-primary-foreground text-primary font-semibold text-lg px-8 py-6 shadow-xl transition-colors duration-300 hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green group"
+          >
             Book Free Consultation
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
           </Button>
-          <Button size="lg" variant="outline" className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-lg px-8 py-6">
+          <Button
+            size="lg"
+            className="border-2 border-transparent bg-primary-foreground text-primary font-semibold text-lg px-8 py-6 shadow-xl transition-colors duration-300 hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green"
+          >
             <Phone className="mr-2" size={20} />
             Call Us Now
           </Button>

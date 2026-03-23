@@ -63,7 +63,7 @@ const Pensions = () => {
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Pension <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary highlighter-mark">Planning</span>
+              Pension <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Planning</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Helping you make informed decisions about your retirement. Our guidance is designed to support your long-term financial well-being, giving you clarity and confidence as you plan for the future.
@@ -86,7 +86,7 @@ const Pensions = () => {
                   Why Choose Phoenix Finserv for your <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">Pension Planning?</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  According to Age UK, around half of people aged 40£-64£ may not have enough savings to retire comfortably when they reach state pension age. Without additional pension arrangements in place, you could face financial challenges later in life.
+                  According to Age UK, around half of people aged 40?64 may not have enough savings to retire comfortably when they reach state pension age. Without additional pension arrangements in place, you could face financial challenges later in life.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   At Phoenix Finserv, we help you explore private pension options that support your long-term financial well-being. Our team has extensive experience in the pension sector and can guide you through your choices, helping you avoid common mistakes and plan confidently for retirement.
@@ -107,7 +107,7 @@ const Pensions = () => {
             <div className="text-center mb-14">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Pension</span> Options
+                <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Pension</span> Options
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Exploring pension options with Phoenix Finserv means securing a future built on stability, ensuring peace of mind, and creating a financial foundation that supports your retirement goals.

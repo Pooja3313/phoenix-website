@@ -1,5 +1,6 @@
 
 import { AlertCircle, Phone, Mail, FileText, Clock } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const ComplaintsProcedure = () => {
   return (
@@ -64,7 +65,16 @@ const ComplaintsProcedure = () => {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Financial Ombudsman Service</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    If you are not satisfied with our response, you may be able to refer your complaint to the Financial Ombudsman Service. They can be contacted at: <a href="https://www.financial-ombudsman.org.uk" className="text-primary hover:underline font-semibold" target="_blank" rel="noopener noreferrer">www.financial-ombudsman.org.uk</a> or by phone on <span className="text-primary font-semibold">0800 023 4567</span>.
+                    If you are not satisfied with our response, you may be able to refer your complaint to the Financial Ombudsman Service. They can be contacted at:{" "}
+                    <NavLink
+                      to="https://www.financial-ombudsman.org.uk"
+                      className="text-primary hover:underline font-semibold"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      www.financial-ombudsman.org.uk
+                    </NavLink>{" "}
+                    or by phone on <span className="text-primary font-semibold">0800 023 4567</span>.
                   </p>
                 </div>
               </div>

@@ -30,6 +30,7 @@ import ProtectionSubService from "./pages/services/ProtectionSubService";
 import MortgageCalculator from "./pages/services/MortgageCalculator";
 import MortgageSubService from "./pages/services/MortgageSubService";
 import CommercialLendingSubService from "./pages/services/CommercialLendingSubService";
+import FinancialOmbudsman from "./pages/FinancialOmbudsman";
 // import ProtectionServicePage from "./pages/ProtectionPage";
 // import ProtectionSubServiceDetailPage from "./components/ProtectionSubServiceDetailPage";
 
@@ -72,6 +73,8 @@ const App = () => (
               element={<ComplaintsProcedure />}
             />
             <Route path="/fair-treatment" element={<FairTreatment />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/financial-ombudsman" element={<FinancialOmbudsman />} />
             <Route path="*" element={<NotFound />} />
 
             {/* Service main pages */}

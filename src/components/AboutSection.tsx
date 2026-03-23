@@ -1,5 +1,6 @@
 import { ArrowRight, Award, Users, Globe, Briefcase } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const badges = [
   { icon: Award, label: "Living Wage Employer" },
@@ -37,7 +38,7 @@ const AboutSection = () => {
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
               Comprehensive{" "}
-              <span className="font-handwritten text-4xl md:text-5xl lg:text-6xl text-primary pen-underline">
+              <span className="font-handwritten text-4xl md:text-5xl lg:text-6xl text-primary pen-underline2">
                 Enterprise
               </span>
               <br />
@@ -60,14 +61,14 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <a
-              href="#"
+            <NavLink
+              to="/about"
               className={`inline-flex items-center gap-2 text-primary font-semibold text-base group hover:gap-3 transition-all duration-300 ${visible ? 'animate-float-up' : 'opacity-0'}`}
               style={{ animationDelay: '0.35s' }}
             >
               Explore more
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </NavLink>
 
             {/* Accreditation Badges */}
             <div className={`flex flex-wrap items-center gap-6 mt-10 ${visible ? 'animate-float-up' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>

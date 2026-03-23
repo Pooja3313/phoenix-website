@@ -25,7 +25,7 @@ const ServiceFeaturesGrid = ({ title, features }: ServiceFeaturesGridProps) => {
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">
             What We Offer
           </p>
-          <h2 className="font-script text-3xl md:text-4xl text-foreground">
+          <h2 className="font-script text-3xl md:text-4xl text-foreground ">
             Our {title} Solutions
           </h2>
         </div>

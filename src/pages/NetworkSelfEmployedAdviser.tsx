@@ -1,5 +1,6 @@
 import { Shield, Compass, Users, Wrench, TrendingUp, Send, Phone, Mail } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const [visible, setVisible] = useState(false);
@@ -126,12 +127,18 @@ const NetworkSelfEmployedAdviser = () => {
                 <h2 className="text-3xl font-bold mb-4">Become a Financial Adviser with <span className="font-handwritten text-4xl">Phoenix Finserv</span></h2>
                 <p className="text-primary-foreground/80 mb-6">Step into the role of financial adviser and enjoy the independence of running your business your way, supported by a framework that gives you access to regulatory expertise and powerful tools.</p>
                 <div className="space-y-4">
-                  <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  <NavLink
+                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Mail size={18} /> accountants@phoenix-accountancy.co.uk
-                  </a>
-                  <a href="tel:+442079932737" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  </NavLink>
+                  <NavLink
+                    to="tel:+442079932737"
+                    className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
                     <Phone size={18} /> +44 (0) 2079 932 737
-                  </a>
+                  </NavLink>
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.2}>

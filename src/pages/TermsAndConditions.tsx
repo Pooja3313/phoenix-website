@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 
 const TermsAndConditions = () => {
   return (
@@ -79,7 +79,11 @@ const TermsAndConditions = () => {
               <div className="animate-float-up" style={{ animationDelay: '0.6s' }}>
                 <h3 className="text-xl font-bold text-primary mb-3">Privacy Policy</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Please read our <a href="/privacy-policy" className="text-primary hover:underline font-semibold">Privacy Policy</a> for details of how we use information about you.
+                  Please read our{" "}
+                  <NavLink to="/privacy-policy" className="text-primary hover:underline font-semibold">
+                    Privacy Policy
+                  </NavLink>{" "}
+                  for details of how we use information about you.
                 </p>
               </div>
 
@@ -116,7 +120,10 @@ const TermsAndConditions = () => {
                 <h3 className="text-xl font-bold text-primary mb-3">Enquiries</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   If you have any enquiries regarding these Terms and Conditions please contact us at{" "}
-                  <a href="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline font-semibold">accountants@phoenix-accountancy.co.uk</a>.
+                  <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline font-semibold">
+                    accountants@phoenix-accountancy.co.uk
+                  </NavLink>
+                  .
                 </p>
               </div>
             </div>

@@ -57,7 +57,7 @@
 //         <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
 //           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
 //           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.06),transparent_50%)]" />
-//           <div className="absolute top-10 right-10 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+//           <div className="absolute top-10 right-10 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
 //           <div className="absolute bottom-10 left-10 w-28 h-28 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" />
 //           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
 //             <AnimatedSection>
@@ -210,9 +210,7 @@
 // export default Network;
 
 import { ArrowRight, Briefcase, Users, BarChart3, Shield, Megaphone, Code, Handshake, Phone, CheckCircle } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import StickyGetInTouch from "@/components/StickyGetInTouch";
+
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -411,10 +409,13 @@ const Network = () => {
               <p className="text-primary-foreground/80 mb-8">
                 Join a team of dedicated financial professionals committed to empowering individuals and families with tailored solutions, expert guidance, and long-term financial security.
               </p>
-              <a href="tel:+442079932737" className="inline-flex items-center gap-3 bg-card text-primary font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:bg-background">
+              <NavLink
+                to="tel:+442079932737"
+                className="inline-flex items-center gap-3 bg-card text-primary font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:bg-background"
+              >
                 <Phone size={20} />
                 Request a Callback
-              </a>
+              </NavLink>
             </AnimatedSection>
           </div>
         </section>

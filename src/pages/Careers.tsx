@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyGetInTouch from "@/components/StickyGetInTouch";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const perks = [
   { icon: TrendingUp, title: "Career Growth", description: "Continuous learning and development opportunities to advance your career." },
@@ -33,15 +34,15 @@ const Careers = () => {
     
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-phoenix-gray-dark text-primary-foreground overflow-hidden">
+        <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.08),transparent_60%)]" />
-          <div className="absolute top-20 left-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+          <div className="absolute top-20 left-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Careers</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               Join the <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Phoenix</span> Team
             </h1>
-            <p className="text-primary-foreground/70 max-w-xl mx-auto">
+            <p className="text-muted-foreground max-w-xl mx-auto">
               Be part of a growing team dedicated to helping people secure their financial futures.
             </p>
           </div>
@@ -53,7 +54,7 @@ const Careers = () => {
             <div className="text-center mb-14">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Why Work With Us</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                The Phoenix <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Experience</span>
+                The Phoenix <span className="font-handwritten text-4xl md:text-5xl text-accent  highlighter-mark">Experience</span>
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -76,7 +77,7 @@ const Careers = () => {
             <div className="text-center mb-14">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Open Positions</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Current <span className="font-handwritten text-4xl md:text-5xl text-primary">Openings</span>
+                Current <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Openings</span>
               </h2>
             </div>
             <div className="max-w-3xl mx-auto space-y-5">
@@ -91,9 +92,12 @@ const Careers = () => {
                         <span className="inline-flex items-center gap-1 text-xs text-muted-foreground"><Clock size={12} />{job.type}</span>
                       </div>
                     </div>
-                    <a href="#contact" className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 whitespace-nowrap shrink-0 text-sm group/btn">
+                    <NavLink
+                      to="/#contact"
+                      className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 whitespace-nowrap shrink-0 text-sm group/btn"
+                    >
                       Apply Now <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               ))}
@@ -101,8 +105,6 @@ const Careers = () => {
           </div>
         </section>
       </main>
-    
-      <StickyGetInTouch />
     </div>
   );
 };

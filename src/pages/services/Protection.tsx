@@ -45,7 +45,7 @@ const Protection = () => {
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Protection <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary highlighter-mark">Planning</span>
+              Protection <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Planning</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Safeguard your tomorrow with protection plans designed to provide peace of mind, security and strength through life's uncertainties.
@@ -146,7 +146,7 @@ const Protection = () => {
             <div className="text-center mb-10">
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Comprehensive <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">Protection</span> Solutions
+                Comprehensive <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Protection</span> Solutions
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Protection planning is about creating a financial safety net that ensures you, your family, or your business are supported in the face of life's uncertainties.

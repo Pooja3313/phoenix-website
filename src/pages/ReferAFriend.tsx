@@ -8,6 +8,7 @@ import {
   Send,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const AnimatedSection = ({
   children,
@@ -87,7 +88,7 @@ const ReferAFriend = () => {
         <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">
-            £
+          £
           </div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <AnimatedSection>
@@ -256,12 +257,9 @@ const ReferAFriend = () => {
                       />
                       <span className="text-sm text-muted-foreground">
                         I accept the{" "}
-                        <a
-                          href="/terms-and-conditions"
-                          className="text-primary hover:underline"
-                        >
+                        <NavLink to="/terms-and-conditions" className="text-primary hover:underline">
                           Terms and Conditions
-                        </a>
+                        </NavLink>
                         *
                       </span>
                     </label>

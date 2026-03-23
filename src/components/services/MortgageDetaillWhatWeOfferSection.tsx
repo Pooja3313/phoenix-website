@@ -30,7 +30,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Our{" "}
-            <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">
+            <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">
               {service.title}
             </span>{" "}
             Services

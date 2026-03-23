@@ -112,11 +112,14 @@
 
 // export default Contact;
 
-import { Mail, Phone, MapPin, Clock, Send, Linkedin, Facebook, Twitter, Calendar, MessageCircle, PhoneCall, CheckSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Calendar, MessageCircle, PhoneCall, CheckSquare } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyGetInTouch from "@/components/StickyGetInTouch";
 import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { BrandFacebookIcon, BrandLinkedInIcon, BrandTwitterIcon } from "@/components/icons/BrandSocialIcons";
+import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const [visible, setVisible] = useState(false);
@@ -194,13 +197,18 @@ const Contact = () => {
               {contactMethods.map((method, i) => (
                 <AnimatedSection key={method.title} delay={i * 0.1}>
                   {method.href ? (
-                    <a href={method.href} target="_blank" rel="noopener noreferrer" className="group block h-full bg-card border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500">
+                    <NavLink
+                      to={method.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block h-full bg-card border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500"
+                    >
                       <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 icon-hover-bounce">
                         <method.icon size={26} className="text-primary group-hover:text-accent-foreground transition-colors" />
                       </div>
                       <h3 className="font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{method.title}</h3>
                       <p className="text-muted-foreground text-sm">{method.desc}</p>
-                    </a>
+                    </NavLink>
                   ) : (
                     <div className="group h-full bg-card border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500 cursor-pointer" onClick={() => setContactType(method.title === "Request a Callback" ? "callback" : "meeting")}>
                       <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 icon-hover-bounce">
@@ -291,7 +299,9 @@ const Contact = () => {
                         <div>
                           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{item.label}</p>
                           {item.href ? (
-                            <a href={item.href} className="text-foreground font-medium text-sm hover:text-primary transition-colors">{item.value}</a>
+                            <NavLink to={item.href} className="text-foreground font-medium text-sm hover:text-primary transition-colors">
+                              {item.value}
+                            </NavLink>
                           ) : (
                             <p className="text-foreground font-medium text-sm">{item.value}</p>
                           )}
@@ -304,10 +314,31 @@ const Contact = () => {
                   <div className="mb-8">
                     <p className="text-sm font-semibold text-foreground mb-3">Follow Us</p>
                     <div className="flex gap-3">
-                      {[Linkedin, Facebook, Twitter].map((Icon, i) => (
-                        <a key={i} href="#" className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce text-primary">
-                          <Icon size={18} />
-                        </a>
+                      <NavLink
+                        to={PHOENIX_LINKEDIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Phoenix on LinkedIn"
+                        className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce text-primary"
+                      >
+                        <BrandLinkedInIcon size={18} aria-hidden />
+                      </NavLink>
+                      {(
+                        [
+                          { Icon: BrandFacebookIcon, label: "Facebook" },
+                          { Icon: BrandTwitterIcon, label: "Twitter" },
+                        ] as const
+                      ).map(({ Icon, label }) => (
+                        <NavLink
+                          key={label}
+                          to="."
+                          aria-label={`${label} (link coming soon)`}
+                          className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 icon-hover-bounce text-primary"
+                          onClick={(e) => e.preventDefault()}
+                          onAuxClick={(e) => e.preventDefault()}
+                        >
+                          <Icon size={18} aria-hidden />
+                        </NavLink>
                       ))}
                     </div>
                   </div>
