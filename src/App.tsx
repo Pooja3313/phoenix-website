@@ -28,9 +28,12 @@ import Mortgage from "./pages/services/Mortgage";
 import Protection from "./pages/services/Protection";
 import ProtectionSubService from "./pages/services/ProtectionSubService";
 import MortgageCalculator from "./pages/services/MortgageCalculator";
+import BestBuyCalculator from "./pages/services/BestBuyCalculator";
+import StampDutyCalculator from "./pages/services/StampDutyCalculator";
 import MortgageSubService from "./pages/services/MortgageSubService";
 import CommercialLendingSubService from "./pages/services/CommercialLendingSubService";
 import FinancialOmbudsman from "./pages/FinancialOmbudsman";
+import RepaymentCalculator from "./pages/services/RepaymentCalculator";
 // import ProtectionServicePage from "./pages/ProtectionPage";
 // import ProtectionSubServiceDetailPage from "./components/ProtectionSubServiceDetailPage";
 
@@ -99,6 +102,18 @@ const App = () => (
             <Route
               path="/mortgage/calculator"
               element={<MortgageCalculator />}
+            />
+            <Route
+              path="/mortgage/best-buy"
+              element={<BestBuyCalculator />}
+            />
+               <Route
+              path="/mortgage/repayment-calculator"
+              element={<RepaymentCalculator />}
+            />
+            <Route
+              path="/mortgage/stamp-duty"
+              element={<StampDutyCalculator />}
             />
             <Route path="/mortgage/:slug" element={<MortgageSubService />} />
             <Route

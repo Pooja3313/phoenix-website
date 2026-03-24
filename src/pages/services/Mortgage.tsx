@@ -1,4 +1,4 @@
-import { Home, Building, Key, RefreshCw, ArrowRight, Calculator, TrendingUp, ChevronRight } from "lucide-react";
+import { Home, Building, Key, RefreshCw, ArrowRight, Calculator, ChevronRight, Search, FileText } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { mortgageServices } from "@/data/mortgageData";
@@ -89,19 +89,31 @@ const Mortgage = () => {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              <NavLink to="/mortgage/calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
-                <Calculator size={40} className="text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-bold text-lg mb-2">Mortgage Calculator</h3>
-                <p className="text-muted-foreground text-sm">Calculate your monthly repayments, compare rates, and find the deal that's right for you.</p>
+             
+              <NavLink to="/mortgage/best-buy" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+                <Search size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Best Buy Calculator</h3>
+                <p className="text-muted-foreground text-sm">Compare mortgage rates with top lenders and find the mortgage deal that?s right for you.</p>
                 <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Try Now <ChevronRight size={16} />
                 </div>
               </NavLink>
-              <div className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
-                <TrendingUp size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-bold text-lg mb-2">Rates & Repayments</h3>
+               <NavLink to="/mortgage/calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
+                <Calculator size={40} className="text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Mortgage rates and repayments</h3>
                 <p className="text-muted-foreground text-sm">Compare mortgage deals and find out what your interest rate and monthly repayments could be.</p>
-              </div>
+                <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  Try Now <ChevronRight size={16} />
+                </div>
+              </NavLink>
+              {/* <NavLink to="/mortgage/stamp-duty" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+                <FileText size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Stamp Duty Calculator</h3>
+                <p className="text-muted-foreground text-sm">Whether you?re a first-time buyer, moving to a new home, or purchasing an additional property, find out exactly what you have to pay.</p>
+                <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  Try Now <ChevronRight size={16} />
+                </div>
+              </NavLink> */}
             </div>
           </div>
         </section>

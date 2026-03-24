@@ -36,7 +36,7 @@ const Careers = () => {
         {/* Hero */}
         <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.08),transparent_60%)]" />
-          <div className="absolute top-20 left-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">Â£</div>
+          <div className="absolute top-20 left-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Careers</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">

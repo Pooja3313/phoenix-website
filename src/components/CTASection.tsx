@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -16,19 +17,28 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
+          {/* Book Free Consultation - Navigates to Contact Page */}
           <Button
+            asChild
             size="lg"
             className="border-2 border-transparent bg-primary-foreground text-primary font-semibold text-lg px-8 py-6 shadow-xl transition-colors duration-300 hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green group"
           >
-            Book Free Consultation
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            <NavLink to="/contact">
+              Book Free Consultation
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            </NavLink>
           </Button>
+
+          {/* Call Us Now - Opens Phone Dialer */}
           <Button
+            asChild
             size="lg"
             className="border-2 border-transparent bg-primary-foreground text-primary font-semibold text-lg px-8 py-6 shadow-xl transition-colors duration-300 hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green"
           >
-            <Phone className="mr-2" size={20} />
-            Call Us Now
+            <NavLink to="tel:+919876543210">   {/* ? Change this number to your actual number */}
+              <Phone className="mr-2" size={20} />
+              Call Us Now
+            </NavLink>
           </Button>
         </div>
       </div>

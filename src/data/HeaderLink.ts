@@ -74,6 +74,8 @@ export const serviceGroupsNav: ServiceGroup[] = [
         title: "Mortgage Services",
         items: [
           { name: "Mortgage Calculator", href: "/mortgage/calculator" },
+          // { name: "Best Buy Calculator", href: "/mortgage/best-buy" },
+          // { name: "Stamp Duty Calculator", href: "/mortgage/stamp-duty" },
           ...mortgageServices.map((s) => ({
             name: s.title,
             href: `/mortgage/${s.slug}`,

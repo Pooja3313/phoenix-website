@@ -33,7 +33,7 @@ const LogoSlider = () => {
   return (
     <section className="py-12 bg-muted/20 border-y border-border overflow-hidden">
       <div className="container mx-auto px-4 mb-6">
-        <p className="text-center text-muted-foreground text-sm">
+        <p className="text-center text-muted-foreground text-sm md:text-xl">
           Our advisers have experience working with leading platforms
         </p>
       </div>

@@ -1,4 +1,4 @@
-import { Calculator, ArrowRight, PoundSterling, TrendingUp, Percent } from "lucide-react";
+import { Home, Building, Key, RefreshCw, ArrowRight, Calculator, ChevronRight, Search, FileText } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -40,6 +40,7 @@ const MortgageCalculator = () => {
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
           <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col items-center text-center">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Tools</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Mortgage <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Calculator</span>
@@ -48,157 +49,51 @@ const MortgageCalculator = () => {
               Use our calculator to estimate your monthly mortgage repayments and understand what you could afford.
             </p>
           </div>
+          </div>
         </section>
 
-        {/* Calculator */}
-        <section className="py-16 bg-background">
+
+        {/* Mortgage Calculator */}
+        <section className="py-16 bg-gradient-to-br from-phoenix-gray-light/40 to-background">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              {/* Inputs */}
-              <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
-                <h2 className="text-2xl font-bold text-foreground mb-2">Enter Your Details</h2>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Property Value</label>
-                  <div className="relative">
-                    <PoundSterling size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      type="number"
-                      value={propertyValue}
-                      onChange={e => setPropertyValue(Number(e.target.value))}
-                      className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                    />
-                  </div>
-                  <input type="range" min={50000} max={2000000} step={5000} value={propertyValue} onChange={e => setPropertyValue(Number(e.target.value))} className="w-full mt-2 accent-primary" />
+            {/* <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Find Your Best <span className="font-handwritten text-4xl md:text-5xl text-primary hand-underline1">Mortgage Deal</span> in Seconds
+              </h2>
+              <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
+                Our intelligent tools do the hard work for you â analysing real-time data from trusted lenders to reveal tailored deals that match your goals.
+              </p>
+            </div> */}
+            <div className="grid sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
+             
+              <NavLink to="/mortgage/best-buy" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+                <Search size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Best Buy Calculator</h3>
+                <p className="text-muted-foreground text-sm">Compare mortgage rates with top lenders and find the mortgage deal that?s right for you.</p>
+                <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  Try Now <ChevronRight size={16} />
                 </div>
-
-                {/* <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Deposit</label>
-                  <div className="relative">
-                    <PoundSterling size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      type="number"
-                      value={deposit}
-                      onChange={e => setDeposit(Number(e.target.value))}
-                      className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                    />
-                  </div>
-                  <input type="range" min={0} max={propertyValue} step={5000} value={deposit} onChange={e => setDeposit(Number(e.target.value))} className="w-full mt-2 accent-accent" />
-                </div> */}
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Interest Rate (%)</label>
-                  <div className="relative">
-                    <Percent size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      type="number"
-                      step={0.1}
-                      value={interestRate}
-                      onChange={e => setInterestRate(Number(e.target.value))}
-                      className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                    />
-                  </div>
+              </NavLink>
+               <NavLink to="/mortgage/repayment-calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
+                <Calculator size={40} className="text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Mortgage rates and repayments</h3>
+                <p className="text-muted-foreground text-sm">Compare mortgage deals and find out what your interest rate and monthly repayments could be.</p>
+                <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  Try Now <ChevronRight size={16} />
                 </div>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Mortgage Term (years)</label>
-                  <div className="flex items-center gap-4">
-                    <input
-                      type="number"
-                      value={term}
-                      onChange={e => setTerm(Number(e.target.value))}
-                      className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                    />
-                    <span className="text-muted-foreground text-sm whitespace-nowrap">{term} years</span>
-                  </div>
-                  <input type="range" min={5} max={40} step={1} value={term} onChange={e => setTerm(Number(e.target.value))} className="w-full mt-2 accent-primary" />
+              </NavLink>
+              <NavLink to="/mortgage/stamp-duty" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+                <FileText size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold text-lg mb-2">Stamp Duty Calculator</h3>
+                <p className="text-muted-foreground text-sm">Whether you?re a first-time buyer, moving to a new home, or purchasing an additional property, find out exactly what you have to pay.</p>
+                <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  Try Now <ChevronRight size={16} />
                 </div>
-
-                {/* <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Repayment Type</label>
-                  <div className="flex gap-3">
-                    {(["repayment", "interest-only"] as const).map(type => (
-                      <button
-                        key={type}
-                        onClick={() => setRepaymentType(type)}
-                        className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                          repaymentType === type
-                            ? 'bg-primary text-primary-foreground shadow-lg'
-                            : 'bg-muted text-foreground hover:bg-primary/10'
-                        }`}
-                      >
-                        {type === 'repayment' ? 'Repayment' : 'Interest Only'}
-                      </button>
-                    ))}
-                  </div>
-                </div> */}
-              </div>
-
-              {/* Results */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-primary to-phoenix-orange-dark text-primary-foreground rounded-2xl p-8">
-                  <p className="text-primary-foreground/70 text-sm mb-1">Monthly Repayment</p>
-                  <p className="text-4xl md:text-5xl font-bold mb-6">{formatCurrency(monthlyPayment)}</p>
-                  
-                  {/* <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Loan Amount</p>
-                      <p className="text-lg font-bold">{formatCurrency(loanAmount)}</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">LTV Ratio</p>
-                      <p className="text-lg font-bold">{ltv}%</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Total Interest</p>
-                      <p className="text-lg font-bold">{formatCurrency(totalInterest)}</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Total Repaid</p>
-                      <p className="text-lg font-bold">{formatCurrency(totalRepaid)}</p>
-                    </div>
-                  </div> */}
-                </div>
-
-                {/* Visual bar */}
-                <div className="bg-card border border-border rounded-2xl p-6">
-                  <h3 className="font-bold text-foreground mb-4">Cost Breakdown</h3>
-                  <div className="h-6 rounded-full overflow-hidden flex bg-muted">
-                    <div className="bg-accent h-full transition-all duration-500" style={{ width: `${totalRepaid > 0 ? (loanAmount / totalRepaid) * 100 : 0}%` }} />
-                    <div className="bg-primary h-full transition-all duration-500" style={{ width: `${totalRepaid > 0 ? (totalInterest / totalRepaid) * 100 : 0}%` }} />
-                  </div>
-                  <div className="flex justify-between mt-3 text-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-accent" />
-                      <span className="text-muted-foreground">Principal ({formatCurrency(loanAmount)})</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-primary" />
-                      <span className="text-muted-foreground">Interest ({formatCurrency(totalInterest)})</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6">
-                  <div className="flex items-start gap-3">
-                    <TrendingUp size={20} className="text-accent shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">Important Note</h4>
-                      <p className="text-muted-foreground text-sm">This calculator provides an estimate only. Actual rates and repayments may vary. Contact our advisers for a personalised mortgage quote tailored to your circumstances.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <NavLink
-                  to="/contact"
-                  className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
-                >
-                  Speak to an Adviser <ArrowRight size={18} />
-                </NavLink>
-              </div>
+              </NavLink>
             </div>
           </div>
         </section>
+      
       </main>
  
     </div>

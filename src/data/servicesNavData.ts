@@ -58,6 +58,8 @@ const mortgageColumn: NavColumn[] = [
     title: "Mortgage Services",
     items: [
       { name: "Mortgage Calculators", href: "/mortgage/calculator" },
+      { name: "Best Buy Calculator", href: "/mortgage/best-buy" },
+      { name: "Stamp Duty Calculator", href: "/mortgage/stamp-duty" },
       ...mortgageServices.map((s) => ({
         name: s.title,
         href: `/mortgage/${s.slug}`,
