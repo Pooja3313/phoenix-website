@@ -145,6 +145,12 @@ const WHATSAPP_ADVISOR_URL =
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-background">
+       {/* style={{
+    backgroundImage: `url('/images/webiste_images/colleagues-discussing-plans-smartphone.jpg')`,   // ? Yaha dummy path daal diya hai
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }} */}
       {/* Light background for white theme */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-phoenix-green-light/30 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_50%)]" />

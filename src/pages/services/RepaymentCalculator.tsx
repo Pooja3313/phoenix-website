@@ -42,7 +42,7 @@ const RepaymentCalculator = () => {
           <div className="container mx-auto px-4 relative z-10">
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Tools</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Mortgage <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Calculator</span>
+              Mortgage <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Repayments Calculator</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Use our calculator to estimate your monthly mortgage repayments and understand what you could afford.
