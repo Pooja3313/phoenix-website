@@ -34,7 +34,7 @@ const Careers = () => {
     
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
+        {/* <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.08),transparent_60%)]" />
           <div className="absolute top-20 left-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
@@ -46,7 +46,49 @@ const Careers = () => {
               Be part of a growing team dedicated to helping people secure their financial futures.
             </p>
           </div>
-        </section>
+        </section> */}
+        
+
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
+  
+  {/* Full Cover Background Image */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('/images/website_images/young-business.jpg')`
+    }}
+  />
+
+  {/* Dark Overlay for Text Readability */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
+
+  {/* Subtle Accent Gradient */}
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.12),transparent_70%)]" />
+
+  {/* Floating � Symbol */}
+  <div className="absolute top-20 left-20 text-white/10 text-[140px] md:text-[160px] lg:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+    £
+  </div>
+
+  <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+    <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+      Careers
+    </p>
+    
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight">
+      Join the{" "}
+      <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
+        Phoenix
+      </span>{" "}
+      Team
+    </h1>
+
+    <p className="text-white/90 max-w-xl mx-auto text-lg md:text-xl">
+      Be part of a growing team dedicated to helping people secure their financial futures.
+    </p>
+  </div>
+
+</section>
 
         {/* Perks */}
         <section className="py-20 bg-background" ref={ref}>

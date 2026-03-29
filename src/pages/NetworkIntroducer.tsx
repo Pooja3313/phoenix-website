@@ -37,7 +37,7 @@ const NetworkIntroducer = () => {
    
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
+        {/* <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" />
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
@@ -51,7 +51,49 @@ const NetworkIntroducer = () => {
               </p>
             </AnimatedSection>
           </div>
-        </section>
+        </section> */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
+  
+  {/* Background Image - Full Cover & Responsive */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('/images/website_images/colleagues-work.jpg')`
+    }}
+  />
+
+  {/* Dark Overlay for Better Text Readability */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
+
+  {/* Subtle Accent Gradient (kept as per your original) */}
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+  {/* Small Decorative Circle (kept as per your original) */}
+  <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/10 animate-pound-morph pointer-events-none" />
+
+  <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+    <AnimatedSection>
+      <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+        Introducer
+      </p>
+      
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
+          Introducer
+        </span> Opportunities with Phoenix Finserv
+      </h1>
+
+      <p className="text-white/90 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        Become an introducer and enjoy a structured referral partnership that allows you to add{' '}
+        <span className="font-handwritten text-xl md:text-2xl text-[#ffd700] highlighter-mark">
+          value
+        </span>{' '}
+        for your clients and generate additional income.
+      </p>
+    </AnimatedSection>
+  </div>
+
+</section>
 
         {/* About */}
         <section className="py-20 bg-background">

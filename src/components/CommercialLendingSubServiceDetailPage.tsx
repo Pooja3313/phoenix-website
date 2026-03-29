@@ -23,10 +23,11 @@ const CommercialLendingSubServiceDetailPage = ({
           heroSubtitle={service.heroSubtitle}
           title={service.title}
           heroDescription={service.heroDescription}
+          heroImage={service.heroImage} 
         />
 
         {service.whyContent && service.whyContent.length > 0 ? (
-          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent} />
+          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent}  whyChooseImage={service.whyChooseImage} />
         ) : null}
 
         {service.features && service.features.length > 0 ? (

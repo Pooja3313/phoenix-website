@@ -37,15 +37,33 @@ const MortgageCalculator = () => {
   
       <main>
         {/* Hero */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+        <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
+  
+  {/* Full Cover Background Image */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('/images/mortgage/mortgage_calculator.jpg')`
+    }}
+  />
+
+  {/* Dark Overlay - Ensures text is readable */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
+
+  {/* Subtle Accent Gradient */}
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+  {/* Floating � Symbol */}
+  <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+    £
+  </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center text-center">
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Tools</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Mortgage <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Calculator</span>
+            <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">Tools</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Mortgage <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">Calculator</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
               Use our calculator to estimate your monthly mortgage repayments and understand what you could afford.
             </p>
           </div>
@@ -66,7 +84,7 @@ const MortgageCalculator = () => {
             </div> */}
             <div className="grid sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
              
-              <NavLink to="/mortgage/best-buy" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+              <NavLink to="/mortgage/mortgagecalculator/best-buy" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
                 <Search size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Best Buy Calculator</h3>
                 <p className="text-muted-foreground text-sm">Compare mortgage rates with top lenders and find the mortgage deal that?s right for you.</p>
@@ -74,7 +92,7 @@ const MortgageCalculator = () => {
                   Try Now <ChevronRight size={16} />
                 </div>
               </NavLink>
-               <NavLink to="/mortgage/repayment-calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
+               <NavLink to="/mortgage/mortgagecalculator/repayment-calculator" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block">
                 <Calculator size={40} className="text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Mortgage rates and repayments</h3>
                 <p className="text-muted-foreground text-sm">Compare mortgage deals and find out what your interest rate and monthly repayments could be.</p>
@@ -82,7 +100,7 @@ const MortgageCalculator = () => {
                   Try Now <ChevronRight size={16} />
                 </div>
               </NavLink>
-              <NavLink to="/mortgage/stamp-duty" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
+              <NavLink to="/mortgage/mortgagecalculator/stamp-duty" className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group">
                 <FileText size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Stamp Duty Calculator</h3>
                 <p className="text-muted-foreground text-sm">Whether you?re a first-time buyer, moving to a new home, or purchasing an additional property, find out exactly what you have to pay.</p>

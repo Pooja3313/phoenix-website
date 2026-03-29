@@ -4,6 +4,7 @@ import FaqSection from "@/components/FaqSection";
 // import ServiceDetailFeaturesSection from "@/components/services/ServiceDetailFeaturesSection";
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
+import ServiceDetailBenefitsSection from "@/components/services/ServiceDetailBenefitsSection";
 
 // import MortgageWhatWeOfferSection from "@/components/services/MortgageWhatWeOfferSection";
 import MortgageDetailCTASection from "./services/MortgageDetailCTASection";
@@ -13,7 +14,9 @@ interface MortgageSubServiceDetailPageProps {
   service: ServiceItem;
 }
 
-const MortgageSubServiceDetailPage = ({ service }: MortgageSubServiceDetailPageProps) => {
+const MortgageSubServiceDetailPage = ({
+  service,
+}: MortgageSubServiceDetailPageProps) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [service.slug]);
@@ -25,11 +28,23 @@ const MortgageSubServiceDetailPage = ({ service }: MortgageSubServiceDetailPageP
           heroSubtitle={service.heroSubtitle}
           title={service.title}
           heroDescription={service.heroDescription}
+          heroImage={service.heroImage}
         />
 
         {service.whyContent && service.whyContent.length > 0 ? (
-          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent} />
+          <ServiceDetailWhyChooseSection
+            whyTitle={service.whyTitle}
+            whyContent={service.whyContent}
+            whyChooseImage={service.whyChooseImage}
+          />
         ) : null}
+        <ServiceDetailBenefitsSection
+          title={service.benefitsTitle}
+          subtitle={service.heroDescription}
+          benefitItems={service.benefitItems}
+          image={service.benefitsImage}
+          slug={service.slug} 
+        />
 
         {/* <ServiceDetailFeaturesSection title={service.title} features={service.features} /> */}
 
@@ -37,10 +52,15 @@ const MortgageSubServiceDetailPage = ({ service }: MortgageSubServiceDetailPageP
           <MortgageDetailWhatWeOfferSection service={service} />
         ) : null}
 
-        {service.faqs && service.faqs.length > 0 ? <FaqSection faqs={service.faqs} /> : null}
+        {service.faqs && service.faqs.length > 0 ? (
+          <FaqSection faqs={service.faqs} />
+        ) : null}
 
         {service.ctaTitle || service.ctaDescription ? (
-          <MortgageDetailCTASection ctaTitle={service.ctaTitle} ctaDescription={service.ctaDescription} />
+          <MortgageDetailCTASection
+            ctaTitle={service.ctaTitle}
+            ctaDescription={service.ctaDescription}
+          />
         ) : null}
       </main>
     </div>
@@ -48,4 +68,3 @@ const MortgageSubServiceDetailPage = ({ service }: MortgageSubServiceDetailPageP
 };
 
 export default MortgageSubServiceDetailPage;
-

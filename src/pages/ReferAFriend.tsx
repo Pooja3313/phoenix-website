@@ -85,7 +85,7 @@ const ReferAFriend = () => {
     <div className="min-h-screen">
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
+        {/* <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">
           £
@@ -110,7 +110,53 @@ const ReferAFriend = () => {
               </p>
             </AnimatedSection>
           </div>
-        </section>
+        </section> */}
+
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
+  
+  {/* Full Cover Background Image */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('/images/website_images/middle-age-business-woman-giving-charts-her-young-colleague-conference-room.jpg')`
+    }}
+  />
+
+  {/* Dark Overlay - Ensures text remains clearly visible */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
+
+  {/* Subtle Accent Gradient (kept from your original) */}
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+  {/* Floating � Symbol (kept as per your code) */}
+  <div className="absolute bottom-16 right-16 md:bottom-20 md:right-20 text-white/10 text-[140px] md:text-[180px] lg:text-[220px] font-bold animate-pound-rotate select-none pointer-events-none">
+    £
+  </div>
+
+  <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+    <AnimatedSection>
+      <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+        Referral Programme
+      </p>
+      
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+        Refer a{" "}
+        <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
+          Friend
+        </span>
+      </h1>
+
+      <p className="text-white/90 max-w-xl mx-auto text-lg md:text-xl">
+        Share the Phoenix experience and earn{" "}
+        <span className="font-handwritten text-xl md:text-2xl text-[#ffd700] highlighter-mark">
+          rewards
+        </span>{" "}
+        for every successful referral.
+      </p>
+    </AnimatedSection>
+  </div>
+
+</section>
 
         {/* Rewards */}
         <section className="py-20 bg-background">

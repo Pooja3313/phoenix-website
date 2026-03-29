@@ -51,19 +51,25 @@ const formatCurrency = (n: number) =>
   }).format(n);
 
 export default function BestBuyCalculator() {
-  const [mortgagePurpose, setMortgagePurpose] = useState<MortgagePurpose>("purchase");
+  const [mortgagePurpose, setMortgagePurpose] =
+    useState<MortgagePurpose>("purchase");
   const [propertyValue, setPropertyValue] = useState(250000);
   const [paymentType, setPaymentType] = useState<PaymentType>("repayment");
-  const [applicantType, setApplicantType] = useState<ApplicantType>("first-time-buyer");
+  const [applicantType, setApplicantType] =
+    useState<ApplicantType>("first-time-buyer");
   const [loanAmount, setLoanAmount] = useState(150000);
   const [termYears, setTermYears] = useState(20);
   const [mortgageClass, setMortgageClass] = useState<MortgageClass>("all");
-  const [initialRatePeriodYears, setInitialRatePeriodYears] = useState<RatePeriod>("any");
+  const [initialRatePeriodYears, setInitialRatePeriodYears] =
+    useState<RatePeriod>("any");
   // ?? New fields ????????????????????????????????????????????????
   const [totalCost, setTotalCost] = useState<TotalCostOption>("initial");
   const [selectedLender, setSelectedLender] = useState<string>("all");
 
-  const deposit = useMemo(() => Math.max(0, propertyValue - loanAmount), [propertyValue, loanAmount]);
+  const deposit = useMemo(
+    () => Math.max(0, propertyValue - loanAmount),
+    [propertyValue, loanAmount],
+  );
   const ltv = useMemo(() => {
     if (!propertyValue) return 0;
     return Number(((loanAmount / propertyValue) * 100).toFixed(1));
@@ -101,15 +107,46 @@ export default function BestBuyCalculator() {
   const [error, setError] = useState<string | null>(null);
 
   const mockAPR = useMemo(() => {
-    const classBoost = mortgageClass === "buy-to-let" ? 0.65 : mortgageClass === "residential" ? 0.2 : 0.35;
+    const classBoost =
+      mortgageClass === "buy-to-let"
+        ? 0.65
+        : mortgageClass === "residential"
+          ? 0.2
+          : 0.35;
     const purposeBoost = mortgagePurpose === "remortgage" ? 0.25 : 0.0;
     const ltvBoost = ltv > 85 ? 1.25 : ltv > 75 ? 0.7 : ltv > 60 ? 0.35 : 0.1;
-    const periodBoost = initialRatePeriodYears === "any" ? 0.18 : initialRatePeriodYears === "5" ? 0.05 : initialRatePeriodYears === "3" ? 0.18 : 0.28;
+    const periodBoost =
+      initialRatePeriodYears === "any"
+        ? 0.18
+        : initialRatePeriodYears === "5"
+          ? 0.05
+          : initialRatePeriodYears === "3"
+            ? 0.18
+            : 0.28;
     const paymentBoost = paymentType === "interest-only" ? 0.35 : 0.0;
     const applicantBoost =
-      applicantType === "first-time-buyer" ? 0.1 : applicantType === "home-mover" ? 0.2 : 0.35;
-    return 3.6 + classBoost + purposeBoost + ltvBoost + periodBoost + paymentBoost + applicantBoost;
-  }, [initialRatePeriodYears, ltv, mortgageClass, mortgagePurpose, paymentType, applicantType]);
+      applicantType === "first-time-buyer"
+        ? 0.1
+        : applicantType === "home-mover"
+          ? 0.2
+          : 0.35;
+    return (
+      3.6 +
+      classBoost +
+      purposeBoost +
+      ltvBoost +
+      periodBoost +
+      paymentBoost +
+      applicantBoost
+    );
+  }, [
+    initialRatePeriodYears,
+    ltv,
+    mortgageClass,
+    mortgagePurpose,
+    paymentType,
+    applicantType,
+  ]);
 
   const handleCalculate = (e: FormEvent) => {
     e.preventDefault();
@@ -120,20 +157,32 @@ export default function BestBuyCalculator() {
 
     const calcMonthlyPayment = (apr: number) => {
       const principal = loanAmount;
-      const monthlyRate = (apr / 100) / 12;
+      const monthlyRate = apr / 100 / 12;
       const n = termYears * 12;
       if (monthlyRate <= 0 || n <= 0) return 0;
       if (paymentType === "interest-only") return principal * monthlyRate;
-      return (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+      return (
+        (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) /
+        (Math.pow(1 + monthlyRate, n) - 1)
+      );
     };
 
     const base = mockAPR;
     const step = 0.18;
-    const rateChoices = [base, base + step, base + step * 2].map((r) => Number(r.toFixed(2)));
+    const rateChoices = [base, base + step, base + step * 2].map((r) =>
+      Number(r.toFixed(2)),
+    );
 
     const resolvedInitialPeriods = [2, 3, 5];
 
-    const mockLenders = ["Halifax", "AIB", "Barclays", "Accord", "Aldermore", "Atom Bank"];
+    const mockLenders = [
+      "Halifax",
+      "AIB",
+      "Barclays",
+      "Accord",
+      "Aldermore",
+      "Atom Bank",
+    ];
 
     const computedDeals: BestBuyDeal[] = rateChoices.map((rate, idx) => {
       const lender =
@@ -141,10 +190,15 @@ export default function BestBuyCalculator() {
           ? selectedLender
           : mockLenders[idx % mockLenders.length] || "Halifax";
 
-      const resolvedInitial = initialRatePeriodYears === "any" ? resolvedInitialPeriods[idx] : Number(initialRatePeriodYears);
+      const resolvedInitial =
+        initialRatePeriodYears === "any"
+          ? resolvedInitialPeriods[idx]
+          : Number(initialRatePeriodYears);
       const totalFees = Math.round(199 + idx * 150 + Math.random() * 400);
 
-      const standardVariableRate = Number((rate + 1.35 + idx * 0.15).toFixed(2));
+      const standardVariableRate = Number(
+        (rate + 1.35 + idx * 0.15).toFixed(2),
+      );
 
       return {
         id: `deal-${idx}`,
@@ -175,7 +229,7 @@ export default function BestBuyCalculator() {
     <div className="min-h-screen bg-gray-50">
       <main>
         {/* Hero - simplified, orange/green theme */}
-        <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background">
+        {/* <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background">
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center text-center">
               <p className="text-green-600 font-semibold text-sm uppercase tracking-widest mb-3">
@@ -193,6 +247,44 @@ export default function BestBuyCalculator() {
 
             </div>
           </div>
+        </section> */}
+
+        <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
+          {/* Full Cover Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/mortgage/Best-Buy-Calculator.jpg')`,
+            }}
+          />
+
+          {/* Dark Overlay - Ensures text is readable */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
+
+          {/* Subtle Accent Gradient */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+          {/* Floating £ Symbol */}
+          <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+            Â£
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col items-center text-center">
+              <p className="text-white font-semibold text-md uppercase tracking-widest mb-3">
+                Mortgage Tools
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#ffd700] mb-4">
+                Best Buy{" "}
+                <span className="text-primary font-handwritten pen-underline2">
+                  Calculator
+                </span>
+              </h1>
+              <p className="text-white/90 text-xl max-w-2xl leading-relaxed">
+                Compare potential deals based on your inputs. Ready for live API
+                integration.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Content */}
@@ -204,7 +296,8 @@ export default function BestBuyCalculator() {
                   Enter Your Details
                 </h2>
                 <p className="text-gray-600 mt-3 max-w-2xl">
-                  Adjust values ? click Search to see estimated deals (mock mode).
+                  Adjust values ? click Search to see estimated deals (mock
+                  mode).
                 </p>
               </div>
 
@@ -240,7 +333,9 @@ export default function BestBuyCalculator() {
                 >
                   <div className="flex items-start justify-between gap-5">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Mortgage Inputs</h3>
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        Mortgage Inputs
+                      </h3>
                       <p className="text-gray-600 mt-2">
                         Adjust values to see deal preview update.
                       </p>
@@ -258,7 +353,9 @@ export default function BestBuyCalculator() {
                       </label>
                       <select
                         value={mortgagePurpose}
-                        onChange={(e) => setMortgagePurpose(e.target.value as MortgagePurpose)}
+                        onChange={(e) =>
+                          setMortgagePurpose(e.target.value as MortgagePurpose)
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       >
                         <option value="purchase">Purchase</option>
@@ -272,7 +369,9 @@ export default function BestBuyCalculator() {
                       </label>
                       <select
                         value={mortgageClass}
-                        onChange={(e) => setMortgageClass(e.target.value as MortgageClass)}
+                        onChange={(e) =>
+                          setMortgageClass(e.target.value as MortgageClass)
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       >
                         <option value="all">All</option>
@@ -289,7 +388,9 @@ export default function BestBuyCalculator() {
                       </label>
                       <select
                         value={paymentType}
-                        onChange={(e) => setPaymentType(e.target.value as PaymentType)}
+                        onChange={(e) =>
+                          setPaymentType(e.target.value as PaymentType)
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       >
                         <option value="repayment">Repayment</option>
@@ -303,10 +404,14 @@ export default function BestBuyCalculator() {
                       </label>
                       <select
                         value={applicantType}
-                        onChange={(e) => setApplicantType(e.target.value as ApplicantType)}
+                        onChange={(e) =>
+                          setApplicantType(e.target.value as ApplicantType)
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       >
-                        <option value="first-time-buyer">First Time Buyer</option>
+                        <option value="first-time-buyer">
+                          First Time Buyer
+                        </option>
                         <option value="home-mover">Home Mover</option>
                         <option value="remortgage">Remortgage</option>
                       </select>
@@ -322,7 +427,9 @@ export default function BestBuyCalculator() {
                       <input
                         type="number"
                         value={propertyValue}
-                        onChange={(e) => setPropertyValue(Number(e.target.value))}
+                        onChange={(e) =>
+                          setPropertyValue(Number(e.target.value))
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       />
                       <input
@@ -331,7 +438,9 @@ export default function BestBuyCalculator() {
                         max={2000000}
                         step={5000}
                         value={propertyValue}
-                        onChange={(e) => setPropertyValue(Number(e.target.value))}
+                        onChange={(e) =>
+                          setPropertyValue(Number(e.target.value))
+                        }
                         className="w-full accent-orange-500"
                       />
                     </div>
@@ -345,7 +454,11 @@ export default function BestBuyCalculator() {
                       <input
                         type="number"
                         value={loanAmount}
-                        onChange={(e) => setLoanAmount(Math.min(Number(e.target.value), propertyValue))}
+                        onChange={(e) =>
+                          setLoanAmount(
+                            Math.min(Number(e.target.value), propertyValue),
+                          )
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                       />
                       <p className="text-xs text-gray-500 mt-2">
@@ -367,7 +480,6 @@ export default function BestBuyCalculator() {
                     </div>
                   </div>
 
-              
                   {/* Group 4: Periods + Total Cost + Lender + APR */}
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6  pt-2">
                     <div>
@@ -429,8 +541,6 @@ export default function BestBuyCalculator() {
                     </div>
                   </div>
 
-               
-
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
                     <button
@@ -462,7 +572,9 @@ export default function BestBuyCalculator() {
                 <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
                   <div className="flex items-center justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">Deal Preview</h3>
+                      <h3 className="text-xl font-bold text-gray-900">
+                        Deal Preview
+                      </h3>
                       <p className="text-gray-600 mt-1 text-sm">
                         Results update after you click Search.
                       </p>
@@ -501,7 +613,9 @@ export default function BestBuyCalculator() {
                           </div>
 
                           <div className="mt-4 flex items-center justify-between">
-                            <p className="text-sm text-gray-500">Monthly (est.)</p>
+                            <p className="text-sm text-gray-500">
+                              Monthly (est.)
+                            </p>
                             <p className="text-lg font-bold text-gray-900">
                               {formatCurrency(deal.monthlyPayment)}
                             </p>
@@ -515,7 +629,9 @@ export default function BestBuyCalculator() {
                           </div>
 
                           <div className="mt-1 flex items-center justify-between">
-                            <p className="text-sm text-gray-500">Total fees (est.)</p>
+                            <p className="text-sm text-gray-500">
+                              Total fees (est.)
+                            </p>
                             <p className="text-sm font-semibold text-gray-900">
                               {formatCurrency(deal.totalFees)}
                             </p>
@@ -542,17 +658,23 @@ export default function BestBuyCalculator() {
                   </div>
 
                   <div className="mt-6 rounded-2xl bg-green-50 border border-green-200 p-5">
-                    <p className="text-sm font-semibold text-gray-800">Important Note</p>
+                    <p className="text-sm font-semibold text-gray-800">
+                      Important Note
+                    </p>
                     <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-                      This is a UI estimate for now. When your API is connected, these cards will show live lender data.
+                      This is a UI estimate for now. When your API is connected,
+                      these cards will show live lender data.
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-6 rounded-3xl border border-gray-200 bg-white/60 p-6 shadow-sm">
-                  <p className="text-sm font-semibold text-gray-900">Why Best Buy?</p>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Why Best Buy?
+                  </p>
                   <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                    We help you compare options fast, so you can focus on affordability and long-term confidence.
+                    We help you compare options fast, so you can focus on
+                    affordability and long-term confidence.
                   </p>
                 </div>
               </div>

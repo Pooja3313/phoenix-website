@@ -416,9 +416,9 @@
 .pen-underline::after {
   content: '';
   position: absolute;
-  left: -10%;
+  left: -4%;
   bottom: -10px;
-  width: 120%;
+  width: 110%;
   height: 56px;
   min-height: 44px;
   transform: scaleX(0);

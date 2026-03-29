@@ -134,7 +134,7 @@ export default function StampDutyCalculator() {
        
 
 
-   <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background">
+   {/* <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background">
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center text-center">
               <p className="text-green-600 font-semibold text-sm uppercase tracking-widest mb-3">
@@ -153,7 +153,49 @@ export default function StampDutyCalculator() {
 
             </div>
           </div>
+        </section> */}
+
+
+ <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
+          {/* Full Cover Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/mortgage/stamp1.jpg')`,
+            }}
+          />
+
+          {/* Dark Overlay - Ensures text is readable */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
+
+          {/* Subtle Accent Gradient */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+          {/* Floating £ Symbol */}
+          <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+            Â£
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col items-center text-center">
+              <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
+                 UK Costs
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#ffd700] mb-4">
+              Stamp Duty{" "}
+                <span className="text-primary font-handwritten pen-underline2">
+                  Calculator
+                </span>
+              </h1>
+              <p className="text-white/90 text-lg max-w-2xl leading-relaxed">
+                Get a fast estimate of stamp duty based on common SDLT bands. Connect your
+                  official calculation API later to make it 100% accurate.
+              </p>
+
+            </div>
+          </div>
         </section>
+
+       
 
 
         {/* Content */}

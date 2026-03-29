@@ -45,7 +45,7 @@ const OurBegining = () => {
  
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
+        {/* <section className="relative py-24 bg-gradient-to-br text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.1),transparent_60%)]" />
           <div className="absolute bottom-20 right-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center">
@@ -56,6 +56,39 @@ const OurBegining = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">
               From humble beginnings to a trusted financial services firm — our story of growth, trust, and excellence.
             </p>
+          </div>
+        </section> */}
+
+
+        <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
+          {/* Full Cover Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/website_images/about-us.jpg')`,
+            }}
+          />
+
+          {/* Dark Overlay - Ensures text is readable */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
+
+          {/* Subtle Accent Gradient */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+          {/* Floating � Symbol */}
+          <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+            £
+          </div>
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <AnimatedSection>
+            <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Our Story</p>
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 ">
+              The Phoenix <span className="font-handwritten text-5xl md:text-7xl text-primary pen-underline">Journey</span>
+            </h1>
+            <p className="text-white/90 max-w-xl text-xl mx-auto">
+              From humble beginnings to a trusted financial services firm — our story of growth, trust, and excellence.
+            </p>
+            </AnimatedSection>
           </div>
         </section>
 
@@ -77,7 +110,7 @@ const OurBegining = () => {
               </div>
               <div className="flex-1">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[4/5]">
-                  <img src="/images/journey-stairs.jpg" alt="Our Journey" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                  <img src="/images/website_images/group-businesspeople-using-laptop-while-working-document.jpg" alt="Our Journey" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-phoenix-gray-dark/80 to-transparent flex items-end p-8">
                     <div>
                       <p className="text-primary-foreground font-bold text-2xl">Since 2013</p>

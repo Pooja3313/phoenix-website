@@ -10,6 +10,8 @@ export interface ServiceItem {
   faqs?: { question: string; answer: string }[];
   ctaTitle: string;
   ctaDescription: string;
+  heroImage: string;
+  whyChooseImage: string;
 }
 
 export const personalProtectionServices: ServiceItem[] = [
@@ -20,6 +22,8 @@ export const personalProtectionServices: ServiceItem[] = [
     heroSubtitle: "Protection",
     heroDescription: "Protect your family's financial future with comprehensive life insurance that provides a tax-free lump sum or regular income upon death, ensuring your loved ones are supported when they need it most.",
     whyTitle: "Why Choose Phoenix Finserv for Life Cover?",
+    heroImage: "/images/protection/life-cover1.jpg",           
+    whyChooseImage: "/images/protection/life-cover2.jpg",
     whyContent: [
       "Life cover is one of the most important financial decisions you can make. It ensures that if the worst were to happen, your family would be financially supported. Whether you're looking to cover a mortgage, provide for dependants, or leave a financial legacy, life cover gives you peace of mind.",
       "At Phoenix Finserv, we take the time to understand your personal circumstances and help you find a policy that offers the right level of cover at a price that works for you. We work with a wide range of leading UK insurers to ensure you get the best possible deal.",
@@ -58,6 +62,8 @@ export const personalProtectionServices: ServiceItem[] = [
     category: "Personal Protection",
     heroSubtitle: "Protection",
     heroDescription: "Receive a tax-free lump sum if you're diagnosed with a specified critical illness, helping you focus on recovery without the added stress of financial worries.",
+    heroImage: "/images/protection/critical-illness-cover.jpg",          
+    whyChooseImage: "/images/protection/critical-illness-cover1.jpg",
     whyTitle: "Why Choose Phoenix Finserv for Critical Illness Cover?",
     whyContent: [
       "A critical illness can strike at any time, and the financial impact can be devastating. Critical illness cover provides a tax-free lump sum payment if you're diagnosed with one of a specified list of serious conditions, such as cancer, heart attack, or stroke.",
@@ -98,6 +104,8 @@ export const personalProtectionServices: ServiceItem[] = [
     heroSubtitle: "Protection",
     heroDescription: "Replace a portion of your income if you're unable to work due to illness or injury, ensuring your financial commitments are met during the most difficult times.",
     whyTitle: "Why Choose Phoenix Finserv for Income Protection?",
+    heroImage: "/images/protection/income.jpg",           
+    whyChooseImage: "/images/protection/income2.jpg",
     whyContent: [
       "Your income is your most valuable asset. If illness or injury prevents you from working, income protection insurance ensures you still receive a regular monthly payment £ typically between 50% and 70% of your gross salary £ until you're able to return to work or reach retirement age.",
       "Unlike critical illness cover, which pays a one-off lump sum, income protection provides ongoing financial support for as long as you're unable to work. This makes it an essential part of any comprehensive financial plan.",
@@ -140,6 +148,8 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Protect your business against the financial impact of losing a key employee. Keyman cover ensures business continuity and stability when it matters most.",
     whyTitle: "Why Choose Phoenix Finserv for Keyman Cover?",
+    heroImage: "/images/protection/keyman-cover.jpg",           // ? dummy path
+    whyChooseImage: "/images/protection/keyman-cover1.jpg",
     whyContent: [
       "Every business has individuals whose skills, knowledge, or leadership are critical to its success. If one of these key people were to become seriously ill or pass away, the impact on the business could be devastating £ from lost revenue and client relationships to difficulty meeting financial commitments.",
       "Keyman cover (also known as key person insurance) provides a financial safety net, paying out a lump sum that can be used to cover the costs of finding and training a replacement, repaying business debts, or simply keeping the business afloat during a difficult period.",
@@ -161,6 +171,8 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Ensure business continuity and financial security in unforeseen events. Shareholder protection provides the means to buy out a deceased or critically ill partner's shares.",
     whyTitle: "Why Choose Phoenix Finserv for Shareholder Protection?",
+    heroImage: "/images/protection/shareholder-protection.jpg",           // ? dummy path
+    whyChooseImage: "/images/protection/shareholder-protection1.jpg",
     whyContent: [
       "If a business partner or shareholder were to die or become critically ill, without proper planning their shares could pass to someone outside the business £ potentially a family member with no interest in or knowledge of the company. This could create serious problems for the remaining shareholders.",
       "Shareholder protection insurance, combined with a suitable legal agreement, ensures that the remaining shareholders have the funds to purchase the outgoing shareholder's shares at an agreed value, while the deceased's family receives fair compensation.",
@@ -182,6 +194,8 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Tax-efficient life insurance for company directors and employees. A cost-effective way for businesses to provide death-in-service benefits outside of a registered group life scheme.",
     whyTitle: "Why Choose Phoenix Finserv for Relevant Life Cover?",
+    heroImage: "/images/protection/relevant-life-cover.jpg",         
+    whyChooseImage: "/images/protection/relevant-life-cover1.jpg",
     whyContent: [
       "Relevant life cover is a tax-efficient way for employers to provide life insurance for individual employees or directors. Premiums are paid by the company and are typically treated as an allowable business expense for corporation tax purposes, while the benefit is not treated as a P11D benefit for the employee.",
       "This makes it an attractive alternative to group life schemes, particularly for small businesses with just one or two directors, or for high-earning employees who may exceed the lifetime allowance for pension contributions.",
@@ -203,6 +217,8 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Provides financial protection against losses, legal claims and property damage. Ensure your business loans are covered if a key individual passes away or becomes critically ill.",
     whyTitle: "Why Choose Phoenix Finserv for Business Loan Protection?",
+    heroImage: "/images/protection/Business-Loan-Protection.jpg",           
+    whyChooseImage: "/images/protection/Business-Loan-Protection1.jpg",
     whyContent: [
       "Many business owners take out personal guarantees when securing business loans. If the guarantor were to die or become critically ill, the lender could call in the debt, putting the business and the individual's family at serious financial risk.",
       "Business loan protection insurance ensures that if the worst happens, the loan can be repaid in full, protecting both the business and the guarantor's personal assets and family.",
@@ -227,6 +243,8 @@ export const homeInsuranceServices: ServiceItem[] = [
     heroSubtitle: "Home Insurance",
     heroDescription: "Protect your home and everything in it with comprehensive buildings and contents insurance. Cover your property structure and personal belongings against damage, theft and unexpected events.",
     whyTitle: "Why Choose Phoenix Finserv for Home Insurance?",
+    heroImage: "/images/protection/Buildings&Contents.jpg",          
+    whyChooseImage: "/images/protection/Buildings&Contents1.jpg",
     whyContent: [
       "Your home is likely your most valuable asset, and protecting it should be a priority. Buildings insurance covers the structure of your home £ walls, roof, floors, and permanent fixtures £ against risks such as fire, flood, subsidence, and storm damage. Contents insurance protects your personal belongings, from furniture and electronics to jewellery and clothing.",
       "Many homeowners are underinsured because they underestimate the cost of rebuilding their home or replacing their possessions. At Phoenix Finserv, we help you assess the true value of your property and belongings to ensure you have adequate cover.",

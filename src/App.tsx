@@ -104,15 +104,15 @@ const App = () => (
               element={<MortgageCalculator />}
             />
             <Route
-              path="/mortgage/best-buy"
+              path="/mortgage/mortgagecalculator/best-buy"
               element={<BestBuyCalculator />}
             />
                <Route
-              path="/mortgage/repayment-calculator"
+              path="/mortgage/mortgagecalculator/repayment-calculator"
               element={<RepaymentCalculator />}
             />
             <Route
-              path="/mortgage/stamp-duty"
+              path="/mortgage/mortgagecalculator/stamp-duty"
               element={<StampDutyCalculator />}
             />
             <Route path="/mortgage/:slug" element={<MortgageSubService />} />

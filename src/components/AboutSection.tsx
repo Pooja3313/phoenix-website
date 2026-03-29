@@ -110,7 +110,7 @@ const AboutSection = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[4/3]">
                 {/* Replace src with your team image */}
                 <img
-                  src="/images/about-team.jpg"
+                  src="/images/website_images/young-pregnant-woman-work.jpg"
                   alt="Phoenix Finserv Team"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -121,11 +121,11 @@ const AboutSection = () => {
                   }}
                 />
                 {/* Fallback content when no image */}
-                <div className="about-fallback-content absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-phoenix-gray-dark via-foreground to-phoenix-gray-dark text-primary-foreground p-8">
+                {/* <div className="about-fallback-content absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-phoenix-gray-dark via-foreground to-phoenix-gray-dark text-primary-foreground p-8">
                   <Briefcase size={64} className="text-primary mb-4 animate-pound-rotate" style={{ animationDuration: '10s' }} />
                   <p className="font-handwritten text-3xl text-primary text-center">Your Team Photo Here</p>
                   <p className="text-primary-foreground/50 text-sm mt-2">Add image at /public/images/about-team.jpg</p>
-                </div>
+                </div> */}
               </div>
 
               {/* Floating stat card */}
