@@ -5,6 +5,7 @@ import ServiceDetailFeaturesSection from "@/components/services/ServiceDetailFea
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
 import CommercialDetailWhatWeOfferSection from "@/components/services/CommercialDetailWhatWeOfferSection";
+import ServiceDetailBenefitsSection from "./services/ServiceDetailBenefitsSection";
 interface CommercialLendingSubServiceDetailPageProps {
   service: ServiceItem;
 }
@@ -27,7 +28,17 @@ const CommercialLendingSubServiceDetailPage = ({
         />
 
         {service.whyContent && service.whyContent.length > 0 ? (
-          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent}  whyChooseImage={service.whyChooseImage} />
+          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent} />
+        ) : null}
+
+        {service.benefitItems && service.benefitItems.length > 0 ? (
+          <ServiceDetailBenefitsSection
+            title={service.benefitsTitle}
+            subtitle={service.benefitSubtitle}
+            benefitItems={service.benefitItems}
+            image={service.benefitsImage}
+           
+          />
         ) : null}
 
         {service.features && service.features.length > 0 ? (

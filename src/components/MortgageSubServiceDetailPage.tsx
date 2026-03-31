@@ -35,16 +35,18 @@ const MortgageSubServiceDetailPage = ({
           <ServiceDetailWhyChooseSection
             whyTitle={service.whyTitle}
             whyContent={service.whyContent}
-            whyChooseImage={service.whyChooseImage}
           />
         ) : null}
-        <ServiceDetailBenefitsSection
-          title={service.benefitsTitle}
-          subtitle={service.heroDescription}
-          benefitItems={service.benefitItems}
-          image={service.benefitsImage}
-          slug={service.slug} 
-        />
+
+        {service.benefitItems && service.benefitItems.length > 0 ? (
+          <ServiceDetailBenefitsSection
+            title={service.benefitsTitle}
+            subtitle={service.benefitSubtitle}
+            benefitItems={service.benefitItems}
+            image={service.benefitsImage}
+           
+          />
+        ) : null}
 
         {/* <ServiceDetailFeaturesSection title={service.title} features={service.features} /> */}
 

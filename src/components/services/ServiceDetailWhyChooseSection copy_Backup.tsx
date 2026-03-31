@@ -91,40 +91,36 @@
 
 // export default ServiceDetailWhyChooseSection;
 
+
 import { Shield } from "lucide-react";
 
 interface ServiceDetailWhyChooseSectionProps {
   whyTitle: string;
   whyContent: string[];
+  /** NEW: Right side image */
   whyChooseImage?: string;
   highlightClassName?: string;
 }
 
 function splitWhyTitle(whyTitle: string): { prefix: string; highlight: string } {
-  if (whyTitle.startsWith("Why Choose ")) {
-    return { prefix: "Why Choose ", highlight: whyTitle.slice("Why Choose ".length) };
+  if (whyTitle.startsWith("Why Plan for ")) {
+    return { prefix: "Why Plan for ", highlight: whyTitle.slice("Why Plan for ".length) };
   }
-  if (whyTitle.startsWith("Why have ")) {
-    return { prefix: "Why have ", highlight: whyTitle.slice("Why have ".length) };
+  if (whyTitle.startsWith("Why Arrange a ")) {
+    return { prefix: "Why Arrange a ", highlight: whyTitle.slice("Why Arrange a ".length) };
   }
-   if (whyTitle.startsWith("Why Consider")) {
-    return { prefix: "Why Consider", highlight: whyTitle.slice("Why Consider".length) };
-  }
-   if (whyTitle.startsWith("Why")) {
-    return { prefix: "Why", highlight: whyTitle.slice("Why".length) };
-  }
-   
-  const yourIdx = whyTitle.indexOf(" to ");
+  const yourIdx = whyTitle.indexOf(" for your ");
   if (yourIdx !== -1) {
-    return { 
-      prefix: whyTitle.slice(0, yourIdx + " to ".length), 
-      highlight: whyTitle.slice(yourIdx + " to ".length) 
-    };
+    return { prefix: whyTitle.slice(0, yourIdx + " for your ".length), highlight: whyTitle.slice(yourIdx + " for your ".length) };
+  }
+  const forIdx = whyTitle.indexOf(" for ");
+  if (forIdx !== -1) {
+    return { prefix: whyTitle.slice(0, forIdx + " for ".length), highlight: whyTitle.slice(forIdx + " for ".length) };
   }
   return { prefix: "", highlight: whyTitle };
 }
 
-const HIGHLIGHT_DEFAULT = "font-handwritten text-4xl md:text-5xl text-primary pen-underline2";
+const HIGHLIGHT_DEFAULT = "font-handwritten text-4xl md:text-5xl text-primary pen-underline";
 
 const ServiceDetailWhyChooseSection = ({
   whyTitle,
@@ -135,28 +131,40 @@ const ServiceDetailWhyChooseSection = ({
   const { prefix, highlight } = splitWhyTitle(whyTitle);
 
   return (
-  <section className="py-16 md:py-20 bg-background">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      
-      {/* Title - Centered on all screens */}
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
-        {prefix && <span className="block md:inline">{prefix}</span>}
-        <span className={highlightClassName}>{highlight}</span>
-      </h2>
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left - Text */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              {prefix ? <span>{prefix}</span> : null}
+              <span className={highlightClassName}>{highlight}</span>
+            </h2>
+            {whyContent.map((para, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed mb-4">
+                {para}
+              </p>
+            ))}
+          </div>
 
-      {/* Content Paragraphs */}
-      <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
-        {whyContent.map((para, i) => (
-          <p key={i} className="xs:text-justify  sm:text-justify md:text-justify lg:text-center">
-            {para}
-          </p>
-        ))}
+          {/* Right - Dynamic Image (replaced placeholder) */}
+          <div className="relative">
+            <img
+              src={whyChooseImage || "/images/services/why/placeholder.jpg"} // fallback
+              alt="Why choose Phoenix Finserv"
+              className="aspect-[4/3] w-full rounded-2xl object-cover border-2 border-dashed border-border shadow-inner"
+            />
+            {/* Expert Advice badge (same as pehle) */}
+            <div
+              className="absolute -bottom-4 -right-4 px-4 py-2 bg-accent text-accent-foreground rounded-xl text-sm font-bold shadow-lg animate-bounce"
+              style={{ animationDuration: "3s" }}
+            >
+              Expert Advice
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 

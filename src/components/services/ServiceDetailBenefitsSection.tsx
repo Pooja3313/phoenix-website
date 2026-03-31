@@ -1,73 +1,147 @@
-import { TrendingUp, ShieldCheck, Award } from "lucide-react";
+// components/services/ServiceDetailBenefitsSection.tsx
+import React from "react";
+import * as LucideIcons from "lucide-react";
 
-interface Benefit {
+interface BenefitItem {
   title: string;
   description: string;
-  iconName: string;
+  icon: string;
 }
 
 interface ServiceDetailBenefitsSectionProps {
   title?: string;
   subtitle?: string;
-  benefitItems: Benefit[];
+  benefitItems: BenefitItem[];
   image?: string;
+  layout?: "default" | "split";
+  ctaText?: string;
+  highlightClassName?: string;
 }
 
-const ServiceDetailBenefitsSection = ({
-  title = "What are Benefits of Buy to Let Mortgage?",
-  subtitle = "Obtaining a buy to let mortgage gives you a range of investor benefits, meaning that you'll benefit beyond a monthly rental income and property appreciation",
+// Title Split Logic
+function splitTitle(title: string): { prefix: string; highlight: string } {
+  if (!title) return { prefix: "", highlight: "" };
+
+  if (title.startsWith("What are Benefits of")) {
+    return {
+      prefix: "What are Benefits of ",
+      highlight: title.replace("What are Benefits of ", ""),
+    };
+  }
+
+  const ofIndex = title.indexOf(" of ");
+  if (ofIndex !== -1) {
+    return {
+      prefix: title.slice(0, ofIndex + 4),
+      highlight: title.slice(ofIndex + 4),
+    };
+  }
+
+  return { prefix: "", highlight: title };
+}
+
+const HIGHLIGHT_DEFAULT =
+  "font-handwritten text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-primary hand-underline1";
+
+const ServiceDetailBenefitsSection: React.FC<
+  ServiceDetailBenefitsSectionProps
+> = ({
+  title = "",
+  subtitle,
   benefitItems,
   image,
-}: ServiceDetailBenefitsSectionProps) => {
-  // Icon mapping
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Portfolio Diversification":
-        return TrendingUp;
-      case "Inflation Protection":
-        return ShieldCheck;
-      case "Tax Advantages":
-        return Award;
-      default:
-        return TrendingUp;
-    }
+  layout = "default",
+  ctaText = "Contact Us",
+  highlightClassName = HIGHLIGHT_DEFAULT,
+}) => {
+  const { prefix, highlight } = splitTitle(title);
+
+  const getIconComponent = (iconName: string) => {
+    const Icon = (LucideIcons as any)[iconName];
+    return Icon || LucideIcons.Shield;
   };
 
-  return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
-        
-        {/* ==================== TITLE & SUBTITLE - CENTER ALIGNED ==================== */}
-        <div className="text-center mb-16">
-          <h2 className="font-handwritten text-4xl md:text-6xl font-bold text-accent tracking-tight">
-            {title}
-          </h2>
-          <p className="mt-6 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            {subtitle}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+  // ==================== SPLIT LAYOUT (Recommended for Life Cover, Critical Illness, etc.) ====================
+  if (layout === "split") {
+    return (
+      <section className="bg-gradient-to-br from-primary/5 via-phoenix-green-light/20 to-background py-12 md:py-16 lg:py-20 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-8xl">
           
-          {/* ==================== LEFT SIDE - Benefits ==================== */}
-          <div className="space-y-12">
-            {/* Benefits List */}
-            <div className="space-y-10">
-              {benefitItems.map((item, index) => {
-                const IconComponent = getIcon(item.iconName);
-                
-                return (
-                  <div key={index} className="flex gap-6 group">
-                    {/* Orange Icon */}
-                    <div className="flex-shrink-0 w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center group-hover:bg-orange-200 transition-all duration-300">
-                      <IconComponent className="w-8 h-8 text-orange-600" />
-                    </div>
+          {/* Title Section */}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-tight">
+              {prefix && <span className="block md:inline">{prefix}</span>}
+              <span className={highlightClassName}>{highlight}</span>
+            </h2>
+            {subtitle && (
+              <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
+                {subtitle}
+              </p>
+            )}
+          </div>
 
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+            
+            {/* Left Benefits - Visible on lg+ only in left position */}
+            <div className="lg:col-span-4 space-y-8 md:space-y-10 order-2 lg:order-1">
+              {benefitItems.slice(0, Math.ceil(benefitItems.length / 2)).map((item, index) => {
+                const IconComponent = getIconComponent(item.icon);
+                return (
+                  <div key={index} className="flex gap-4 sm:gap-5 group">
+                    <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                      <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2.5 leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed text-[15.8px]">
+                      <p className="text-muted-foreground text-[15px] sm:text-[15.5px] leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* ==================== CENTER IMAGE ==================== */}
+            <div className="lg:col-span-4 flex justify-center py-6 md:py-8 lg:py-0 order-1 lg:order-2">
+              <div className="relative">
+                <div
+                  className="w-72 sm:w-80 md:w-[420px] lg:w-80 
+                             h-[340px] sm:h-[380px] md:h-[360px] lg:h-[420px]
+                             bg-gradient-to-br from-primary to-primary/90 
+                             rounded-[2.5rem] sm:rounded-[3rem] md:rounded-[3.25rem] lg:rounded-[4rem] 
+                             flex items-center justify-center overflow-hidden shadow-2xl mx-auto"
+                >
+                  <img
+                    src={image || "/images/protection/life-cover-family.jpg"}
+                    alt="Benefits Illustration"
+                    className="w-[290px] sm:w-[290px] md:w-[400px] lg:w-[310px] 
+                               h-[290px] sm:h-[310px] md:h-[330px] lg:h-[418px] 
+                               rounded-3xl object-cover shadow-xl"
+                  />
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -top-6 -right-6 w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl rotate-12 hidden sm:block" />
+                <div className="absolute -bottom-8 -left-8 w-14 h-14 sm:w-16 sm:h-16 bg-white/30 backdrop-blur-sm rounded-2xl -rotate-12 hidden sm:block" />
+              </div>
+            </div>
+
+            {/* Right Benefits */}
+            <div className="lg:col-span-4 space-y-8 md:space-y-10 order-3 lg:order-3">
+              {benefitItems.slice(Math.ceil(benefitItems.length / 2)).map((item, index) => {
+                const IconComponent = getIconComponent(item.icon);
+                return (
+                  <div key={index} className="flex gap-4 sm:gap-5 group">
+                    <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2.5 leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-[15px] sm:text-[15.5px] leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -77,26 +151,75 @@ const ServiceDetailBenefitsSection = ({
             </div>
           </div>
 
-          {/* ==================== RIGHT SIDE - Couple Image ==================== */}
-          <div className="relative flex justify-center pt-8">
-            <div className="relative w-full max-w-md">
-              {/* Main Couple Image */}
-              <img
-                src={image || "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2070"}
-                alt="Happy couple discussing buy to let mortgage"
-                className="w-full rounded-3xl shadow-2xl object-cover"
-              />
+          {/* CTA Button */}
+          <div className="flex justify-center mt-12 md:mt-16">
+            <a
+              href="/contact"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 sm:px-10 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 group text-base sm:text-lg"
+            >
+              {ctaText}
+              <LucideIcons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
-              {/* Large Orange Circle Background */}
-              <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-orange-500 rounded-full -z-10" />
+  // ==================== DEFAULT LAYOUT (Fallback) ====================
+  return (
+    <section className="bg-gradient-to-br from-primary/5 via-phoenix-green-light/20 to-background py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+            {prefix && <span className="block md:inline">{prefix}</span>}
+            <span className={highlightClassName}>{highlight}</span>
+          </h2>
+          {subtitle && (
+            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+              {subtitle}
+            </p>
+          )}
+        </div>
 
-              {/* Floating Orange Bubble with House & % */}
-              <div className="absolute -top-8 right-16 bg-white rounded-3xl shadow-xl px-6 py-4 flex items-center gap-4 border border-orange-100">
-                <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl">
-                  ??
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Benefits List - Left Side */}
+          <div className="space-y-10 md:space-y-12 order-2 lg:order-1">
+            {benefitItems.map((item, index) => {
+              const IconComponent = getIconComponent(item.icon);
+              return (
+                <div key={index} className="flex gap-5 sm:gap-6 group">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                    <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-[15px] sm:text-[15.8px]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-orange-600 text-4xl font-bold">%</div>
-              </div>
+              );
+            })}
+          </div>
+
+          {/* Image - Right Side */}
+          <div className="relative flex justify-center pt-4 lg:mt-8 md:pt-8 order-1 lg:order-2">
+            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+              <img
+                src={
+                  image ||
+                  "https://images.unsplash.com/photo-1556155092-490a1ba16284"
+                }
+                alt="Benefits"
+                className="w-full rounded-3xl shadow-2xl object-cover 
+                           h-auto aspect-[4/3] sm:aspect-[5/4] md:aspect-[16/10] 
+                           lg:aspect-[16/9] xl:aspect-[16/9] min-h-[280px] 
+                           sm:min-h-[340px] md:min-h-[400px] 
+                           lg:min-h-[380px] xl:min-h-[360px]"
+              />
             </div>
           </div>
         </div>
@@ -104,114 +227,5 @@ const ServiceDetailBenefitsSection = ({
     </section>
   );
 };
-// 
+
 export default ServiceDetailBenefitsSection;
-
-// import { TrendingUp, ShieldCheck, Award } from "lucide-react";
-
-// interface Benefit {
-//   title: string;
-//   description: string;
-//   iconName: string;
-// }
-
-// interface ServiceDetailBenefitsSectionProps {
-//   title?: string;
-//   subtitle?: string;
-//   benefitItems: Benefit[];
-//   image?: string;
-// }
-
-// const ServiceDetailBenefitsSection = ({
-//   title = "What are Benefits of Buy to Let Mortgage?",
-//   subtitle = "Obtaining a buy to let mortgage gives you a range of investor benefits, meaning that you'll benefit beyond a monthly rental income and property appreciation",
-//   benefitItems,
-//   image,
-// }: ServiceDetailBenefitsSectionProps) => {
-//   // Icon mapping
-//   const getIcon = (iconName: string) => {
-//     switch (iconName) {
-//       case "Portfolio Diversification":
-//         return TrendingUp;
-//       case "Inflation Protection":
-//         return ShieldCheck;
-//       case "Tax Advantages":
-//         return Award;
-//       default:
-//         return TrendingUp;
-//     }
-//   };
-
-//   return (
-//     <section className="py-20 bg-white">
-//       <div className="container mx-auto px-4 max-w-6xl">
-        
-//         {/* ==================== TITLE & SUBTITLE - CENTER ALIGNED ==================== */}
-//         <div className="text-center mb-16">
-//           <h2 className=" font-script text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-//             {title}
-//           </h2>
-//           <p className="mt-6 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-//             {subtitle}
-//           </p>
-//         </div>
-
-//         <div className="grid md:grid-cols-2 gap-16 items-start">
-          
-//           {/* ==================== LEFT SIDE - Benefits ==================== */}
-//           <div className="space-y-12">
-//             {/* Benefits List */}
-//             <div className="space-y-10">
-//               {benefitItems.map((item, index) => {
-//                 const IconComponent = getIcon(item.iconName);
-                
-//                 return (
-//                   <div key={index} className="flex gap-6 group">
-//                     {/* Orange Icon */}
-//                     <div className="flex-shrink-0 w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center group-hover:bg-orange-200 transition-all duration-300">
-//                       <IconComponent className="w-8 h-8 text-orange-600" />
-//                     </div>
-
-//                     <div>
-//                       <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-//                         {item.title}
-//                       </h3>
-//                       <p className="text-gray-600 leading-relaxed text-[15.8px]">
-//                         {item.description}
-//                       </p>
-//                     </div>
-//                   </div>
-//                 );
-//               })}
-//             </div>
-//           </div>
-
-//           {/* ==================== RIGHT SIDE - Couple Image ==================== */}
-//           <div className="relative flex justify-center pt-8">
-//             <div className="relative w-full max-w-md">
-//               {/* Main Couple Image */}
-//               <img
-//                 src={image || "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2070"}
-//                 alt="Happy couple discussing buy to let mortgage"
-//                 className="w-full rounded-3xl shadow-2xl object-cover"
-//               />
-
-//               {/* Large Orange Circle Background */}
-//               <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-orange-500 rounded-full -z-10" />
-
-//               {/* Floating Orange Bubble with House & % */}
-//               <div className="absolute -top-8 right-16 bg-white rounded-3xl shadow-xl px-6 py-4 flex items-center gap-4 border border-orange-100">
-//                 <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl">
-//                   ??
-//                 </div>
-//                 <div className="text-orange-600 text-4xl font-bold">%</div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ServiceDetailBenefitsSection;
