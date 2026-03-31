@@ -181,19 +181,15 @@ const contactMethods = [
     title: "Request a Callback",
     desc: "Fill in the form and we'll call you back at a convenient time.",
     color: "primary",
+    href: "tel:+918488891091",
   },
-  {
-    icon: Calendar,
-    title: "Book a Free Meeting",
-    desc: "Schedule a no-obligation consultation with our advisers.",
-    color: "accent",
-  },
+
   {
     icon: MessageCircle,
     title: "WhatsApp Us",
     desc: "Send us a message on WhatsApp for quick answers.",
     color: "phoenix-gold",
-    href: "https://wa.me/442079932737",
+    href: "https://wa.me/918488891091?text=Hi%20Phoenix%20Finserv%20team%2C%20I%20would%20like%20to%20speak%20with%20an%20adviser%20about%20financial%20planning.",
   },
 ];
 
@@ -270,7 +266,7 @@ const Contact = () => {
         {/* Contact Methods */}
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {contactMethods.map((method, i) => (
                 <AnimatedSection key={method.title} delay={i * 0.1}>
                   {method.href ? (
