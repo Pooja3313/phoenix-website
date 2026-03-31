@@ -126,11 +126,11 @@ const PrivacyPolicy = () => {
                 </li>
                 <li>
                   By Email:{" "}
-                  <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline">
-                    accountants@phoenix-accountancy.co.uk
+                  <NavLink to="mailto:dreams@phoenixfinserv.co.uk" className="text-primary hover:underline">
+                    dreams@phoenixfinserv.co.uk
                   </NavLink>
                 </li>
-                <li>By Writing: London, United Kingdom</li>
+                <li>By Writing: 21 Heath Drive, Romford, Essex, RM2 5QH</li>
               </ul>
             </div>
           </div>

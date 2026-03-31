@@ -159,10 +159,10 @@ const NetworkAppointedRepresentative = () => {
                 <p className="text-primary-foreground/80 mb-6">Partner with us to grow your financial advisory business under your brand name with the right balance of independence and regulatory support.</p>
                 <div className="space-y-4">
                   <NavLink
-                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    to="mailto:dreams@phoenixfinserv.co.uk"
                     className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
-                    <Mail size={18} /> accountants@phoenix-accountancy.co.uk
+                    <Mail size={18} /> dreams@phoenixfinserv.co.uk
                   </NavLink>
                   <NavLink
                     to="tel:+442079932737"

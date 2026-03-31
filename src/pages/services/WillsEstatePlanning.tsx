@@ -57,7 +57,7 @@ const WillsEstatePlanning = () => {
               to="/contact"
               className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Book a Free Consultation <ArrowRight size={18} />
+              Book a Free Discovery Call <ArrowRight size={18} />
             </NavLink>
           </div>
         </section> */}
@@ -92,7 +92,7 @@ const WillsEstatePlanning = () => {
               to="/contact"
               className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Book a Free Consultation <ArrowRight size={18} />
+              Book a Free Discovery Call <ArrowRight size={18} />
             </NavLink>
           </div>
         </section>

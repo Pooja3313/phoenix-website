@@ -19,60 +19,81 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
   return (
     <>
       {/* Overlay */}
-      <div className="fixed inset-0 bg-foreground/50 z-[60] transition-opacity" onClick={onClose} />
+      <div
+        className="fixed inset-0 bg-foreground/50 z-[60] transition-opacity"
+        onClick={onClose}
+      />
 
       {/* Sidebar */}
-      <div className="fixed top-0 right-0 h-full w-full max-w-sm bg-background z-[70] shadow-2xl animate-slide-in-right overflow-y-auto">
+      <div className="fixed top-0 right-0 h-full w-full max-w-sm bg-background z-[70] shadow-2xl animate-slide-in-right overflow-y-auto scrollbar-hide">
         <div className="p-6">
           {/* Close Button */}
-          <button onClick={onClose} className="absolute top-4 right-4 p-2 hover:bg-muted rounded-full transition-colors">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 hover:bg-muted rounded-full transition-colors"
+          >
             <X size={24} />
           </button>
 
           {/* Logo */}
-          <div className="mb-8 mt-2">
-            <div className="flex items-center gap-2">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">PF</span>
-              </div>
-              <div>
-                <span className="font-bold text-xl text-foreground">Phoenix Finserv</span>
-                <span className="block text-xs text-muted-foreground italic">Helping secure dreams</span>
-              </div>
-            </div>
+          <div className="mb-8 mt-2 ml-[-15px]">
+            <img
+              src="/images/Phoenix-Finserv.png"
+              alt="Phoenix Finserv"
+              className="h-17 w-auto"
+            />
           </div>
 
           {/* About */}
           <div className="mb-8">
             <h3 className="text-lg font-bold text-foreground mb-3">About Us</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Phoenix Finserv provides comprehensive financial services including protection, mortgages,
-              pensions, and estate planning. We help you secure your dreams with expert advice and
-              personalised solutions.
+              Phoenix Finserv provides comprehensive financial services
+              including protection, mortgages, pensions, and estate planning. We
+              help you secure your dreams with expert advice and personalised
+              solutions.
             </p>
           </div>
 
           {/* Contact Details */}
           <div className="mb-8">
-            <h3 className="text-lg font-bold text-foreground mb-4">Get in Touch</h3>
+            <h3 className="text-lg font-bold text-foreground mb-4">
+              Get in Touch
+            </h3>
             <div className="space-y-4">
-              <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-start gap-3 group">
+              <NavLink
+                to="mailto:dreams@phoenixfinserv.co.uk"
+                className="flex items-start gap-3 group"
+              >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-phoenix-green-light transition-colors">
-                  <Mail size={18} className="text-primary group-hover:text-phoenix-green transition-colors" />
+                  <Mail
+                    size={18}
+                    className="text-primary group-hover:text-phoenix-green transition-colors"
+                  />
                 </div>
                 <div>
                   <span className="text-xs text-muted-foreground">Email</span>
-                  <p className="text-sm text-foreground">accountants@phoenix-accountancy.co.uk</p>
+                  <p className="text-sm text-foreground">
+                    dreams@phoenixfinserv.co.uk
+                  </p>
                 </div>
               </NavLink>
 
-              <NavLink to="tel:+442079932737" className="flex items-start gap-3 group">
+              <NavLink
+                to="tel:+442079932737"
+                className="flex items-start gap-3 group"
+              >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-phoenix-green-light transition-colors">
-                  <Phone size={18} className="text-primary group-hover:text-phoenix-green transition-colors" />
+                  <Phone
+                    size={18}
+                    className="text-primary group-hover:text-phoenix-green transition-colors"
+                  />
                 </div>
                 <div>
                   <span className="text-xs text-muted-foreground">Phone</span>
-                  <p className="text-sm text-foreground">+44 (0) 2079 932 737</p>
+                  <p className="text-sm text-foreground">
+                    +44 (0) 2079 932 737
+                  </p>
                 </div>
               </NavLink>
 
@@ -82,7 +103,9 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
                 </div>
                 <div>
                   <span className="text-xs text-muted-foreground">Address</span>
-                  <p className="text-sm text-foreground">London, United Kingdom</p>
+                  <p className="text-sm text-foreground">
+                    21 Heath Drive, Romford, Essex, RM2 5QH
+                  </p>
                 </div>
               </div>
 
@@ -91,8 +114,12 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
                   <Clock size={18} className="text-primary" />
                 </div>
                 <div>
-                  <span className="text-xs text-muted-foreground">Working Hours</span>
-                  <p className="text-sm text-foreground">MonÃ¢ÂÂFri: 9:00 AM Ã¢ÂÂ 6:00 PM</p>
+                  <span className="text-xs text-muted-foreground">
+                    Working Hours
+                  </span>
+                  <p className="text-sm text-foreground">
+                    Monday to Friday: 9:00 AM - 6:00 PM
+                  </p>
                 </div>
               </div>
             </div>
@@ -100,7 +127,9 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
 
           {/* Social Links */}
           <div className="mb-8">
-            <h3 className="text-lg font-bold text-foreground mb-4">Follow Us</h3>
+            <h3 className="text-lg font-bold text-foreground mb-4">
+              Follow Us
+            </h3>
             <div className="flex gap-3">
               <NavLink
                 to={PHOENIX_LINKEDIN_URL}
@@ -134,8 +163,12 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
 
           {/* CTA */}
           <div className="bg-primary/5 rounded-xl p-5 border border-primary/10">
-            <h4 className="font-bold text-foreground mb-2">Free Consultation</h4>
-            <p className="text-sm text-muted-foreground mb-4">Book a free consultation with our financial experts today.</p>
+            <h4 className="font-bold text-foreground mb-2">
+              Free Discovery Call
+            </h4>
+            <p className="text-sm text-muted-foreground mb-4">
+              Book a free discovery call with our financial experts today.
+            </p>
             <button className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-phoenix-orange-dark transition-colors shadow-lg">
               Book Now
             </button>

@@ -85,9 +85,9 @@
 //               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-phoenix-gold rounded-full" />
 //             </h3>
 //             <div className="space-y-4 mb-6">
-//               <a href="mailto:accountants@phoenix-accountancy.co.uk" className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors">
+//               <a href="mailto:dreams@phoenixfinserv.co.uk" className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors">
 //                 <Mail size={16} className="mt-0.5 shrink-0" />
-//                 accountants@phoenix-accountancy.co.uk
+//                 dreams@phoenixfinserv.co.uk
 //               </a>
 //               <a href="tel:+442079932737" className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors">
 //                 <Phone size={16} className="mt-0.5 shrink-0" />
@@ -95,7 +95,7 @@
 //               </a>
 //               <div className="flex items-start gap-3 text-sm text-primary-foreground/60">
 //                 <MapPin size={16} className="mt-0.5 shrink-0" />
-//                 London, United Kingdom
+//                 21 Heath Drive, Romford, Essex, RM2 5QH
 //               </div>
 //             </div>
 
@@ -126,8 +126,6 @@
 // };
 
 // export default Footer;
-
-
 
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -177,17 +175,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-x-clip overflow-y-visible bg-phoenix-gray-dark text-primary-foreground">
+    <footer className="relative overflow-x-clip overflow-y-visible bg-zinc-900 text-primary-foreground">
       {/* Animated top line */}
       <div className="glow-line h-1 bg-gradient-to-r from-primary via-accent to-phoenix-gold" />
 
       {/* Background effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-40 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/3 blur-[80px] rounded-full pointer-events-none" />
-      <div className="absolute top-20 left-10 text-primary/[0.03] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+      <div className="absolute top-20 left-10 text-primary/[0.03] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+        £
+      </div>
 
       <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
           {/* Company Info £ column + logo nudge so graphic lines up with paragraph / icons (PNG often has soft left bleed) */}
           <div className="flex min-w-0 flex-col items-start text-left">
             <NavLink
@@ -198,13 +198,18 @@ const Footer = () => {
               <img
                 src={PHOENIX_LOGO_SRC}
                 alt="Phoenix Finserv"
-                className="block h-16 w-auto max-h-[104px] max-w-full object-contain object-left sm:h-20 md:h-[5.75rem] -ml-3 sm:-ml-3.5 md:-ml-4"
+                className="block h-16 w-auto max-h-[180px] max-w-[280px] object-contain object-left 
+               sm:h-20 sm:max-w-[320px] 
+               md:h-24 md:max-w-[380px] 
+               -ml-4 sm:-ml-6"
                 decoding="async"
                 loading="lazy"
               />
             </NavLink>
             <p className="w-full text-sm text-primary-foreground/60 leading-relaxed mb-6">
-              Trusted financial services providing expert advice in protection, mortgages, pensions, and estate planning across the United Kingdom.
+              Trusted financial services providing expert advice in protection,
+              mortgages, pensions, and estate planning across the United
+              Kingdom.
             </p>
             <div className="flex w-full flex-wrap justify-start gap-3">
               <NavLink
@@ -247,7 +252,10 @@ const Footer = () => {
               {serviceLinks.map((link) => (
                 <li key={link.to}>
                   <NavLink to={link.to} className={footerNavClass}>
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                    <ArrowRight
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity text-primary"
+                    />
                     {link.name}
                   </NavLink>
                 </li>
@@ -265,7 +273,10 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.to}>
                   <NavLink to={link.to} className={footerNavClass}>
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                    <ArrowRight
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity text-primary"
+                    />
                     {link.name}
                   </NavLink>
                 </li>
@@ -281,11 +292,11 @@ const Footer = () => {
             </h3>
             <div className="space-y-4 mb-6">
               <NavLink
-                to="mailto:accountants@phoenix-accountancy.co.uk"
+                to="mailto:dreams@phoenixfinserv.co.uk"
                 className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
               >
                 <Mail size={16} className="mt-0.5 shrink-0" />
-                accountants@phoenix-accountancy.co.uk
+                dreams@phoenixfinserv.co.uk
               </NavLink>
               <NavLink
                 to="tel:+442079932737"
@@ -296,7 +307,7 @@ const Footer = () => {
               </NavLink>
               <div className="flex items-start gap-3 text-sm text-primary-foreground/60">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                London, United Kingdom
+                21 Heath Drive, Romford, Essex, RM2 5QH
               </div>
             </div>
 
@@ -325,7 +336,9 @@ const Footer = () => {
                 to={link.to}
                 className={({ isActive }) =>
                   `flex items-center gap-2 text-xs transition-colors ${
-                    isActive ? "text-primary" : "text-primary-foreground/50 hover:text-primary"
+                    isActive
+                      ? "text-primary"
+                      : "text-primary-foreground/50 hover:text-primary"
                   }`
                 }
               >
@@ -333,16 +346,18 @@ const Footer = () => {
                 {link.name}
               </NavLink>
             ))}
-
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/40">
-            {"\u00A9"} {new Date().getFullYear()} Phoenix Finserv. All rights reserved.
+            {"\u00A9"} {new Date().getFullYear()} Phoenix Finserv. All rights
+            reserved.
           </p>
-          <p className="text-xs text-primary-foreground/40">Authorised and Regulated by the Financial Conduct Authority</p>
+          <p className="text-xs text-primary-foreground/40">
+            Authorised and Regulated by the Financial Conduct Authority
+          </p>
         </div>
       </div>
     </footer>

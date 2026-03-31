@@ -120,8 +120,8 @@ const TermsAndConditions = () => {
                 <h3 className="text-xl font-bold text-primary mb-3">Enquiries</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   If you have any enquiries regarding these Terms and Conditions please contact us at{" "}
-                  <NavLink to="mailto:accountants@phoenix-accountancy.co.uk" className="text-primary hover:underline font-semibold">
-                    accountants@phoenix-accountancy.co.uk
+                  <NavLink to="mailto:dreams@phoenixfinserv.co.uk" className="text-primary hover:underline font-semibold">
+                    dreams@phoenixfinserv.co.uk
                   </NavLink>
                   .
                 </p>

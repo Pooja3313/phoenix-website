@@ -17,14 +17,14 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          {/* Book Free Consultation - Navigates to Contact Page */}
+          {/* Book Free Discovery Call - Navigates to Contact Page */}
           <Button
             asChild
             size="lg"
             className="border-2 border-transparent bg-primary-foreground text-primary font-semibold text-lg px-8 py-6 shadow-xl transition-colors duration-300 hover:bg-phoenix-green-light hover:border-phoenix-green hover:text-phoenix-green group"
           >
             <NavLink to="/contact">
-              Book Free Consultation
+              Book a Free Discovery Call
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </NavLink>
           </Button>

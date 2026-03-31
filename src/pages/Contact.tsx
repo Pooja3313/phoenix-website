@@ -72,9 +72,9 @@
 
 //                 <div className="space-y-6 mb-10">
 //                   {[
-//                     { icon: Mail, label: "Email", value: "accountants@phoenix-accountancy.co.uk", href: "mailto:accountants@phoenix-accountancy.co.uk" },
+//                     { icon: Mail, label: "Email", value: "dreams@phoenixfinserv.co.uk", href: "mailto:dreams@phoenixfinserv.co.uk" },
 //                     { icon: Phone, label: "Phone", value: "+44 (0) 2079 932 737", href: "tel:+442079932737" },
-//                     { icon: MapPin, label: "Address", value: "London, United Kingdom", href: "#" },
+//                     { icon: MapPin, label: "Address", value: "21 Heath Drive, Romford, Essex, RM2 5QH", href: "#" },
 //                     { icon: Clock, label: "Hours", value: "Mon - Fri: 9:00 AM - 6:00 PM", href: "#" },
 //                   ].map((item) => (
 //                     <a key={item.label} href={item.href} className="group flex items-start gap-4 p-4 rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300">
@@ -181,7 +181,7 @@ const contactMethods = [
     title: "Request a Callback",
     desc: "Fill in the form and we'll call you back at a convenient time.",
     color: "primary",
-    href: "tel:+918488891091",
+    href: "tel:+44 (0) 2079 932 737",
   },
 
   {
@@ -464,8 +464,8 @@ const Contact = () => {
                       {
                         icon: Mail,
                         label: "EMAIL",
-                        value: "accountants@phoenix-accountancy.co.uk",
-                        to: "mailto:accountants@phoenix-accountancy.co.uk",
+                        value: "dreams@phoenixfinserv.co.uk",
+                        to: "mailto:dreams@phoenixfinserv.co.uk",
                       },
                       {
                         icon: Phone,
@@ -476,7 +476,7 @@ const Contact = () => {
                       {
                         icon: MapPin,
                         label: "ADDRESS",
-                        value: "London, United Kingdom",
+                        value: "21 Heath Drive, Romford, Essex, RM2 5QH",
                       },
                       {
                         icon: Clock,

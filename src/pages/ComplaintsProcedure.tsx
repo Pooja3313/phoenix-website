@@ -27,7 +27,7 @@ const ComplaintsProcedure = () => {
             <div className="grid md:grid-cols-2 gap-6 animate-float-up" style={{ animationDelay: '0.1s' }}>
               {[
                 { icon: Phone, title: "By Phone", desc: "+44 (0) 2079 932 737" },
-                { icon: Mail, title: "By Email", desc: "accountants@phoenix-accountancy.co.uk" },
+                { icon: Mail, title: "By Email", desc: "dreams@phoenixfinserv.co.uk" },
                 { icon: FileText, title: "In Writing", desc: "Send your complaint to our registered office address" },
                 { icon: Clock, title: "Response Time", desc: "We aim to resolve complaints within 8 weeks" },
               ].map((item, i) => (

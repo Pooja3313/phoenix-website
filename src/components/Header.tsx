@@ -70,12 +70,12 @@
 //           <div className="container mx-auto flex items-center justify-between px-4 py-2 text-sm">
 //             <div className="flex items-center gap-6">
 //               <a
-//                 href="mailto:accountants@phoenix-accountancy.co.uk"
+//                 href="mailto:dreams@phoenixfinserv.co.uk"
 //                 className="flex items-center gap-2 hover:opacity-80 transition-opacity"
 //               >
 //                 <Mail size={14} />
 //                 <span className="hidden sm:inline">
-//                   accountants@phoenix-accountancy.co.uk
+//                   dreams@phoenixfinserv.co.uk
 //                 </span>
 //               </a>
 //               <a
@@ -542,12 +542,12 @@ const Header = () => {
             <div className="flex items-center justify-between gap-2 sm:gap-3 text-xs sm:text-sm w-full min-w-0">
               <div className="flex items-center gap-5 sm:gap-3 min-w-0 shrink">
                 <NavLink
-                  to="mailto:accountants@phoenix-accountancy.co.uk"
+                  to="mailto:dreams@phoenixfinserv.co.uk"
                   className="flex items-center gap-1 sm:gap-1.5 hover:text-phoenix-orange transition-colors shrink-0"
                   aria-label="Email"
                 >
                   <Mail size={12} className="shrink-0" />
-                  <span className="hidden sm:inline truncate sm:whitespace-normal">accountants@phoenix-accountancy.co.uk</span>
+                  <span className="hidden sm:inline truncate sm:whitespace-normal">dreams@phoenixfinserv.co.uk</span>
                 </NavLink>
                 <NavLink
                   to="tel:+442079932737"
@@ -581,7 +581,7 @@ const Header = () => {
                 <img
                   src="/images/Phoenix-Finserv.png"
                   alt="Phoenix Finserv"
-                  className="h-full w-auto max-h-[80px] min-h-[56px] object-contain object-left"
+                  className="h-full w-auto max-h-[100px] min-h-[70px] object-contain object-left"
                 />
               </NavLink>
               <NavLink to="/" className="flex lg:hidden items-center pr-3">
@@ -595,11 +595,11 @@ const Header = () => {
               <div className="header-top-bar relative bg-phoenix-gray-light text-phoenix-gray hidden md:flex items-center justify-end h-8 flex-shrink-0 border-b border-phoenix-gray/10 pr-4 sm:pr-6 lg:pr-8">
                 <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5 text-xs sm:text-sm pl-4 w-full">
                   <NavLink
-                    to="mailto:accountants@phoenix-accountancy.co.uk"
+                    to="mailto:dreams@phoenixfinserv.co.uk"
                     className="flex items-center gap-1.5 hover:text-phoenix-orange transition-colors shrink-0"
                   >
                     <Mail size={12} className="shrink-0" />
-                    <span>accountants@phoenix-accountancy.co.uk</span>
+                    <span>dreams@phoenixfinserv.co.uk</span>
                   </NavLink>
                   <NavLink
                     to="tel:+442079932737"
@@ -737,7 +737,7 @@ const Header = () => {
         {/* Five services orange bar: md+ only (xs and sm use hamburger) */}
         <div
           ref={orangeBarRef}
-          className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-2 hidden md:block"
+          className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-1 hidden md:block"
         >
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex justify-center">
             <div className="relative flex items-center justify-center w-full">

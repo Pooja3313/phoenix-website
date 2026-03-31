@@ -112,7 +112,7 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Start-Up Finance", description: "Funding options for new businesses, including government-backed Start Up Loans and alternative finance solutions.", icon: "Rocket" },
     ],
     ctaTitle: "Need Business Finance?",
-    ctaDescription: "Find the right funding solution for your business. Contact our commercial finance team for a free consultation."
+    ctaDescription: "Find the right funding solution for your business. Contact our commercial finance team for a Free Discovery Call."
   },
   {
     slug: "property-development-finance",
@@ -292,6 +292,6 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Refinancing", description: "Switch your existing commercial mortgage to a better deal, release equity for business purposes, or restructure your borrowing.", icon: "RefreshCw" },
     ],
     ctaTitle: "Need a Commercial Mortgage?",
-    ctaDescription: "Whether you're buying premises for your business or investing in commercial property, our advisers can help. Book a free consultation today."
+    ctaDescription: "Whether you're buying premises for your business or investing in commercial property, our advisers can help. Book a Free Discovery Call today."
   },
 ];
