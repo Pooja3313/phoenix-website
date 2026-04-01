@@ -8,6 +8,9 @@ import {
   Shield,
   ArrowRight,
   ChevronRight,
+  HeartHandshake,
+  BriefcaseBusiness,
+
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -32,13 +35,13 @@ const tabs = [
 ];
 
 const iconMap: Record<string, React.ElementType> = {
-  "life-cover": Heart,
+  "life-cover": HeartHandshake,
   "critical-illness": ShieldCheck,
   "income-protection": Shield,
   "keyman-cover": Briefcase,
   "shareholder-protection": Users,
   "relevant-life-cover": FileCheck,
-  "business-loan-protection": Briefcase,
+  "business-loan-protection": BriefcaseBusiness,
   "buildings-and-contents": Home,
 };
 
@@ -283,7 +286,7 @@ const Protection = () => {
                 return (
                   <NavLink
                     key={item.slug}
-                    to={`/services/protection/${item.slug}`}
+                    to={`/protection/${item.slug}`}
                     className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-primary/30 block ${
                       visible ? "animate-float-up" : "opacity-0"
                     }`}
