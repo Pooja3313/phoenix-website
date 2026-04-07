@@ -1,6 +1,7 @@
 import { Handshake, GraduationCap, ShieldCheck, BookOpen, CalendarCheck, ClipboardList } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import AnimatedSection from "./AnimatedSection";
 
 const features = [
   { icon: Handshake, title: "Our Personal Touch", color: "primary" },
@@ -12,20 +13,7 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
-  const [visible, setVisible] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
 
   const positions = [
     { top: "8%", left: "50%" },
@@ -37,7 +25,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-background relative overflow-x-hidden overflow-y-visible" ref={ref}>
+    <section className="py-16 sm:py-20 lg:py-24 bg-background relative overflow-x-hidden overflow-y-visible">
       <div className="absolute top-20 right-4 text-primary/[0.03] text-[100px] font-bold animate-pound-rotate select-none pointer-events-none sm:right-20 sm:text-[140px] lg:text-[180px]">
         {"\u00A3"}
       </div>
@@ -55,7 +43,6 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="w-full px-0 sm:px-1 lg:pl-1 lg:pr-14">
-          {/* Hub layout on all breakpoints ? heights scale so labels + orbit fit */}
           <div
             className="relative mx-auto w-full max-w-2xl
               h-[440px] min-h-[440px]
@@ -63,37 +50,37 @@ const WhyChooseUs = () => {
               md:h-[520px] md:min-h-[520px]
               lg:h-[580px] lg:min-h-[580px]"
           >
-            {/* Orbit ring ? square at every breakpoint so it stays a circle */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-              <div
-                className={`shrink-0 rounded-full border-2 border-dashed border-border/40 aspect-square
+              <AnimatedSection className="block">
+                <div
+                  className="shrink-0 rounded-full border-2 border-dashed border-border/40 aspect-square
                   w-[min(72vw,260px)] max-w-[260px]
                   sm:w-[min(78vw,300px)] sm:max-w-[300px]
                   md:w-[min(82vw,360px)] md:max-w-[360px]
-                  lg:w-[420px] lg:max-w-[420px]
-                  ${visible ? "animate-float-up" : "opacity-0"}`}
-              />
+                  lg:w-[420px] lg:max-w-[420px]"
+                />
+              </AnimatedSection>
             </div>
 
-            {/* Center Phoenix circle ? 1:1 at all sizes */}
             <div className="absolute top-1/2 left-1/2 z-30 -translate-x-1/2 -translate-y-1/2">
-              <div
-                className={`flex size-[7.25rem] shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-border bg-card shadow-2xl
+              <AnimatedSection>
+                <div
+                  className="flex size-[7.25rem] shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-border bg-card shadow-2xl
                   sm:size-32 sm:border-4
                   md:size-40
-                  lg:size-52
-                  ${visible ? "animate-float-up" : "opacity-0"}`}
-              >
-                <div className="flex w-full flex-col items-center justify-center px-2 text-center sm:px-3">
-                  <span className="text-lg font-bold leading-tight text-primary sm:text-xl md:text-2xl">Phoenix</span>
-                  <span className="mt-0.5 block text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:text-[10px]">
-                    Finserv
-                  </span>
-                  <span className="mt-1 block max-w-[9rem] font-handwritten text-xs leading-snug text-primary sm:mt-1.5 sm:text-sm md:text-base">
-                    Helping secure dreams
-                  </span>
+                  lg:size-52"
+                >
+                  <div className="flex w-full flex-col items-center justify-center px-2 text-center sm:px-3">
+                    <span className="text-lg font-bold leading-tight text-primary sm:text-xl md:text-2xl">Phoenix</span>
+                    <span className="mt-0.5 block text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:text-[10px]">
+                      Finserv
+                    </span>
+                    <span className="mt-1 block max-w-[9rem] font-handwritten text-xs leading-snug text-primary sm:mt-1.5 sm:text-sm md:text-base">
+                      Helping secure dreams
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </AnimatedSection>
             </div>
 
             {features.map((feature, index) => {
@@ -113,11 +100,7 @@ const WhyChooseUs = () => {
                   onMouseEnter={() => setHoveredIdx(index)}
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
-                  {/* Outer keeps translate(-50%,-50%); inner runs float-up so transform is not overwritten */}
-                  <div
-                    className={visible ? "animate-float-up" : "opacity-0"}
-                    style={{ animationDelay: `${index * 0.15 + 0.3}s` }}
-                  >
+                  <AnimatedSection delay={index * 0.15 + 0.3}>
                     <div className="flex cursor-pointer flex-col items-center group">
                       <div
                         className={`flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 shadow-lg transition-all duration-500
@@ -153,7 +136,7 @@ const WhyChooseUs = () => {
                         {feature.title}
                       </span>
                     </div>
-                  </div>
+                  </AnimatedSection>
                 </div>
               );
             })}
@@ -179,17 +162,14 @@ const WhyChooseUs = () => {
             </svg>
           </div>
 
-          <div
-            className={`mt-10 flex justify-center sm:mt-12 lg:mt-14 ${visible ? "animate-float-up" : "opacity-0"}`}
-            style={{ animationDelay: "1.2s" }}
-          >
+          <AnimatedSection delay={1.2} className="mt-10 flex justify-center sm:mt-12 lg:mt-14">
             <NavLink
               to="/contact"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-phoenix-orange-dark hover:shadow-xl sm:px-8 sm:py-4"
             >
               Get a Quote
             </NavLink>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

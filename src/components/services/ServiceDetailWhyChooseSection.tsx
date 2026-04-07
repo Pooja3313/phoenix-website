@@ -92,6 +92,7 @@
 // export default ServiceDetailWhyChooseSection;
 
 import { Shield } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface ServiceDetailWhyChooseSectionProps {
   whyTitle: string;
@@ -135,28 +136,33 @@ const ServiceDetailWhyChooseSection = ({
   const { prefix, highlight } = splitWhyTitle(whyTitle);
 
   return (
-  <section className="py-16 md:py-20 bg-background">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      
-      {/* Title - Centered on all screens */}
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
-        {prefix && <span className="block md:inline">{prefix}</span>}
-        <span className={highlightClassName}>{highlight}</span>
-      </h2>
+    <section className="py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Title - Centered on all screens */}
+          <AnimatedSection animation="animate-fade-scale">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
+              {prefix && <span className="block md:inline">{prefix}</span>}
+              <span className={highlightClassName}>{highlight}</span>
+            </h2>
+          </AnimatedSection>
 
-      {/* Content Paragraphs */}
-      <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
-        {whyContent.map((para, i) => (
-          <p key={i} className="xs:text-justify  sm:text-justify md:text-justify lg:text-center">
-            {para}
-          </p>
-        ))}
+          {/* Content Paragraphs */}
+          <AnimatedSection delay={0.15}>
+            <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
+              {whyContent.map((para, i) => (
+                <p
+                  key={i}
+                  className="xs:text-justify sm:text-justify md:text-justify lg:text-center"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 

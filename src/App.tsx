@@ -34,8 +34,6 @@ import MortgageSubService from "./pages/services/MortgageSubService";
 import CommercialLendingSubService from "./pages/services/CommercialLendingSubService";
 import FinancialOmbudsman from "./pages/FinancialOmbudsman";
 import RepaymentCalculator from "./pages/services/RepaymentCalculator";
-// import ProtectionServicePage from "./pages/ProtectionPage";
-// import ProtectionSubServiceDetailPage from "./components/ProtectionSubServiceDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -77,7 +75,10 @@ const App = () => (
             />
             <Route path="/fair-treatment" element={<FairTreatment />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/financial-ombudsman" element={<FinancialOmbudsman />} />
+            <Route
+              path="/financial-ombudsman"
+              element={<FinancialOmbudsman />}
+            />
             <Route path="*" element={<NotFound />} />
 
             {/* Service main pages */}
@@ -91,9 +92,6 @@ const App = () => (
             />
             <Route path="/pensions/:slug" element={<Pensions />} />
 
-            {/* Service sub-pages (slug routes; calculator before :slug for mortgage) */}
-            {/* <Route path="/services/protection/:slug" element={<ProtectionSubService />} /> */}
-            {/* <Route path="/protection/:slug" element={<ProtectionSubServiceDetailPage />} /> */}
             <Route
               path="/protection/:slug"
               element={<ProtectionSubService />}
@@ -107,7 +105,7 @@ const App = () => (
               path="/mortgage/mortgagecalculator/best-buy"
               element={<BestBuyCalculator />}
             />
-               <Route
+            <Route
               path="/mortgage/mortgagecalculator/repayment-calculator"
               element={<RepaymentCalculator />}
             />

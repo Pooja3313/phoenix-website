@@ -5,9 +5,9 @@ import {
   ArrowRight,
   Heart,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import FaqSection from "@/components/FaqSection";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const offerings = [
   {
@@ -54,43 +54,9 @@ const faqs = [
 ];
 
 const Pensions = () => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="min-h-screen">
       <main>
-        {/* Hero */}
-        {/* <section className="relative py-20 md:py-28 bg-gradient-to-br from-accent/10 via-phoenix-green-light/30 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-accent/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
-          <div className="container mx-auto px-4 relative z-10">
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Pension <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Planning</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Helping you make informed decisions about your retirement. Our guidance is designed to support your long-term financial well-being, giving you clarity and confidence as you plan for the future.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Book a Free Discovery Call <ArrowRight size={18} />
-            </NavLink>
-          </div>
-        </section> */}
-
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
@@ -112,59 +78,36 @@ const Pensions = () => {
             £
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
-              Our Services
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Pension{" "}
-              <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
-                Planning
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-              Helping you make informed decisions about your retirement. Our
-              guidance is designed to support your long-term financial
-              well-being, giving you clarity and confidence as you plan for the
-              future.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Book a Free Discovery Call <ArrowRight size={18} />
-            </NavLink>
+            <AnimatedSection delay={0.3}>
+              <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
+                Our Services
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                Pension{" "}
+                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
+                  Planning
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                Helping you make informed decisions about your retirement. Our
+                guidance is designed to support your long-term financial
+                well-being, giving you clarity and confidence as you plan for
+                the future.
+              </p>
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Book a Free Discovery Call <ArrowRight size={18} />
+              </NavLink>
+            </AnimatedSection>
           </div>
         </section>
-
-        {/* Why Choose */}
-        {/* <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Why Choose Phoenix Finserv for your <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">Pension Planning?</span>
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  According to Age UK, around half of people aged 40?64 may not have enough savings to retire comfortably when they reach state pension age. Without additional pension arrangements in place, you could face financial challenges later in life.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  At Phoenix Finserv, we help you explore private pension options that support your long-term financial well-being. Our team has extensive experience in the pension sector and can guide you through your choices, helping you avoid common mistakes and plan confidently for retirement.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10 border border-border flex items-center justify-center">
-                  <PiggyBank size={80} className="text-accent/30" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         {/* Why Choose */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <AnimatedSection delay={0.3} animation="animate-fade-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Why Choose Phoenix Finserv for your{" "}
                   <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
@@ -184,30 +127,29 @@ const Pensions = () => {
                   guide you through your choices, helping you avoid common
                   mistakes and plan confidently for retirement.
                 </p>
-              </div>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
-                  <img
-                    src="/images/pension/pension2.jpg"
-                    alt="Family reviewing important documents together"
-                    className="w-full h-full object-cover"
-                  />
+              </AnimatedSection>
+              <AnimatedSection delay={0.3} animation="animate-fade-scale">
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
+                    <img
+                      src="/images/pension/pension2.jpg"
+                      alt="Family reviewing important documents together"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <Heart size={32} className="text-accent" />
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                  <Heart size={32} className="text-accent" />
-                </div>
-              </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>
 
         {/* Offerings */}
-        <section
-          className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30"
-          ref={ref}
-        >
+        <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-14">
+            <AnimatedSection className="text-center mb-14" delay={0.1}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
                 What We Offer
               </p>
@@ -222,30 +164,30 @@ const Pensions = () => {
                 future built on stability, ensuring peace of mind, and creating
                 a financial foundation that supports your retirement goals.
               </p>
-            </div>
+            </AnimatedSection>
             <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {offerings.map((item, index) => (
-                <div
+                <AnimatedSection
                   key={item.title}
-                  className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-accent/30 ${
-                    visible ? "animate-float-up" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: `${index * 0.12}s` }}
+                  delay={index * 0.12}
+                  animation="animate-fade-scale"
                 >
-                  <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                    <item.icon
-                      size={26}
-                      className="text-accent group-hover:text-accent-foreground transition-colors"
-                    />
+                  <div className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-accent/30 h-full">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <item.icon
+                        size={26}
+                        className="text-accent group-hover:text-accent-foreground transition-colors"
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -256,20 +198,23 @@ const Pensions = () => {
         {/* CTA */}
         <section className="py-20 bg-gradient-to-r from-accent to-phoenix-green text-accent-foreground">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Need Help Navigating your Pension Choices?
-            </h2>
-            <p className="text-accent-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
-              At Phoenix Finserv, our advisers are authorised and experienced in
-              retirement planning. We offer regulated financial advice to help
-              you explore pension options tailored to your needs and goals.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-background text-accent font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Speak to our Advisers <ArrowRight size={18} />
-            </NavLink>
+            <AnimatedSection delay={0.4}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Need Help Navigating your Pension Choices?
+              </h2>
+              <p className="text-accent-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
+                At Phoenix Finserv, our advisers are authorised and experienced
+                in retirement planning. We offer regulated financial advice to
+                help you explore pension options tailored to your needs and
+                goals.
+              </p>
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-background text-accent font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Speak to our Advisers <ArrowRight size={18} />
+              </NavLink>
+            </AnimatedSection>
           </div>
         </section>
       </main>

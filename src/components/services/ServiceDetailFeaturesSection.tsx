@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface FeatureItem {
   title: string;
@@ -15,28 +15,10 @@ const ServiceDetailFeaturesSection = ({
   title,
   features,
 }: ServiceDetailFeaturesSectionProps) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30"
-      ref={ref}
-    >
+    <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+        <AnimatedSection className="text-center mb-14" delay={0.1}>
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
             What We Offer
           </p>
@@ -47,16 +29,13 @@ const ServiceDetailFeaturesSection = ({
             </span>{" "}
             Solutions
           </h2>
-        </div>
+        </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {features.map((feature, index) => (
+            <AnimatedSection key={feature.title} delay={index * 0.12}>
             <div
-              key={feature.title}
-              className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-primary/30 ${
-                visible ? "animate-float-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 0.12}s` }}
+              className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-primary/30 h-full"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -75,6 +54,7 @@ const ServiceDetailFeaturesSection = ({
                 {feature.description}
               </p>
             </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

@@ -2,22 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyGetInTouch from "@/components/StickyGetInTouch";
 import { Send, Mail, Bell, TrendingUp, Shield, BookOpen } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-
-const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={`${visible ? 'animate-float-up' : 'opacity-0'} ${className}`} style={{ animationDelay: `${delay}s` }}>
-      {children}
-    </div>
-  );
-};
+import { useState } from "react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const topics = [
   { icon: Shield, title: "Protection Tips", desc: "Expert advice on safeguarding your family's financial future." },
@@ -43,7 +29,7 @@ const Newsletter = () => {
         <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" />
-          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none"> Â£</div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
             <AnimatedSection>
               <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Stay Informed</p>

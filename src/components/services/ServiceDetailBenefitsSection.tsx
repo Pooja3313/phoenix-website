@@ -1,6 +1,7 @@
 // components/services/ServiceDetailBenefitsSection.tsx
 import React from "react";
 import * as LucideIcons from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface BenefitItem {
   title: string;
@@ -66,24 +67,28 @@ const ServiceDetailBenefitsSection: React.FC<
     return (
       <section className="bg-gradient-to-br from-primary/5 via-phoenix-green-light/20 to-background py-12 md:py-16 lg:py-20 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-8xl">
-          
           {/* Title Section */}
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-tight">
-              {prefix && <span className="block md:inline">{prefix}</span>}
-              <span className={highlightClassName}>{highlight}</span>
-            </h2>
-            {subtitle && (
-              <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
-                {subtitle}
-              </p>
-            )}
-          </div>
+          <AnimatedSection animation="animate-fade-scale">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-tight">
+                {prefix && <span className="block md:inline">{prefix}</span>}
+                <span className={highlightClassName}>{highlight}</span>
+              </h2>
+              {subtitle && (
+                <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+          </AnimatedSection>
 
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             
             {/* Left Benefits - Visible on lg+ only in left position */}
-            <div className="lg:col-span-4 space-y-8 md:space-y-10 order-2 lg:order-1">
+            <AnimatedSection
+              className="lg:col-span-4 space-y-8 md:space-y-10 order-2 lg:order-1"
+              animation="animate-fade-left"
+            >
               {benefitItems.slice(0, Math.ceil(benefitItems.length / 2)).map((item, index) => {
                 const IconComponent = getIconComponent(item.icon);
                 return (
@@ -102,10 +107,13 @@ const ServiceDetailBenefitsSection: React.FC<
                   </div>
                 );
               })}
-            </div>
+            </AnimatedSection>
 
             {/* ==================== CENTER IMAGE ==================== */}
-            <div className="lg:col-span-4 flex justify-center py-6 md:py-8 lg:py-0 order-1 lg:order-2">
+            <AnimatedSection
+              className="lg:col-span-4 flex justify-center py-6 md:py-8 lg:py-0 order-1 lg:order-2"
+              animation="animate-fade-rotate"
+            >
               <div className="relative">
                 <div
                   className="w-72 sm:w-80 md:w-[420px] lg:w-80 
@@ -126,10 +134,13 @@ const ServiceDetailBenefitsSection: React.FC<
                 <div className="absolute -top-6 -right-6 w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl rotate-12 hidden sm:block" />
                 <div className="absolute -bottom-8 -left-8 w-14 h-14 sm:w-16 sm:h-16 bg-white/30 backdrop-blur-sm rounded-2xl -rotate-12 hidden sm:block" />
               </div>
-            </div>
+            </AnimatedSection>
 
             {/* Right Benefits */}
-            <div className="lg:col-span-4 space-y-8 md:space-y-10 order-3 lg:order-3">
+            <AnimatedSection
+              className="lg:col-span-4 space-y-8 md:space-y-10 order-3 lg:order-3"
+              animation="animate-fade-right"
+            >
               {benefitItems.slice(Math.ceil(benefitItems.length / 2)).map((item, index) => {
                 const IconComponent = getIconComponent(item.icon);
                 return (
@@ -148,19 +159,21 @@ const ServiceDetailBenefitsSection: React.FC<
                   </div>
                 );
               })}
-            </div>
+            </AnimatedSection>
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center mt-12 md:mt-16">
-            <a
-              href="/contact"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 sm:px-10 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 group text-base sm:text-lg"
-            >
-              {ctaText}
-              <LucideIcons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+          <AnimatedSection delay={0.25} animation="animate-fade-scale">
+            <div className="flex justify-center mt-12 md:mt-16">
+              <a
+                href="/contact"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 sm:px-10 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 group text-base sm:text-lg"
+              >
+                {ctaText}
+                <LucideIcons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     );
@@ -170,21 +183,26 @@ const ServiceDetailBenefitsSection: React.FC<
   return (
     <section className="bg-gradient-to-br from-primary/5 via-phoenix-green-light/20 to-background py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
-            {prefix && <span className="block md:inline">{prefix}</span>}
-            <span className={highlightClassName}>{highlight}</span>
-          </h2>
-          {subtitle && (
-            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              {subtitle}
-            </p>
-          )}
-        </div>
+        <AnimatedSection animation="animate-fade-scale">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+              {prefix && <span className="block md:inline">{prefix}</span>}
+              <span className={highlightClassName}>{highlight}</span>
+            </h2>
+            {subtitle && (
+              <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Benefits List - Left Side */}
-          <div className="space-y-10 md:space-y-12 order-2 lg:order-1">
+          <AnimatedSection
+            className="space-y-10 md:space-y-12 order-2 lg:order-1"
+            animation="animate-fade-left"
+          >
             {benefitItems.map((item, index) => {
               const IconComponent = getIconComponent(item.icon);
               return (
@@ -203,10 +221,13 @@ const ServiceDetailBenefitsSection: React.FC<
                 </div>
               );
             })}
-          </div>
+          </AnimatedSection>
 
           {/* Image - Right Side */}
-          <div className="relative flex justify-center pt-4 lg:mt-8 md:pt-8 order-1 lg:order-2">
+          <AnimatedSection
+            className="relative flex justify-center pt-4 lg:mt-8 md:pt-8 order-1 lg:order-2"
+            animation="animate-fade-right"
+          >
             <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
               <img
                 src={
@@ -221,7 +242,7 @@ const ServiceDetailBenefitsSection: React.FC<
                            lg:min-h-[380px] xl:min-h-[360px]"
               />
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

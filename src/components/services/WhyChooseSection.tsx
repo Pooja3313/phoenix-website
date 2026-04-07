@@ -66,7 +66,7 @@
 
 // export default WhyChooseSection;
 import { Heart } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface WhyChooseSectionProps {
   title: string;
@@ -75,19 +75,11 @@ interface WhyChooseSectionProps {
 }
 
 const WhyChooseSection = ({ title, content, imageSrc = "/placeholder.svg"  }: WhyChooseSectionProps) => {
-  const { ref, visible } = useScrollReveal();
-
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* LEFT TEXT */}
-          <div
-            className={`transition-all duration-700 ${
-              visible ? "animate-slide-in-left opacity-100" : "opacity-0 -translate-x-10"
-            }`}
-          >
+          <AnimatedSection animation="animate-slide-in-left">
             <h2 className="font-script text-3xl md:text-4xl text-foreground mb-8 leading-snug">
               {title}
             </h2>
@@ -97,14 +89,9 @@ const WhyChooseSection = ({ title, content, imageSrc = "/placeholder.svg"  }: Wh
                 {para}
               </p>
             ))}
-          </div>
+          </AnimatedSection>
 
-          {/* RIGHT ROUND IMAGE WITH ANIMATION */}
-          <div
-            className={`transition-all duration-700 delay-200 ${
-              visible ? "animate-slide-in-right opacity-100" : "opacity-0 translate-x-10"
-            }`}
-          >
+          <AnimatedSection delay={0.2} animation="animate-slide-in-right">
             <div className="relative flex justify-center">
               
               <div className="relative w-80 h-80 md:w-96 md:h-96">
@@ -128,7 +115,7 @@ const WhyChooseSection = ({ title, content, imageSrc = "/placeholder.svg"  }: Wh
                 <Heart className="w-8 h-8 text-accent" />
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import type { ServiceItem } from "@/data/commercialLendingData";
 import ServiceDetailCTASection from "@/components/services/ServiceDetailCTASection";
-import ServiceDetailFeaturesSection from "@/components/services/ServiceDetailFeaturesSection";
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
 import CommercialDetailWhatWeOfferSection from "@/components/services/CommercialDetailWhatWeOfferSection";

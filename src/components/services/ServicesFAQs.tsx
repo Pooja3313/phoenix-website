@@ -66,7 +66,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import AnimatedSection from "@/components/AnimatedSection";
 import type { FAQ } from "@/data/protectionData1";
 
 interface ServiceFAQsProps {
@@ -74,32 +74,19 @@ interface ServiceFAQsProps {
 }
 
 const ServiceFAQs = ({ faqs }: ServiceFAQsProps) => {
-  const { ref, visible } = useScrollReveal();
-
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
-
-        {/* Heading */}
-        <div
-          className={`text-center mb-12 transition-all duration-700 ${
-            visible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
-          }`}
-        >
+        <AnimatedSection className="text-center mb-12" animation="animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Frequently Asked{" "}
             <span className="font-handwritten text-4xl md:text-5xl text-primary highlighter-mark">
               Questions
             </span>
           </h2>
-        </div>
+        </AnimatedSection>
 
-        {/* FAQs */}
-        <div
-          className={`transition-all duration-700 delay-200 ${
-            visible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
-          }`}
-        >
+        <AnimatedSection animation="animate-fade-in-up" delay={0.2}>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -123,7 +110,7 @@ const ServiceFAQs = ({ faqs }: ServiceFAQsProps) => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </AnimatedSection>
 
       </div>
     </section>

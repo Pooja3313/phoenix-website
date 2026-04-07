@@ -142,7 +142,7 @@
 
 @layer components {
 
-  /* Accounting hero underline ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ no dot in className: use `pen-underline2` not `.pen-underline2` */
+  /* .pen-underline2 */
   .pen-underline2 {
     position: relative;
     display: inline-block;
@@ -196,7 +196,8 @@
   .highlighter-mark {
     position: relative;
     display: inline-block;
-    isolation: isolate;
+     overflow: visible;
+    line-height: 1.05;
   }
   .highlighter-mark::after {
     content: '';
@@ -212,51 +213,23 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: -1;
-    transform: skewX(-3deg) rotate(-1deg);
-    border-radius: 4px;
-    opacity: 1;
-    filter: contrast(1.08) saturate(1.12) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: pen-draw 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.45s;
+    opacity: 0.92;
+    
   }
 
 
 
-  /* .pen-underline {
-  position: relative;
-  display: inline-block;
-  line-height: 1.1; 
-}
 
-.pen-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;               
-  width: 100%;
-  height: 20px;               
-  background-image: url('/images/green-hand-marker-underline.png'); 
-  background-size: 100% 100%;  
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  transform: rotate(-1.5deg);  
-  opacity: 0.95;
-  z-index: -1;
-}
-
-
-.pen-underline.long-underline::after {
-  background-repeat: repeat-x; 
-  background-size: auto 100%;
-}
-
-.pen-underline:hover::after {
-  transform: rotate(-0.8deg) translateY(2px);
-  transition: all 0.4s ease;
-} */
 
 
 
   /* === HANDMADE THICK ORANGE UNDERLINE (Odoo style) === */
-/* Per-word highlight: width must follow the span ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ fixed 300px made one stroke cover "Finance &" and hid the second word's line */
+
 .hand-underline {
   position: relative;
   display: inline-block;
@@ -376,37 +349,7 @@
   pointer-events: none;
 }
 
-/* .pen-underline {
-  position: relative;
-  display: inline-block;
-}
 
-.pen-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;         
-  width: 100%;
-  height: 5px;         
-  background-image: url('/images/green_highlighte.jpg');
-  border-radius: 10px;
-  opacity: 0.95;
-  z-index: -1;
-  box-shadow: 0 4px 8px rgba(249, 115, 22, 0.25); 
-  transform: scaleX(0);
-    transform-origin: left;
-    animation: pen-draw 1s ease-out forwards;
-    animation-delay: 0.5s;
-} */
-
-
-
-
-
-/*
- * pen-underline: must NOT mix translateY() with pen-draw ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ keyframes only set scaleX(1),
- * which drops translateY after animate and breaks alignment on some pages (e.g. Pensions).
- */
 .pen-underline {
   position: relative;
   display: inline-block;
@@ -443,18 +386,6 @@
   animation-delay: 0.85s;
 }
 
-
-/* hover pe thoda natural movement */
-/* .pen-underline:hover::after {
-  transform: rotate(-1deg) scaleX(1.02);
-  transition: all 0.3s ease;
-} */
-/* 
-  .pen-underline {
-    position: relative;
-    display: inline-block;
-  } */
-
   /* Thick green handmade-style underline (marker/doodle look) */
   .handmade-green-underline {
     position: relative;
@@ -476,21 +407,54 @@
       0 2px 4px rgb(16 185 129 / 0.45),
       0 0 0 1px rgb(16 185 129 / 0.25);
   }
-  /* .pen-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: hsl(var(--primary));
-    border-radius: 2px;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: pen-draw 1s ease-out forwards;
-    animation-delay: 0.5s;
-  } */
+  
+  
+/* Footer Underline - Thick + Visible Animation */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
 
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 25%;  /* Sirf 25% length, jaise abhi hai */
+  height: 3px;  /* Thick line */
+  border-radius: 2px;
+  transform-origin: left;
+  animation: underlineDraw  2.5s infinite ease-in-out;
+}
+
+/* Colors */
+.services-underline::after {
+  background-color: hsl(var(--primary));
+}
+
+.quicklinks-underline::after {
+  background-color: hsl(var(--accent));
+}
+
+.contact-underline::after {
+  background-color: hsl(var(--phoenix-gold));
+}
+
+/* NEW ANIMATION - Left to Right Draw (sirf 25% tak) */
+@keyframes underlineDraw {
+  0% {
+    width: 0%;
+  }
+  35% {
+    width: 25%;     /* exact image wali length tak draw */
+  }
+  65% {
+    width: 25%;     /* thodi der hold (smart look ke liye) */
+  }
+  100% {
+    width: 0%;      /* smoothly reset aur fir se start */
+  }
+}
   @keyframes pen-draw {
     to { transform: scaleX(1); }
   }
@@ -538,7 +502,7 @@
   }
 
   @keyframes float-up {
-    0% { opacity: 0; transform: translateY(40px); }
+    0% { opacity: 0; transform: translateY(140px); }
     100% { opacity: 1; transform: translateY(0); }
   }
 

@@ -8,40 +8,8 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-const AnimatedSection = ({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`${visible ? "animate-float-up" : "opacity-0"} ${className}`}
-      style={{ animationDelay: `${delay}s` }}
-    >
-      {children}
-    </div>
-  );
-};
+import AnimatedSection from "@/components/AnimatedSection";
 
 const features = [
   {
@@ -82,48 +50,26 @@ const NetworkSelfEmployedAdviser = () => {
   return (
     <div className="min-h-screen">
       <main>
-        {/* Hero */}
-        {/* <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
-          <div className="absolute bottom-20 left-20 text-primary/5 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
-          <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection>
-              <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Self Employed Adviser</p>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Self Employed <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Adviser</span> Opportunities
-              </h1>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                For individuals who prefer <span className="font-handwritten text-xl text-primary highlighter-mark">independence</span> but also value the importance of a functional framework.
-              </p>
-            </AnimatedSection>
-          </div>
-        </section> */}
+        {/* Hero Section */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[600px] flex items-center">
-          {/* Background Image - Full Cover & Responsive */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url('/images/website_images/front-view-young-busy-confused-clerical-workers-discussing-one-issue-documents-office.jpg')`,
             }}
           />
-
-          {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
-
-          {/* Optional subtle accent gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_70%)]" />
 
-          {/* Floating � Symbol */}
           <div className="absolute bottom-12 left-8 md:left-16 text-white/10 text-[140px] md:text-[180px] lg:text-[220px] font-bold select-none pointer-events-none">
             £
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection>
+            <AnimatedSection delay={0.6}>
               <p className="text-white/90 font-semibold text-sm uppercase tracking-[0.25em] mb-4">
                 Self Employed Adviser
               </p>
-
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Self Employed{" "}
                 <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
@@ -131,7 +77,6 @@ const NetworkSelfEmployedAdviser = () => {
                 </span>{" "}
                 Opportunities
               </h1>
-
               <p className="text-white/90 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
                 For individuals who prefer{" "}
                 <span className="font-handwritten text-xl md:text-2xl text-[#ffd700] highlighter-mark">
@@ -141,24 +86,12 @@ const NetworkSelfEmployedAdviser = () => {
               </p>
             </AnimatedSection>
           </div>
-          {/* 
-          <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection>
-               <p className="text-white/90 font-semibold text-sm uppercase tracking-[0.25em] mb-4">Self Employed Adviser</p>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Self Employed <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Adviser</span> Opportunities
-              </h1>
-              <p className="text-white max-w-2xl mx-auto text-lg">
-                For individuals who prefer <span className="font-handwritten text-xl text-primary highlighter-mark">independence</span> but also value the importance of a functional framework.
-              </p>
-            </AnimatedSection>
-          </div> */}
         </section>
 
-        {/* About */}
+        {/* About Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
-            <AnimatedSection>
+            <AnimatedSection delay={0.1}>
               <div className="bg-card border border-border rounded-2xl p-10">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
                   A Network Built to{" "}
@@ -179,12 +112,16 @@ const NetworkSelfEmployedAdviser = () => {
           </div>
         </section>
 
-        {/* Features */}
+        {/* Features Section */}
         <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {features.map((item, i) => (
-                <AnimatedSection key={item.title} delay={i * 0.1}>
+                <AnimatedSection 
+                  key={item.title} 
+                  delay={0.1 + i * 0.15}
+                  animation="animate-fade-scale"
+                >
                   <div className="group bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                       <item.icon
@@ -205,10 +142,10 @@ const NetworkSelfEmployedAdviser = () => {
           </div>
         </section>
 
-        {/* Career Path */}
+        {/* Career Path Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="text-center mb-14">
+            <AnimatedSection className="text-center mb-14" delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 A Career That{" "}
                 <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
@@ -221,9 +158,10 @@ const NetworkSelfEmployedAdviser = () => {
                 that's aligned with your aspirations and values.
               </p>
             </AnimatedSection>
+
             <div className="max-w-2xl mx-auto">
               {careerPath.map((step, i) => (
-                <AnimatedSection key={step} delay={i * 0.1}>
+                <AnimatedSection key={step} delay={0.2 + i * 0.12}>
                   <div className="flex items-center gap-4 mb-4 group">
                     <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0 group-hover:scale-110 group-hover:bg-accent transition-all duration-300">
                       {i + 1}
@@ -243,11 +181,11 @@ const NetworkSelfEmployedAdviser = () => {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary via-primary to-phoenix-orange-dark text-primary-foreground">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-              <AnimatedSection>
+              <AnimatedSection delay={0.1}>
                 <h2 className="text-3xl font-bold mb-4">
                   Become a Financial Adviser with{" "}
                   <span className="font-handwritten text-4xl">
@@ -275,7 +213,8 @@ const NetworkSelfEmployedAdviser = () => {
                   </NavLink>
                 </div>
               </AnimatedSection>
-              <AnimatedSection delay={0.2}>
+
+              <AnimatedSection delay={0.3}>
                 <div className="bg-card text-foreground rounded-2xl p-8 shadow-2xl">
                   <h3 className="text-xl font-bold mb-4">Join Now</h3>
                   <form
@@ -309,21 +248,11 @@ const NetworkSelfEmployedAdviser = () => {
                       </label>
                       <div className="flex gap-4">
                         <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="experience"
-                            value="yes"
-                            className="accent-primary"
-                          />{" "}
+                          <input type="radio" name="experience" value="yes" className="accent-primary" />{" "}
                           <span className="text-sm">Yes</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="experience"
-                            value="no"
-                            className="accent-primary"
-                          />{" "}
+                          <input type="radio" name="experience" value="no" className="accent-primary" />{" "}
                           <span className="text-sm">No</span>
                         </label>
                       </div>

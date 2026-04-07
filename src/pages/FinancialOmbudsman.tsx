@@ -1,24 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import StickyGetInTouch from "@/components/StickyGetInTouch";
-import { AlertCircle, MapPin, Phone, Mail, Globe, ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { AlertCircle, MapPin, Phone, Mail, Globe } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
-const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={`${visible ? 'animate-float-up' : 'opacity-0'} ${className}`} style={{ animationDelay: `${delay}s` }}>
-      {children}
-    </div>
-  );
-};
+import AnimatedSection from "@/components/AnimatedSection";
 
 const FinancialOmbudsman = () => {
   return (

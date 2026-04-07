@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface ServiceDetailWhyChooseSectionProps {
   whyTitle: string;
@@ -75,23 +76,27 @@ const ServiceDetailHowWorkSection = ({
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Title - Centered on all screens */}
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
-            {prefix && <span>{prefix}</span>}
-            <span className={highlightClassName}>{highlight}</span>
-            {suffix && <span>{suffix}</span>}
-          </h2>
+          <AnimatedSection animation="animate-fade-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
+              {prefix && <span>{prefix}</span>}
+              <span className={highlightClassName}>{highlight}</span>
+              {suffix && <span>{suffix}</span>}
+            </h2>
+          </AnimatedSection>
 
           {/* Content Paragraphs */}
-          <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
-            {whyContent.map((para, i) => (
-              <p
-                key={i}
-                className="text-justify md:text-justify lg:text-center"
-              >
-                {para}
-              </p>
-            ))}
-          </div>
+          <AnimatedSection delay={0.18} animation="animate-fade-right">
+            <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
+              {whyContent.map((para, i) => (
+                <p
+                  key={i}
+                  className="text-justify md:text-justify lg:text-center"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

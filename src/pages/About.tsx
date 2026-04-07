@@ -1,4 +1,3 @@
-// import AboutSection from "@/components/AboutSection";
 import DedicatedTeam from "@/components/DedicatedTeam";
 import MissionVision from "@/components/MissionVision";
 import OurBegining from "@/components/OurBegining";

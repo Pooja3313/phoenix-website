@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import type { WillsServiceItem } from "@/data/willsEstatePlanningData";
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
-import ServiceDetailFeaturesSection from "@/components/services/ServiceDetailFeaturesSection";
 import ServiceDetailCTASection from "@/components/services/ServiceDetailCTASection";
 import CommercialDetailWhatWeOfferSection from "./services/CommercialDetailWhatWeOfferSection";
 import ServiceDetailBenefitsSection from "./services/ServiceDetailBenefitsSection";

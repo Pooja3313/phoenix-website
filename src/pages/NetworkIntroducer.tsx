@@ -1,22 +1,16 @@
-
-import { Award, PoundSterling, Users, Search, Settings, Zap, Send, Phone, Mail } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import {
+  Award,
+  PoundSterling,
+  Users,
+  Search,
+  Settings,
+  Zap,
+  Send,
+  Phone,
+  Mail,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
-
-const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={`${visible ? 'animate-float-up' : 'opacity-0'} ${className}`} style={{ animationDelay: `${delay}s` }}>
-      {children}
-    </div>
-  );
-};
+import AnimatedSection from "@/components/AnimatedSection";
 
 const benefits = [
   { icon: Zap, title: "Seamless Process", description: "Simple, transparent referral workflow that fits around your business." },
@@ -34,71 +28,53 @@ const steps = [
 const NetworkIntroducer = () => {
   return (
     <div className="min-h-screen">
-   
       <main>
-        {/* Hero */}
-        {/* <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" />
+        {/* Hero Section */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/website_images/colleagues-work.jpg')`
+            }}
+          />
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
+
+          {/* Subtle Accent Gradient */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
+
+          {/* Decorative Circle */}
+          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/10 animate-pound-morph pointer-events-none" />
+
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection>
-              <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Introducer</p>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Introducer</span> Opportunities with Phoenix Finserv
+            <AnimatedSection delay={0.1}>
+              <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+                Introducer
+              </p>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
+                  Introducer
+                </span> Opportunities with Phoenix Finserv
               </h1>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                Become an introducer and enjoy a structured referral partnership that allows you to add <span className="font-handwritten text-xl text-primary highlighter-mark">value</span> for your clients and generate additional income.
+
+              <p className="text-white/90 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+                Become an introducer and enjoy a structured referral partnership that allows you to add{' '}
+                <span className="font-handwritten text-xl md:text-2xl text-[#ffd700] highlighter-mark">
+                  value
+                </span>{' '}
+                for your clients and generate additional income.
               </p>
             </AnimatedSection>
           </div>
-        </section> */}
-        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
-  
-  {/* Background Image - Full Cover & Responsive */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{
-      backgroundImage: `url('/images/website_images/colleagues-work.jpg')`
-    }}
-  />
+        </section>
 
-  {/* Dark Overlay for Better Text Readability */}
-  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
-
-  {/* Subtle Accent Gradient (kept as per your original) */}
-  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
-
-  {/* Small Decorative Circle (kept as per your original) */}
-  <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/10 animate-pound-morph pointer-events-none" />
-
-  <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-    <AnimatedSection>
-      <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
-        Introducer
-      </p>
-      
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline">
-          Introducer
-        </span> Opportunities with Phoenix Finserv
-      </h1>
-
-      <p className="text-white/90 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-        Become an introducer and enjoy a structured referral partnership that allows you to add{' '}
-        <span className="font-handwritten text-xl md:text-2xl text-[#ffd700] highlighter-mark">
-          value
-        </span>{' '}
-        for your clients and generate additional income.
-      </p>
-    </AnimatedSection>
-  </div>
-
-</section>
-
-        {/* About */}
+        {/* About Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
-            <AnimatedSection>
+            <AnimatedSection delay={0.1} animation="animate-fade-right">
               <div className="bg-card border border-border rounded-2xl p-10">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
                   Partnership Built Around <span className="font-handwritten text-3xl text-primary highlighter-mark">Your Business</span>
@@ -111,18 +87,26 @@ const NetworkIntroducer = () => {
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* Benefits Section */}
         <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {benefits.map((item, i) => (
-                <AnimatedSection key={item.title} delay={i * 0.1}>
+                <AnimatedSection 
+                  key={item.title} 
+                  delay={0.1 + i * 0.15}
+                  animation="animate-fade-scale"
+                >
                   <div className="group bg-card border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full">
                     <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                       <item.icon size={28} className="text-primary group-hover:text-accent-foreground transition-colors" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -130,22 +114,29 @@ const NetworkIntroducer = () => {
           </div>
         </section>
 
-        {/* How it Works */}
+        {/* How it Works Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="text-center mb-14">
+            <AnimatedSection className="text-center mb-14" delay={0.1}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Simple & Transparent</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 How the Partnership <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">Works</span>
               </h2>
             </AnimatedSection>
+
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {steps.map((step, i) => (
-                <AnimatedSection key={step.num} delay={i * 0.15}>
+                <AnimatedSection key={step.num} delay={0.2 + i * 0.2}>
                   <div className="group relative bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full">
-                    <span className="font-handwritten text-6xl text-primary/10 absolute top-4 right-4 group-hover:text-primary/30 transition-colors">{step.num}</span>
-                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                    <span className="font-handwritten text-6xl text-primary/10 absolute top-4 right-4 group-hover:text-primary/30 transition-colors">
+                      {step.num}
+                    </span>
+                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -153,11 +144,11 @@ const NetworkIntroducer = () => {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary via-primary to-phoenix-orange-dark text-primary-foreground">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-              <AnimatedSection>
+              <AnimatedSection delay={0.1}>
                 <h2 className="text-3xl font-bold mb-4">Start an Introducer <span className="font-handwritten text-4xl">Partnership</span></h2>
                 <p className="text-primary-foreground/80 mb-6">If you feel a referral partnership could support your business and your clients, we'd be happy to talk.</p>
                 <div className="space-y-4">
@@ -175,14 +166,39 @@ const NetworkIntroducer = () => {
                   </NavLink>
                 </div>
               </AnimatedSection>
-              <AnimatedSection delay={0.2}>
+
+              <AnimatedSection delay={0.3}>
                 <div className="bg-card text-foreground rounded-2xl p-8 shadow-2xl">
                   <h3 className="text-xl font-bold mb-4">Join Now</h3>
-                  <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Thank you! We will contact you soon."); }}>
-                    <input type="text" placeholder="Full Name" className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" required />
-                    <input type="email" placeholder="Email" className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" required />
-                    <input type="tel" placeholder="Contact Number" className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" required />
-                    <button type="submit" className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <form 
+                    className="space-y-4" 
+                    onSubmit={(e) => { 
+                      e.preventDefault(); 
+                      alert("Thank you! We will contact you soon."); 
+                    }}
+                  >
+                    <input 
+                      type="text" 
+                      placeholder="Full Name" 
+                      className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" 
+                      required 
+                    />
+                    <input 
+                      type="email" 
+                      placeholder="Email" 
+                      className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" 
+                      required 
+                    />
+                    <input 
+                      type="tel" 
+                      placeholder="Contact Number" 
+                      className="w-full px-4 py-3 border border-border rounded-xl bg-background focus:border-primary outline-none transition-colors" 
+                      required 
+                    />
+                    <button 
+                      type="submit" 
+                      className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
                       <Send size={18} /> Submit
                     </button>
                   </form>
@@ -192,7 +208,6 @@ const NetworkIntroducer = () => {
           </div>
         </section>
       </main>
-     
     </div>
   );
 };

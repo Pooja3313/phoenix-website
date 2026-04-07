@@ -9,9 +9,9 @@ import {
   ChevronRight,
   Heart,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { commercialLendingServices } from "@/data/commercialLendingData";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const iconMap: Record<string, React.ElementType> = {
   "bridging-loan": Landmark,
@@ -23,43 +23,10 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const CommercialLending = () => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.1 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="min-h-screen">
       <main>
         {/* Hero */}
-        {/* <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-phoenix-gray-light/40 to-background overflow-hidden">
-          <div className="absolute top-10 right-10 text-primary/[0.04] text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
-          <div className="container mx-auto px-4 relative z-10">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Services</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Commercial <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-accent highlighter-mark">Lending</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Drive your business forward with strategic lending designed to unlock opportunities, strengthen growth and build financial resilience.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Book a Free Discovery Call <ArrowRight size={18} />
-            </NavLink>
-          </div>
-        </section> */}
-
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
           <div
@@ -81,26 +48,28 @@ const CommercialLending = () => {
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
-              Our Services
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Commercial{" "}
-              <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
-                Lending
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-              Drive your business forward with strategic lending designed to
-              unlock opportunities, strengthen growth and build financial
-              resilience.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Book a Free Discovery Call <ArrowRight size={18} />
-            </NavLink>
+            <AnimatedSection delay={0.4}>
+              <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
+                Our Services
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+                Commercial{" "}
+                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
+                  Lending
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                Drive your business forward with strategic lending designed to
+                unlock opportunities, strengthen growth and build financial
+                resilience.
+              </p>
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Book a Free Discovery Call <ArrowRight size={18} />
+              </NavLink>
+            </AnimatedSection>
           </div>
         </section>
 
@@ -108,7 +77,7 @@ const CommercialLending = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <AnimatedSection delay={0.4} animation="animate-fade-right">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Why Choose Phoenix Finserv for{" "}
                   <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
@@ -141,31 +110,29 @@ const CommercialLending = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-              {/* Right Side - Image (Full Cover & Responsive) */}
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
-                  <img
-                    src="/images/Commercial-Lending/Commercial-Lending1.jpg"
-                    alt="Family reviewing important documents together"
-                    className="w-full h-full object-cover"
-                  />
+              </AnimatedSection>
+              <AnimatedSection delay={0.4} animation="animate-fade-scale">
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
+                    <img
+                      src="/images/Commercial-Lending/Commercial-Lending1.jpg"
+                      alt="Family reviewing important documents together"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <Heart size={32} className="text-accent" />
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                  <Heart size={32} className="text-accent" />
-                </div>
-              </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>
 
         {/* Offerings */}
-        <section
-          className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30"
-          ref={ref}
-        >
+        <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-14">
+            <AnimatedSection className="text-center mb-14" delay={0.1}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
                 What We Offer
               </p>
@@ -181,36 +148,38 @@ const CommercialLending = () => {
                 and organisations, whether SMEs, property developers, non-profit
                 organisations or large corporations.
               </p>
-            </div>
+            </AnimatedSection>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {commercialLendingServices.map((item, index) => {
                 const Icon = iconMap[item.slug] || Briefcase;
                 return (
-                  <NavLink
+                  <AnimatedSection
                     key={item.slug}
-                    to={`/commercial-lending/${item.slug}`}
-                    className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-primary/30 block ${
-                      visible ? "animate-float-up" : "opacity-0"
-                    }`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    delay={index * 0.2}
+                    animation="animate-fade-rotate"
                   >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                      <Icon
-                        size={26}
-                        className="text-primary group-hover:text-primary-foreground transition-colors"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
-                      {item.heroDescription}
-                    </p>
-                    <div className="flex items-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Learn More <ChevronRight size={16} />
-                    </div>
-                  </NavLink>
+                    <NavLink
+                      to={`/commercial-lending/${item.slug}`}
+                      className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-primary/30 block h-full"
+                    >
+                      <div className="absolute top-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <Icon
+                          size={26}
+                          className="text-primary group-hover:text-primary-foreground transition-colors"
+                        />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                        {item.heroDescription}
+                      </p>
+                      <div className="flex items-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Learn More <ChevronRight size={16} />
+                      </div>
+                    </NavLink>
+                  </AnimatedSection>
                 );
               })}
             </div>
@@ -220,20 +189,22 @@ const CommercialLending = () => {
         {/* CTA */}
         <section className="py-20 bg-gradient-to-r from-primary to-phoenix-orange-dark text-primary-foreground">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Looking for Commercial Lending Solutions?
-            </h2>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
-              Our brokers are experienced in financing and have access to a wide
-              range of options. Contact us today to discuss your requirements
-              and secure the ideal financing solution.
-            </p>
-            <NavLink
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-background text-primary font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              Speak to our Advisers <ArrowRight size={18} />
-            </NavLink>
+            <AnimatedSection delay={0.3}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Looking for Commercial Lending Solutions?
+              </h2>
+              <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
+                Our brokers are experienced in financing and have access to a
+                wide range of options. Contact us today to discuss your
+                requirements and secure the ideal financing solution.
+              </p>
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-background text-primary font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Speak to our Advisers <ArrowRight size={18} />
+              </NavLink>
+            </AnimatedSection>
           </div>
         </section>
       </main>

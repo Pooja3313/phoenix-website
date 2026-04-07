@@ -1,22 +1,12 @@
 import { Target, Eye, Rocket, BarChart3, Lightbulb, Users } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
+import AnimatedSection from "./AnimatedSection";
 
 const MissionVision = () => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+ 
 
   return (
-    <section className="py-24 bg-muted/30 relative overflow-hidden" ref={ref}>
+    <section className="py-24 bg-muted/30 relative overflow-hidden" >
       {/* Decorative background */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
@@ -33,8 +23,9 @@ const MissionVision = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Mission Card */}
           <div
-            className={`group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-primary/30 overflow-hidden ${visible ? 'animate-float-up' : 'opacity-0'}`}
+            className= "group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-primary/30 overflow-hidden "
           >
+            <AnimatedSection delay={0.4} animation="animate-fade-left">
             {/* Animated corner accent */}
             <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-br-[60px] group-hover:w-32 group-hover:h-32 transition-all duration-500" />
             
@@ -61,13 +52,14 @@ const MissionVision = () => {
 
             {/* Bottom decorative line */}
             <div className="mt-8 h-0.5 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent rounded-full" />
+         </AnimatedSection>
           </div>
 
           {/* Vision Card */}
           <div
-            className={`group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-accent/30 overflow-hidden ${visible ? 'animate-float-up' : 'opacity-0'}`}
-            style={{ animationDelay: '0.2s' }}
+            className= "group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-accent/30 overflow-hidden "
           >
+             <AnimatedSection delay={0.4} animation="animate-fade-right">
             {/* Animated corner accent */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent/10 to-transparent rounded-bl-[60px] group-hover:w-32 group-hover:h-32 transition-all duration-500" />
             
@@ -97,11 +89,13 @@ const MissionVision = () => {
 
             {/* Bottom decorative line */}
             <div className="mt-8 h-0.5 bg-gradient-to-r from-accent/30 via-accent/10 to-transparent rounded-full" />
+          </AnimatedSection>
           </div>
         </div>
 
         {/* CTA */}
-        <div className={`text-center mt-12 ${visible ? 'animate-float-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+        <div className= "text-center mt-12">
+          <AnimatedSection delay={0.4}>
           <NavLink
             to="/#contact"
             className="inline-flex items-center gap-2 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
@@ -109,6 +103,7 @@ const MissionVision = () => {
             Get a Quote
             <Rocket size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </NavLink>
+          </AnimatedSection>
         </div>
       </div>
     </section>
@@ -116,3 +111,4 @@ const MissionVision = () => {
 };
 
 export default MissionVision;
+

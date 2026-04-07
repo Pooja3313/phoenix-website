@@ -1,30 +1,16 @@
 import { CheckCircle, ChevronRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import type { ServiceItem } from "@/data/mortgageData";
+import AnimatedSection from "@/components/AnimatedSection";
 
 interface MortgageDetailWhatWeOfferSectionProps {
   service: ServiceItem;
 }
 
 const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOfferSectionProps) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setVisible(true);
-    }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30"
-      ref={ref}
-    >
+    <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+        <AnimatedSection className="text-center mb-14" delay={0.1}>
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
             What We Offer
           </p>
@@ -35,16 +21,13 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
             </span>{" "}
             Services
           </h2>
-        </div>
+        </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {service.features.map((feature, index) => (
+            <AnimatedSection key={feature.title} delay={index * 0.12}>
             <div
-              key={feature.title}
-              className={`group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-accent/30 block ${
-                visible ? "animate-float-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 0.12}s` }}
+              className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-accent/30 block h-full"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
@@ -63,6 +46,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
                 Learn More <ChevronRight size={16} />
               </div>
             </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

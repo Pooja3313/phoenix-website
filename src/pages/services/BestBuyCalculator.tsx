@@ -1,15 +1,7 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  ArrowRight,
-  BadgePercent,
-  Building2,
-  Calculator,
-  ChevronRight,
-  Search,
-  ShieldCheck,
-  Timer,
-} from "lucide-react";
+import { ArrowRight, Building2, ChevronRight, Search } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 type MortgagePurpose = "purchase" | "remortgage";
 type PaymentType = "repayment" | "interest-only";
@@ -62,7 +54,7 @@ export default function BestBuyCalculator() {
   const [mortgageClass, setMortgageClass] = useState<MortgageClass>("all");
   const [initialRatePeriodYears, setInitialRatePeriodYears] =
     useState<RatePeriod>("any");
-  // ?? New fields ????????????????????????????????????????????????
+  //  New fields
   const [totalCost, setTotalCost] = useState<TotalCostOption>("initial");
   const [selectedLender, setSelectedLender] = useState<string>("all");
 
@@ -229,26 +221,6 @@ export default function BestBuyCalculator() {
     <div className="min-h-screen bg-gray-50">
       <main>
         {/* Hero - simplified, orange/green theme */}
-        {/* <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary/10 via-phoenix-green-light/30 to-background">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col items-center text-center">
-              <p className="text-green-600 font-semibold text-sm uppercase tracking-widest mb-3">
-                Mortgage Tools
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                Best Buy{" "}
-                <span className="text-orange-600 font-handwritten pen-underline2">
-                  Calculator
-                </span>
-              </h1>
-              <p className="text-gray-600 text-lg max-w-2xl leading-relaxed">
-                Compare potential deals based on your inputs. Ready for live API integration.
-              </p>
-
-            </div>
-          </div>
-        </section> */}
-
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
           <div
@@ -269,416 +241,402 @@ export default function BestBuyCalculator() {
             £
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col items-center text-center">
-              <p className="text-white font-semibold text-md uppercase tracking-widest mb-3">
-                Mortgage Tools
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#ffd700] mb-4">
-                Best Buy{" "}
-                <span className="text-primary font-handwritten pen-underline2">
-                  Calculator
-                </span>
-              </h1>
-              <p className="text-white/90 text-xl max-w-2xl leading-relaxed">
-                Compare potential deals based on your inputs. Ready for live API
-                integration.
-              </p>
-            </div>
+            <AnimatedSection delay={0.3}>
+              <div className="flex flex-col items-center text-center">
+                <p className="text-white font-semibold text-md uppercase tracking-widest mb-3">
+                  Mortgage Tools
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#ffd700] mb-4">
+                  Best Buy{" "}
+                  <span className="text-primary font-handwritten pen-underline2">
+                    Calculator
+                  </span>
+                </h1>
+                <p className="text-white/90 text-xl max-w-2xl leading-relaxed">
+                  Compare potential deals based on your inputs. Ready for live
+                  API integration.
+                </p>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 
         {/* Content */}
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  Enter Your Details
-                </h2>
-                <p className="text-gray-600 mt-3 max-w-2xl">
-                  Adjust values ? click Search to see estimated deals (mock
-                  mode).
-                </p>
+            <AnimatedSection animation="animate-fade-scale" delay={0.3}>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Enter Your Details
+                  </h2>
+                  <p className="text-gray-600 mt-3 max-w-2xl">
+                    Adjust values ? click Search to see estimated deals (mock
+                    mode).
+                  </p>
+                </div>
               </div>
 
-              {/* <div className="bg-white border border-gray-200 rounded-2xl p-5 w-full md:w-[22rem] shadow-sm">
-                <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold">
-                  Quick Snapshot
-                </p>
-                <div className="mt-4 grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm text-gray-600">Loan Amount</p>
-                    <p className="text-xl font-bold text-gray-900">{formatCurrency(loanAmount)}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">LTV</p>
-                    <p className="text-xl font-bold text-gray-900">{ltv}%</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Class</span>
-                  <span className="font-semibold text-gray-900">
-                    {mortgageClass === "all" ? "All" : mortgageClass.replace("-", " ")}
-                  </span>
-                </div>
-              </div> */}
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
-              {/* Form */}
-              <div className="w-full lg:max-w-[620px]">
-                <form
-                  onSubmit={handleCalculate}
-                  className="bg-white border border-gray-200 rounded-3xl p-6 space-y-6 shadow-sm"
-                >
-                  <div className="flex items-start justify-between gap-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        Mortgage Inputs
-                      </h3>
-                      <p className="text-gray-600 mt-2">
-                        Adjust values to see deal preview update.
-                      </p>
-                    </div>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center">
-                      <Search className="text-orange-600" size={24} />
-                    </div>
-                  </div>
-
-                  {/* Existing selects */}
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Mortgage Purpose
-                      </label>
-                      <select
-                        value={mortgagePurpose}
-                        onChange={(e) =>
-                          setMortgagePurpose(e.target.value as MortgagePurpose)
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      >
-                        <option value="purchase">Purchase</option>
-                        <option value="remortgage">Remortgage</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Mortgage Class
-                      </label>
-                      <select
-                        value={mortgageClass}
-                        onChange={(e) =>
-                          setMortgageClass(e.target.value as MortgageClass)
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      >
-                        <option value="all">All</option>
-                        <option value="residential">Residential</option>
-                        <option value="buy-to-let">Buy-to-let</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Payment Type
-                      </label>
-                      <select
-                        value={paymentType}
-                        onChange={(e) =>
-                          setPaymentType(e.target.value as PaymentType)
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      >
-                        <option value="repayment">Repayment</option>
-                        <option value="interest-only">Interest Only</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Applicant Type
-                      </label>
-                      <select
-                        value={applicantType}
-                        onChange={(e) =>
-                          setApplicantType(e.target.value as ApplicantType)
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      >
-                        <option value="first-time-buyer">
-                          First Time Buyer
-                        </option>
-                        <option value="home-mover">Home Mover</option>
-                        <option value="remortgage">Remortgage</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Property Value */}
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      Property Value
-                    </label>
-                    <div className="grid sm:grid-cols-[1fr,180px] gap-4 items-center">
-                      <input
-                        type="number"
-                        value={propertyValue}
-                        onChange={(e) =>
-                          setPropertyValue(Number(e.target.value))
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      />
-                      <input
-                        type="range"
-                        min={50000}
-                        max={2000000}
-                        step={5000}
-                        value={propertyValue}
-                        onChange={(e) =>
-                          setPropertyValue(Number(e.target.value))
-                        }
-                        className="w-full accent-orange-500"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Loan Amount
-                      </label>
-                      <input
-                        type="number"
-                        value={loanAmount}
-                        onChange={(e) =>
-                          setLoanAmount(
-                            Math.min(Number(e.target.value), propertyValue),
-                          )
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      />
-                      <p className="text-xs text-gray-500 mt-2">
-                        Est. Deposit: {formatCurrency(deposit)}
-                      </p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Term (years)
-                      </label>
-                      <input
-                        type="number"
-                        min={5}
-                        max={40}
-                        value={termYears}
-                        onChange={(e) => setTermYears(Number(e.target.value))}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Group 4: Periods + Total Cost + Lender + APR */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6  pt-2">
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Initial Rate Period
-                      </label>
-                      <select
-                        value={initialRatePeriodYears}
-                        onChange={(e) =>
-                          setInitialRatePeriodYears(
-                            e.target.value as RatePeriod,
-                          )
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
-                      >
-                        <option value="any">Any Period</option>
-                        <option value="2">2 Years</option>
-                        <option value="3">3 Years</option>
-                        <option value="5">5 Years</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Total Cost
-                      </label>
-                      <select
-                        value={totalCost}
-                        onChange={(e) =>
-                          setTotalCost(e.target.value as TotalCostOption)
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
-                      >
-                        <option value="initial">Initial Period</option>
-                        <option value="term">Term Period</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
-                        Lender
-                      </label>
-                      <select
-                        value={selectedLender}
-                        onChange={(e) => setSelectedLender(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
-                      >
-                        <option value="all">All</option>
-                        <option value="Accord">Accord</option>
-                        <option value="AIB">AIB</option>
-                        <option value="Aldermore Mortgages">
-                          Aldermore Mortgages
-                        </option>
-                        <option value="Atom Bank">Atom Bank</option>
-                        <option value="Barclays Bank">Barclays Bank</option>
-                        <option value="Halifax">Halifax</option>
-                        {/* ? Add more lenders here when you have the full list */}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
-                      {loading ? "Searching..." : "Search"}
-                      <ChevronRight size={18} />
-                    </button>
-                    <NavLink
-                      to="/contact"
-                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto border border-gray-300 hover:border-orange-300 bg-white hover:bg-orange-50 text-gray-800 font-semibold px-8 py-3 rounded-xl transition-colors"
-                    >
-                      Speak to an Adviser <ArrowRight size={18} />
-                    </NavLink>
-                  </div>
-
-                  {error && (
-                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
-                      {error}
-                    </div>
-                  )}
-                </form>
-              </div>
-
-              {/* Results - same as before, minor color tweaks */}
-              <div className="w-full lg:max-w-[520px]">
-                <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        Deal Preview
-                      </h3>
-                      <p className="text-gray-600 mt-1 text-sm">
-                        Results update after you click Search.
-                      </p>
-                    </div>
-                    <div className="w-10 h-10 rounded-2xl bg-green-100 flex items-center justify-center">
-                      <Building2 className="text-green-600" size={20} />
-                    </div>
-                  </div>
-
-                  <div className="mt-6 space-y-4">
-                    {deals.length === 0 ? (
-                      <div className="border border-gray-200 rounded-2xl p-5 text-center text-gray-500">
-                        Choose inputs and click Search to see deal cards.
+              <div className="grid lg:grid-cols-2 gap-6 items-start">
+                {/* Form */}
+                <div className="w-full lg:max-w-[620px]">
+                  <form
+                    onSubmit={handleCalculate}
+                    className="bg-white border border-gray-200 rounded-3xl p-6 space-y-6 shadow-sm"
+                  >
+                    <div className="flex items-start justify-between gap-5">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">
+                          Mortgage Inputs
+                        </h3>
+                        <p className="text-gray-600 mt-2">
+                          Adjust values to see deal preview update.
+                        </p>
                       </div>
-                    ) : (
-                      deals.map((deal) => (
-                        <div
-                          key={deal.id}
-                          className="rounded-2xl border border-gray-200 bg-white p-5 hover:border-orange-300 transition-colors shadow-sm"
+                      <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center">
+                        <Search className="text-orange-600" size={24} />
+                      </div>
+                    </div>
+
+                    {/* Existing selects */}
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Mortgage Purpose
+                        </label>
+                        <select
+                          value={mortgagePurpose}
+                          onChange={(e) =>
+                            setMortgagePurpose(
+                              e.target.value as MortgagePurpose,
+                            )
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
                         >
-                          <div className="flex items-start justify-between gap-4">
-                            <div>
-                              <p className="text-sm font-semibold text-gray-900">
-                                {deal.lender}
-                              </p>
-                              <p className="text-xs text-gray-500 mt-1">
-                                {deal.productName}
-                              </p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-sm text-gray-500">APR</p>
-                              <p className="text-2xl font-bold text-orange-600">
-                                {deal.rateApr.toFixed(2)}%
-                              </p>
-                            </div>
-                          </div>
+                          <option value="purchase">Purchase</option>
+                          <option value="remortgage">Remortgage</option>
+                        </select>
+                      </div>
 
-                          <div className="mt-4 flex items-center justify-between">
-                            <p className="text-sm text-gray-500">
-                              Monthly (est.)
-                            </p>
-                            <p className="text-lg font-bold text-gray-900">
-                              {formatCurrency(deal.monthlyPayment)}
-                            </p>
-                          </div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Mortgage Class
+                        </label>
+                        <select
+                          value={mortgageClass}
+                          onChange={(e) =>
+                            setMortgageClass(e.target.value as MortgageClass)
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        >
+                          <option value="all">All</option>
+                          <option value="residential">Residential</option>
+                          <option value="buy-to-let">Buy-to-let</option>
+                        </select>
+                      </div>
+                    </div>
 
-                          <div className="mt-2 flex items-center justify-between">
-                            <p className="text-sm text-gray-500">SVR (demo)</p>
-                            <p className="text-sm font-semibold text-gray-900">
-                              {deal.standardVariableRate.toFixed(2)}%
-                            </p>
-                          </div>
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Payment Type
+                        </label>
+                        <select
+                          value={paymentType}
+                          onChange={(e) =>
+                            setPaymentType(e.target.value as PaymentType)
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        >
+                          <option value="repayment">Repayment</option>
+                          <option value="interest-only">Interest Only</option>
+                        </select>
+                      </div>
 
-                          <div className="mt-1 flex items-center justify-between">
-                            <p className="text-sm text-gray-500">
-                              Total fees (est.)
-                            </p>
-                            <p className="text-sm font-semibold text-gray-900">
-                              {formatCurrency(deal.totalFees)}
-                            </p>
-                          </div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Applicant Type
+                        </label>
+                        <select
+                          value={applicantType}
+                          onChange={(e) =>
+                            setApplicantType(e.target.value as ApplicantType)
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        >
+                          <option value="first-time-buyer">
+                            First Time Buyer
+                          </option>
+                          <option value="home-mover">Home Mover</option>
+                          <option value="remortgage">Remortgage</option>
+                        </select>
+                      </div>
+                    </div>
 
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            <span className="text-xs px-3 py-1 rounded-full bg-green-100 border border-green-200 text-green-700">
-                              {deal.termYears}y
-                            </span>
-                            <span className="text-xs px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-700">
-                              {deal.initialRatePeriodYears}y fixed
-                            </span>
-                          </div>
+                    {/* Property Value */}
+                    <div>
+                      <label className="text-sm font-medium text-gray-700 mb-2 block">
+                        Property Value
+                      </label>
+                      <div className="grid sm:grid-cols-[1fr,180px] gap-4 items-center">
+                        <input
+                          type="number"
+                          value={propertyValue}
+                          onChange={(e) =>
+                            setPropertyValue(Number(e.target.value))
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        />
+                        <input
+                          type="range"
+                          min={50000}
+                          max={2000000}
+                          step={5000}
+                          value={propertyValue}
+                          onChange={(e) =>
+                            setPropertyValue(Number(e.target.value))
+                          }
+                          className="w-full accent-orange-500"
+                        />
+                      </div>
+                    </div>
 
-                          <NavLink
-                            to="/contact"
-                            className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 py-2 shadow-sm transition-colors"
-                          >
-                            Enquire <ArrowRight size={16} />
-                          </NavLink>
-                        </div>
-                      ))
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Loan Amount
+                        </label>
+                        <input
+                          type="number"
+                          value={loanAmount}
+                          onChange={(e) =>
+                            setLoanAmount(
+                              Math.min(Number(e.target.value), propertyValue),
+                            )
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        />
+                        <p className="text-xs text-gray-500 mt-2">
+                          Est. Deposit: {formatCurrency(deposit)}
+                        </p>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Term (years)
+                        </label>
+                        <input
+                          type="number"
+                          min={5}
+                          max={40}
+                          value={termYears}
+                          onChange={(e) => setTermYears(Number(e.target.value))}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Group 4: Periods + Total Cost + Lender + APR */}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6  pt-2">
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Initial Rate Period
+                        </label>
+                        <select
+                          value={initialRatePeriodYears}
+                          onChange={(e) =>
+                            setInitialRatePeriodYears(
+                              e.target.value as RatePeriod,
+                            )
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
+                        >
+                          <option value="any">Any Period</option>
+                          <option value="2">2 Years</option>
+                          <option value="3">3 Years</option>
+                          <option value="5">5 Years</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Total Cost
+                        </label>
+                        <select
+                          value={totalCost}
+                          onChange={(e) =>
+                            setTotalCost(e.target.value as TotalCostOption)
+                          }
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
+                        >
+                          <option value="initial">Initial Period</option>
+                          <option value="term">Term Period</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">
+                          Lender
+                        </label>
+                        <select
+                          value={selectedLender}
+                          onChange={(e) => setSelectedLender(e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all"
+                        >
+                          <option value="all">All</option>
+                          <option value="Accord">Accord</option>
+                          <option value="AIB">AIB</option>
+                          <option value="Aldermore Mortgages">
+                            Aldermore Mortgages
+                          </option>
+                          <option value="Atom Bank">Atom Bank</option>
+                          <option value="Barclays Bank">Barclays Bank</option>
+                          <option value="Halifax">Halifax</option>
+                          {/* ? Add more lenders here when you have the full list */}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {loading ? "Searching..." : "Search"}
+                        <ChevronRight size={18} />
+                      </button>
+                      <NavLink
+                        to="/contact"
+                        className="inline-flex items-center justify-center gap-2 w-full sm:w-auto border border-gray-300 hover:border-orange-300 bg-white hover:bg-orange-50 text-gray-800 font-semibold px-8 py-3 rounded-xl transition-colors"
+                      >
+                        Speak to an Adviser <ArrowRight size={18} />
+                      </NavLink>
+                    </div>
+
+                    {error && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
+                        {error}
+                      </div>
                     )}
-                  </div>
-
-                  <div className="mt-6 rounded-2xl bg-green-50 border border-green-200 p-5">
-                    <p className="text-sm font-semibold text-gray-800">
-                      Important Note
-                    </p>
-                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-                      This is a UI estimate for now. When your API is connected,
-                      these cards will show live lender data.
-                    </p>
-                  </div>
+                  </form>
                 </div>
 
-                <div className="mt-6 rounded-3xl border border-gray-200 bg-white/60 p-6 shadow-sm">
-                  <p className="text-sm font-semibold text-gray-900">
-                    Why Best Buy?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                    We help you compare options fast, so you can focus on
-                    affordability and long-term confidence.
-                  </p>
+                {/* Results - same as before, minor color tweaks */}
+                <div className="w-full lg:max-w-[520px]">
+                  <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">
+                          Deal Preview
+                        </h3>
+                        <p className="text-gray-600 mt-1 text-sm">
+                          Results update after you click Search.
+                        </p>
+                      </div>
+                      <div className="w-10 h-10 rounded-2xl bg-green-100 flex items-center justify-center">
+                        <Building2 className="text-green-600" size={20} />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 space-y-4">
+                      {deals.length === 0 ? (
+                        <div className="border border-gray-200 rounded-2xl p-5 text-center text-gray-500">
+                          Choose inputs and click Search to see deal cards.
+                        </div>
+                      ) : (
+                        deals.map((deal) => (
+                          <div
+                            key={deal.id}
+                            className="rounded-2xl border border-gray-200 bg-white p-5 hover:border-orange-300 transition-colors shadow-sm"
+                          >
+                            <div className="flex items-start justify-between gap-4">
+                              <div>
+                                <p className="text-sm font-semibold text-gray-900">
+                                  {deal.lender}
+                                </p>
+                                <p className="text-xs text-gray-500 mt-1">
+                                  {deal.productName}
+                                </p>
+                              </div>
+                              <div className="text-right">
+                                <p className="text-sm text-gray-500">APR</p>
+                                <p className="text-2xl font-bold text-orange-600">
+                                  {deal.rateApr.toFixed(2)}%
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-4 flex items-center justify-between">
+                              <p className="text-sm text-gray-500">
+                                Monthly (est.)
+                              </p>
+                              <p className="text-lg font-bold text-gray-900">
+                                {formatCurrency(deal.monthlyPayment)}
+                              </p>
+                            </div>
+
+                            <div className="mt-2 flex items-center justify-between">
+                              <p className="text-sm text-gray-500">
+                                SVR (demo)
+                              </p>
+                              <p className="text-sm font-semibold text-gray-900">
+                                {deal.standardVariableRate.toFixed(2)}%
+                              </p>
+                            </div>
+
+                            <div className="mt-1 flex items-center justify-between">
+                              <p className="text-sm text-gray-500">
+                                Total fees (est.)
+                              </p>
+                              <p className="text-sm font-semibold text-gray-900">
+                                {formatCurrency(deal.totalFees)}
+                              </p>
+                            </div>
+
+                            <div className="mt-3 flex flex-wrap gap-2">
+                              <span className="text-xs px-3 py-1 rounded-full bg-green-100 border border-green-200 text-green-700">
+                                {deal.termYears}y
+                              </span>
+                              <span className="text-xs px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-700">
+                                {deal.initialRatePeriodYears}y fixed
+                              </span>
+                            </div>
+
+                            <NavLink
+                              to="/contact"
+                              className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 py-2 shadow-sm transition-colors"
+                            >
+                              Enquire <ArrowRight size={16} />
+                            </NavLink>
+                          </div>
+                        ))
+                      )}
+                    </div>
+
+                    <div className="mt-6 rounded-2xl bg-green-50 border border-green-200 p-5">
+                      <p className="text-sm font-semibold text-gray-800">
+                        Important Note
+                      </p>
+                      <p className="text-sm text-gray-600 mt-1 leading-relaxed">
+                        This is a UI estimate for now. When your API is
+                        connected, these cards will show live lender data.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 rounded-3xl border border-gray-200 bg-white/60 p-6 shadow-sm">
+                    <p className="text-sm font-semibold text-gray-900">
+                      Why Best Buy?
+                    </p>
+                    <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                      We help you compare options fast, so you can focus on
+                      affordability and long-term confidence.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </section>
       </main>

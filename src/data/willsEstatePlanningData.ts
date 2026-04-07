@@ -55,7 +55,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
       {
         title: "Tax Planning Opportunities",
         description: "A well-structured will can support inheritance tax planning and help preserve more of your estate.",
-        icon: "Receipt"
+        icon: "PoundSterling"
       },
     ],
     benefitsImage: "/images/Will-Writing/Will_Writing1.jpg",   // Copied from whyChooseImage

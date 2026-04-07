@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-/**
- * Scrolls window to top on route change (e.g. footer / header NavLink clicks).
- */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 

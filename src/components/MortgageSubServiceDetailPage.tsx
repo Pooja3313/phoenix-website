@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import type { ServiceItem } from "@/data/mortgageData";
 import FaqSection from "@/components/FaqSection";
-// import ServiceDetailFeaturesSection from "@/components/services/ServiceDetailFeaturesSection";
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
 import ServiceDetailBenefitsSection from "@/components/services/ServiceDetailBenefitsSection";
-
-// import MortgageWhatWeOfferSection from "@/components/services/MortgageWhatWeOfferSection";
 import MortgageDetailCTASection from "./services/MortgageDetailCTASection";
 import MortgageDetailWhatWeOfferSection from "./services/MortgageDetaillWhatWeOfferSection";
 

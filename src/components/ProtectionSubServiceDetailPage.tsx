@@ -88,11 +88,4 @@ const ProtectionSubServiceDetailPage = ({
 
 export default ProtectionSubServiceDetailPage;
 
-/*
-OLD INLINE SECTIONS (moved into reusable components)
 
-- Hero                -> src/components/services/ServiceDetailHeroSection.tsx
-- Why Choose          -> src/components/services/ServiceDetailWhyChooseSection.tsx
-- Features / Offer    -> src/components/services/ServiceDetailFeaturesSection.tsx
-- CTA                 -> src/components/services/ServiceDetailCTASection.tsx
-*/
