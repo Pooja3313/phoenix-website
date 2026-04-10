@@ -892,7 +892,7 @@ const Header = () => {
                         key={link.href}
                         to={link.href}
                         className={({ isActive }) =>
-                          `py-2 text-sm xl:min-w-16 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-4xl font-medium rounded-md transition-colors whitespace-nowrap ${
+                          `py-2 text-sm xl:min-w-16 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-medium rounded-md transition-colors whitespace-nowrap ${
                             isActive
                               ? "text-phoenix-orange"
                               : "text-phoenix-gray hover:text-phoenix-orange"
@@ -911,7 +911,7 @@ const Header = () => {
                       onMouseLeave={() => setNetworkOpen(false)}
                     >
                       <div
-                        className={`py-2 text-sm 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl  4xl:text-4xl font-medium rounded-md transition-colors flex items-center gap-1 whitespace-nowrap ${
+                        className={`py-2 text-sm 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl  4xl:text-3xl font-medium rounded-md transition-colors flex items-center gap-1 whitespace-nowrap ${
                           networkOpen ||
                           path.startsWith("/join-our-network") ||
                           path.startsWith("/network/")
@@ -921,7 +921,7 @@ const Header = () => {
                       >
                         <NavLink
                           to="/join-our-network"
-                          className="inline-flex items-center 2xl:text-xl 3xl:text-2xl 4xl:text-4xl "
+                          className="inline-flex items-center 2xl:text-xl 3xl:text-2xl 4xl:text-3xl "
                           onClick={() => setNetworkOpen(true)}
                         >
                           Join Our Network
@@ -944,7 +944,7 @@ const Header = () => {
                       </div>
 
                       {networkOpen && (
-                        <div className="absolute top-full left-0 mt-1 bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2 min-w-[200px] 2xl:min-w-[260px] 3xl:min-w-[260px] 4xl:min-w-[320px] z-[100] animate-dropdown-from-top overflow-hidden">
+                        <div className="absolute top-full left-0 mt-1 bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2 min-w-[200px] 2xl:min-w-[260px] 3xl:min-w-[290px] 4xl:min-w-[370px] z-[100] animate-dropdown-from-top overflow-hidden">
                           {networkDropdown.map((item) => {
                             const isItemActive =
                               path === item.href ||
@@ -953,7 +953,7 @@ const Header = () => {
                               <NavLink
                                 key={item.href}
                                 to={item.href}
-                                className={`block px-4 py-2.5 text-sm lg:text-md xl:min-w-16 2xl:min-w-24 3xl:min-w-30 4xl:min-w-32  xl:text-md 2xl:text-xl 3xl:text-xl 4xl:text-2xl rounded-md mx-1 transition-all duration-200 ${
+                                className={`block px-4 py-2.5 text-sm lg:text-md xl:min-w-16 2xl:min-w-24 3xl:min-w-30 4xl:min-w-32  xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-3xl rounded-md mx-1 transition-all duration-200 ${
                                   isItemActive
                                     ? "bg-phoenix-green-light/50 text-phoenix-orange font-semibold"
                                     : "text-foreground hover:bg-phoenix-green-light/50 hover:text-phoenix-orange"
@@ -975,7 +975,7 @@ const Header = () => {
                         key={link.href}
                         to={link.href}
                         className={({ isActive }) =>
-                          `py-2 text-sm xl:min-w-16 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-4xl font-medium rounded-md transition-colors whitespace-nowrap ${
+                          `py-2 text-sm xl:min-w-16 2xl:min-w-24 3xl:min-w-32 4xl:min-w-40 xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-medium rounded-md transition-colors whitespace-nowrap ${
                             isActive
                               ? "text-phoenix-orange"
                               : "text-phoenix-gray hover:text-phoenix-orange"
@@ -991,7 +991,7 @@ const Header = () => {
                   <div className="flex items-center gap-2 2xl:gap-4 3xl:gap-5 4xl:gap-6 pl-2 xl:pl-4  shrink-0">
                     <NavLink
                       to="/contact"
-                      className="flex items-center justify-center bg-phoenix-orange hover:bg-phoenix-orange-dark text-white text-sm  2xl:text-xl  3xl:text-2xl 4xl:text-4xl font-semibold py-2 px-4 lg:py-1 lg:px-2 xl:px-5  3xl:px-6 4xl:px-8 xl:py-2   rounded-md transition-all shrink-0"
+                      className="flex items-center justify-center bg-phoenix-orange hover:bg-phoenix-orange-dark text-white text-sm xl:text-md 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold py-2 px-4 lg:py-1 lg:px-2 xl:px-5  3xl:px-6 4xl:px-8  4xl:py-3 xl:py-2   rounded-md transition-all shrink-0"
                     >
                       Contact Us
                     </NavLink>
@@ -1065,13 +1065,13 @@ const Header = () => {
         </div>
 
         {/* Five services orange bar: md+ only (xs and sm use hamburger) */}
-        <div
+        {/* <div
           ref={orangeBarRef}
           className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-1 hidden md:block"
         >
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex justify-center">
             <div className="relative flex items-center justify-center w-full">
-              <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5  2xl:gap-3 w-full  sm:w-fit max-w-full rounded-xl sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 2xl:py-2.5 lg:px-5 2xl:px-6 shadow-md ring-1 ring-black/5 mx-auto">
+              <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5  2xl:gap-3  3xl:gap-4  4xl:gap-5 w-full  sm:w-fit max-w-full rounded-xl sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 2xl:py-2.5 lg:px-5 2xl:px-6  shadow-md ring-1 ring-black/5 mx-auto">
                 {serviceGroupsNav.map((group) => {
                   const hasDropdown = group.columns.some(
                     (col) => col.items.length > 0,
@@ -1103,7 +1103,7 @@ const Header = () => {
                       }
                     >
                       <div
-                        className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] px-1.5 sm:px-2.5 lg:px-3 py-1 text-sm sm:text-sm 2xl:text-md 3xl:text-lg 4xl:text-xl font-semibold rounded-md sm:rounded-lg transition-all flex items-center justify-center gap-0.5 sm:gap-1 ${
+                        className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] 2xl:min-w-[6.5rem] 3xl:min-w-[7.5rem] 4xl:min-w-[8.5rem]  px-1.5 sm:px-2.5 lg:px-3 py-1 text-sm sm:text-sm 2xl:text-md 3xl:text-xl 4xl:text-2xl font-semibold rounded-md sm:rounded-lg transition-all flex items-center justify-center gap-0.5 sm:gap-1 ${
                           isGroupActive || isOpen
                             ? "bg-white text-phoenix-orange shadow-sm"
                             : "text-white hover:bg-white/15"
@@ -1162,7 +1162,7 @@ const Header = () => {
                                   <div key={col.title}>
                                     {group.columns.length > 1 && (
                                       <div
-                                        className={`px-3 py-1.5 text-xs md:text-xs lg:text-sm    uppercase tracking-wider border-b border-phoenix-gray-light/50 ${titleColorClass}`}
+                                        className={`px-3 py-1.5 text-xs md:text-xs lg:text-sm  uppercase tracking-wider border-b border-phoenix-gray-light/50 ${titleColorClass}`}
                                       >
                                         {col.title}
                                       </div>
@@ -1202,7 +1202,163 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+{/* Five services orange bar: md+ only */}
+<div
+  ref={orangeBarRef}
+  className="relative overflow-visible bg-phoenix-green-light/25 py-1.5 lg:py-1 hidden md:block"
+>
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex justify-center">
+    <div className="relative flex items-center justify-center w-full">
+      <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5 2xl:gap-3 3xl:gap-4 4xl:gap-5 w-full sm:w-fit max-w-full rounded-xl 
+     
+      sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 2xl:py-2.5 lg:px-5 2xl:px-6 shadow-md ring-1 ring-black/5 mx-auto">
+        
+        {serviceGroupsNav.map((group) => {
+          const hasDropdown = group.columns.some((col) => col.items.length > 0);
+          const isGroupActive =
+            path === group.href ||
+            path.startsWith(group.href + "/") ||
+            group.columns.some((col) =>
+              col.items.some(
+                (item) =>
+                  path === item.href || path.startsWith(item.href + "/"),
+              ),
+            );
+          const isOpen = openServiceBar === group.name;
+
+          return (
+            <div
+              key={group.name}
+              className="relative overflow-visible"
+              onMouseEnter={() =>
+                serviceHoverEnabled && hasDropdown && setOpenServiceBar(group.name)
+              }
+              onMouseLeave={() =>
+                serviceHoverEnabled && hasDropdown && setOpenServiceBar(null)
+              }
+            >
+              {/* Main Service Button - White text as original */}
+              <div
+                className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] 2xl:min-w-[6.5rem] 3xl:min-w-[7.5rem] 4xl:min-w-[8.5rem]
+                  px-1.5 sm:px-2.5 lg:px-3 py-1
+                  text-sm sm:text-sm 2xl:text-base 3xl:text-xl 4xl:text-2xl
+                  font-semibold rounded-md sm:rounded-lg transition-all
+                  flex items-center justify-center gap-0.5 sm:gap-1
+                  ${isGroupActive || isOpen
+                    ? "bg-white text-phoenix-orange shadow-sm"
+                    : "text-white hover:bg-white/15"
+                  }`}
+              >
+                <NavLink
+                  to={group.href}
+                  className="inline-flex items-center"
+                  onClick={() => setOpenServiceBar(group.name)}
+                >
+                  {group.name}
+                </NavLink>
+
+                {hasDropdown && (
+                  <button
+                    type="button"
+                    className="shrink-0 flex items-center justify-center"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setOpenServiceBar(
+                        openServiceBar === group.name ? null : group.name,
+                      );
+                    }}
+                    aria-label={`${group.name} services`}
+                  >
+                    <ChevronDown
+                      size={13}
+                      className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                )}
+              </div>
+
+              {/* Dropdown Menu - Compact & Better Width */}
+              {hasDropdown && isOpen && (
+                <div className="absolute left-0 top-full z-[100] pt-1">
+                 <div
+      className={`bg-background border border-phoenix-gray-light/50 rounded-xl shadow-xl py-2
+                  flex flex-col animate-dropdown-from-top origin-top
+                  min-w-[210px] 
+                  sm:min-w-[230px] 
+                  2xl:min-w-[260px] 
+                  3xl:min-w-[290px] 
+                  4xl:min-w-[310px]
+                  ${group.name === "Commercial Lending" 
+                    ? "min-w-[250px] sm:min-w-[270px] 2xl:min-w-[300px] 3xl:min-w-[340px] 4xl:min-w-[370px]" 
+                    : "max-w-[min(100vw-2rem,380px)]"
+                  }`}
+    >
+                    <div className="py-1 overflow-y-auto scrollbar-hide scroll-smooth overscroll-contain flex-1 min-h-0">
+                      {group.columns.map((col) => {
+                        const titleLower = col.title.toLowerCase();
+                        const isPersonal = titleLower.includes("personal");
+                        const isBusiness = titleLower.includes("business");
+                        const isHome = titleLower.includes("home");
+
+                        const titleColorClass =
+                          isPersonal || isBusiness || isHome
+                            ? "text-phoenix-green font-semibold"
+                            : "text-phoenix-orange font-semibold";
+
+                        return (
+                          <div key={col.title}>
+                            {group.columns.length > 1 && (
+                              <div
+                                className={`px-4 py-2 text-xs sm:text-xs md:text-xs 
+                                  lg:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl
+                                  uppercase tracking-wider border-b border-phoenix-gray-light/50 
+                                  ${titleColorClass}`}
+                              >
+                                {col.title}
+                              </div>
+                            )}
+
+                            {col.items.map((item) => {
+                              const isItemActive =
+                                path === item.href || path.startsWith(item.href + "/");
+
+                              return (
+                                <NavLink
+                                  key={item.href}
+                                  to={item.href}
+                                  className={`block px-4 py-2
+                                    text-sm sm:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl
+                                    rounded-lg mx-1 transition-all duration-200 ${
+                                      isItemActive
+                                        ? "bg-phoenix-green-light/50 text-phoenix-orange font-semibold"
+                                        : "text-foreground hover:bg-phoenix-green-light/40 hover:text-phoenix-orange"
+                                    }`}
+                                  onClick={() => setOpenServiceBar(null)}
+                                >
+                                  {item.name}
+                                </NavLink>
+                              );
+                            })}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Bottom gradient */}
+                    <div className="h-1.5 w-full rounded-b-xl bg-gradient-to-r from-phoenix-green via-phoenix-orange to-phoenix-green shrink-0" />
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Mobile Menu - y-axis scroll, scrollbar hidden, smooth */}
         {mobileMenuOpen && (
@@ -1439,3 +1595,5 @@ const Header = () => {
 };
 
 export default Header;
+
+
