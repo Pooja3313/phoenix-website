@@ -1211,9 +1211,9 @@ const Header = () => {
 >
   <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex justify-center">
     <div className="relative flex items-center justify-center w-full">
-      <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5 2xl:gap-3 3xl:gap-4 4xl:gap-5 w-full sm:w-fit max-w-full rounded-xl 
+      <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 lg:gap-2.5 2xl:gap-3 3xl:gap-5 4xl:gap-6 w-full sm:w-fit max-w-full rounded-xl 
      
-      sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 2xl:py-2.5 lg:px-5 2xl:px-6 shadow-md ring-1 ring-black/5 mx-auto">
+      sm:rounded-2xl bg-phoenix-orange px-2 py-1 sm:px-4 sm:py-1.5 2xl:py-2.5 lg:px-5 2xl:px-6 shadow-md ring-1 ring-black/5 mx-auto 4xl:min-w-[1300px] 3xl:min-w-[1100px]">
         
         {serviceGroupsNav.map((group) => {
           const hasDropdown = group.columns.some((col) => col.items.length > 0);
@@ -1241,7 +1241,7 @@ const Header = () => {
             >
               {/* Main Service Button - White text as original */}
               <div
-                className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] 2xl:min-w-[6.5rem] 3xl:min-w-[7.5rem] 4xl:min-w-[8.5rem]
+                className={`min-w-0 sm:min-w-[5rem] lg:min-w-[5.5rem] 2xl:min-w-[6.5rem] 3xl:min-w-[10.5rem] 4xl:min-w-[11.5rem]
                   px-1.5 sm:px-2.5 lg:px-3 py-1
                   text-sm sm:text-sm 2xl:text-base 3xl:text-xl 4xl:text-2xl
                   font-semibold rounded-md sm:rounded-lg transition-all

@@ -1,4 +1,5 @@
 import { Heart, Shield, Users, Eye, MessageSquare, Scale } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const principles = [
   { icon: Heart, title: "Fair Culture", description: "We embed fair treatment of customers at the heart of our corporate culture and business strategy." },
@@ -17,22 +18,32 @@ const FairTreatment = () => {
         <section className="relative py-20 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Fair Treatment of <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Customers</span>
-            </h1>
+            <AnimatedSection>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Fair Treatment of{" "}
+                <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">
+                  Customers
+                </span>
+              </h1>
+            </AnimatedSection>
           </div>
         </section>
 
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
-            <div className="animate-float-up mb-10">
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                At Phoenix Finserv, treating customers fairly (<span className="font-handwritten text-xl text-primary highlighter-mark">TCF</span>) is at the core of everything we do. We are committed to ensuring that our customers receive a fair deal at all times.
+            <AnimatedSection delay={0.3}>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-10">
+                At Phoenix Finserv, treating customers fairly (
+                <span className="font-handwritten text-xl text-primary highlighter-mark">
+                  TCF
+                </span>
+                ) is at the core of everything we do. We are committed to ensuring that our customers receive a fair deal at all times.
               </p>
-            </div>
+            </AnimatedSection>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {principles.map((item, i) => (
+                <AnimatedSection key={item.title} delay={i * 0.1} animation="animate-fade-scale">
                 <div
                   key={item.title}
                   className="group bg-card border border-border rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 transition-all duration-500 animate-float-up"
@@ -44,6 +55,7 @@ const FairTreatment = () => {
                   <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>

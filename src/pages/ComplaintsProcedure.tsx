@@ -1,6 +1,7 @@
 
 import { AlertCircle, Phone, Mail, FileText, Clock } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const ComplaintsProcedure = () => {
   return (
@@ -10,19 +11,24 @@ const ComplaintsProcedure = () => {
         <section className="relative py-20 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Complaints <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Procedure</span>
-            </h1>
+            <AnimatedSection>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Complaints{" "}
+                <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">
+                  Procedure
+                </span>
+              </h1>
+            </AnimatedSection>
           </div>
         </section>
 
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-4xl space-y-8">
-            <div className="animate-float-up">
+            <AnimatedSection>
               <p className="text-muted-foreground leading-relaxed">
                 At Phoenix Finserv, we are committed to providing you with the highest level of service. However, if you are unhappy with any aspect of our service, we want to hear about it and resolve your concerns as quickly as possible.
               </p>
-            </div>
+            </AnimatedSection>
 
             <div className="grid md:grid-cols-2 gap-6 animate-float-up" style={{ animationDelay: '0.1s' }}>
               {[
@@ -31,6 +37,7 @@ const ComplaintsProcedure = () => {
                 { icon: FileText, title: "In Writing", desc: "Send your complaint to our registered office address" },
                 { icon: Clock, title: "Response Time", desc: "We aim to resolve complaints within 8 weeks" },
               ].map((item, i) => (
+                <AnimatedSection key={item.title} delay={i * 0.1} animation="animate-fade-left">
                 <div key={item.title} className="group bg-card border border-border rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 transition-all duration-500">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                     <item.icon size={22} className="text-primary group-hover:text-primary-foreground transition-colors" />
@@ -38,10 +45,12 @@ const ComplaintsProcedure = () => {
                   <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm">{item.desc}</p>
                 </div>
+                </AnimatedSection>
               ))}
             </div>
 
-            <div className="animate-float-up" style={{ animationDelay: '0.2s' }}>
+            <div >
+              <AnimatedSection delay={0.2}>
               <h3 className="text-xl font-bold text-primary mb-3">Our Process</h3>
               <div className="space-y-4">
                 {[
@@ -51,15 +60,19 @@ const ComplaintsProcedure = () => {
                   "We will aim to resolve your complaint within 8 weeks.",
                   "If we are unable to resolve your complaint within 8 weeks, we will write to you explaining the reasons for the delay.",
                 ].map((step, i) => (
+                  <AnimatedSection key={i} delay={i * 0.1}>
                   <div key={i} className="flex items-start gap-3">
                     <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">{i + 1}</span>
                     <p className="text-muted-foreground leading-relaxed pt-1">{step}</p>
                   </div>
+                  </AnimatedSection>
                 ))}
               </div>
+              </AnimatedSection>
             </div>
-
+ <AnimatedSection delay={0.1} animation="animate-fade-right">
             <div className="animate-float-up bg-card border border-border rounded-2xl p-6" style={{ animationDelay: '0.3s' }}>
+             
               <div className="flex items-start gap-3">
                 <AlertCircle className="text-primary shrink-0 mt-1" size={20} />
                 <div>
@@ -78,7 +91,9 @@ const ComplaintsProcedure = () => {
                   </p>
                 </div>
               </div>
+           
             </div>
+             </AnimatedSection>
           </div>
         </section>
       </main>

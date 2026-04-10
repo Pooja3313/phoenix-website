@@ -27,7 +27,7 @@ const FinancialOmbudsman = () => {
         {/* Content */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-4xl space-y-10">
-            <AnimatedSection>
+            <AnimatedSection delay={0.2}  animation="animate-fade-left">
               <div className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-500">
                 <p className="text-muted-foreground leading-relaxed text-lg">
                   If we have not issued our final response letter within <span className="font-semibold text-primary highlighter-mark">8 weeks</span> of receipt of the complaint or, if you are dissatisfied with our final response, you have the right to refer your complaint to the Financial Ombudsman Service, free of charge but you must do so within <span className="font-semibold text-primary">six months</span> of the date of our final response letter.
@@ -35,7 +35,7 @@ const FinancialOmbudsman = () => {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection delay={0.3} animation="animate-fade-right">
               <div className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-500">
                 <div className="flex items-start gap-3 mb-4">
                   <AlertCircle className="text-primary shrink-0 mt-1" size={22} />
@@ -47,7 +47,7 @@ const FinancialOmbudsman = () => {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.2}>
+            <AnimatedSection delay={0.2} >
               <div className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-500">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
                   Financial Ombudsman <span className="font-handwritten text-3xl text-primary highlighter-mark">Service</span> :
@@ -85,7 +85,7 @@ const FinancialOmbudsman = () => {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.3}>
+            <AnimatedSection delay={0.3} animation="animate-fade-left">
               <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-phoenix-gold/5 border border-border rounded-2xl p-8">
                 <p className="text-muted-foreground leading-relaxed text-lg">
                   Be assured that we treat all complaints very seriously and we will conduct a <span className="font-semibold text-primary highlighter-mark">full review</span> and conclude all matters to the mutual satisfaction of the parties as quickly as possible maintaining appropriate records at all times.

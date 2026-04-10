@@ -26,17 +26,29 @@ const Newsletter = () => {
       
       <main>
         {/* Hero */}
-        <section className="relative py-24 bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" />
+        <section className="relative py-24  min-h-[85vh] md:min-h-[90vh] bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/presentation-financial-project.jpg')`,
+        }}
+      />
+          
+        
+      {/* Dark Overlay for Better Readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
+
+      {/* Subtle Accent Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--phoenix-green)/0.10),transparent_60%)]" />
           <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none"> £</div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
             <AnimatedSection>
-              <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">Stay Informed</p>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">Stay Informed</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Our <span className="font-handwritten text-5xl md:text-6xl text-primary pen-underline">Newsletter</span>
               </h1>
-              <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              <p className="text-white text-lg max-w-xl mx-auto">
                 Stay informed and inspired as the latest insights and expert updates guide your journey toward <span className="font-handwritten text-xl text-primary highlighter-mark">smarter</span> financial decisions.
               </p>
             </AnimatedSection>
@@ -53,7 +65,7 @@ const Newsletter = () => {
             </AnimatedSection>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {topics.map((item, i) => (
-                <AnimatedSection key={item.title} delay={i * 0.1}>
+                <AnimatedSection key={item.title} delay={i * 0.1} animation="animate-fade-scale">
                   <div className="group bg-card border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full">
                     <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 icon-hover-bounce">
                       <item.icon size={26} className="text-primary group-hover:text-accent-foreground transition-colors" />
@@ -70,7 +82,7 @@ const Newsletter = () => {
         {/* Subscribe Form */}
         <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
           <div className="container mx-auto px-4 max-w-2xl">
-            <AnimatedSection>
+            <AnimatedSection animation="animate-fade-right">
               <div className="bg-card border border-border rounded-3xl p-10 shadow-xl text-center">
                 <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <Mail size={30} className="text-primary" />
@@ -109,7 +121,7 @@ const Newsletter = () => {
         {/* Coming Soon */}
         <section className="py-16 bg-background text-center">
           <div className="container mx-auto px-4 max-w-2xl">
-            <AnimatedSection>
+            <AnimatedSection >
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 Blog & Articles ? <span className="font-handwritten text-3xl text-primary">Coming Soon!</span>
               </h2>
