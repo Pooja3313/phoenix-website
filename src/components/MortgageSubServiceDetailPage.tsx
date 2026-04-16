@@ -35,6 +35,11 @@ const MortgageSubServiceDetailPage = ({
           />
         ) : null}
 
+        
+        {service.features && service.features.length > 0 ? (
+          <MortgageDetailWhatWeOfferSection service={service} />
+        ) : null}
+
         {service.benefitItems && service.benefitItems.length > 0 ? (
           <ServiceDetailBenefitsSection
             title={service.benefitsTitle}
@@ -45,11 +50,7 @@ const MortgageSubServiceDetailPage = ({
           />
         ) : null}
 
-        {/* <ServiceDetailFeaturesSection title={service.title} features={service.features} /> */}
 
-        {service.features && service.features.length > 0 ? (
-          <MortgageDetailWhatWeOfferSection service={service} />
-        ) : null}
 
         {service.faqs && service.faqs.length > 0 ? (
           <FaqSection faqs={service.faqs} />

@@ -125,9 +125,9 @@ const ServiceDetailBenefitsSection: React.FC<
                   <img
                     src={image || "/images/protection/life-cover-family.jpg"}
                     alt="Benefits Illustration"
-                    className="w-[290px] sm:w-[290px] md:w-[400px] lg:w-[310px] 
+                    className="w-[290px] sm:w-[290px] md:w-[400px] lg:w-[310px]  xl:w-[610px]
                                h-[290px] sm:h-[310px] md:h-[330px] lg:h-[418px] 
-                               rounded-3xl object-cover shadow-xl"
+                               rounded-3xl object-cover shadow-xl" 
                   />
                 </div>
                 {/* Decorative Elements */}

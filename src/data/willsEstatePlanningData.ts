@@ -16,10 +16,11 @@ export interface WillsServiceItem {
   benefitItems: BenefitItem[];
   benefitsImage?: string;
   features: { title: string; description: string; icon: string }[];
+  faqs?: { question: string; answer: string }[];
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
-  // whyChooseImage: string; 
+  
 }
 
 export const willsEstatePlanningServices: WillsServiceItem[] = [
@@ -27,10 +28,9 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     slug: "will-writing",
     title: "Will Writing",
     heroSubtitle: "Wills & Estate Planning",
-    heroDescription: "Ensure your assets are distributed according to your wishes with a professionally drafted will that reflects your intentions.",
+    heroDescription: "Safeguard your assets and intentions with tailored will writing guidance, giving your loved ones clarity and security",
     whyTitle: "Why Write a Will?",
     heroImage: "/images/Will-Writing/Will_Writing.jpg",
-    // whyChooseImage: "/images/Will-Writing/Will_Writing1.jpg",   // Commented
     whyContent: [
       "Writing a will is a key part of estate planning. It ensures your assets are passed on to the people you choose, rather than being distributed under intestacy laws. Despite its importance, around 60% of UK adults do not have a will in place. Creating a will?and where appropriate, setting up a trust?allows you to name specific beneficiaries, decide how your assets are distributed, and appoint guardians for your children. This helps ensure your wishes are respected and your loved ones are looked after. At WealthMax Financial Advisers, we have extensive experience in trust and will services. We guide you through the process, helping you make informed decisions that protect your legacy and provide peace of mind. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.",
     ],
@@ -66,17 +66,88 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
       { title: "Peace of Mind", description: "Knowing your wishes are clearly documented and legally binding provides reassurance for you and your loved ones.", icon: "ShieldCheck" },
       { title: "Updates and Amendments", description: "As your life changes, your will can be reviewed and updated so it always reflects your current intentions.", icon: "Edit3" },
     ],
+    faqs: [
+      {
+        question: "Can I write my own will legally?",
+        answer: "Yes, but a DIY will can easily be invalid or challenged. A professionally written will reduces the risk of disputes and ensures your wishes are followed."
+      },
+      {
+        question: "What happens if I don't make a will?",
+        answer: "Your estate will be distributed according to intestacy rules, which may not match your wishes and can cause delays and family conflicts."
+      },
+      {
+        question: "Why is it important for unmarried couples to set up a will?",
+        answer: "Unmarried partners have no automatic inheritance rights. Without a will, your partner may receive nothing from your estate."
+      }
+    ],
     ctaTitle: "Need Help with Will Writing?",
     ctaDescription: "Speak to our estate planning specialists to draft or review your will and protect your legacy.",
+  },
+   {
+    slug: "inheritance-tax-planning",
+    title: "Inheritance Tax Planning",
+    heroSubtitle: "Wills & Estate Planning",
+    heroDescription: "Ensure your estate is passed on efficiently and thoughtfully with professional Inheritance Tax Planning tailored to your unique circumstances",
+    whyTitle: "Why Choose Inheritance Tax Planning?",
+    heroImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning.jpg",
+    whyContent: [
+      "Tax treatment depends on individual circumstances and may change in future. Advice should be tailored to your specific needs and objectives. Despite less than 4% of estates in the UK typically being subject to inheritance tax, HMRC still gathered more than £6.8 billion in revenue in 2023. Without inheritance tax planning in place, your loved one?s legacy could subject to major tax liabilities, meaning that they end up with much less financial support than you intended. Inadequate inheritance tax planning can also lead to errors or oversights that add to your liabilities, in addition to complications and delays during the probate process. You can avoid all the associated distress and financial strain these holdups can cause by talking to a WealthMax advisor, who can help you mitigate these risks and preserve your family?s inheritance. Inheritance Tax Planning is a valuable step to ensure your hard-earned wealth is passed on to your loved ones. With the right strategy, you can reduce tax exposure and protect your estate for future generations.",
+    ],
+    benefitsTitle: "What are Benefits of Inheritance Tax Planning?",
+    benefitSubtitle: "Inheritance Tax Planning is important to ensure your hard-earned wealth is passed on to your loved ones. The other benefits of planning are stated below.",
+    benefitItems: [
+      {
+        title: "Minimise Tax Liability",
+        description: "Reduce the amount of inheritance tax your family may need to pay, ensuring more of your wealth is preserved.",
+        icon: "Receipt"
+      },
+      {
+        title: "Protect Family Wealth",
+        description: "Safeguard assets such as property, savings or investments so they pass on to your loved ones rather than being lost to taxes.",
+        icon: "Shield"
+      },
+      {
+        title: "Provide Financial Security for Loved Ones",
+        description: "Ensure your spouse, children, or chosen beneficiaries receive the maximum benefit from your estate.",
+        icon: "Users"
+      },
+      {
+        title: "Greater Control Over Your Estate",
+        description: "Decide exactly how your wealth is distributed, rather than leaving it entirely to tax laws.",
+        icon: "Settings"
+      },
+      {
+        title: "Avoid Unnecessary Stress for Family",
+        description: "Proper planning simplifies the inheritance process, easing the burden on family members during difficult times.",
+        icon: "Heart"
+      },
+    ],
+    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",   // Copied from whyChooseImage
+    features: [],
+    faqs: [
+      {
+        question: "How much Inheritance tax do I have to pay?",
+        answer: "Inheritance Tax is currently charged at 40% on the value of your estate above the nil-rate band (£325,000 per person, or up to £650,000 for married couples/civil partners). Planning can significantly reduce or eliminate this."
+      },
+      {
+        question: "Can I leave my house to my children without paying inheritance tax?",
+        answer: "Possibly, through the Residence Nil Rate Band (up to £175,000 extra per person when leaving a home to direct descendants). Proper planning and gifting strategies can further reduce the tax."
+      },
+      {
+        question: "Do you pay inheritance tax when the first partner dies?",
+        answer: "Usually no. The unused nil-rate band can be transferred to the surviving spouse/civil partner, potentially doubling the tax-free allowance on the second death."
+      }
+    ],
+    ctaTitle: "Review Your Inheritance Tax Position",
+    ctaDescription: "Book a review to understand your potential inheritance tax exposure and planning options.",
   },
   {
     slug: "trust-planning",
     title: "Trust Planning",
     heroSubtitle: "Wills & Estate Planning",
-    heroDescription: "Safeguard your wealth and secure your family's future with expert trust planning tailored to your needs.",
+    heroDescription: "Protect your assets and secure your legacy with tailored Trust Planning solutions designed to safeguard your wealth for generations",
     whyTitle: "Why Trust Planning Matters?",
     heroImage: "/images/Trust_planning/trust-planning5.jpg",
-    // whyChooseImage: "/images/Trust_planning/trust-planning3.jpg",   // Commented
     whyContent: [
       "Around 60% of UK people die intestate, which can make things very complicated for your beneficiaries when it comes to distributing your property or assets as you wish. However, when WealthMax assists you in setting up a trust, you can avoid the delays and increased costs that occur when adequate inheritance tax planning isn?t carried out. When trusts are established, they not only provide clear instructions regarding who receives your assets or property but also how they?re passed on. For example, without a trust, the beneficiary may simply receive a lump sum, which can lead to irresponsible spending and disputes among family members. Our experts can help you in setting up a trust in which trustees hold your assets for the benefit of your heirs. They offer a flexible way to transfer your assets while retaining control over how they?re distributed. This also protects your assets from creditors and inheritance tax by reducing the overall size of your estate. Tax treatment depends on individual circumstances. Professional advice is recommended to ensure suitability.",
     ],
@@ -113,6 +184,16 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
       { title: "Life Interest Trust", description: "Provides income or benefit for one beneficiary during their lifetime, with capital passing to others afterwards.", icon: "Clock" },
       { title: "Asset Protection Trust", description: "Helps shield assets from certain creditors and long-term care costs, subject to legal and tax rules.", icon: "Shield" },
     ],
+    faqs: [
+      {
+        question: "What are the advantages of putting a property in a trust?",
+        answer: "Putting a property in a trust can help protect it from creditors, control how and when beneficiaries receive it, and assist with inheritance tax planning."
+      },
+      {
+        question: "How can a trust reduce inheritance tax?",
+        answer: "Certain trusts allow assets to be removed from your estate for IHT purposes while still giving you or your family some benefit or control."
+      }
+    ],
     ctaTitle: "Looking at Trust Options?",
     ctaDescription: "Arrange a consultation to explore how trusts could support your family and estate planning goals.",
   },
@@ -120,7 +201,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     slug: "power-of-attorney",
     title: "Lasting Power of Attorney",
     heroSubtitle: "Wills & Estate Planning",
-    heroDescription: "Appoint trusted individuals to make decisions on your behalf should you become unable to do so.",
+    heroDescription: "Plan for the unexpected with Lasting Power of Attorney services that protect your choices and provide peace of mind for you and your loved ones",
     whyTitle: "Why Set Up a Lasting Power of Attorney?",
     heroImage: "images/Lasting Power of Attorney/lasting-power-attorney2.jpg",
     // whyChooseImage: "/images/Lasting Power of Attorney/lasting-power-attorney5.jpg",   // Commented
@@ -163,52 +244,22 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     ],
     benefitsImage: "/images/Lasting Power of Attorney/lasting-power-attorney5.jpg",   // Copied from whyChooseImage
     features: [],
+    faqs: [
+      {
+        question: "How long does a Lasting Power of Attorney last?",
+        answer: "It lasts for your lifetime (or until you revoke it while you still have capacity). It only becomes active when needed."
+      },
+      {
+        question: "How many people can you nominate in an LPA?",
+        answer: "You can appoint up to 4 attorneys for each type of LPA (Property & Financial Affairs and Health & Welfare)."
+      },
+      {
+        question: "Do I need a Solicitor to set up an LPA?",
+        answer: "No, it is not mandatory, but many people use a professional to ensure it is completed correctly and avoid mistakes that could make it invalid."
+      }
+    ],
     ctaTitle: "Set Up a Power of Attorney",
     ctaDescription: "Talk to our team about arranging lasting powers of attorney that reflect your wishes.",
-  },
-  {
-    slug: "inheritance-tax-planning",
-    title: "Inheritance Tax Planning",
-    heroSubtitle: "Wills & Estate Planning",
-    heroDescription: "Reduce potential inheritance tax liabilities through strategic planning, helping your loved ones retain more of your estate.",
-    whyTitle: "Why Choose Inheritance Tax Planning?",
-    heroImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning.jpg",
-    // whyChooseImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",   // Commented
-    whyContent: [
-      "Tax treatment depends on individual circumstances and may change in future. Advice should be tailored to your specific needs and objectives. Despite less than 4% of estates in the UK typically being subject to inheritance tax, HMRC still gathered more than £6.8 billion in revenue in 2023. Without inheritance tax planning in place, your loved one?s legacy could subject to major tax liabilities, meaning that they end up with much less financial support than you intended. Inadequate inheritance tax planning can also lead to errors or oversights that add to your liabilities, in addition to complications and delays during the probate process. You can avoid all the associated distress and financial strain these holdups can cause by talking to a WealthMax advisor, who can help you mitigate these risks and preserve your family?s inheritance. Inheritance Tax Planning is a valuable step to ensure your hard-earned wealth is passed on to your loved ones. With the right strategy, you can reduce tax exposure and protect your estate for future generations.",
-    ],
-    benefitsTitle: "What are Benefits of Inheritance Tax Planning?",
-    benefitSubtitle: "Inheritance Tax Planning is important to ensure your hard-earned wealth is passed on to your loved ones. The other benefits of planning are stated below.",
-    benefitItems: [
-      {
-        title: "Minimise Tax Liability",
-        description: "Reduce the amount of inheritance tax your family may need to pay, ensuring more of your wealth is preserved.",
-        icon: "Receipt"
-      },
-      {
-        title: "Protect Family Wealth",
-        description: "Safeguard assets such as property, savings or investments so they pass on to your loved ones rather than being lost to taxes.",
-        icon: "Shield"
-      },
-      {
-        title: "Provide Financial Security for Loved Ones",
-        description: "Ensure your spouse, children, or chosen beneficiaries receive the maximum benefit from your estate.",
-        icon: "Users"
-      },
-      {
-        title: "Greater Control Over Your Estate",
-        description: "Decide exactly how your wealth is distributed, rather than leaving it entirely to tax laws.",
-        icon: "Settings"
-      },
-      {
-        title: "Avoid Unnecessary Stress for Family",
-        description: "Proper planning simplifies the inheritance process, easing the burden on family members during difficult times.",
-        icon: "Heart"
-      },
-    ],
-    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",   // Copied from whyChooseImage
-    features: [],
-    ctaTitle: "Review Your Inheritance Tax Position",
-    ctaDescription: "Book a review to understand your potential inheritance tax exposure and planning options.",
-  },
+  }
+ 
 ];

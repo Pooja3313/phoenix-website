@@ -10,7 +10,7 @@ const MainLayout = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <ScrollToTop />
       <Header />
       <main className="flex-1">
@@ -27,4 +27,3 @@ const MainLayout = () => {
 };
 
 export default MainLayout;
-

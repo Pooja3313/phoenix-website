@@ -23,7 +23,6 @@ export interface ServiceItem {
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
-  // whyChooseImage: string;
   benefitsImage?: string;
   benefitSubtitle?: string;
 
@@ -38,12 +37,9 @@ export const personalProtectionServices: ServiceItem[] = [
     heroDescription: "Protect your family's financial future with comprehensive life insurance that provides a tax-free lump sum or regular income upon death, ensuring your loved ones are supported when they need it most.",
     whyTitle: "Why Choose Life Cover?",
     heroImage: "/images/protection/life-cover1.jpg",
-    // whyChooseImage: "/images/protection/life-cover2.jpg",
     whyContent: [
       "Would your family be able to cope financially if you were to unexpectedly pass away? Despite 6 out of 10 UK adults saying that life cover would benefit them and their loved ones, only 35% have a policy in place. Life cover represents the cornerstone of any comprehensive protection planning strategy, and the Wealthmax team of experts is here to help.",
     ],
-
-    // ?? NEW FIELDS for "How does Life Cover Work?"
     howItWorksTitle: "How does Life Cover Work?",
     howItWorksContent: [
       "It offers a predetermined lump sum or monthly income that becomes payable in the event that you die or if a medical doctor believes you have less than 12 months to live. The money paid out from the policy not only helps those closest to you with their day to day living costs but also allows them to take care of your funeral expenses and any outstanding debts you might have."
@@ -85,10 +81,22 @@ export const personalProtectionServices: ServiceItem[] = [
     ],
     benefitsImage: "/images/protection/life-cover2.jpg",
     features: [
-      { title: "Level Term Life Insurance", description: "A fixed payout amount throughout the policy term, ideal for protecting your family against the unexpected." },
-      { title: "Decreasing Term Life Insurance", description: "Cover that reduces over time, typically used alongside a repayment mortgage to ensure the loan is paid off if you pass away." },
-      { title: "Whole of Life Insurance", description: "Lifetime cover that guarantees a payout whenever you pass away, providing certainty for your loved ones and estate planning." },
-      { title: "Family Income Benefit", description: "Provides a regular tax-free income to your family rather than a lump sum, helping them maintain their standard of living." },
+      {
+        title: "Term Assurance",
+        description: "Term Assurance provides cover for a fixed period, such as ten years or up to a specific age. A payout is made if the insured person dies or is diagnosed with a terminal illness during this term. There are two main types: Level Term Assurance (benefit remains constant) and Decreasing Term Assurance (benefit reduces over time, often used with repayment mortgages)."
+      },
+      {
+        title: "Whole Life Cover",
+        description: "Whole of Life cover provides protection for the entirety of your lifetime, with a guaranteed payout upon death. Unlike Term Assurance, Whole of Life cover ensures a payout whenever you pass away, as long as your premiums have been maintained throughout."
+      },
+      {
+        title: "Joint Life Cover",
+        description: "A policy that covers a couple (married or cohabitees), typically paying out on the first partner's death. Available as either term or whole of life. Can also be arranged to pay on the second death, making it useful for Inheritance Tax Planning."
+      },
+      {
+        title: "An Over 50s Plan",
+        description: "Over 50?s Plans are suitable for people over the age of 50 who have pre-existing health conditions. This policy offers guaranteed acceptance for those aged 50-80 without medical underwriting and provides a fixed lump sum on death."
+      }
     ],
     faqs: [
       {
@@ -118,7 +126,6 @@ export const personalProtectionServices: ServiceItem[] = [
     heroSubtitle: "Protection",
     heroDescription: "Receive a tax-free lump sum if you're diagnosed with a specified critical illness, helping you focus on recovery without the added stress of financial worries.",
     heroImage: "/images/protection/critical-illness-cover.jpg",
-    // whyChooseImage: "/images/protection/critical-illness-cover1.jpg",
     whyTitle: "Why Consider Critical Illness Cover?",
     whyContent: [
       "According to Cancer Research UK, one in two people will be diagnosed with cancer at some point in their lifetime. Figures published by the Association of British Insurers show that in 2022,  £1.27 billion was paid out in critical illness claims. This type of cover can offer a valuable financial safety net for individuals and their families, providing breathing space during difficult times especially when illness prevents someone from working and adds emotional and financial strain.",
@@ -172,12 +179,7 @@ export const personalProtectionServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/critical-illness-cover1.jpg",
-    features: [
-      { title: "Standalone Critical Illness", description: "A dedicated policy that pays out a lump sum on diagnosis of a covered condition, independent of any life cover." },
-      { title: "Combined Life & Critical Illness", description: "A single policy that covers both life insurance and critical illness, offering comprehensive protection at a competitive price." },
-      { title: "Children's Critical Illness", description: "Some policies include free cover for your children, protecting the whole family against the financial impact of a serious diagnosis." },
-      { title: "Enhanced Cover Options", description: "Access policies that cover a wider range of conditions and offer additional benefits such as second opinion services and rehabilitation support." },
-    ],
+    features: [],
     faqs: [
       {
         question: "Do I need financial advice on how to cash in my pension pot?",
@@ -213,7 +215,6 @@ export const personalProtectionServices: ServiceItem[] = [
       "Unlike critical illness cover, which pays a one-off lump sum, income protection provides ongoing financial support for as long as you're unable to work. This makes it an essential part of any comprehensive financial plan.",
       "At Phoenix Finserv, we help you find an income protection policy that fits your budget and provides the level of cover you need. We explain the different options available, including short-term and long-term policies, and help you understand deferred periods, benefit amounts, and policy terms."
     ],
-    // ?? NO howItWorksTitle or howItWorksContent (or set to undefined)
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
     benefitsTitle: "Conditions Commonly Covered by Income Protection",
@@ -251,12 +252,8 @@ export const personalProtectionServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/income2.jpg",
-    features: [
-      { title: "Long-Term Income Protection", description: "Pays out until you return to work, reach retirement age, or the policy ends £ providing sustained financial security." },
-      { title: "Short-Term Income Protection", description: "Covers you for a defined period (typically 1-2 years), ideal if you want lower premiums or have other savings to fall back on." },
-      { title: "Own Occupation Cover", description: "Pays out if you're unable to perform your specific job, offering the strongest level of protection for professionals." },
-      { title: "Day One Cover", description: "Some policies can be arranged to pay from the first day of incapacity, though most have a deferred period to keep premiums affordable." },
-    ],
+    features: [],
+
     faqs: [
       {
         question: "Do I need financial advice on how to cash in my pension pot?",
@@ -288,8 +285,7 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Protect your business against the financial impact of losing a key employee. Keyman cover ensures business continuity and stability when it matters most.",
     whyTitle: "Why have Key Person Insurance?",
-    heroImage: "/images/protection/keyman-cover.jpg",           // ? dummy path
-    // whyChooseImage: "/images/protection/keyman-cover1.jpg",
+    heroImage: "/images/protection/keyman-cover.jpg",
     whyContent: [
       "Most companies insure their buildings and physical assets against risks such as fire, flood, theft and equipment breakdown. However, they often overlook their most valuable asset: the key individuals at the top of the organisation who drive critical business functions. Without these people, the business could face serious disruption?and in some cases, may struggle to survive."
     ],
@@ -306,11 +302,17 @@ export const businessProtectionServices: ServiceItem[] = [
     ],
     benefitsImage: "/images/protection/keyman-cover1.jpg",
 
-    features: [
-      { title: "Death Cover", description: "Pays out a lump sum if your key person passes away, helping the business manage the financial impact and fund recruitment costs." },
-      { title: "Critical Illness Cover", description: "Provides a payout if your key person is diagnosed with a serious illness, giving your business the resources to adapt and continue operating." },
-      { title: "Revenue Protection", description: "Cover can be structured to replace lost revenue attributable to the key person, helping maintain cash flow during the transition period." },
-      { title: "Loan & Debt Protection", description: "Ensures that any business loans or financial commitments tied to the key person can be repaid if they are no longer able to contribute." },
+    features: [],
+
+    faqs: [
+      {
+        question: "What is the difference between Key Person Cover and Shareholder Protection?",
+        answer: "Key person insurance helps protect the business against the loss of a vital individual whose absence could affect profitability. In contrast, shareholder protection specifically addresses ownership continuity?ensuring that if a shareholder exits due to death or illness, the remaining owners can retain control and minimise disruption to the business."
+      },
+      {
+        question: "What are the main benefits of Key Person Insurance?",
+        answer: "It provides financial support to cover recruitment costs, maintain cash flow, repay business loans, and give confidence to investors and creditors during the transition period after losing a key employee."
+      }
     ],
     ctaTitle: "Need Keyman Cover for Your Business?",
     ctaDescription: "Protect your business from the unexpected. Our advisers can help you assess your key person risk and find the right level of cover."
@@ -322,9 +324,7 @@ export const businessProtectionServices: ServiceItem[] = [
     heroSubtitle: "Business Protection",
     heroDescription: "Ensure business continuity and financial security in unforeseen events. Shareholder protection provides the means to buy out a deceased or critically ill partner's shares.",
     whyTitle: "Why have Shareholder Protection Cover?",
-    heroImage: "/images/protection/shareholder-protection.jpg",           // ? dummy path
-    // whyChooseImage: "/images/protection/shareholder-protection1.jpg",
-
+    heroImage: "/images/protection/shareholder-protection.jpg",
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
     whyContent: [
@@ -339,11 +339,20 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "A Market for the Shares", description: "Creates a market for shares in private companies.", icon: "Award" }
     ],
     benefitsImage: "/images/protection/shareholder-protection1.jpg",
-    features: [
-      { title: "Cross Option Agreement", description: "A legal arrangement that gives surviving shareholders the option to buy, and the deceased's estate the option to sell, the shares at an agreed price." },
-      { title: "Life Cover for Shareholders", description: "Each shareholder takes out a life policy for the value of their shares, ensuring funds are available when needed." },
-      { title: "Critical Illness Add-On", description: "Extends protection to cover shareholders who are diagnosed with a critical illness, not just those who pass away." },
-      { title: "Business Valuation Support", description: "We help you establish a fair market value for the shares, ensuring all parties are treated equitably." },
+    features: [],
+    faqs: [
+      {
+        question: "What Is the difference between Key person Cover and Shareholder Protection?",
+        answer: "There?s a common misconception that shareholder protection and directors? insurance are the same. In reality, they are distinctly different forms of business cover. Shareholder protection is designed to safeguard business owners in the event of a shareholder?s death or diagnosis of a critical illness, whereas directors? insurance typically relates to indemnity or liability risks. Shareholder protection specifically addresses ownership continuity."
+      },
+      {
+        question: "Who Pays for Shareholder Protection?",
+        answer: "Usually, the company pays the premiums for shareholder protection policies. In many cases, these premiums can be treated as a legitimate business expense, potentially qualifying for corporation tax relief."
+      },
+      {
+        question: "Do I need a shareholder agreement along with the insurance?",
+        answer: "Yes, it is highly recommended. The insurance works best when paired with a proper cross-option or buy-sell agreement that legally allows the surviving shareholders to purchase the shares using the payout from the policy."
+      }
     ],
     ctaTitle: "Need Shareholder Protection?",
     ctaDescription: "Protect your business partnership with the right agreements and insurance in place. Speak to our advisers today."
@@ -374,11 +383,20 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "Corporate Responsibility Perception", description: "Providing cover like this for employees demonstrates that you're a caring employer.", icon: "Heart" }
     ],
     benefitsImage: "/images/protection/relevant-life-cover1.jpg",
-    features: [
-      { title: "Corporation Tax Relief", description: "Premiums are usually deductible as a business expense, reducing your company's tax bill." },
-      { title: "No P11D Benefit", description: "The employee doesn't pay income tax or National Insurance on the premiums, making it genuinely tax-free cover." },
-      { title: "Written in Trust", description: "Policies are automatically written into trust, ensuring fast and tax-efficient payment to the employee's beneficiaries." },
-      { title: "Flexible Cover Levels", description: "Cover can be tailored to the individual's salary and circumstances, with no requirement for a minimum number of employees." },
+    features: [],
+    faqs: [
+      {
+        question: "Who owns a relevant life plan?",
+        answer: "The company (employer) owns and pays for the relevant life plan. However, the policy is written in trust so that any payout goes directly to the employee's nominated beneficiaries, not to the company."
+      },
+      {
+        question: "Can a sole trader have relevant life cover?",
+        answer: "Relevant Life Cover is designed for employees and directors of limited companies. Sole traders cannot take out Relevant Life Cover as there is no employer-employee relationship. They can consider standard life insurance instead."
+      },
+      {
+        question: "Is Relevant Life Cover tax-free?",
+        answer: "Yes ? premiums are usually corporation tax deductible for the company, there is no P11D benefit-in-kind for the employee, and the payout to beneficiaries is normally free from income tax and inheritance tax (when correctly written in trust)."
+      }
     ],
     ctaTitle: "Looking for Relevant Life Cover?",
     ctaDescription: "Provide tax-efficient life cover for your directors and employees. Contact our advisers to find out how your business can benefit."
@@ -407,11 +425,20 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "Peace of Mind", description: "Provides reassurance to business owners and stakeholders.", icon: "Heart" }
     ],
     benefitsImage: "/images/protection/Business-Loan-Protection1.jpg",
-    features: [
-      { title: "Loan Repayment Cover", description: "Ensures outstanding business loans are repaid if the guarantor dies or is diagnosed with a critical illness." },
-      { title: "Personal Guarantee Protection", description: "Protects the personal assets of directors who have provided guarantees for business borrowing." },
-      { title: "Decreasing or Level Cover", description: "Choose between cover that reduces in line with the loan balance or remains fixed throughout the term." },
-      { title: "Multiple Loan Cover", description: "Policies can be structured to cover multiple loans and financial commitments under a single arrangement." },
+    features: [],
+    faqs: [
+      {
+        question: "What is covered by business loan protection?",
+        answer: "It covers outstanding business loans and debts if a key individual (usually a director who gave a personal guarantee) dies or is diagnosed with a critical illness. The policy pays out to clear the loan balance."
+      },
+      {
+        question: "Should I write my business loan cover into trust?",
+        answer: "Yes, it is strongly recommended to write the policy into trust. This ensures the payout goes directly to the lender or the right party without delays and potential inheritance tax issues."
+      },
+      {
+        question: "Does Business Loan Protection cover critical illness?",
+        answer: "Most good policies can include critical illness cover along with life cover, so the loan can be repaid even if the guarantor becomes seriously ill and cannot work."
+      }
     ],
     ctaTitle: "Need Business Loan Protection?",
     ctaDescription: "Don't let a business loan become a personal liability. Our advisers can help you find the right protection for your business borrowing."
@@ -427,7 +454,7 @@ export const homeInsuranceServices: ServiceItem[] = [
     heroDescription: "Protect your home and everything in it with comprehensive buildings and contents insurance. Cover your property structure and personal belongings against damage, theft and unexpected events.",
     whyTitle: "Why Choose Buildings and Contents Cover?",
     heroImage: "/images/protection/Buildings&Contents.jpg",
-    // whyChooseImage: "/images/protection/Buildings&Contents1.jpg",
+
     whyContent: [
       "According to the latest figures from the FCA, there are approximately 650,000 domestic burglaries in the UK each year. Government statistics also show that 5.5 million homes and business premises are at risk of flooding, along with over 143,000 fires annually that can destroy property. Given these risks, buildings and contents protection is essential.Buildings protection safeguards your home's structure, covering the cost of repairs or rebuilding after damage. Contents protection helps replace or repair items inside your home that are damaged, stolen, or lost during such incidents. In challenging times like these, having this kind of financial security can offer much-needed peace of mind.",
 
@@ -489,12 +516,24 @@ export const homeInsuranceServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/Buildings&Contents1.jpg",
-
-    features: [
-      { title: "Buildings Insurance", description: "Covers the cost of repairing or rebuilding your home if it's damaged by an insured event such as fire, flood, storm or subsidence." },
-      { title: "Contents Insurance", description: "Protects your personal belongings inside the home against theft, accidental damage, fire and other covered events." },
-      { title: "Combined Policies", description: "Get both buildings and contents cover in a single policy for convenience and often a better price than buying separately." },
-      { title: "Accidental Damage Cover", description: "Optional add-on that covers unexpected damage to your home and belongings, such as spilling paint on a carpet or putting your foot through the ceiling." },
+    features: [],
+    faqs: [
+      {
+        question: "What is the difference between Buildings and Contents Insurance?",
+        answer: "Buildings Insurance covers the structure of your home (walls, roof, floors, built-in fixtures). Contents Insurance covers your personal belongings inside the home such as furniture, electronics, clothing, and valuables."
+      },
+      {
+        question: "Is accidental damage covered?",
+        answer: "Standard policies usually do not include accidental damage. You need to add an 'Accidental Damage' extension for extra protection against spills, breaks, or other unintended mishaps."
+      },
+      {
+        question: "Does home insurance cover flooding?",
+        answer: "Flood cover is not always included by default. Many insurers offer it as standard now, but in high-risk flood areas you may need to pay extra or use the Flood Re scheme."
+      },
+      {
+        question: "Can I cover high-value items like jewellery?",
+        answer: "Yes, but high-value items usually need to be specified separately on the policy (scheduled items) and may require valuation and extra premium."
+      }
     ],
     ctaTitle: "Looking for Home Insurance?",
     ctaDescription: "Protect your home and belongings with comprehensive insurance cover. Speak to our advisers today for a tailored quote."

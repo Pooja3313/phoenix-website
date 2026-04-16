@@ -5,6 +5,8 @@ import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSec
 import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWhyChooseSection";
 import CommercialDetailWhatWeOfferSection from "@/components/services/CommercialDetailWhatWeOfferSection";
 import ServiceDetailBenefitsSection from "./services/ServiceDetailBenefitsSection";
+import FaqSection from "./FaqSection";
+
 interface CommercialLendingSubServiceDetailPageProps {
   service: ServiceItem;
 }
@@ -23,11 +25,18 @@ const CommercialLendingSubServiceDetailPage = ({
           heroSubtitle={service.heroSubtitle}
           title={service.title}
           heroDescription={service.heroDescription}
-          heroImage={service.heroImage} 
+          heroImage={service.heroImage}
         />
 
         {service.whyContent && service.whyContent.length > 0 ? (
-          <ServiceDetailWhyChooseSection whyTitle={service.whyTitle} whyContent={service.whyContent} />
+          <ServiceDetailWhyChooseSection
+            whyTitle={service.whyTitle}
+            whyContent={service.whyContent}
+          />
+        ) : null}
+
+        {service.features && service.features.length > 0 ? (
+          <CommercialDetailWhatWeOfferSection service={service} />
         ) : null}
 
         {service.benefitItems && service.benefitItems.length > 0 ? (
@@ -36,16 +45,18 @@ const CommercialLendingSubServiceDetailPage = ({
             subtitle={service.benefitSubtitle}
             benefitItems={service.benefitItems}
             image={service.benefitsImage}
-           
           />
         ) : null}
 
-        {service.features && service.features.length > 0 ? (
-          <CommercialDetailWhatWeOfferSection service={service} />
+        {service.faqs && service.faqs.length > 0 ? (
+          <FaqSection faqs={service.faqs} />
         ) : null}
 
         {service.ctaTitle || service.ctaDescription ? (
-          <ServiceDetailCTASection ctaTitle={service.ctaTitle} ctaDescription={service.ctaDescription} />
+          <ServiceDetailCTASection
+            ctaTitle={service.ctaTitle}
+            ctaDescription={service.ctaDescription}
+          />
         ) : null}
       </main>
     </div>
@@ -53,4 +64,3 @@ const CommercialLendingSubServiceDetailPage = ({
 };
 
 export default CommercialLendingSubServiceDetailPage;
-

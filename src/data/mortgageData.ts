@@ -1,4 +1,3 @@
-import { Percent, Clock, PiggyBank, Landmark, Award, TrendingUp, Shield, Users } from "lucide-react";
 export interface BenefitItem {
   title: string;
   description: string;
@@ -12,7 +11,7 @@ export interface ServiceItem {
   heroDescription: string;
   whyTitle: string;
   whyContent: string[];
-  benefitsTitle: string;           // ? New
+  benefitsTitle: string;           
   benefitItems: BenefitItem[];
   features: { title: string; description: string }[];
   faqs?: { question: string; answer: string }[];
@@ -66,6 +65,24 @@ export const mortgageServices: ServiceItem[] = [
       { title: "Portfolio Landlord Mortgages", description: "Tailored solutions for landlords with four or more mortgaged properties, taking into account your full portfolio when assessing affordability." },
       { title: "HMO Mortgages", description: "Financing for Houses in Multiple Occupation, which can offer higher rental yields but require specialist lending arrangements." },
       { title: "Limited Company Buy-to-Let", description: "Increasingly popular for tax efficiency, we can arrange mortgages for properties purchased through a Special Purpose Vehicle (SPV) company." },
+    ],
+    faqs: [
+      {
+        question: "How many buy to let mortgages can I have?",
+        answer: "There is no strict maximum limit on the number of buy-to-let mortgages you can have. However, most lenders will assess your portfolio as a whole, considering total borrowing, rental income and your experience as a landlord."
+      },
+      {
+        question: "Do I need to have a minimum income?",
+        answer: "Yes, most lenders require a minimum personal income (typically £25,000?£30,000 per year) in addition to the rental income from the property. This helps demonstrate your ability to manage the mortgage if the property is vacant."
+      },
+      {
+        question: "Can I get a buy to let mortgage as a first-time buyer?",
+        answer: "Yes, it is possible for first-time buyers to get a buy-to-let mortgage, but it can be more challenging. Lenders usually prefer applicants with some property or letting experience. Specialist lenders may consider you if you have a strong income and deposit."
+      },
+      {
+        question: "Can I live in a buy-to-let property?",
+        answer: "No. Buy-to-let mortgages are for properties that will be rented out. Living in the property yourself may breach the mortgage terms and could lead to the loan being called in."
+      }
     ],
     ctaTitle: "Ready to Invest in Property?",
     ctaDescription: "Our buy-to-let mortgage advisers can help you find the right deal for your investment goals. Book a free consultation today."
@@ -126,6 +143,20 @@ export const mortgageServices: ServiceItem[] = [
       { title: "Mortgage in Principle", description: "We'll help you obtain a mortgage in principle so you can house hunt with confidence, knowing exactly how much you can afford." },
       { title: "Full Application Support", description: "From finding the right deal to completion, we manage the entire mortgage application process, keeping you informed at every stage." },
     ],
+   faqs: [
+      {
+        question: "How much deposit do I need as a first-time buyer?",
+        answer: "Most lenders require 5?10% deposit. Higher deposit usually gives better interest rates and more product choices."
+      },
+      {
+        question: "Who qualifies as a first-time buyer?",
+        answer: "Anyone who has never owned a residential property anywhere in the world (or whose only ownership was with a former spouse/partner)."
+      },
+      {
+        question: "Can I be a first-time buyer if my partner owns a house?",
+        answer: "Usually no, if your partner already owns a property you may not qualify for first-time buyer schemes or rates."
+      }
+    ],
     ctaTitle: "Ready to Buy Your First Home?",
     ctaDescription: "Take the first step on the property ladder with expert guidance from Phoenix Finserv. Book your free mortgage consultation today."
   },
@@ -185,6 +216,16 @@ export const mortgageServices: ServiceItem[] = [
       { title: "Tracker Mortgages", description: "Your rate tracks the Bank of England base rate plus a set percentage, offering transparency about how your rate is calculated." },
       { title: "Offset Mortgages", description: "Link your savings to your mortgage to reduce the interest you pay, while still having access to your savings when you need them." },
     ],
+    faqs: [
+      {
+        question: "What is the difference between fixed and variable rate mortgages?",
+        answer: "Fixed rate keeps your payments the same for a set period. Variable rate can go up or down with the lender?s SVR or Bank of England base rate."
+      },
+      {
+        question: "Can self-employed people get a residential mortgage?",
+        answer: "Yes. Lenders typically require 2?3 years of accounts or SA302 tax calculations. We have access to flexible lenders for self-employed applicants."
+      }
+    ],
     ctaTitle: "Looking for a Residential Mortgage?",
     ctaDescription: "Find the right mortgage for your home purchase with expert advice from Phoenix Finserv. Contact us for a free consultation."
   },
@@ -236,6 +277,16 @@ export const mortgageServices: ServiceItem[] = [
       { title: "Equity Release", description: "Access the equity in your property for home improvements, investments, or other financial needs without selling your home." },
       { title: "Debt Consolidation", description: "Combine multiple debts into your mortgage for a single, more manageable monthly payment â€” though be aware this may increase the total amount you repay." },
       { title: "Term Adjustment", description: "Extend or reduce your mortgage term to adjust your monthly payments to suit your current financial situation." },
+    ],
+  faqs: [
+      {
+        question: "When is the best time to remortgage?",
+        answer: "Usually when your current fixed deal is ending or when interest rates have dropped and you can secure a better deal."
+      },
+      {
+        question: "Can I remortgage to release equity?",
+        answer: "Yes. Many people remortgage to release equity for home improvements, debt consolidation or investments."
+      }
     ],
     ctaTitle: "Thinking About Remortgaging?",
     ctaDescription: "Don't stay on a rate that's costing you money. Our advisers can help you find a better deal. Book your free remortgage review today."

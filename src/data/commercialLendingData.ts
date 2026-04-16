@@ -66,6 +66,16 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Refurbishment Finance", description: "Fund property renovations and improvements with bridging loans that take into account the projected uplift in value.", icon: "Paintbrush" },
       { title: "Commercial Bridging", description: "Short-term finance for commercial property acquisitions, conversions, and investment opportunities.", icon: "Building2" },
     ],
+    faqs: [
+      {
+        question: "How quickly can I get a bridging loan?",
+        answer: "Bridging loans can be approved and funded in as little as 7?14 days, making them ideal for time-sensitive property purchases or auctions."
+      },
+      {
+        question: "What can I use a bridging loan for?",
+        answer: "Common uses include auction purchases, chain breaks, property refurbishments, and short-term funding while selling an existing property."
+      }
+    ],
     ctaTitle: "Need Fast Finance?",
     ctaDescription: "Bridging loans can provide the speed and flexibility you need. Speak to our advisers today about your bridging finance requirements."
   },
@@ -110,6 +120,20 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Revolving Credit Facilities", description: "Flexible borrowing that allows you to draw down and repay funds as needed, only paying interest on what you use.", icon: "RefreshCw" },
       { title: "Invoice Finance", description: "Release cash tied up in unpaid invoices to improve your working capital position and maintain healthy cash flow.", icon: "FileText" },
       { title: "Start-Up Finance", description: "Funding options for new businesses, including government-backed Start Up Loans and alternative finance solutions.", icon: "Rocket" },
+    ],
+ faqs: [
+      {
+        question: "How do I become eligible for a business loan?",
+        answer: "Eligibility depends on your business trading history, annual turnover, credit score, cash flow, and ability to repay. Lenders also consider the purpose of the loan and your personal guarantee in many cases."
+      },
+      {
+        question: "How long does it take to get a business loan in the UK?",
+        answer: "It varies by lender type. Alternative lenders can approve and fund in a few days to 2 weeks, while traditional banks may take 4?8 weeks or longer."
+      },
+      {
+        question: "Can I repay my business loan early?",
+        answer: "Most business loans allow early repayment, but some charge an early repayment charge (ERC) or exit fee. We always recommend checking the terms before signing."
+      }
     ],
     ctaTitle: "Need Business Finance?",
     ctaDescription: "Find the right funding solution for your business. Contact our commercial finance team for a Free Discovery Call."
@@ -156,6 +180,20 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Mezzanine Finance", description: "Additional funding layered on top of senior debt to increase the total loan-to-cost ratio, reducing the developer's equity requirement.", icon: "Layers" },
       { title: "Joint Venture Finance", description: "Structured finance arrangements where the lender provides a higher proportion of funding in exchange for a share of the development profit.", icon: "Handshake" },
     ],
+  faqs: [
+      {
+        question: "How much can I borrow for property development?",
+        answer: "Loan amounts are usually based on a percentage of the project cost (Loan to Cost) or the Gross Development Value (GDV). Lenders typically fund 60?75% of costs, sometimes up to 85?90% with mezzanine finance."
+      },
+      {
+        question: "Can I change my plan later?",
+        answer: "Yes, many development finance lenders allow flexibility to adjust plans, but significant changes may require re-approval and could affect the loan terms."
+      },
+      {
+        question: "Do you have to give a personal guarantee?",
+        answer: "In most cases, especially for smaller developers, a personal guarantee is required. Some larger or experienced developers can negotiate limited or no personal guarantee."
+      }
+    ],
     ctaTitle: "Planning a Development Project?",
     ctaDescription: "Get the right finance in place before you break ground. Our development finance specialists can help structure the perfect funding package."
   },
@@ -200,6 +238,17 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Finance Lease", description: "Use the asset for an agreed period while the finance company retains ownership. Ideal if you regularly upgrade equipment.", icon: "Key" },
       { title: "Operating Lease", description: "Rent equipment for a shorter period than its useful life, with the option to return, upgrade, or extend at the end of the term.", icon: "Repeat" },
       { title: "Refinancing", description: "Release capital tied up in existing assets by refinancing them, providing a cash injection without selling the equipment.", icon: "RefreshCw" },
+    ],
+   
+   faqs: [
+      {
+        question: "What is the difference between Hire Purchase and Leasing?",
+        answer: "Hire Purchase leads to ownership of the asset at the end of the term. Leasing allows you to use the asset without owning it, often with lower monthly payments and the option to upgrade."
+      },
+      {
+        question: "Can I finance used equipment?",
+        answer: "Yes, most asset finance providers offer funding for both new and used machinery, vehicles, and equipment."
+      }
     ],
     ctaTitle: "Need to Finance Business Assets?",
     ctaDescription: "Don't let capital constraints hold your business back. Our asset finance team can help you acquire the equipment you need."
@@ -246,6 +295,20 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Multi-Unit Freehold Blocks", description: "Specialist financing for purchasing entire blocks of flats or maisonettes, with lending based on aggregate rental income.", icon: "Building2" },
       { title: "Portfolio Refinancing", description: "Restructure your existing portfolio finance to release equity, reduce costs, or consolidate with fewer lenders.", icon: "RefreshCw" },
     ],
+    faqs: [
+      {
+        question: "Can I buy a commercial buy-to-let property as a first-time buyer?",
+        answer: "It is possible but more difficult. Lenders usually prefer applicants with some property or letting experience."
+      },
+      {
+        question: "How much deposit is needed for a commercial buy-to-let mortgage?",
+        answer: "Typically 25%?40% deposit is required for commercial buy-to-let properties, higher than residential buy-to-let."
+      },
+      {
+        question: "How much can I borrow for a commercial buy-to-let property?",
+        answer: "Lending is usually based on rental income coverage (ICR) rather than personal income. Most lenders look for rental income to cover 125%?145% of the mortgage payments."
+      }
+    ],
     ctaTitle: "Looking to Expand Your Property Portfolio?",
     ctaDescription: "Our buy-to-let finance specialists can help you structure the right funding for your investment goals. Get in touch today."
   },
@@ -290,6 +353,20 @@ export const commercialLendingServices: ServiceItem[] = [
       { title: "Investment Mortgages", description: "Loans for purchasing commercial properties to let out to tenants, with lending assessed on the property's rental income potential.", icon: "TrendingUp" },
       { title: "Semi-Commercial Mortgages", description: "Finance for mixed-use properties that combine commercial and residential elements, such as a shop with a flat above.", icon: "Building" },
       { title: "Refinancing", description: "Switch your existing commercial mortgage to a better deal, release equity for business purposes, or restructure your borrowing.", icon: "RefreshCw" },
+    ],
+  faqs: [
+      {
+        question: "What is the process of obtaining a commercial mortgage?",
+        answer: "The process includes initial assessment, submitting financial documents, property valuation, credit checks, and legal work. It usually takes 6?12 weeks from application to completion."
+      },
+      {
+        question: "What are the fees involved in a commercial mortgage?",
+        answer: "Common fees include arrangement fees (1?2%), valuation fees, legal fees, and possibly broker fees."
+      },
+      {
+        question: "How much deposit is needed for a commercial mortgage?",
+        answer: "Deposit requirements typically range from 20% to 40%, depending on the property type, borrower strength, and lender policy."
+      }
     ],
     ctaTitle: "Need a Commercial Mortgage?",
     ctaDescription: "Whether you're buying premises for your business or investing in commercial property, our advisers can help. Book a Free Discovery Call today."

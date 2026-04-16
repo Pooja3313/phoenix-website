@@ -45,31 +45,36 @@ const ProtectionSubServiceDetailPage = ({
           />
         ) : null}
 
-       {service.benefitItems?.length > 0 && (
-  <ServiceDetailBenefitsSection
-    title={service.benefitsTitle}
-    subtitle={service.benefitSubtitle || ""}
-    benefitItems={service.benefitItems}
-    image={service.benefitsImage}
-    
-    // Sirf Personal Protection ke 3 services mein special split layout
-    layout={
-      service.category === "Personal Protection" && 
-      ["life-cover", "critical-illness", "income-protection"].includes(service.slug)
-        ? "split"
-        : "default"
-    }
-    
-    ctaText="Contact Us"
-  />
-)}
-
         {service.features && service.features.length > 0 ? (
           <ServiceDetailFeaturesSection
             title={service.title}
             features={service.features}
           />
         ) : null}
+
+        {service.benefitItems?.length > 0 && (
+          <ServiceDetailBenefitsSection
+            title={service.benefitsTitle}
+            subtitle={service.benefitSubtitle || ""}
+            benefitItems={service.benefitItems}
+            image={service.benefitsImage}
+            // Sirf Personal Protection ke 3 services mein special split layout
+            layout={
+              // Split layout for these categories/services
+              (service.category === "Personal Protection" ||
+                service.category === "Home Insurance") &&
+              [
+                "life-cover",
+                "critical-illness",
+                "income-protection",
+                "buildings-and-contents",
+              ].includes(service.slug)
+                ? "split"
+                : "default"
+            }
+            ctaText="Contact Us"
+          />
+        )}
 
         {service.faqs && service.faqs.length > 0 ? (
           <FaqSection faqs={service.faqs} />
@@ -87,5 +92,3 @@ const ProtectionSubServiceDetailPage = ({
 };
 
 export default ProtectionSubServiceDetailPage;
-
-

@@ -31,14 +31,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
           
         ],
       },
-      // {
-      //   title: "Business Protection",
-      //   items: [
-      //     { name: "Key Person Cover", href: "/services/protection/key-person" },
-      //     { name: "Shareholder Protection", href: "/services/protection/shareholder" },
-      //     { name: "Relevant Life Cover", href: "/services/protection/relevant-life" },
-      //   ],
-      // },
+     
          {
         title: "Business Protection",
         items: [
@@ -50,13 +43,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
         ],
       },
      
-      //  {
-      //   title: "Home Insurance",
-      //   items: [
-      //     { name: "Buildings & Contents", href: "/services/protection/buildings-contents" },
-         
-      //   ],
-      // },
+    
        {
         title: "Home Insurance",
         items: [
