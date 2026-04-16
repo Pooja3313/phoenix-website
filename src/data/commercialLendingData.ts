@@ -20,7 +20,7 @@ export interface ServiceItem {
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
-  // whyChooseImage: string;   
+   
 }
 
 export const commercialLendingServices: ServiceItem[] = [
@@ -31,7 +31,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Explore bridging loans with Phoenix Finserv for quick access to capital for property purchases, renovations or investments. Short-term financing to bridge the gap between transactions.",
     whyTitle: "Why Choose Bridging Loan?",
     heroImage: "/images/bridging_Loan/bridging-loan3.jpg",
-    // whyChooseImage: "/images/bridging_Loan/bridging-loan4.jpg",   // Commented as requested
     whyContent: [
       "A bridging loan in the UK is a short-term financing option designed to \"bridge\" the gap when funds are needed quickly, often between buying a new property and selling an existing one. It provides fast access to capital, making it useful for property purchases, renovations, or covering urgent financial commitments. While interest rates are typically higher than standard mortgages, the flexibility and speed of approval make bridging loans a valuable solution for both homeowners and investors. At Wealthmax Financial Advisers, we specialise in guiding clients through bridging finance, ensuring you secure the right option tailored to your circumstances.",
     ],
@@ -60,12 +59,28 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/bridging_Loan/bridging-loan4.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Auction Finance", description: "Complete your auction purchase within the required 28-day timeframe with fast bridging finance tailored to auction buyers.", icon: "Hammer" },
-      { title: "Chain Break Finance", description: "Don't let a broken property chain derail your purchase ? bridge the gap until your existing property sells.", icon: "Link2Off" },
-      { title: "Refurbishment Finance", description: "Fund property renovations and improvements with bridging loans that take into account the projected uplift in value.", icon: "Paintbrush" },
-      { title: "Commercial Bridging", description: "Short-term finance for commercial property acquisitions, conversions, and investment opportunities.", icon: "Building2" },
-    ],
+  features: [
+  {
+    title: "Closed Bridging Loans",
+    description: "Short-term loans with a clear repayment strategy, typically tied to the sale of a specific property or a confirmed funding source. These usually offer lower interest rates due to reduced risk for the lender.",
+    icon: "Target"                    
+  },
+  {
+    title: "Open Bridging Loans",
+    description: "Flexible short-term loans without a fixed repayment date. Ideal for borrowers with uncertain sale timelines or complex transactions where the exit strategy is not yet confirmed.",
+    icon: "Clock"                  
+  },
+  {
+    title: "Regulated Bridging Loans",
+    description: "FCA-regulated bridging loans designed for residential properties where the borrower or their immediate family intends to live. These come with strong consumer protections and are limited to a maximum of 12 months.",
+    icon: "Shield"               
+  },
+  {
+    title: "Commercial Bridging Loans",
+    description: "Short-term finance tailored for commercial properties, business premises, or investment opportunities. Suitable for purchases, refurbishments, developments, or bridging until long-term funding is secured.",
+    icon: "Building2"                 
+  },
+],
     faqs: [
       {
         question: "How quickly can I get a bridging loan?",
@@ -86,7 +101,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Secure tailored business loans for your needs, ideal for growth and expansion. Unlock capital for your business today with flexible repayment options suited to your cash flow.",
     whyTitle: "Why Choose Business Finance?",
     heroImage: "/images/Business_Finance/Business_Finance1.jpg",
-    // whyChooseImage: "/images/Business_Finance/Business_Finance3.jpg",   // Commented
     whyContent: [
       "Business finance is essential for helping companies manage cash flow, invest in growth, and seize new opportunities. It can be used for a wide range of needs, from purchasing equipment and inventory to funding expansion, marketing campaigns, or even acquiring another business. Unlike personal finance, business finance is tailored to support the unique demands of running and scaling an organisation, providing the resources needed to remain competitive in market. At Wealthmax Financial Advisers, we work closely with businesses to identify the most suitable finance options, enabling them to achieve long-term stability and sustainable growth.",
     ],
@@ -115,12 +129,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Business_Finance/Business_Finance3.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Term Loans", description: "Traditional business loans with fixed or variable rates, repaid over an agreed period ? ideal for planned investments and expansion.", icon: "Calendar" },
-      { title: "Revolving Credit Facilities", description: "Flexible borrowing that allows you to draw down and repay funds as needed, only paying interest on what you use.", icon: "RefreshCw" },
-      { title: "Invoice Finance", description: "Release cash tied up in unpaid invoices to improve your working capital position and maintain healthy cash flow.", icon: "FileText" },
-      { title: "Start-Up Finance", description: "Funding options for new businesses, including government-backed Start Up Loans and alternative finance solutions.", icon: "Rocket" },
-    ],
+    features: [],
  faqs: [
       {
         question: "How do I become eligible for a business loan?",
@@ -145,7 +154,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Explore property development finance options tailored to your projects. Secure funding for your development plans effortlessly, from ground-up builds to conversions and refurbishments.",
     whyTitle: "Why Choose Property Development Finance?",
     heroImage: "/images/Commercial-Lending/Commercial-Lending4.jpg",
-    // whyChooseImage: "/images/Trust_planning/trust-planning2.jpg",   // Commented
     whyContent: [
       "Property development finance is a flexible funding option designed to support the construction, renovation, or conversion of properties, whether for residential, commercial, or mixed-use projects. It provides developers and investors with access to capital at various stages of a project, from purchasing land to completing the build. Unlike traditional mortgages, this type of finance is tailored to the unique timelines and costs involved in development, offering staged payments that align with progress. At Wealthmax Financial Advisers, we help clients navigate the complexities of property development finance, ensuring they secure the right solution to bring their vision to life while maximising returns.",
     ],
@@ -174,12 +182,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Trust_planning/trust-planning2.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Ground-Up Development", description: "Finance for new-build residential and commercial projects, with funds released in stages as construction milestones are met.", icon: "Building2" },
-      { title: "Conversion & Refurbishment", description: "Funding for converting commercial properties to residential use, or refurbishing existing properties to increase their value.", icon: "Wrench" },
-      { title: "Mezzanine Finance", description: "Additional funding layered on top of senior debt to increase the total loan-to-cost ratio, reducing the developer's equity requirement.", icon: "Layers" },
-      { title: "Joint Venture Finance", description: "Structured finance arrangements where the lender provides a higher proportion of funding in exchange for a share of the development profit.", icon: "Handshake" },
-    ],
+    features: [],
   faqs: [
       {
         question: "How much can I borrow for property development?",
@@ -204,7 +207,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Access asset finance solutions for your business needs, from equipment purchases to vehicle leasing. Drive your business forward with ease and preserve your working capital.",
     whyTitle: "Why Choose Asset Finance?",
     heroImage: "/images/Business_Finance/Business_Finance2.jpg",
-    // whyChooseImage: "/images/Business_Finance/Business_Finance4.jpg",   // Commented
     whyContent: [
       "Asset finance is a flexible way for businesses to acquire vehicles, machinery, technology, or other essential equipment without the need for large upfront costs. Instead of tying up valuable working capital, payments are spread over an agreed period, making it easier to manage cash flow while still accessing the tools needed for growth. It can also unlock value from existing assets, providing funds that can be reinvested back into the business. At Wealthmax Financial Advisers, we help clients find the right asset finance solution, ensuring they can invest in their future with confidence and financial stability.",
     ],
@@ -233,12 +235,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Business_Finance/Business_Finance4.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Hire Purchase", description: "Spread the cost of an asset over time with fixed monthly payments. You own the asset outright once all payments are made.", icon: "CreditCard" },
-      { title: "Finance Lease", description: "Use the asset for an agreed period while the finance company retains ownership. Ideal if you regularly upgrade equipment.", icon: "Key" },
-      { title: "Operating Lease", description: "Rent equipment for a shorter period than its useful life, with the option to return, upgrade, or extend at the end of the term.", icon: "Repeat" },
-      { title: "Refinancing", description: "Release capital tied up in existing assets by refinancing them, providing a cash injection without selling the equipment.", icon: "RefreshCw" },
-    ],
+    features: [],
    
    faqs: [
       {
@@ -289,12 +286,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Individual Buy-to-Let", description: "Standard buy-to-let mortgages for individual landlords purchasing in their own name, with competitive rates from leading lenders.", icon: "Home" },
-      { title: "Limited Company Purchase", description: "Increasingly popular for tax efficiency, we arrange finance for properties purchased through SPV companies or trading companies.", icon: "Building" },
-      { title: "Multi-Unit Freehold Blocks", description: "Specialist financing for purchasing entire blocks of flats or maisonettes, with lending based on aggregate rental income.", icon: "Building2" },
-      { title: "Portfolio Refinancing", description: "Restructure your existing portfolio finance to release equity, reduce costs, or consolidate with fewer lenders.", icon: "RefreshCw" },
-    ],
+    features: [],
     faqs: [
       {
         question: "Can I buy a commercial buy-to-let property as a first-time buyer?",
@@ -319,7 +311,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Unlock growth opportunities with commercial mortgages. Access financing for business premises, whether owner-occupied or investment properties, with competitive rates and flexible terms.",
     whyTitle: "Why Choose Phoenix Finserv for Commercial Mortgages?",
     heroImage: "/images/commercial-mortgage/commercial-mortgage.jpg",
-    // whyChooseImage: "/images/commercial-mortgage/commercial-mortgage1.jpg",   // Commented
     whyContent: [
       "A commercial loan is a financing solution designed specifically to support businesses in meeting their larger financial needs, such as purchasing property, funding expansion or investing in major assets. Unlike personal loans, commercial loans are structured to suit the scale and complexity of business operations, often offering flexible repayment terms and competitive rates. They provide companies with the capital required to grow, innovate, and remain resilient in a competitive marketplace. At WealthMax Financial Advisers, we guide businesses through the process of securing the right commercial loan, ensuring they have the financial foundation to achieve their goals.",
     ],
@@ -348,12 +339,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/commercial-mortgage/commercial-mortgage1.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Owner-Occupied Mortgages", description: "Finance for purchasing premises from which your business will trade, often with more favourable terms than standard commercial lending.", icon: "Briefcase" },
-      { title: "Investment Mortgages", description: "Loans for purchasing commercial properties to let out to tenants, with lending assessed on the property's rental income potential.", icon: "TrendingUp" },
-      { title: "Semi-Commercial Mortgages", description: "Finance for mixed-use properties that combine commercial and residential elements, such as a shop with a flat above.", icon: "Building" },
-      { title: "Refinancing", description: "Switch your existing commercial mortgage to a better deal, release equity for business purposes, or restructure your borrowing.", icon: "RefreshCw" },
-    ],
+    features: [],
   faqs: [
       {
         question: "What is the process of obtaining a commercial mortgage?",

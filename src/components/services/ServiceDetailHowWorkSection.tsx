@@ -86,7 +86,7 @@ const ServiceDetailHowWorkSection = ({
 
           {/* Content Paragraphs */}
           <AnimatedSection delay={0.18} animation="animate-fade-right">
-            <div className="space-y-6 text-muted-foreground text-[17px] leading-relaxed">
+            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               {whyContent.map((para, i) => (
                 <p
                   key={i}

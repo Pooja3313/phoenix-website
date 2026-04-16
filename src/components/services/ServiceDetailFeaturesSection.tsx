@@ -31,7 +31,7 @@ const ServiceDetailFeaturesSection = ({
           </h2>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-8 max-w-4xl xl:max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <AnimatedSection key={feature.title} delay={index * 0.12}>
             <div
@@ -50,7 +50,7 @@ const ServiceDetailFeaturesSection = ({
               <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm xl:text-base leading-relaxed">
                 {feature.description}
               </p>
             </div>

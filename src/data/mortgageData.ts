@@ -11,7 +11,7 @@ export interface ServiceItem {
   heroDescription: string;
   whyTitle: string;
   whyContent: string[];
-  benefitsTitle: string;           
+  benefitsTitle: string;
   benefitItems: BenefitItem[];
   features: { title: string; description: string }[];
   faqs?: { question: string; answer: string }[];
@@ -32,10 +32,9 @@ export const mortgageServices: ServiceItem[] = [
     title: "Buy to Let Mortgage",
 
     heroSubtitle: "Mortgage",
-    heroDescription: "Whether you're new to property investment or an experienced landlord, explore the financial freedom offered by buy-to-let mortgages, with competitive rates and lucrative investment opportunities in the UK property market.",
+    heroDescription: "Unlock the potential of property investment with tailored buy to let mortgage solutions designed to grow your portfolio and maximise returns",
     whyTitle: "Why have Buy to Let Mortgage?",
     heroImage: "/images/mortgage/buy-to-let-mortgage.jpg",
-    // whyChooseImage: "/images/mortgage/buy-to-let-mortgage1.jpg",
     whyContent: [
       "Do you have an existing mortgage rate you're not happy with? Do you need to release equity to access funds for home improvements? There can be multiple reasons why a remortgage might be the path for you, but it's important to know the ramifications of doing so. That's where Wealthmax Financial advisers can assist. Our team can help you compare mortgage deals and advise you on associated aspects like valuations, the fees involved and whether it makes financial sense for you. Remortgaging offers financial flexibility and we can give you the reassurance that it's the right decision for your unique set of circumstances.",
 
@@ -60,12 +59,7 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/buy-to-let-mortgage1.jpg",
-    features: [
-      { title: "First-Time Landlord Mortgages", description: "Specialist products for those entering the buy-to-let market for the first time, with competitive rates and flexible terms." },
-      { title: "Portfolio Landlord Mortgages", description: "Tailored solutions for landlords with four or more mortgaged properties, taking into account your full portfolio when assessing affordability." },
-      { title: "HMO Mortgages", description: "Financing for Houses in Multiple Occupation, which can offer higher rental yields but require specialist lending arrangements." },
-      { title: "Limited Company Buy-to-Let", description: "Increasingly popular for tax efficiency, we can arrange mortgages for properties purchased through a Special Purpose Vehicle (SPV) company." },
-    ],
+    features: [],
     faqs: [
       {
         question: "How many buy to let mortgages can I have?",
@@ -92,14 +86,12 @@ export const mortgageServices: ServiceItem[] = [
     title: "First Time Buyer Mortgage",
 
     heroSubtitle: "Mortgage",
-    heroDescription: "Buying your first home is an exciting step and Phoenix Finserv is here to guide you through it. We'll explain how first-time buyer mortgages work, what to consider, and the steps involved.",
+    heroDescription: "Looking for your first mortgage to get onto the property ladder? We can search across lenders using sourcing technology and give you tailored mortgage advice to suit your needs",
     whyTitle: "Why Choose First Time Buyer Mortgage?",
     heroImage: "/images/mortgage/first-time-buyer-mortgage.jpg",
-    // whyChooseImage: "/images/mortgage/first-time-buyer-mortgage1.jpg",
     whyContent: [
       "Buying your first home can feel both exciting and overwhelming, which is why having expert guidance can make the process easier. At Wealthmax, we provide mortgage advice for first time buyers and will take the time to explain your options clearly, based on your circumstances.We work with a wide range of lenders, including many of the UK?s largest mortgage providers, to help identify products that may be suitable for your needs. Our aim is to support you in navigating the mortgage process with confidence, so you can take your next steps toward home ownership.",
     ],
-
     benefitsTitle: "What are Benefits of First Time Buyer Mortgage?",
     benefitSubtitle:
       "A first-time buyer mortgage opens the door to home ownership and provides guidance, affordability checks, and access to schemes that make buying your first home easier.",
@@ -138,12 +130,32 @@ export const mortgageServices: ServiceItem[] = [
     ],
     benefitsImage: "/images/mortgage/first-time-buyer-mortgage1.jpg",
     features: [
-      { title: "Deposit Guidance", description: "We'll help you understand how much deposit you need and explore options such as Help to Buy ISAs and Lifetime ISAs to boost your savings." },
-      { title: "Government Schemes", description: "Access to shared ownership, First Homes, and other government-backed schemes designed to help first-time buyers get on the property ladder." },
-      { title: "Mortgage in Principle", description: "We'll help you obtain a mortgage in principle so you can house hunt with confidence, knowing exactly how much you can afford." },
-      { title: "Full Application Support", description: "From finding the right deal to completion, we manage the entire mortgage application process, keeping you informed at every stage." },
+      {
+        title: "Fixed - Rate Mortgages",
+        description: "Offer a set interest rate for an agreed upon term, providing stability and predictable payments."
+      },
+      {
+        title: "Variable - Rate Mortgages",
+        description: "Interest rates fluctuate according to market conditions, and these mortgages may offer lower initial rates but with less predictability."
+      },
+      {
+        title: "Tracker Mortgages",
+        description: "Linked to the Bank of England's base rate, tracking its movements with a predetermined margin."
+      },
+      {
+        title: "Right to Buy Scheme",
+        description: "The Right to Buy scheme allows eligible council and housing association tenants in England to purchase their home at a discounted price."
+      },
+      {
+        title: "Shared Ownership Mortgage",
+        description: "Allows purchasing a share of a property and paying rent on the remaining share."
+      },
+      {
+        title: "Guarantor Mortgage",
+        description: "This option requires a guarantor, often a family member, who agrees to cover repayments if the borrower defaults."
+      },
     ],
-   faqs: [
+    faqs: [
       {
         question: "How much deposit do I need as a first-time buyer?",
         answer: "Most lenders require 5?10% deposit. Higher deposit usually gives better interest rates and more product choices."
@@ -210,12 +222,28 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/residential-mortgage1.jpg",
-    features: [
-      { title: "Fixed Rate Mortgages", description: "Lock in your monthly payments for a set period (typically 2-5 years), giving you certainty and protection against interest rate rises." },
-      { title: "Variable Rate Mortgages", description: "Benefit from potentially lower initial rates that move with the lender's standard variable rate or the Bank of England base rate." },
-      { title: "Tracker Mortgages", description: "Your rate tracks the Bank of England base rate plus a set percentage, offering transparency about how your rate is calculated." },
-      { title: "Offset Mortgages", description: "Link your savings to your mortgage to reduce the interest you pay, while still having access to your savings when you need them." },
-    ],
+   features: [
+  { 
+    title: "Fixed - Rate Mortgages", 
+    description: "Offer stability with a set interest rate that remains unchanged, no matter what happens to prevailing mortgage rates." 
+  },
+  { 
+    title: "Discount Mortgages", 
+    description: "Offer a discount on the lender's standard variable rate for a set period, after which you're free to switch products." 
+  },
+  { 
+    title: "Variable - Rate Mortgages", 
+    description: "Interest rates fluctuate according to market conditions, and these mortgage products fluctuate with them." 
+  },
+  { 
+    title: "Offset Mortgages", 
+    description: "These mortgages allow you to offset savings against your mortgage balance to reduce interest payments." 
+  },
+  { 
+    title: "Tracker Mortgages", 
+    description: "These products are linked to the Bank of England's base rate and track its movements with a margin (typically 1% - 2%)." 
+  },
+],
     faqs: [
       {
         question: "What is the difference between fixed and variable rate mortgages?",
@@ -272,13 +300,8 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/remortgage1.jpg",
-    features: [
-      { title: "Rate Switch", description: "Move to a lower interest rate to reduce your monthly payments and save money over the life of your mortgage." },
-      { title: "Equity Release", description: "Access the equity in your property for home improvements, investments, or other financial needs without selling your home." },
-      { title: "Debt Consolidation", description: "Combine multiple debts into your mortgage for a single, more manageable monthly payment — though be aware this may increase the total amount you repay." },
-      { title: "Term Adjustment", description: "Extend or reduce your mortgage term to adjust your monthly payments to suit your current financial situation." },
-    ],
-  faqs: [
+    features: [],
+    faqs: [
       {
         question: "When is the best time to remortgage?",
         answer: "Usually when your current fixed deal is ending or when interest rates have dropped and you can secure a better deal."

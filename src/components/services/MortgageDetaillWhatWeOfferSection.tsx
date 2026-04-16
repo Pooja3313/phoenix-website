@@ -23,7 +23,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
           </h2>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {service.features.map((feature, index) => (
             <AnimatedSection key={feature.title} delay={index * 0.12}>
             <div
@@ -39,7 +39,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
               <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+              <p className="text-muted-foreground text-sm xl:text-base leading-relaxed line-clamp-3">
                 {feature.description}
               </p>
               <div className="flex items-center gap-1 mt-4 text-accent text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">

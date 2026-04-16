@@ -176,14 +176,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Trust_planning/trust-planning3.jpg",   // Copied from whyChooseImage
-    features: [
-      { title: "Bare Trust", description: "Beneficiaries have an immediate right to the trust assets, making this a simple way to pass assets to children.", icon: "Gift" },
-      { title: "Interest in Possession Trust", description: "Beneficiaries are entitled to income from the trust, while the underlying capital can be protected for others.", icon: "Eye" },
-      { title: "Discretionary Trust", description: "Trustees have discretion over how and when benefits are distributed among a class of beneficiaries.", icon: "SlidersHorizontal" },
-      { title: "Charitable Trust", description: "Assets are held for charitable purposes, allowing you to support causes that matter to you in a tax-efficient way.", icon: "Heart" },
-      { title: "Life Interest Trust", description: "Provides income or benefit for one beneficiary during their lifetime, with capital passing to others afterwards.", icon: "Clock" },
-      { title: "Asset Protection Trust", description: "Helps shield assets from certain creditors and long-term care costs, subject to legal and tax rules.", icon: "Shield" },
-    ],
+    features: [],
     faqs: [
       {
         question: "What are the advantages of putting a property in a trust?",

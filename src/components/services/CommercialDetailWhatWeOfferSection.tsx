@@ -53,7 +53,7 @@ const CommercialDetailWhatWeOfferSection = ({
     <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
       <div className="container mx-auto px-4">
         <AnimatedSection className="text-center mb-14" delay={0.1}>
-          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-primary font-semibold text-sm 2xl:text-lg uppercase tracking-widest mb-2">
             What We Offer
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -63,16 +63,16 @@ const CommercialDetailWhatWeOfferSection = ({
             </span>{" "}
             Solutions
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mt-4 max-w-2xl 2xl:max-w-4xl 2xl:text-md mx-auto">
             {service.heroDescription}
           </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-8 max-w-5xl  2xl:max-w-7xl mx-auto">
           {items.map((item, index) => (
             <AnimatedSection key={item.key} delay={index * 0.1}>
             <div
-              className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl hover:border-primary/30 overflow-hidden block h-full"
+              className="group relative bg-card border border-border rounded-2xl p-10 transition-all duration-500 hover:shadow-xl hover:border-primary/30 overflow-hidden block h-full"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
@@ -86,7 +86,7 @@ const CommercialDetailWhatWeOfferSection = ({
               <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+              <p className="text-muted-foreground text-sm xl:text-base leading-relaxed line-clamp-3">
                 {item.description}
               </p>
             </div>

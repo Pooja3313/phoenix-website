@@ -95,7 +95,7 @@ export const personalProtectionServices: ServiceItem[] = [
       },
       {
         title: "An Over 50s Plan",
-        description: "Over 50?s Plans are suitable for people over the age of 50 who have pre-existing health conditions. This policy offers guaranteed acceptance for those aged 50-80 without medical underwriting and provides a fixed lump sum on death."
+        description: "Over 50's Plans are suitable for people over the age of 50 who have pre-existing health conditions. This policy offers guaranteed acceptance for those aged 50-80 without medical underwriting and provides a fixed lump sum on death."
       }
     ],
     faqs: [
