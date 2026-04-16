@@ -30,7 +30,7 @@ const Newsletter = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/images/presentation-financial-project.jpg')`,
+          backgroundImage: `url('/images/Newsletter_hero_image.jpg')`,
         }}
       />
           

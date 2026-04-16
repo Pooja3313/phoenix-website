@@ -12,7 +12,6 @@ import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 const footerNavClass =
   "text-sm text-primary-foreground/60 hover:text-primary transition-colors flex items-center gap-2 group";
 
-/** Same asset as Header ? must start with `/` (public folder). File: public/images/Phoenix-Finserv.png */
 const PHOENIX_LOGO_SRC = "/images/Phoenix-Finserv.png";
 
 const Footer = () => {

@@ -1,14 +1,17 @@
 import { useEffect, useRef } from "react";
 
+
 const logos = [
-  { name: "TaxCalc", initials: "TC" },
-  { name: "QuickBooks", initials: "QB" },
-  { name: "FreshBooks", initials: "FB" },
-  { name: "Xero", initials: "XR" },
-  { name: "Sage", initials: "SG" },
-  { name: "HMRC", initials: "HM" },
-  { name: "FCA", initials: "FC" },
-  { name: "Capium", initials: "CP" },
+  { name: "Logo 1", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 2", src: "public/images/phoenix-e-favicon.png" },
+  { name: "Logo 3", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 4", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 5", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 6", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 7", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 8", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 9", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 10", src: "public/images/phoenix-finserv.png" },
 ];
 
 const LogoSlider = () => {
@@ -42,12 +45,15 @@ const LogoSlider = () => {
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="flex items-center gap-3 px-6 py-3 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group cursor-pointer shrink-0"
+              className="flex items-center justify-center w-44 md:w-56 h-20 md:h-24 px-6 bg-background/80 rounded-2xl border border-border/60 hover:border-orange-400 hover:bg-orange-50/60 hover:shadow-lg hover:shadow-orange-200/40 transition-all duration-300 group cursor-pointer shrink-0"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <span className="text-sm font-bold text-primary group-hover:text-primary-foreground transition-colors">{logo.initials}</span>
-              </div>
-              <span className="text-foreground font-semibold text-sm group-hover:text-primary transition-colors">{logo.name}</span>
+              <img
+                src={logo.src}
+                alt={`${logo.name} logo`}
+                className="h-12 md:h-16 w-auto max-w-[170px] object-contain transition-transform duration-300 group-hover:scale-105"
+                draggable={false}
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
