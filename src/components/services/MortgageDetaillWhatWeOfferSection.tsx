@@ -10,7 +10,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
   return (
     <section className="py-20 bg-gradient-to-br from-phoenix-gray-light/50 via-background to-phoenix-green-light/30">
       <div className="container mx-auto px-4">
-        <AnimatedSection className="text-center mb-14" delay={0.1}>
+        <AnimatedSection className="text-center mb-14" delay={0.2}>
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
             What We Offer
           </p>
@@ -25,7 +25,7 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {service.features.map((feature, index) => (
-            <AnimatedSection key={feature.title} delay={index * 0.12}>
+            <AnimatedSection key={feature.title} delay={index * 0.2} animation="animate-fade-scale">
             <div
               className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden hover:border-accent/30 block h-full"
             >

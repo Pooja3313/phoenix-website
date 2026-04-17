@@ -47,38 +47,39 @@ const CommercialLending = () => {
             £
           </div>
 
-           <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
-        <div className="max-w-3xl xl:max-w-4xl">
-            <AnimatedSection delay={0.4}>
-              <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
-                Our Services
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-                Commercial{" "}
-                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
-                  Lending
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-                Drive your business forward with strategic lending designed to
-                unlock opportunities, strengthen growth and build financial
-                resilience.
-              </p>
-              <NavLink
-                to="/contact"
-                className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Book a Free Discovery Call <ArrowRight size={18} />
-              </NavLink>
-            </AnimatedSection>
-          </div>
+          <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <AnimatedSection delay={0.4}>
+                <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
+                  Our Services
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+                  Commercial{" "}
+                  <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
+                    Lending
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                  Drive your business forward with strategic lending designed to
+                  unlock opportunities, strengthen growth and build financial
+                  resilience.
+                </p>
+                <NavLink
+                  to="/contact"
+                  className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  Book a Free Discovery Call <ArrowRight size={18} />
+                </NavLink>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
         {/* Why Choose */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container  mx-auto px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left - Text Content */}
               <AnimatedSection delay={0.4} animation="animate-fade-right">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Why Choose Phoenix Finserv for{" "}
@@ -86,13 +87,15 @@ const CommercialLending = () => {
                     Commercial Lending?
                   </span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   Commercial financing can be used for the full spectrum of
                   needs, empowering businesses to get ahead in a competitive
                   marketplace. Our team of financial advisers helps clients
                   obtain the funding they require for an array of reasons:
                 </p>
-                <ul className="space-y-2 text-muted-foreground text-sm">
+
+                <ul className="space-y-3 text-muted-foreground">
                   {[
                     "Expansion into new locations or markets",
                     "Acquiring new machinery and upgrading equipment",
@@ -100,30 +103,34 @@ const CommercialLending = () => {
                     "Renovating or expanding existing premises",
                     "Covering unexpected emergency expenses",
                     "Bridging and auction purchases",
-                    "Property purchase â both owner occupied and investments",
+                    "Property purchase ? both owner occupied and investments",
                     "Property development finance",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
                       <ArrowRight
-                        size={14}
+                        size={16}
                         className="text-primary mt-1 shrink-0"
                       />
-                      {item}
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </AnimatedSection>
+
+              {/* Right - Image */}
               <AnimatedSection delay={0.4} animation="animate-fade-scale">
                 <div className="relative">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-2xl">
                     <img
                       src="/images/Commercial-Lending/Commercial-Lending1.jpg"
-                      alt="Family reviewing important documents together"
+                      alt="Commercial lending handshake"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                    <Heart size={32} className="text-accent" />
+
+                  {/* Decorative Heart */}
+                  <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center shadow-lg">
+                    <Heart size={40} className="text-accent" />
                   </div>
                 </div>
               </AnimatedSection>
@@ -145,13 +152,13 @@ const CommercialLending = () => {
                 </span>{" "}
                 Solutions
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl 2xl:max-w-3xl mx-auto">
                 Commercial financing is suitable for a wide range of individuals
                 and organisations, whether SMEs, property developers, non-profit
                 organisations or large corporations.
               </p>
             </AnimatedSection>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl 2xl:max-w-7xl mx-auto">
               {commercialLendingServices.map((item, index) => {
                 const Icon = iconMap[item.slug] || Briefcase;
                 return (

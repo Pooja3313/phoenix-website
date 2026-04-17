@@ -43,7 +43,7 @@ const ServiceDetailHeroSection = ({
           </div>
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
-        <AnimatedSection delay={0.4}>
+        <AnimatedSection delay={0.5}>
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-white text-xs font-semibold uppercase tracking-widest mb-4">
             {heroSubtitle}
           </div>

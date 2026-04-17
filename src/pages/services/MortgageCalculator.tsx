@@ -58,7 +58,7 @@ const MortgageCalculator = () => {
             £
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <AnimatedSection>
+            <AnimatedSection delay={0.2}>
               <div className="flex flex-col items-center text-center">
                 <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
                   Tools
@@ -81,7 +81,7 @@ const MortgageCalculator = () => {
         {/* Mortgage Calculator */}
         <section className="py-16 bg-gradient-to-br from-phoenix-gray-light/40 to-background">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="grid sm:grid-cols-3 gap-8 max-w-6xl mx-auto" animation="animate-fade-scale">
+            <AnimatedSection className="grid sm:grid-cols-3 gap-8 max-w-6xl mx-auto" delay={0.2} animation="animate-fade-rotate">
               <NavLink
                 to="/mortgage/mortgagecalculator/best-buy"
                 className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group"

@@ -30,7 +30,7 @@ const FaqSection = ({ title = "Frequently Asked Questions", faqs }: FaqSectionPr
           {faqs.map((faq, i) => (
             <AnimatedSection
               key={i}
-              delay={0.05 + i * 0.2}
+              delay={0.05 + i * 0.3}
               
             >
               <div className="border border-border rounded-xl overflow-hidden">

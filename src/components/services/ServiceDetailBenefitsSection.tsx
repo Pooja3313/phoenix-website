@@ -68,7 +68,7 @@ const ServiceDetailBenefitsSection: React.FC<
       <section className="bg-gradient-to-br from-primary/5 via-phoenix-green-light/20 to-background py-12 md:py-16 lg:py-20 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-8xl">
           {/* Title Section */}
-          <AnimatedSection animation="animate-fade-scale">
+          <AnimatedSection delay={0.2} animation="animate-fade-scale">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-tight">
                 {prefix && <span className="block md:inline">{prefix}</span>}
@@ -88,6 +88,7 @@ const ServiceDetailBenefitsSection: React.FC<
             <AnimatedSection
               className="lg:col-span-4 space-y-8 md:space-y-10 order-2 lg:order-1"
               animation="animate-fade-left"
+              delay={0.6}
             >
               {benefitItems.slice(0, Math.ceil(benefitItems.length / 2)).map((item, index) => {
                 const IconComponent = getIconComponent(item.icon);
@@ -202,6 +203,8 @@ const ServiceDetailBenefitsSection: React.FC<
           <AnimatedSection
             className="space-y-10 md:space-y-12 order-2 lg:order-1"
             animation="animate-fade-left"
+            delay={0.5}
+
           >
             {benefitItems.map((item, index) => {
               const IconComponent = getIconComponent(item.icon);
@@ -226,7 +229,8 @@ const ServiceDetailBenefitsSection: React.FC<
           {/* Image - Right Side */}
           <AnimatedSection
             className="relative flex justify-center pt-4 lg:mt-8 md:pt-8 order-1 lg:order-2"
-            animation="animate-fade-right"
+            animation="animate-fade-scale"
+            delay={0.6}
           >
             <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
               <img

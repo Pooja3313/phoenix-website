@@ -99,7 +99,7 @@ const Protection = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <AnimatedSection delay={0.1} animation="animate-fade-left">
+              <AnimatedSection delay={0.3} animation="animate-fade-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Why Choose Phoenix Finserv for your{" "}
                   <span className="font-handwritten text-4xl md:text-5xl text-primary pen-underline">
@@ -114,7 +114,7 @@ const Protection = () => {
                 </p>
               </AnimatedSection>
 
-              <AnimatedSection delay={0.15} animation="animate-fade-scale">
+              <AnimatedSection delay={0.2} animation="animate-fade-scale">
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
                     <img

@@ -79,7 +79,7 @@ const Pensions = () => {
           </div>
              <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         <div className="max-w-3xl xl:max-w-4xl">
-            <AnimatedSection delay={0.3}>
+            <AnimatedSection delay={0.4}>
               <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
                 Our Services
               </p>
@@ -117,7 +117,7 @@ const Pensions = () => {
                   </span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  According to Age UK, around half of people aged 40?64 may not
+                  According to Age UK, around half of people aged 40&mdash;64 may not
                   have enough savings to retire comfortably when they reach
                   state pension age. Without additional pension arrangements in
                   place, you could face financial challenges later in life.
@@ -161,20 +161,20 @@ const Pensions = () => {
                 </span>{" "}
                 Options
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl  2xl:max-w-3xl mx-auto">
                 Exploring pension options with Phoenix Finserv means securing a
                 future built on stability, ensuring peace of mind, and creating
                 a financial foundation that supports your retirement goals.
               </p>
             </AnimatedSection>
-            <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-8  2xl:gap-10 max-w-4xl  2xl:max-w-5xl mx-auto">
               {offerings.map((item, index) => (
                 <AnimatedSection
                   key={item.title}
                   delay={index * 0.12}
                   animation="animate-fade-scale"
                 >
-                  <div className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-accent/30 h-full">
+                  <div className="group relative bg-card border border-border rounded-2xl p-8  transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer hover:border-accent/30 h-full">
                     <div className="absolute top-0 left-0 w-full h-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                     <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       <item.icon

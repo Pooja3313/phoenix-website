@@ -45,30 +45,30 @@ const Mortgage = () => {
             £
           </div>
 
-              <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
-        <div className="max-w-3xl xl:max-w-4xl">
-            <AnimatedSection delay={0.5}>
-              <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
-                Our Services
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
-                  Mortgage
-                </span>{" "}
-                Solutions
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-                Shape a future of stability and comfort with trusted mortgage
-                guidance designed to turn aspirations into lasting reality.
-              </p>
-              <NavLink
-                to="/contact"
-                className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Book a Free Discovery Call <ArrowRight size={18} />
-              </NavLink>
-            </AnimatedSection>
-          </div>
+          <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <AnimatedSection delay={0.5}>
+                <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
+                  Our Services
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
+                    Mortgage
+                  </span>{" "}
+                  Solutions
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                  Shape a future of stability and comfort with trusted mortgage
+                  guidance designed to turn aspirations into lasting reality.
+                </p>
+                <NavLink
+                  to="/contact"
+                  className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  Book a Free Discovery Call <ArrowRight size={18} />
+                </NavLink>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
@@ -122,7 +122,7 @@ const Mortgage = () => {
 
         {/* Mortgage Calculator */}
         <section className="py-16 bg-gradient-to-br from-phoenix-gray-light/40 to-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 xl:px-8">
             <AnimatedSection className="text-center mb-10" delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Find Your Best{" "}
@@ -131,17 +131,17 @@ const Mortgage = () => {
                 </span>{" "}
                 in Seconds
               </h2>
-              <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                Our intelligent tools do the hard work for you â analysing
+              <p className="text-muted-foreground mt-3 max-w-xl xl:max-w-2xl mx-auto">
+                Our intelligent tools do the hard work for you &mdash; analysing
                 real-time data from trusted lenders to reveal tailored deals
                 that match your goals.
               </p>
             </AnimatedSection>
-            <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-8 max-w-3xl  xl:max-w-4xl mx-auto">
               <AnimatedSection delay={0.15}>
                 <NavLink
                   to="/mortgage/best-buy"
-                  className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group block h-full"
+                  className="bg-card border border-border rounded-2xl p-8 xl:p-10 text-center hover:shadow-xl transition-all duration-300 hover:border-accent/30 group block h-full"
                 >
                   <Search
                     size={40}
@@ -162,7 +162,7 @@ const Mortgage = () => {
               <AnimatedSection delay={0.25} animation="animate-fade-rotate">
                 <NavLink
                   to="/mortgage/calculator"
-                  className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block h-full"
+                  className="bg-card border border-border rounded-2xl p-8 xl:p-10 text-center hover:shadow-xl transition-all duration-300 hover:border-primary/30 group block h-full"
                 >
                   <Calculator
                     size={40}

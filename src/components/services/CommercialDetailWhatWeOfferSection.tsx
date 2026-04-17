@@ -70,7 +70,7 @@ const CommercialDetailWhatWeOfferSection = ({
 
         <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-8 max-w-5xl  2xl:max-w-7xl mx-auto">
           {items.map((item, index) => (
-            <AnimatedSection key={item.key} delay={index * 0.1}>
+            <AnimatedSection key={item.key} delay={index * 0.1} animation="animate-fade-rotate">
             <div
               className="group relative bg-card border border-border rounded-2xl p-10 transition-all duration-500 hover:shadow-xl hover:border-primary/30 overflow-hidden block h-full"
             >

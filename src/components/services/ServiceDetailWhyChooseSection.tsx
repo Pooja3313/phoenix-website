@@ -140,7 +140,7 @@ const ServiceDetailWhyChooseSection = ({
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Title - Centered on all screens */}
-          <AnimatedSection animation="animate-fade-scale">
+          <AnimatedSection delay={0.2} animation="animate-fade-scale">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight text-center">
               {prefix && <span className="inline">{prefix}</span>}
               <span className={highlightClassName}>{highlight}</span>
@@ -148,7 +148,7 @@ const ServiceDetailWhyChooseSection = ({
           </AnimatedSection>
 
           {/* Content Paragraphs */}
-          <AnimatedSection delay={0.15}>
+          <AnimatedSection delay={0.2}>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               {whyContent.map((para, i) => (
                 <p
