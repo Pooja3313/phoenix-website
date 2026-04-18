@@ -141,6 +141,14 @@
 }
 
 @layer components {
+  .logo-marquee-track {
+    animation: logo-marquee 30s linear infinite;
+    will-change: transform;
+  }
+
+  .logo-marquee-track:hover {
+    animation-play-state: paused;
+  }
 
   /* .pen-underline2 */
   .pen-underline2 {
@@ -458,4 +466,13 @@
     animation: page-enter 0.38s ease-out both;
   }
 
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1.5rem));
+  }
 }

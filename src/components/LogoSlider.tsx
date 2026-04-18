@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-
-
 const logos = [
   { name: "Logo 1", src: "/images/Phoenix-Finserv.png" },
   { name: "Logo 2", src: "/images/phoenix-e-favicon.png" },
@@ -15,24 +12,6 @@ const logos = [
 ];
 
 const LogoSlider = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    let animId: number;
-    let pos = 0;
-    const speed = 0.5;
-    const animate = () => {
-      pos += speed;
-      if (pos >= el.scrollWidth / 2) pos = 0;
-      el.scrollLeft = pos;
-      animId = requestAnimationFrame(animate);
-    };
-    animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
-  }, []);
-
   return (
     <section className="py-12 bg-muted/20 border-y border-border overflow-hidden">
       <div className="container mx-auto px-4 mb-6">
@@ -40,8 +19,8 @@ const LogoSlider = () => {
           Our advisers have experience working with leading platforms
         </p>
       </div>
-      <div className="relative overflow-hidden" ref={scrollRef} style={{ scrollbarWidth: 'none' }}>
-        <div className="flex items-center gap-12 w-max">
+      <div className="relative overflow-hidden">
+        <div className="logo-marquee-track flex items-center gap-12 w-max">
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
