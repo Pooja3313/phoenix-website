@@ -14,7 +14,7 @@ export interface ServiceItem {
   heroDescription: string;
   whyTitle: string;
   whyContent: string[];
-  howItWorksTitle?: string;        // ?? NEW FIELD for "How does X Work?"
+  howItWorksTitle?: string;        
   howItWorksContent?: string[];
   benefitsTitle: string;
   benefitItems: BenefitItem[];
@@ -25,6 +25,7 @@ export interface ServiceItem {
   heroImage: string;
   benefitsImage?: string;
   benefitSubtitle?: string;
+  offerDescription:string;
 
 }
 
@@ -80,6 +81,7 @@ export const personalProtectionServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/life-cover2.jpg",
+    offerDescription:"From protecting your family's financial future to covering outstanding commitments, our life cover services are designed to provide security and lasting peace of mind.",
     features: [
       {
         title: "Term Assurance",
@@ -179,6 +181,7 @@ export const personalProtectionServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/critical-illness-cover1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -209,7 +212,6 @@ export const personalProtectionServices: ServiceItem[] = [
     heroDescription: "Replace a portion of your income if you're unable to work due to illness or injury, ensuring your financial commitments are met during the most difficult times.",
     whyTitle: "Why Choose Phoenix Finserv for Income Protection?",
     heroImage: "/images/protection/income.jpg",
-    // whyChooseImage: "/images/protection/income2.jpg",
     whyContent: [
       "Your income is your most valuable asset. If illness or injury prevents you from working, income protection insurance ensures you still receive a regular monthly payment £ typically between 50% and 70% of your gross salary £ until you're able to return to work or reach retirement age.",
       "Unlike critical illness cover, which pays a one-off lump sum, income protection provides ongoing financial support for as long as you're unable to work. This makes it an essential part of any comprehensive financial plan.",
@@ -252,6 +254,7 @@ export const personalProtectionServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/income2.jpg",
+    offerDescription:"",
     features: [],
 
     faqs: [
@@ -301,7 +304,7 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "Builds Investor Confidence", description: "Reassurance is afforded to creditors and investors about business continuity.", icon: "Award" }
     ],
     benefitsImage: "/images/protection/keyman-cover1.jpg",
-
+    offerDescription:"",
     features: [],
 
     faqs: [
@@ -339,6 +342,7 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "A Market for the Shares", description: "Creates a market for shares in private companies.", icon: "Award" }
     ],
     benefitsImage: "/images/protection/shareholder-protection1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -365,7 +369,6 @@ export const businessProtectionServices: ServiceItem[] = [
     heroDescription: "Tax-efficient life insurance for company directors and employees. A cost-effective way for businesses to provide death-in-service benefits outside of a registered group life scheme.",
     whyTitle: "Why have Relevant Life Cover?",
     heroImage: "/images/protection/relevant-life-cover.jpg",
-    // whyChooseImage: "/images/protection/relevant-life-cover1.jpg",
     whyContent: [
       "Relevant life policies are a form of employer-funded life cover that provides a 'death-in-service' style benefit to eligible employees. These policies are taken out by the business on the life of an individual employee and are typically written into trust, ensuring that any payout is made directly to the employee?s nominated beneficiaries. Importantly, the benefit cannot be paid to the company.",
 
@@ -383,6 +386,7 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "Corporate Responsibility Perception", description: "Providing cover like this for employees demonstrates that you're a caring employer.", icon: "Heart" }
     ],
     benefitsImage: "/images/protection/relevant-life-cover1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -409,7 +413,6 @@ export const businessProtectionServices: ServiceItem[] = [
     heroDescription: "Provides financial protection against losses, legal claims and property damage. Ensure your business loans are covered if a key individual passes away or becomes critically ill.",
     whyTitle: "Why Consider Business Loan Protection?",
     heroImage: "/images/protection/Business-Loan-Protection.jpg",
-    // whyChooseImage: "/images/protection/Business-Loan-Protection1.jpg",
     whyContent: [
       "Many lenders and creditors require company directors and business owners to provide personal guarantees for loans made to their business. In the event that a key individual passes away or suffers a critical illness, the business may face challenges in meeting its financial obligations.",
       "Without appropriate protection in place, personal assets may be at risk, and the financial security of your family could be affected. Business loan protection is designed to help repay outstanding business debts in such circumstances, reducing financial strain and supporting business continuity. In addition to safeguarding personal guarantees, this type of cover may help mitigate wider business risks such as cash flow disruption, supplier concerns, and customer confidence. At Phoenix Financial Advisers, we have experience advising directors and business owners on suitable business loan protection options. We offer access to products from a range of UK providers and can help you find cover that aligns with your business needs."
@@ -425,6 +428,7 @@ export const businessProtectionServices: ServiceItem[] = [
       { title: "Peace of Mind", description: "Provides reassurance to business owners and stakeholders.", icon: "Heart" }
     ],
     benefitsImage: "/images/protection/Business-Loan-Protection1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -516,6 +520,7 @@ export const homeInsuranceServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/protection/Buildings&Contents1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {

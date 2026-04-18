@@ -131,10 +131,11 @@ const Mortgage = () => {
                 </span>{" "}
                 in Seconds
               </h2>
-              <p className="text-muted-foreground mt-3 max-w-xl xl:max-w-2xl mx-auto">
-                Our intelligent tools do the hard work for you &mdash; analysing
-                real-time data from trusted lenders to reveal tailored deals
-                that match your goals.
+              <p className="text-muted-foreground mt-3 max-w-xl xl:max-w-3xl mx-auto">
+                Tired of guessing your repayments or comparing endless offers?
+                Our intelligent Mortgage Calculator does the hard work for you
+                &mdash; analyzing real-time data from trusted lenders to reveal
+                tailored deals that match your goals.
               </p>
             </AnimatedSection>
             <div className="grid sm:grid-cols-2 gap-8 max-w-3xl  xl:max-w-4xl mx-auto">
@@ -198,6 +199,12 @@ const Mortgage = () => {
                 </span>{" "}
                 Services
               </h2>
+              <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl 2xl:text-md mx-auto">
+                Protection planning is about creating a financial safety net
+                that ensures you, your family, or your business are supported in
+                the face of life's uncertainties?such as illness, loss of
+                income, or death.
+              </p>
             </AnimatedSection>
             <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {mortgageServices.map((item, index) => {

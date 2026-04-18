@@ -21,6 +21,9 @@ const MortgageDetailWhatWeOfferSection = ({ service }: MortgageDetailWhatWeOffer
             </span>{" "}
             Services
           </h2>
+           <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl 2xl:max-w-4xl 2xl:text-md mx-auto">
+            {service.offerDescription}
+          </p>
         </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">

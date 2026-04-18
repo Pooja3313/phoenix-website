@@ -146,7 +146,7 @@ const Protection = () => {
                 </span>{" "}
                 Solutions
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl mx-auto">
                 Protection planning is about creating a financial safety net that ensures you, your family, or your business are supported in the face of life's uncertainties.
               </p>
             </AnimatedSection>

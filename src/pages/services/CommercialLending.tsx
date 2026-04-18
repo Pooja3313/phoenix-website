@@ -152,7 +152,7 @@ const CommercialLending = () => {
                 </span>{" "}
                 Solutions
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl 2xl:max-w-3xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl mx-auto">
                 Commercial financing is suitable for a wide range of individuals
                 and organisations, whether SMEs, property developers, non-profit
                 organisations or large corporations.

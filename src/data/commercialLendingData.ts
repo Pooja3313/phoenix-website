@@ -20,6 +20,7 @@ export interface ServiceItem {
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
+  offerDescription:string;
    
 }
 
@@ -59,7 +60,8 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/bridging_Loan/bridging-loan4.jpg",   // Copied from whyChooseImage
-  features: [
+  offerDescription:"Commercial financing is suitable for a wide range of individuals and organisations, whether talking about small and medium-sized enterprises (SMEs), property developers, non-profit organisations or large corporations.",
+    features: [
   {
     title: "Closed Bridging Loans",
     description: "Short-term loans with a clear repayment strategy, typically tied to the sale of a specific property or a confirmed funding source. These usually offer lower interest rates due to reduced risk for the lender.",
@@ -129,6 +131,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Business_Finance/Business_Finance3.jpg",   // Copied from whyChooseImage
+   offerDescription:"",
     features: [],
  faqs: [
       {
@@ -182,6 +185,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Trust_planning/trust-planning2.jpg",   // Copied from whyChooseImage
+    offerDescription:"",
     features: [],
   faqs: [
       {
@@ -235,6 +239,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Business_Finance/Business_Finance4.jpg",   // Copied from whyChooseImage
+    offerDescription:"",
     features: [],
    
    faqs: [
@@ -257,7 +262,6 @@ export const commercialLendingServices: ServiceItem[] = [
     heroDescription: "Discover buy-to-let finance options for property investments. Secure financing tailored to your unique rental property goals and portfolio expansion plans.",
     whyTitle: "Why Choose Phoenix Finserv for Buy to Let Finance?",
     heroImage: "/images/Buy-to-Let-Finance/buy-to-let-finance.jpg",
-    // whyChooseImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.jpg",   // Commented
     whyContent: [
       "Whether you?re looking to expand your investment portfolio or diversify your assets, understanding what's involved with a commercial buy-to-let mortgage is crucial. At Phoenix, we can support you with options around lenders who would finance these investment opportunities. According to recent figures, the average yearly commercial rental property yield is 4.5%, meaning that this type of investment can offer a significant return - and that's before you consider the building's overall appreciation over time. Our experts can search buy-to-let mortgage deals from all of the UK's major lenders to find you the best option.",
     ],
@@ -286,6 +290,8 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.jpg",   // Copied from whyChooseImage
+    
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -339,6 +345,7 @@ export const commercialLendingServices: ServiceItem[] = [
       },
     ],
     benefitsImage: "/images/commercial-mortgage/commercial-mortgage1.jpg",   // Copied from whyChooseImage
+    offerDescription:"",
     features: [],
   faqs: [
       {

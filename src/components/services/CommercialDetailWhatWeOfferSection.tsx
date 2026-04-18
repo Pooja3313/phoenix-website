@@ -63,8 +63,8 @@ const CommercialDetailWhatWeOfferSection = ({
             </span>{" "}
             Solutions
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl 2xl:max-w-4xl 2xl:text-md mx-auto">
-            {service.heroDescription}
+          <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl 2xl:max-w-4xl 2xl:text-md mx-auto">
+            {service.offerDescription}
           </p>
         </AnimatedSection>
 

@@ -29,6 +29,7 @@ export interface ServiceItem {
   benefitsImage?: string;
   benefitSubtitle?: string;
   stampDutyCalculator?: StampDutyCalculatorData;
+  offerDescription:string;
   
 }
 
@@ -68,6 +69,7 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/buy-to-let-mortgage1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {
@@ -146,6 +148,7 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/first-time-buyer-mortgage1.jpg",
+    offerDescription:"First time buyer mortgages come in variety of forms. Each caters to different set of financial situations and preferences.They include",
     features: [
       {
         title: "Fixed - Rate Mortgages",
@@ -239,6 +242,7 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/residential-mortgage1.jpg",
+    offerDescription:"Whether you're stepping onto the property ladder or moving home, our residential mortgages provide flexibility and guidance at every stage.",
    features: [
   { 
     title: "Fixed - Rate Mortgages", 
@@ -282,7 +286,6 @@ export const mortgageServices: ServiceItem[] = [
     heroDescription: "Optimise your finances with a remortgage. The Phoenix Finserv team can help you find competitive rates, flexible terms and expert guidance to achieve your financial goals.",
     whyTitle: "Why Remortgaging?",
     heroImage: "/images/mortgage/remortgage.jpg",
-    // whyChooseImage: "/images/mortgage/remortgage1.jpg",
     whyContent: [
       "Homeowners may consider remortgaging for a variety of reasons, such as securing a more competitive rate, gaining greater flexibility, borrowing additional funds, or paying off their mortgage sooner. Changes in personal circumstances, like divorce, consolidating debts or an increase in property value, can also make remortgaging a suitable option. It can help you review your mortgage choices and manage potential interest rate changes, but it's important to carefully consider your individual circumstances.",
 
@@ -317,6 +320,7 @@ export const mortgageServices: ServiceItem[] = [
       }
     ],
     benefitsImage: "/images/mortgage/remortgage1.jpg",
+    offerDescription:"",
     features: [],
     faqs: [
       {

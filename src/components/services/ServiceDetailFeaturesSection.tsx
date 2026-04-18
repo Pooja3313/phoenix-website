@@ -8,11 +8,13 @@ interface FeatureItem {
 
 interface ServiceDetailFeaturesSectionProps {
   title: string;
+  offerDescription?: string;
   features: FeatureItem[];
 }
 
 const ServiceDetailFeaturesSection = ({
   title,
+  offerDescription,
   features,
 }: ServiceDetailFeaturesSectionProps) => {
   return (
@@ -29,6 +31,11 @@ const ServiceDetailFeaturesSection = ({
             </span>{" "}
             Solutions
           </h2>
+          {offerDescription ? (
+            <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl 2xl:max-w-4xl 2xl:text-md mx-auto">
+              {offerDescription}
+            </p>
+          ) : null}
         </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 gap-8 max-w-4xl xl:max-w-5xl mx-auto">

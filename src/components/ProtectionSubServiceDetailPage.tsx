@@ -33,11 +33,9 @@ const ProtectionSubServiceDetailPage = ({
           <ServiceDetailWhyChooseSection
             whyTitle={service.whyTitle}
             whyContent={service.whyContent}
-            // whyChooseImage={service.whyChooseImage}
           />
         ) : null}
 
-        {/* How It Works Section - Only show if data exists */}
         {service.howItWorksContent && service.howItWorksContent.length > 0 ? (
           <ServiceDetailHowWorkSection
             whyTitle={service.howItWorksTitle || "How does it Work?"}
@@ -48,6 +46,7 @@ const ProtectionSubServiceDetailPage = ({
         {service.features && service.features.length > 0 ? (
           <ServiceDetailFeaturesSection
             title={service.title}
+            offerDescription={service.offerDescription}
             features={service.features}
           />
         ) : null}
@@ -58,7 +57,6 @@ const ProtectionSubServiceDetailPage = ({
             subtitle={service.benefitSubtitle || ""}
             benefitItems={service.benefitItems}
             image={service.benefitsImage}
-            // Sirf Personal Protection ke 3 services mein special split layout
             layout={
               // Split layout for these categories/services
               (service.category === "Personal Protection" ||

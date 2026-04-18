@@ -60,31 +60,31 @@ const WillsEstatePlanning = () => {
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
             £
           </div>
-               <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
-        <div className="max-w-3xl xl:max-w-4xl">
-            <AnimatedSection delay={0.5}>
-              <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
-                Our Services
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Wills & Estate{" "}
-                <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
-                  Planning
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-                Shape a legacy that lasts with expert guidance in wills and
-                estate planning, ensuring your assets and intentions are
-                honoured with precision.
-              </p>
-              <NavLink
-                to="/contact"
-                className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Book a Free Discovery Call <ArrowRight size={18} />
-              </NavLink>
-            </AnimatedSection>
-          </div>
+          <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <AnimatedSection delay={0.5}>
+                <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+                  Our Services
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  Wills & Estate{" "}
+                  <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-[#ffd700] highlighter-mark">
+                    Planning
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                  Shape a legacy that lasts with expert guidance in wills and
+                  estate planning, ensuring your assets and intentions are
+                  honoured with precision.
+                </p>
+                <NavLink
+                  to="/contact"
+                  className="inline-flex items-center gap-2 mt-8 bg-primary hover:bg-phoenix-orange-dark text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  Book a Free Discovery Call <ArrowRight size={18} />
+                </NavLink>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
@@ -147,7 +147,7 @@ const WillsEstatePlanning = () => {
                 </span>{" "}
                 Services
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl lg:max-w-3xl mx-auto">
                 From drafting wills to inheritance planning and trust
                 management, our estate planning services are designed to help
                 protect your legacy and provide peace of mind for your loved

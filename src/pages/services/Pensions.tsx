@@ -161,7 +161,7 @@ const Pensions = () => {
                 </span>{" "}
                 Options
               </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl  2xl:max-w-3xl mx-auto">
+              <p className="text-muted-foreground mt-4 max-w-2xl  lg:max-w-3xl mx-auto">
                 Exploring pension options with Phoenix Finserv means securing a
                 future built on stability, ensuring peace of mind, and creating
                 a financial foundation that supports your retirement goals.
