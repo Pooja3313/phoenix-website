@@ -89,7 +89,7 @@ const MortgageCalculator = () => {
                 <Search size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Best Buy Calculator</h3>
                 <p className="text-muted-foreground text-sm">
-                  Compare mortgage rates with top lenders and find the mortgage deal that?s right for you.
+                  Compare mortgage rates with top lenders and find the mortgage deal that's right for you.
                 </p>
                 <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Try Now <ChevronRight size={16} />
@@ -115,7 +115,7 @@ const MortgageCalculator = () => {
                 <FileText size={40} className="text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-lg mb-2">Stamp Duty Calculator</h3>
                 <p className="text-muted-foreground text-sm">
-                  Whether you?re a first-time buyer, moving to a new home, or purchasing an additional property, find out exactly what you have to pay.
+                  Whether you're a first-time buyer, moving to a new home, or purchasing an additional property, find out exactly what you have to pay.
                 </p>
                 <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Try Now <ChevronRight size={16} />

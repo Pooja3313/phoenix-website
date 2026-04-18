@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import type { ServiceItem } from "@/data/mortgageData";
 import FaqSection from "@/components/FaqSection";
 import ServiceDetailHeroSection from "@/components/services/ServiceDetailHeroSection";
@@ -6,6 +7,7 @@ import ServiceDetailWhyChooseSection from "@/components/services/ServiceDetailWh
 import ServiceDetailBenefitsSection from "@/components/services/ServiceDetailBenefitsSection";
 import MortgageDetailCTASection from "./services/MortgageDetailCTASection";
 import MortgageDetailWhatWeOfferSection from "./services/MortgageDetaillWhatWeOfferSection";
+import StampDutyCalculatorSection from "./StampDutyCalculatorSection";
 
 interface MortgageSubServiceDetailPageProps {
   service: ServiceItem;
@@ -14,6 +16,8 @@ interface MortgageSubServiceDetailPageProps {
 const MortgageSubServiceDetailPage = ({
   service,
 }: MortgageSubServiceDetailPageProps) => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [service.slug]);
@@ -35,6 +39,18 @@ const MortgageSubServiceDetailPage = ({
           />
         ) : null}
 
+
+        {service.stampDutyCalculator?.boxTitle &&
+        service.stampDutyCalculator?.boxDescription ? (
+          <StampDutyCalculatorSection
+            heading={service.stampDutyCalculator.heading}
+            description={service.stampDutyCalculator.description}
+            boxTitle={service.stampDutyCalculator.boxTitle}
+            boxDescription={service.stampDutyCalculator.boxDescription}
+            buttonText={service.stampDutyCalculator.buttonText}
+            onCalculate={() => navigate("/mortgage/mortgagecalculator/stamp-duty")}
+          />
+        ) : null}
         
         {service.features && service.features.length > 0 ? (
           <MortgageDetailWhatWeOfferSection service={service} />

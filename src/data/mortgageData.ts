@@ -3,6 +3,13 @@ export interface BenefitItem {
   description: string;
   icon: string;
 }
+export interface StampDutyCalculatorData {
+  heading: string;
+  description: string;
+  boxTitle: string;
+  boxDescription: string;
+  buttonText?: string;       
+}
 
 export interface ServiceItem {
   slug: string;
@@ -21,6 +28,8 @@ export interface ServiceItem {
   // whyChooseImage: string;
   benefitsImage?: string;
   benefitSubtitle?: string;
+  stampDutyCalculator?: StampDutyCalculatorData;
+  
 }
 
 
@@ -92,6 +101,14 @@ export const mortgageServices: ServiceItem[] = [
     whyContent: [
       "Buying your first home can feel both exciting and overwhelming, which is why having expert guidance can make the process easier. At Wealthmax, we provide mortgage advice for first time buyers and will take the time to explain your options clearly, based on your circumstances.We work with a wide range of lenders, including many of the UK?s largest mortgage providers, to help identify products that may be suitable for your needs. Our aim is to support you in navigating the mortgage process with confidence, so you can take your next steps toward home ownership.",
     ],
+
+    stampDutyCalculator: {
+    heading: "Calculate Your Stamp Duty Instantly",
+    description: "Confused about how much tax you'll pay on your new property? Our smart Stamp Duty Calculator instantly breaks down your costs - factoring in property value, location, and buyer type - so you know exactly what to budget before you buy.",
+    boxTitle: "Stamp Duty Calculator",
+    boxDescription: "Whether you're a first-time buyer, moving to a new home, or purchasing an additional property, use our stamp duty calculator to find out exactly what you have to pay.",
+    buttonText: "Calculate Now",
+  },
     benefitsTitle: "What are Benefits of First Time Buyer Mortgage?",
     benefitSubtitle:
       "A first-time buyer mortgage opens the door to home ownership and provides guidance, affordability checks, and access to schemes that make buying your first home easier.",
