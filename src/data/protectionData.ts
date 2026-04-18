@@ -38,7 +38,7 @@ export const personalProtectionServices: ServiceItem[] = [
     whyTitle: "Why Choose Life Cover?",
     heroImage: "/images/protection/life-cover1.jpg",
     whyContent: [
-      "Would your family be able to cope financially if you were to unexpectedly pass away? Despite 6 out of 10 UK adults saying that life cover would benefit them and their loved ones, only 35% have a policy in place. Life cover represents the cornerstone of any comprehensive protection planning strategy, and the Wealthmax team of experts is here to help.",
+      "Would your family be able to cope financially if you were to unexpectedly pass away? Despite 6 out of 10 UK adults saying that life cover would benefit them and their loved ones, only 35% have a policy in place. Life cover represents the cornerstone of any comprehensive protection planning strategy, and the Phoenix team of experts is here to help.",
     ],
     howItWorksTitle: "How does Life Cover Work?",
     howItWorksContent: [
@@ -46,7 +46,7 @@ export const personalProtectionServices: ServiceItem[] = [
     ],
     benefitsTitle: "Which Life Cover Option Best Meets your Needs?",
 
-    benefitSubtitle: "When discussing life insurance quotes with our experienced advisers at Wealthmax, you?ll receive tailored guidance to help answer the all important question: Which life insurance is right for me? As part of our advice process, we take the time to understand your individual needs and circumstances, considering the following:",
+    benefitSubtitle: "When discussing life insurance quotes with our experienced advisers at Phoenix, you?ll receive tailored guidance to help answer the all important question: Which life insurance is right for me? As part of our advice process, we take the time to understand your individual needs and circumstances, considering the following:",
     benefitItems: [
       {
         title: "Secure your financial future",
@@ -117,7 +117,7 @@ export const personalProtectionServices: ServiceItem[] = [
       },
     ],
     ctaTitle: "Looking for Life Cover?",
-    ctaDescription: "Our advisers are experienced in helping individuals and families find the right life cover. Contact us today for a free, no-obligation consultation."
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
   {
     slug: "critical-illness",
@@ -135,7 +135,7 @@ export const personalProtectionServices: ServiceItem[] = [
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
     benefitsTitle: "The Various Conditions Covered by Critical Illness Policies",
-    benefitSubtitle: "When discussing critical illness cover with a WealthMax financial adviser, you'll discover that most policies provide financial protection against a range of major health issues. The number of conditions covered can vary from as little as three up to 60 to 70 illnesses, depending on the insurance company. That said, the majority will typically include the following",
+    benefitSubtitle: "When discussing critical illness cover with a Phoenix financial adviser, you'll discover that most policies provide financial protection against a range of major health issues. The number of conditions covered can vary from as little as three up to 60 to 70 illnesses, depending on the insurance company. That said, the majority will typically include the following",
     benefitItems: [
       {
         title: "Cancer: Specific Types & Stages",
@@ -198,8 +198,8 @@ export const personalProtectionServices: ServiceItem[] = [
         answer: "You may be able to inherit some of your spouse's or civil partner's state pension, depending on when they reached State Pension age and your own circumstances. Our advisers can help you understand your entitlements.",
       },
     ],
-    ctaTitle: "Need Critical Illness Cover?",
-    ctaDescription: "Protect yourself and your family from the financial impact of a serious illness. Speak to our advisers today for expert guidance.",
+    ctaTitle: "Looking for Critical Illness Cover?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution.",
   },
   {
     slug: "income-protection",
@@ -218,7 +218,7 @@ export const personalProtectionServices: ServiceItem[] = [
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
     benefitsTitle: "Conditions Commonly Covered by Income Protection",
-    benefitSubtitle: "Income protection provides a financial safety net if you're unable to work due to illness or injury for an extended period (typically four weeks or more). A standard income protection policy covers loss of income resulting from medical conditions but does not provide cover for unemployment due to redundancy or dismissal. If your GP confirms that you're unfit for work, you may be eligible to claim?subject to policy terms and any exclusions. However, securing the right level of cover that pays out when you need it is something best discussed with your Wealthmax adviser. Some of the most common reasons for income protection claims include:-",
+    benefitSubtitle: "Income protection provides a financial safety net if you're unable to work due to illness or injury for an extended period (typically four weeks or more). A standard income protection policy covers loss of income resulting from medical conditions but does not provide cover for unemployment due to redundancy or dismissal. If your GP confirms that you're unfit for work, you may be eligible to claim?subject to policy terms and any exclusions. However, securing the right level of cover that pays out when you need it is something best discussed with your Phoenix adviser. Some of the most common reasons for income protection claims include:-",
     benefitItems: [
       {
         title: "Back and Joint Problems",
@@ -273,7 +273,7 @@ export const personalProtectionServices: ServiceItem[] = [
       },
     ],
     ctaTitle: "Looking for Income Protection?",
-    ctaDescription: "Don't leave your income unprotected. Our advisers can help you find the right policy to safeguard your finances if you're unable to work."
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
 ];
 
@@ -314,8 +314,8 @@ export const businessProtectionServices: ServiceItem[] = [
         answer: "It provides financial support to cover recruitment costs, maintain cash flow, repay business loans, and give confidence to investors and creditors during the transition period after losing a key employee."
       }
     ],
-    ctaTitle: "Need Keyman Cover for Your Business?",
-    ctaDescription: "Protect your business from the unexpected. Our advisers can help you assess your key person risk and find the right level of cover."
+    ctaTitle: "Looking for Keyman Cover?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
   {
     slug: "shareholder-protection",
@@ -354,8 +354,8 @@ export const businessProtectionServices: ServiceItem[] = [
         answer: "Yes, it is highly recommended. The insurance works best when paired with a proper cross-option or buy-sell agreement that legally allows the surviving shareholders to purchase the shares using the payout from the policy."
       }
     ],
-    ctaTitle: "Need Shareholder Protection?",
-    ctaDescription: "Protect your business partnership with the right agreements and insurance in place. Speak to our advisers today."
+    ctaTitle: "Looking for Shareholder Protection?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
   {
     slug: "relevant-life-cover",
@@ -369,7 +369,7 @@ export const businessProtectionServices: ServiceItem[] = [
     whyContent: [
       "Relevant life policies are a form of employer-funded life cover that provides a 'death-in-service' style benefit to eligible employees. These policies are taken out by the business on the life of an individual employee and are typically written into trust, ensuring that any payout is made directly to the employee?s nominated beneficiaries. Importantly, the benefit cannot be paid to the company.",
 
-      "At Wealthmax Financial Advisers Limited, we can help you set up relevant life cover tailored to your business needs. A payout is triggered if the insured employee dies or is diagnosed with a terminal illness during the term of the policy. Premiums paid by the employer are generally considered an allowable expense for Corporation Tax purposes. From the employee?s perspective, there is no income tax liability on the premiums, as they are not treated as a benefit in kind. Additionally, for most individuals, any payout from the policy will be free from income tax and inheritance tax, subject to current HMRC rules and the correct trust structure being in place."
+      "At Phoenix Financial Advisers Limited, we can help you set up relevant life cover tailored to your business needs. A payout is triggered if the insured employee dies or is diagnosed with a terminal illness during the term of the policy. Premiums paid by the employer are generally considered an allowable expense for Corporation Tax purposes. From the employee?s perspective, there is no income tax liability on the premiums, as they are not treated as a benefit in kind. Additionally, for most individuals, any payout from the policy will be free from income tax and inheritance tax, subject to current HMRC rules and the correct trust structure being in place."
     ],
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
@@ -399,7 +399,7 @@ export const businessProtectionServices: ServiceItem[] = [
       }
     ],
     ctaTitle: "Looking for Relevant Life Cover?",
-    ctaDescription: "Provide tax-efficient life cover for your directors and employees. Contact our advisers to find out how your business can benefit."
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
   {
     slug: "business-loan-protection",
@@ -412,7 +412,7 @@ export const businessProtectionServices: ServiceItem[] = [
     // whyChooseImage: "/images/protection/Business-Loan-Protection1.jpg",
     whyContent: [
       "Many lenders and creditors require company directors and business owners to provide personal guarantees for loans made to their business. In the event that a key individual passes away or suffers a critical illness, the business may face challenges in meeting its financial obligations.",
-      "Without appropriate protection in place, personal assets may be at risk, and the financial security of your family could be affected. Business loan protection is designed to help repay outstanding business debts in such circumstances, reducing financial strain and supporting business continuity. In addition to safeguarding personal guarantees, this type of cover may help mitigate wider business risks such as cash flow disruption, supplier concerns, and customer confidence. At Wealthmax Financial Advisers, we have experience advising directors and business owners on suitable business loan protection options. We offer access to products from a range of UK providers and can help you find cover that aligns with your business needs."
+      "Without appropriate protection in place, personal assets may be at risk, and the financial security of your family could be affected. Business loan protection is designed to help repay outstanding business debts in such circumstances, reducing financial strain and supporting business continuity. In addition to safeguarding personal guarantees, this type of cover may help mitigate wider business risks such as cash flow disruption, supplier concerns, and customer confidence. At Phoenix Financial Advisers, we have experience advising directors and business owners on suitable business loan protection options. We offer access to products from a range of UK providers and can help you find cover that aligns with your business needs."
     ],
     howItWorksTitle: undefined,
     howItWorksContent: undefined,
@@ -440,8 +440,8 @@ export const businessProtectionServices: ServiceItem[] = [
         answer: "Most good policies can include critical illness cover along with life cover, so the loan can be repaid even if the guarantor becomes seriously ill and cannot work."
       }
     ],
-    ctaTitle: "Need Business Loan Protection?",
-    ctaDescription: "Don't let a business loan become a personal liability. Our advisers can help you find the right protection for your business borrowing."
+    ctaTitle: "Looking for Business Loan Protection?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
 ];
 
@@ -535,8 +535,8 @@ export const homeInsuranceServices: ServiceItem[] = [
         answer: "Yes, but high-value items usually need to be specified separately on the policy (scheduled items) and may require valuation and extra premium."
       }
     ],
-    ctaTitle: "Looking for Home Insurance?",
-    ctaDescription: "Protect your home and belongings with comprehensive insurance cover. Speak to our advisers today for a tailored quote."
+    ctaTitle: "Looking for Buildings & Contents Insurance?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in protection planning and have access to a wide range of protection options. Contact us today to discuss your protection requirements and secure the ideal protection solution."
   },
 ];
 

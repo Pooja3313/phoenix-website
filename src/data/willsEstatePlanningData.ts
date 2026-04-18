@@ -32,7 +32,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     whyTitle: "Why Write a Will?",
     heroImage: "/images/Will-Writing/Will_Writing.jpg",
     whyContent: [
-      "Writing a will is a key part of estate planning. It ensures your assets are passed on to the people you choose, rather than being distributed under intestacy laws. Despite its importance, around 60% of UK adults do not have a will in place. Creating a will?and where appropriate, setting up a trust?allows you to name specific beneficiaries, decide how your assets are distributed, and appoint guardians for your children. This helps ensure your wishes are respected and your loved ones are looked after. At WealthMax Financial Advisers, we have extensive experience in trust and will services. We guide you through the process, helping you make informed decisions that protect your legacy and provide peace of mind. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.",
+      "Writing a will is a key part of estate planning. It ensures your assets are passed on to the people you choose, rather than being distributed under intestacy laws. Despite its importance, around 60% of UK adults do not have a will in place. Creating a will?and where appropriate, setting up a trust?allows you to name specific beneficiaries, decide how your assets are distributed, and appoint guardians for your children. This helps ensure your wishes are respected and your loved ones are looked after. At Phoenix Financial Advisers, we have extensive experience in trust and will services. We guide you through the process, helping you make informed decisions that protect your legacy and provide peace of mind. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.",
     ],
     benefitsTitle: "What are Benefits of Will Writing?",
     benefitSubtitle: "No matter your age, writing a will is a responsible and valuable step in estate planning. It ensures your wishes are legally documented, helping to avoid uncertainty and reduce the risk of future disputes. Without a will, your estate may be subject to intestacy laws, which can lead to complications and delays.",
@@ -80,8 +80,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         answer: "Unmarried partners have no automatic inheritance rights. Without a will, your partner may receive nothing from your estate."
       }
     ],
-    ctaTitle: "Need Help with Will Writing?",
-    ctaDescription: "Speak to our estate planning specialists to draft or review your will and protect your legacy.",
+    ctaTitle: "Looking for Will Writing?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   },
    {
     slug: "inheritance-tax-planning",
@@ -91,7 +91,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     whyTitle: "Why Choose Inheritance Tax Planning?",
     heroImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning.jpg",
     whyContent: [
-      "Tax treatment depends on individual circumstances and may change in future. Advice should be tailored to your specific needs and objectives. Despite less than 4% of estates in the UK typically being subject to inheritance tax, HMRC still gathered more than £6.8 billion in revenue in 2023. Without inheritance tax planning in place, your loved one?s legacy could subject to major tax liabilities, meaning that they end up with much less financial support than you intended. Inadequate inheritance tax planning can also lead to errors or oversights that add to your liabilities, in addition to complications and delays during the probate process. You can avoid all the associated distress and financial strain these holdups can cause by talking to a WealthMax advisor, who can help you mitigate these risks and preserve your family?s inheritance. Inheritance Tax Planning is a valuable step to ensure your hard-earned wealth is passed on to your loved ones. With the right strategy, you can reduce tax exposure and protect your estate for future generations.",
+      "Tax treatment depends on individual circumstances and may change in future. Advice should be tailored to your specific needs and objectives. Despite less than 4% of estates in the UK typically being subject to inheritance tax, HMRC still gathered more than £6.8 billion in revenue in 2023. Without inheritance tax planning in place, your loved one?s legacy could subject to major tax liabilities, meaning that they end up with much less financial support than you intended. Inadequate inheritance tax planning can also lead to errors or oversights that add to your liabilities, in addition to complications and delays during the probate process. You can avoid all the associated distress and financial strain these holdups can cause by talking to a Phoenix advisor, who can help you mitigate these risks and preserve your family?s inheritance. Inheritance Tax Planning is a valuable step to ensure your hard-earned wealth is passed on to your loved ones. With the right strategy, you can reduce tax exposure and protect your estate for future generations.",
     ],
     benefitsTitle: "What are Benefits of Inheritance Tax Planning?",
     benefitSubtitle: "Inheritance Tax Planning is important to ensure your hard-earned wealth is passed on to your loved ones. The other benefits of planning are stated below.",
@@ -138,8 +138,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         answer: "Usually no. The unused nil-rate band can be transferred to the surviving spouse/civil partner, potentially doubling the tax-free allowance on the second death."
       }
     ],
-    ctaTitle: "Review Your Inheritance Tax Position",
-    ctaDescription: "Book a review to understand your potential inheritance tax exposure and planning options.",
+    ctaTitle: "Looking for Inheritance Tax Planning?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   },
   {
     slug: "trust-planning",
@@ -149,7 +149,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     whyTitle: "Why Trust Planning Matters?",
     heroImage: "/images/Trust_planning/trust-planning5.jpg",
     whyContent: [
-      "Around 60% of UK people die intestate, which can make things very complicated for your beneficiaries when it comes to distributing your property or assets as you wish. However, when WealthMax assists you in setting up a trust, you can avoid the delays and increased costs that occur when adequate inheritance tax planning isn?t carried out. When trusts are established, they not only provide clear instructions regarding who receives your assets or property but also how they?re passed on. For example, without a trust, the beneficiary may simply receive a lump sum, which can lead to irresponsible spending and disputes among family members. Our experts can help you in setting up a trust in which trustees hold your assets for the benefit of your heirs. They offer a flexible way to transfer your assets while retaining control over how they?re distributed. This also protects your assets from creditors and inheritance tax by reducing the overall size of your estate. Tax treatment depends on individual circumstances. Professional advice is recommended to ensure suitability.",
+      "Around 60% of UK people die intestate, which can make things very complicated for your beneficiaries when it comes to distributing your property or assets as you wish. However, when Phoenix assists you in setting up a trust, you can avoid the delays and increased costs that occur when adequate inheritance tax planning isn?t carried out. When trusts are established, they not only provide clear instructions regarding who receives your assets or property but also how they?re passed on. For example, without a trust, the beneficiary may simply receive a lump sum, which can lead to irresponsible spending and disputes among family members. Our experts can help you in setting up a trust in which trustees hold your assets for the benefit of your heirs. They offer a flexible way to transfer your assets while retaining control over how they?re distributed. This also protects your assets from creditors and inheritance tax by reducing the overall size of your estate. Tax treatment depends on individual circumstances. Professional advice is recommended to ensure suitability.",
     ],
     benefitsTitle: "What are Benefits of Trust Planning?",
     benefitSubtitle: "Shield your wealth from potential creditors, divorce settlements, or financial disputes, ensuring it stays within the family.",
@@ -187,8 +187,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         answer: "Certain trusts allow assets to be removed from your estate for IHT purposes while still giving you or your family some benefit or control."
       }
     ],
-    ctaTitle: "Looking at Trust Options?",
-    ctaDescription: "Arrange a consultation to explore how trusts could support your family and estate planning goals.",
+    ctaTitle: "Looking for Trust Planning?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   },
   {
     slug: "power-of-attorney",
@@ -199,7 +199,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     heroImage: "images/Lasting Power of Attorney/lasting-power-attorney2.jpg",
     // whyChooseImage: "/images/Lasting Power of Attorney/lasting-power-attorney5.jpg",   // Commented
     whyContent: [
-      "At WealthMax, we understand the importance of planning for the unexpected. According to government statistics, around 100,000 people experience strokes each year, and this is just one of the many ways in which you might become incapacitated. Without a Lasting Power of Attorney (LPA) in place, your loved ones may have a great deal of difficulty in managing your affairs, making critical medical decisions or accessing bank accounts. Our LPA services allow you to appoint trusted individuals to act on your behalf, making sure your affairs are handled smoothly during difficult times.",
+      "At Phoenix, we understand the importance of planning for the unexpected. According to government statistics, around 100,000 people experience strokes each year, and this is just one of the many ways in which you might become incapacitated. Without a Lasting Power of Attorney (LPA) in place, your loved ones may have a great deal of difficulty in managing your affairs, making critical medical decisions or accessing bank accounts. Our LPA services allow you to appoint trusted individuals to act on your behalf, making sure your affairs are handled smoothly during difficult times.",
     ],
     benefitsTitle: "Benefits of Lasting Power of Attorney",
     benefitSubtitle: "In the event that you lose your ability to make decisions for yourself due to illness or injury, your LPA will become triggered. Your appointed person will be able to make meaningful calls about aspects of your life, such as:",
@@ -251,8 +251,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         answer: "No, it is not mandatory, but many people use a professional to ensure it is completed correctly and avoid mistakes that could make it invalid."
       }
     ],
-    ctaTitle: "Set Up a Power of Attorney",
-    ctaDescription: "Talk to our team about arranging lasting powers of attorney that reflect your wishes.",
+    ctaTitle: "Looking for Lasting Power of Attorney?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   }
  
 ];

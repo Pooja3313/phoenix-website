@@ -55,7 +55,7 @@ const StampDutyCalculatorSection: React.FC<StampDutyCalculatorProps> = ({
               )}
             </h2>
 
-            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl md:max-w-3xl lg:max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {description}
             </p>
           </AnimatedSection>
@@ -65,7 +65,7 @@ const StampDutyCalculatorSection: React.FC<StampDutyCalculatorProps> = ({
             animation="animate-fade-right"
             delay={0.2}
           >
-            <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-lg w-full max-w-md md:max-w-2xl lg:max-w-none min-h-[320px] md:min-h-[360px] flex flex-col justify-between">
+            <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-lg w-full max-w-md md:max-w-xl lg:max-w-none min-h-[320px] md:min-h-[360px] flex flex-col justify-between">
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-11 h-11 bg-primary/10 rounded-2xl flex items-center justify-center">
                   <Calculator className="w-5 h-5 text-primary" />

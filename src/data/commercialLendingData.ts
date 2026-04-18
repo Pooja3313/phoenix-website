@@ -32,7 +32,7 @@ export const commercialLendingServices: ServiceItem[] = [
     whyTitle: "Why Choose Bridging Loan?",
     heroImage: "/images/bridging_Loan/bridging-loan3.jpg",
     whyContent: [
-      "A bridging loan in the UK is a short-term financing option designed to \"bridge\" the gap when funds are needed quickly, often between buying a new property and selling an existing one. It provides fast access to capital, making it useful for property purchases, renovations, or covering urgent financial commitments. While interest rates are typically higher than standard mortgages, the flexibility and speed of approval make bridging loans a valuable solution for both homeowners and investors. At Wealthmax Financial Advisers, we specialise in guiding clients through bridging finance, ensuring you secure the right option tailored to your circumstances.",
+      "A bridging loan in the UK is a short-term financing option designed to \"bridge\" the gap when funds are needed quickly, often between buying a new property and selling an existing one. It provides fast access to capital, making it useful for property purchases, renovations, or covering urgent financial commitments. While interest rates are typically higher than standard mortgages, the flexibility and speed of approval make bridging loans a valuable solution for both homeowners and investors. At Phoenix Financial Advisers, we specialise in guiding clients through bridging finance, ensuring you secure the right option tailored to your circumstances.",
     ],
     benefitsTitle: "What are Benefits of Bridging Loan?",
     benefitSubtitle: "A bridging loan is a kind of short-term financing that's used to 'bridge' the gap between the purchase of a new property and the sale of your old one. Here are a few benefits of Bridging Loan",
@@ -91,8 +91,8 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "Common uses include auction purchases, chain breaks, property refurbishments, and short-term funding while selling an existing property."
       }
     ],
-    ctaTitle: "Need Fast Finance?",
-    ctaDescription: "Bridging loans can provide the speed and flexibility you need. Speak to our advisers today about your bridging finance requirements."
+    ctaTitle: "Looking for Bridging Loans?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
   {
     slug: "business-finance",
@@ -102,7 +102,7 @@ export const commercialLendingServices: ServiceItem[] = [
     whyTitle: "Why Choose Business Finance?",
     heroImage: "/images/Business_Finance/Business_Finance1.jpg",
     whyContent: [
-      "Business finance is essential for helping companies manage cash flow, invest in growth, and seize new opportunities. It can be used for a wide range of needs, from purchasing equipment and inventory to funding expansion, marketing campaigns, or even acquiring another business. Unlike personal finance, business finance is tailored to support the unique demands of running and scaling an organisation, providing the resources needed to remain competitive in market. At Wealthmax Financial Advisers, we work closely with businesses to identify the most suitable finance options, enabling them to achieve long-term stability and sustainable growth.",
+      "Business finance is essential for helping companies manage cash flow, invest in growth, and seize new opportunities. It can be used for a wide range of needs, from purchasing equipment and inventory to funding expansion, marketing campaigns, or even acquiring another business. Unlike personal finance, business finance is tailored to support the unique demands of running and scaling an organisation, providing the resources needed to remain competitive in market. At Phoenix Financial Advisers, we work closely with businesses to identify the most suitable finance options, enabling them to achieve long-term stability and sustainable growth.",
     ],
     benefitsTitle: "What are Benefits of Business Finance?",
     benefitSubtitle: "Empower your business with tailored funding solutions that support growth, stability and long-term success.",
@@ -144,8 +144,8 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "Most business loans allow early repayment, but some charge an early repayment charge (ERC) or exit fee. We always recommend checking the terms before signing."
       }
     ],
-    ctaTitle: "Need Business Finance?",
-    ctaDescription: "Find the right funding solution for your business. Contact our commercial finance team for a Free Discovery Call."
+    ctaTitle: "Looking for Business Finance?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
   {
     slug: "property-development-finance",
@@ -155,7 +155,7 @@ export const commercialLendingServices: ServiceItem[] = [
     whyTitle: "Why Choose Property Development Finance?",
     heroImage: "/images/Commercial-Lending/Commercial-Lending4.jpg",
     whyContent: [
-      "Property development finance is a flexible funding option designed to support the construction, renovation, or conversion of properties, whether for residential, commercial, or mixed-use projects. It provides developers and investors with access to capital at various stages of a project, from purchasing land to completing the build. Unlike traditional mortgages, this type of finance is tailored to the unique timelines and costs involved in development, offering staged payments that align with progress. At Wealthmax Financial Advisers, we help clients navigate the complexities of property development finance, ensuring they secure the right solution to bring their vision to life while maximising returns.",
+      "Property development finance is a flexible funding option designed to support the construction, renovation, or conversion of properties, whether for residential, commercial, or mixed-use projects. It provides developers and investors with access to capital at various stages of a project, from purchasing land to completing the build. Unlike traditional mortgages, this type of finance is tailored to the unique timelines and costs involved in development, offering staged payments that align with progress. At Phoenix Financial Advisers, we help clients navigate the complexities of property development finance, ensuring they secure the right solution to bring their vision to life while maximising returns.",
     ],
     benefitsTitle: "What are Benefits of Property Development Finance?",
     benefitSubtitle: "Planning a new build or major refurbishment? Property Development Finance can help turn your plans into reality. Here are some of the major benefits you can expect",
@@ -197,8 +197,8 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "In most cases, especially for smaller developers, a personal guarantee is required. Some larger or experienced developers can negotiate limited or no personal guarantee."
       }
     ],
-    ctaTitle: "Planning a Development Project?",
-    ctaDescription: "Get the right finance in place before you break ground. Our development finance specialists can help structure the perfect funding package."
+    ctaTitle: "Looking for Property Development Finance?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
   {
     slug: "asset-finance",
@@ -208,7 +208,7 @@ export const commercialLendingServices: ServiceItem[] = [
     whyTitle: "Why Choose Asset Finance?",
     heroImage: "/images/Business_Finance/Business_Finance2.jpg",
     whyContent: [
-      "Asset finance is a flexible way for businesses to acquire vehicles, machinery, technology, or other essential equipment without the need for large upfront costs. Instead of tying up valuable working capital, payments are spread over an agreed period, making it easier to manage cash flow while still accessing the tools needed for growth. It can also unlock value from existing assets, providing funds that can be reinvested back into the business. At Wealthmax Financial Advisers, we help clients find the right asset finance solution, ensuring they can invest in their future with confidence and financial stability.",
+      "Asset finance is a flexible way for businesses to acquire vehicles, machinery, technology, or other essential equipment without the need for large upfront costs. Instead of tying up valuable working capital, payments are spread over an agreed period, making it easier to manage cash flow while still accessing the tools needed for growth. It can also unlock value from existing assets, providing funds that can be reinvested back into the business. At Phoenix Financial Advisers, we help clients find the right asset finance solution, ensuring they can invest in their future with confidence and financial stability.",
     ],
     benefitsTitle: "What are Benefits of Asset Finance?",
     benefitSubtitle: "The advantage of asset financing is that the initial cost for vehicles, machinery or indeed, any kind of essential business equipment can be met without draining your cash reserves. The asset itself serves as collateral, meaning you can preserve your working capital while at the same time maintaining liquidity.",
@@ -247,8 +247,8 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "Yes, most asset finance providers offer funding for both new and used machinery, vehicles, and equipment."
       }
     ],
-    ctaTitle: "Need to Finance Business Assets?",
-    ctaDescription: "Don't let capital constraints hold your business back. Our asset finance team can help you acquire the equipment you need."
+    ctaTitle: "Looking for Asset Finance?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
   {
     slug: "buy-to-let-finance",
@@ -259,7 +259,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroImage: "/images/Buy-to-Let-Finance/buy-to-let-finance.jpg",
     // whyChooseImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.jpg",   // Commented
     whyContent: [
-      "Whether you?re looking to expand your investment portfolio or diversify your assets, understanding what's involved with a commercial buy-to-let mortgage is crucial. At Wealthmax, we can support you with options around lenders who would finance these investment opportunities. According to recent figures, the average yearly commercial rental property yield is 4.5%, meaning that this type of investment can offer a significant return - and that's before you consider the building's overall appreciation over time. Our experts can search buy-to-let mortgage deals from all of the UK's major lenders to find you the best option.",
+      "Whether you?re looking to expand your investment portfolio or diversify your assets, understanding what's involved with a commercial buy-to-let mortgage is crucial. At Phoenix, we can support you with options around lenders who would finance these investment opportunities. According to recent figures, the average yearly commercial rental property yield is 4.5%, meaning that this type of investment can offer a significant return - and that's before you consider the building's overall appreciation over time. Our experts can search buy-to-let mortgage deals from all of the UK's major lenders to find you the best option.",
     ],
     benefitsTitle: "What are Benefits of Buy to Let Finance?",
     benefitSubtitle: "Investing in property can be a smart way to build long-term wealth. Here's how Buy to Let Finance can make your investment journey easier and more rewarding.",
@@ -301,8 +301,8 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "Lending is usually based on rental income coverage (ICR) rather than personal income. Most lenders look for rental income to cover 125%?145% of the mortgage payments."
       }
     ],
-    ctaTitle: "Looking to Expand Your Property Portfolio?",
-    ctaDescription: "Our buy-to-let finance specialists can help you structure the right funding for your investment goals. Get in touch today."
+    ctaTitle: "Looking for Buy to Let Finance?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
   {
     slug: "commercial-mortgage",
@@ -312,7 +312,7 @@ export const commercialLendingServices: ServiceItem[] = [
     whyTitle: "Why Choose Phoenix Finserv for Commercial Mortgages?",
     heroImage: "/images/commercial-mortgage/commercial-mortgage.jpg",
     whyContent: [
-      "A commercial loan is a financing solution designed specifically to support businesses in meeting their larger financial needs, such as purchasing property, funding expansion or investing in major assets. Unlike personal loans, commercial loans are structured to suit the scale and complexity of business operations, often offering flexible repayment terms and competitive rates. They provide companies with the capital required to grow, innovate, and remain resilient in a competitive marketplace. At WealthMax Financial Advisers, we guide businesses through the process of securing the right commercial loan, ensuring they have the financial foundation to achieve their goals.",
+      "A commercial loan is a financing solution designed specifically to support businesses in meeting their larger financial needs, such as purchasing property, funding expansion or investing in major assets. Unlike personal loans, commercial loans are structured to suit the scale and complexity of business operations, often offering flexible repayment terms and competitive rates. They provide companies with the capital required to grow, innovate, and remain resilient in a competitive marketplace. At Phoenix Financial Advisers, we guide businesses through the process of securing the right commercial loan, ensuring they have the financial foundation to achieve their goals.",
     ],
     benefitsTitle: "What are Benefits of Commercial Mortgage?",
     benefitSubtitle: "Empower your business with tailored funding solutions that support growth, stability and long-term success.",
@@ -354,7 +354,7 @@ export const commercialLendingServices: ServiceItem[] = [
         answer: "Deposit requirements typically range from 20% to 40%, depending on the property type, borrower strength, and lender policy."
       }
     ],
-    ctaTitle: "Need a Commercial Mortgage?",
-    ctaDescription: "Whether you're buying premises for your business or investing in commercial property, our advisers can help. Book a Free Discovery Call today."
+    ctaTitle: "Looking for Commercial Mortgage?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of commercial lending options. Contact us today to discuss your business finance requirements and secure the ideal financing solution."
   },
 ];

@@ -45,7 +45,7 @@ export const mortgageServices: ServiceItem[] = [
     whyTitle: "Why have Buy to Let Mortgage?",
     heroImage: "/images/mortgage/buy-to-let-mortgage.jpg",
     whyContent: [
-      "Do you have an existing mortgage rate you're not happy with? Do you need to release equity to access funds for home improvements? There can be multiple reasons why a remortgage might be the path for you, but it's important to know the ramifications of doing so. That's where Wealthmax Financial advisers can assist. Our team can help you compare mortgage deals and advise you on associated aspects like valuations, the fees involved and whether it makes financial sense for you. Remortgaging offers financial flexibility and we can give you the reassurance that it's the right decision for your unique set of circumstances.",
+      "Do you have an existing mortgage rate you're not happy with? Do you need to release equity to access funds for home improvements? There can be multiple reasons why a remortgage might be the path for you, but it's important to know the ramifications of doing so. That's where Phoenix Financial advisers can assist. Our team can help you compare mortgage deals and advise you on associated aspects like valuations, the fees involved and whether it makes financial sense for you. Remortgaging offers financial flexibility and we can give you the reassurance that it's the right decision for your unique set of circumstances.",
 
     ],
     benefitsTitle: "What are Benefits of Buy to Let Mortgage?",
@@ -87,8 +87,8 @@ export const mortgageServices: ServiceItem[] = [
         answer: "No. Buy-to-let mortgages are for properties that will be rented out. Living in the property yourself may breach the mortgage terms and could lead to the loan being called in."
       }
     ],
-    ctaTitle: "Ready to Invest in Property?",
-    ctaDescription: "Our buy-to-let mortgage advisers can help you find the right deal for your investment goals. Book a free consultation today."
+    ctaTitle: "Looking for Buy to Let mortgage?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of mortgage options. Contact us today to discuss your mortgage requirements and secure the ideal financing solution."
   },
   {
     slug: "first-time-buyer-mortgage",
@@ -99,7 +99,7 @@ export const mortgageServices: ServiceItem[] = [
     whyTitle: "Why Choose First Time Buyer Mortgage?",
     heroImage: "/images/mortgage/first-time-buyer-mortgage.jpg",
     whyContent: [
-      "Buying your first home can feel both exciting and overwhelming, which is why having expert guidance can make the process easier. At Wealthmax, we provide mortgage advice for first time buyers and will take the time to explain your options clearly, based on your circumstances.We work with a wide range of lenders, including many of the UK?s largest mortgage providers, to help identify products that may be suitable for your needs. Our aim is to support you in navigating the mortgage process with confidence, so you can take your next steps toward home ownership.",
+      "Buying your first home can feel both exciting and overwhelming, which is why having expert guidance can make the process easier. At Phoenix, we provide mortgage advice for first time buyers and will take the time to explain your options clearly, based on your circumstances.We work with a wide range of lenders, including many of the UK?s largest mortgage providers, to help identify products that may be suitable for your needs. Our aim is to support you in navigating the mortgage process with confidence, so you can take your next steps toward home ownership.",
     ],
 
     stampDutyCalculator: {
@@ -186,8 +186,8 @@ export const mortgageServices: ServiceItem[] = [
         answer: "Usually no, if your partner already owns a property you may not qualify for first-time buyer schemes or rates."
       }
     ],
-    ctaTitle: "Ready to Buy Your First Home?",
-    ctaDescription: "Take the first step on the property ladder with expert guidance from Phoenix Finserv. Book your free mortgage consultation today."
+    ctaTitle: "Looking for First Time Buyer Mortgage?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of mortgage options. Contact us today to discuss your mortgage requirements and secure the ideal financing solution."
   },
   {
     slug: "residential-mortgage",
@@ -200,7 +200,7 @@ export const mortgageServices: ServiceItem[] = [
     // whyChooseImage: "/images/mortgage/residential-mortgage1.jpg",
 
     whyContent: [
-      "If you're looking to enter the residential property market, you need guidance to help you navigate your way past the pitfalls that many fall into. Whether you're a first time buyer or looking to remortgage, the Wealthmax team can find the ideal solution for your needs.With so many options available, it can be very confusing and difficult to find the option that suits your circumstances and goals. However, with our experts by your side, we'll be with you every step of the way to ensure you make the right decision when securing your new home."
+      "If you're looking to enter the residential property market, you need guidance to help you navigate your way past the pitfalls that many fall into. Whether you're a first time buyer or looking to remortgage, the Phoenix team can find the ideal solution for your needs.With so many options available, it can be very confusing and difficult to find the option that suits your circumstances and goals. However, with our experts by your side, we'll be with you every step of the way to ensure you make the right decision when securing your new home."
     ],
     benefitsTitle: "What are Benefits of Residential Mortgage?",
     benefitSubtitle:
@@ -271,8 +271,8 @@ export const mortgageServices: ServiceItem[] = [
         answer: "Yes. Lenders typically require 2?3 years of accounts or SA302 tax calculations. We have access to flexible lenders for self-employed applicants."
       }
     ],
-    ctaTitle: "Looking for a Residential Mortgage?",
-    ctaDescription: "Find the right mortgage for your home purchase with expert advice from Phoenix Finserv. Contact us for a free consultation."
+    ctaTitle: "Looking for Residential Mortgage?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of mortgage options. Contact us today to discuss your mortgage requirements and secure the ideal financing solution."
   },
   {
     slug: "remortgage",
@@ -328,8 +328,8 @@ export const mortgageServices: ServiceItem[] = [
         answer: "Yes. Many people remortgage to release equity for home improvements, debt consolidation or investments."
       }
     ],
-    ctaTitle: "Thinking About Remortgaging?",
-    ctaDescription: "Don't stay on a rate that's costing you money. Our advisers can help you find a better deal. Book your free remortgage review today."
+    ctaTitle: "Looking for Remortgage?",
+    ctaDescription: "Phoenix is here to help. Our advisers are experienced in financing and have access to a wide range of mortgage options. Contact us today to discuss your mortgage requirements and secure the ideal financing solution."
   },
 ];
 
