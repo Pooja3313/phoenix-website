@@ -2,16 +2,16 @@ import { useEffect, useRef } from "react";
 
 
 const logos = [
-  { name: "Logo 1", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 2", src: "public/images/phoenix-e-favicon.png" },
-  { name: "Logo 3", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 4", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 5", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 6", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 7", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 8", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 9", src: "public/images/phoenix-finserv.png" },
-  { name: "Logo 10", src: "public/images/phoenix-finserv.png" },
+  { name: "Logo 1", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 2", src: "/images/phoenix-e-favicon.png" },
+  { name: "Logo 3", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 4", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 5", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 6", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 7", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 8", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 9", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 10", src: "/images/Phoenix-Finserv.png" },
 ];
 
 const LogoSlider = () => {
