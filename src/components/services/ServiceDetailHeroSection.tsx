@@ -22,8 +22,6 @@ const ServiceDetailHeroSection = ({
 }: ServiceDetailHeroSectionProps) => {
   return (
      <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
-          {/* Full Cover Background Image */}
-          {/* ?? FULL COVER BACKGROUND IMAGE - Ye line sabse important hai */}
       {heroImage && (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105" // scale-105 thoda zoom out feel deta hai

@@ -20,8 +20,8 @@ export interface WillsServiceItem {
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
-  offerDescription:string;
-  
+  offerDescription: string;
+
 }
 
 export const willsEstatePlanningServices: WillsServiceItem[] = [
@@ -59,8 +59,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "PoundSterling"
       },
     ],
-    benefitsImage: "/images/Will-Writing/Will_Writing1.jpg",   
-   offerDescription:"While it's possible to write a will yourself, there are several reasons to seek professional support. These include:",
+    benefitsImage: "/images/Will-Writing/Will_Writing1.jpg",
+    offerDescription: "While it's possible to write a will yourself, there are several reasons to seek professional support. These include:",
     features: [
       { title: "Legal Expertise", description: "Professionals understand the intricacies of writing a will and ensure your document complies with all legal requirements.", icon: "Scale" },
       { title: "Complex Situations", description: "We can help with more complex circumstances such as business ownership, blended families or overseas assets so every aspect is addressed.", icon: "Users" },
@@ -85,7 +85,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     ctaTitle: "Looking for Will Writing?",
     ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   },
-   {
+  {
     slug: "inheritance-tax-planning",
     title: "Inheritance Tax Planning",
     heroSubtitle: "Wills & Estate Planning",
@@ -124,8 +124,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Heart"
       },
     ],
-    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",   
-     offerDescription:"",
+    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -178,8 +178,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Shield"
       },
     ],
-    benefitsImage: "/images/Trust_planning/trust-planning3.jpg",  
-    offerDescription:"",
+    benefitsImage: "/images/Trust_planning/trust-planning3.jpg",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -200,7 +200,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     heroSubtitle: "Wills & Estate Planning",
     heroDescription: "Plan for the unexpected with Lasting Power of Attorney services that protect your choices and provide peace of mind for you and your loved ones",
     whyTitle: "Why Set Up a Lasting Power of Attorney?",
-    heroImage: "images/Lasting Power of Attorney/lasting-power-attorney2.jpg",
+    heroImage: "/images/Lasting-Power-of-Attorney/lasting-power-attorney2.jpg",
     whyContent: [
       "At Phoenix, we understand the importance of planning for the unexpected. According to government statistics, around 100,000 people experience strokes each year, and this is just one of the many ways in which you might become incapacitated. Without a Lasting Power of Attorney (LPA) in place, your loved ones may have a great deal of difficulty in managing your affairs, making critical medical decisions or accessing bank accounts. Our LPA services allow you to appoint trusted individuals to act on your behalf, making sure your affairs are handled smoothly during difficult times.",
     ],
@@ -238,8 +238,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Gift"
       },
     ],
-    benefitsImage: "/images/Lasting Power of Attorney/lasting-power-attorney5.jpg",   
-    offerDescription:"",
+    benefitsImage: "/images/Lasting-Power-of-Attorney/lasting-power-attorney5.jpg",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -258,5 +258,5 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     ctaTitle: "Looking for Lasting Power of Attorney?",
     ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   }
- 
+
 ];
