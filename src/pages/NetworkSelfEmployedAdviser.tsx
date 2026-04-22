@@ -62,8 +62,8 @@ const NetworkSelfEmployedAdviser = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_70%)]" />
 
-          <div className="absolute bottom-12 left-8 md:left-16 text-white/10 text-[140px] md:text-[180px] lg:text-[220px] font-bold select-none pointer-events-none">
-            ?
+           <div className="absolute bottom-16 right-16 md:bottom-20 md:right-20 text-white/10 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">
+             £
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">

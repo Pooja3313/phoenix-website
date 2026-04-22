@@ -71,7 +71,7 @@ const RepaymentCalculator = () => {
 
           {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-             ?
+              £
           </div>
 
           <div className="container mx-auto px-4 relative z-10">

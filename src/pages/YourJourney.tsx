@@ -87,8 +87,8 @@ const OurJourney = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.06),transparent_50%)]" />
 
           {/* Pound Symbol (�) - Decorative - Hidden on mobile */}
-          <div className="absolute bottom-20 right-10 md:right-20 text-primary/10 text-[120px] md:text-[160px] lg:text-[180px] font-bold animate-pound-rotate select-none pointer-events-none hidden md:block">
-            £
+          <div className="absolute bottom-16 right-16 md:bottom-20 md:right-20 text-white/10 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">
+             £
           </div>
 
           {/* Content with AnimatedSection */}

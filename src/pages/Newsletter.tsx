@@ -42,7 +42,7 @@ const Newsletter = () => {
       {/* Subtle Accent Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--phoenix-green)/0.10),transparent_60%)]" />
-          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">?</div>
+          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
             <AnimatedSection>
               <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">Stay Informed</p>

@@ -106,8 +106,8 @@ const Network = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.08),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.06),transparent_50%)]" />
 
-          <div className="absolute top-10 right-10 text-primary/10 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none hidden md:block">
-            £
+          <div className="absolute bottom-16 right-16 md:bottom-20 md:right-20 text-white/10 text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">
+             £
           </div>
           <div className="absolute bottom-10 left-10 w-28 h-28 rounded-full bg-accent/10 animate-pound-morph pointer-events-none hidden md:block" />
 

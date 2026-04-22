@@ -91,7 +91,7 @@ const Careers = () => {
 
           {/* Floating ? Symbol */}
           <div className="absolute top-20 left-20 text-white/10 text-[140px] md:text-[160px] lg:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-             ?
+              £
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">

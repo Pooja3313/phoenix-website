@@ -18,7 +18,6 @@ import ComplaintsProcedure from "./pages/ComplaintsProcedure";
 import FairTreatment from "./pages/FairTreatment";
 import NetworkSelfEmployedAdviser from "./pages/NetworkSelfEmployedAdviser";
 import NetworkIntroducer from "./pages/NetworkIntroducer";
-import NetworkAppointedRepresentative from "./pages/NetworkAppointedRepresentative";
 import Newsletter from "./pages/Newsletter";
 import WillsEstatePlanning from "./pages/services/WillsEstatePlanning";
 import WillsEstatePlanningSubService from "./pages/services/WillsEstatePlanningSubService";
@@ -42,17 +41,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/your-journey" element={<YourJourney />} />
             <Route path="/join-our-network" element={<JoinOurNetwork />} />
-            <Route
-              path="/network/appointed-representative"
-              element={<NetworkAppointedRepresentative />}
-            />
+
             <Route path="/network/introducer" element={<NetworkIntroducer />} />
             <Route
               path="/network/self-employed-adviser"
