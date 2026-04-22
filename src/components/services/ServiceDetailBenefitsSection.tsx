@@ -124,7 +124,7 @@ const ServiceDetailBenefitsSection: React.FC<
                              flex items-center justify-center overflow-hidden shadow-2xl mx-auto"
                 >
                   <img
-                    src={image || "/images/protection/life-cover-family.jpg"}
+                    src={image || "/images/protection/life-cover-family.webp"}
                     alt="Benefits Illustration"
                     className="w-[290px] sm:w-[290px] md:w-[400px] lg:w-[310px]  xl:w-[610px]
                                h-[290px] sm:h-[310px] md:h-[330px] lg:h-[418px] 

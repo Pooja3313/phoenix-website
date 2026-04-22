@@ -31,7 +31,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Explore bridging loans with Phoenix Finserv for quick access to capital for property purchases, renovations or investments. Short-term financing to bridge the gap between transactions.",
     whyTitle: "Why Choose Bridging Loan?",
-    heroImage: "/images/bridging_Loan/bridging-loan3.jpg",
+    heroImage: "/images/bridging_Loan/bridging-loan3.webp",
     whyContent: [
       "A bridging loan in the UK is a short-term financing option designed to \"bridge\" the gap when funds are needed quickly, often between buying a new property and selling an existing one. It provides fast access to capital, making it useful for property purchases, renovations, or covering urgent financial commitments. While interest rates are typically higher than standard mortgages, the flexibility and speed of approval make bridging loans a valuable solution for both homeowners and investors. At Phoenix Financial Advisers, we specialise in guiding clients through bridging finance, ensuring you secure the right option tailored to your circumstances.",
     ],
@@ -59,7 +59,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "TrendingUp"
       },
     ],
-    benefitsImage: "/images/bridging_Loan/bridging-loan4.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/bridging_Loan/bridging-loan4.webp",   // Copied from whyChooseImage
   offerDescription:"Commercial financing is suitable for a wide range of individuals and organisations, whether talking about small and medium-sized enterprises (SMEs), property developers, non-profit organisations or large corporations.",
     features: [
   {
@@ -102,7 +102,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Secure tailored business loans for your needs, ideal for growth and expansion. Unlock capital for your business today with flexible repayment options suited to your cash flow.",
     whyTitle: "Why Choose Business Finance?",
-    heroImage: "/images/Business_Finance/Business_Finance1.jpg",
+    heroImage: "/images/Business_Finance/Business_Finance1.webp",
     whyContent: [
       "Business finance is essential for helping companies manage cash flow, invest in growth, and seize new opportunities. It can be used for a wide range of needs, from purchasing equipment and inventory to funding expansion, marketing campaigns, or even acquiring another business. Unlike personal finance, business finance is tailored to support the unique demands of running and scaling an organisation, providing the resources needed to remain competitive in market. At Phoenix Financial Advisers, we work closely with businesses to identify the most suitable finance options, enabling them to achieve long-term stability and sustainable growth.",
     ],
@@ -130,7 +130,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "Target"
       },
     ],
-    benefitsImage: "/images/Business_Finance/Business_Finance3.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/Business_Finance/Business_Finance3.webp",   // Copied from whyChooseImage
    offerDescription:"",
     features: [],
  faqs: [
@@ -156,7 +156,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Explore property development finance options tailored to your projects. Secure funding for your development plans effortlessly, from ground-up builds to conversions and refurbishments.",
     whyTitle: "Why Choose Property Development Finance?",
-    heroImage: "/images/Commercial-Lending/Commercial-Lending4.jpg",
+    heroImage: "/images/Commercial-Lending/Commercial-Lending4.webp",
     whyContent: [
       "Property development finance is a flexible funding option designed to support the construction, renovation, or conversion of properties, whether for residential, commercial, or mixed-use projects. It provides developers and investors with access to capital at various stages of a project, from purchasing land to completing the build. Unlike traditional mortgages, this type of finance is tailored to the unique timelines and costs involved in development, offering staged payments that align with progress. At Phoenix Financial Advisers, we help clients navigate the complexities of property development finance, ensuring they secure the right solution to bring their vision to life while maximising returns.",
     ],
@@ -184,7 +184,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "TrendingUp"
       },
     ],
-    benefitsImage: "/images/Trust_planning/trust-planning2.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/Trust_planning/trust-planning2.webp",   // Copied from whyChooseImage
     offerDescription:"",
     features: [],
   faqs: [
@@ -210,7 +210,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Access asset finance solutions for your business needs, from equipment purchases to vehicle leasing. Drive your business forward with ease and preserve your working capital.",
     whyTitle: "Why Choose Asset Finance?",
-    heroImage: "/images/Business_Finance/Business_Finance2.jpg",
+    heroImage: "/images/Business_Finance/Business_Finance2.webp",
     whyContent: [
       "Asset finance is a flexible way for businesses to acquire vehicles, machinery, technology, or other essential equipment without the need for large upfront costs. Instead of tying up valuable working capital, payments are spread over an agreed period, making it easier to manage cash flow while still accessing the tools needed for growth. It can also unlock value from existing assets, providing funds that can be reinvested back into the business. At Phoenix Financial Advisers, we help clients find the right asset finance solution, ensuring they can invest in their future with confidence and financial stability.",
     ],
@@ -238,7 +238,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "TrendingUp"
       },
     ],
-    benefitsImage: "/images/Business_Finance/Business_Finance4.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/Business_Finance/Business_Finance4.webp",   // Copied from whyChooseImage
     offerDescription:"",
     features: [],
    
@@ -261,7 +261,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Discover buy-to-let finance options for property investments. Secure financing tailored to your unique rental property goals and portfolio expansion plans.",
     whyTitle: "Why Choose Phoenix Finserv for Buy to Let Finance?",
-    heroImage: "/images/Buy-to-Let-Finance/buy-to-let-finance.jpg",
+    heroImage: "/images/Buy-to-Let-Finance/buy-to-let-finance.webp",
     whyContent: [
       "Whether you?re looking to expand your investment portfolio or diversify your assets, understanding what's involved with a commercial buy-to-let mortgage is crucial. At Phoenix, we can support you with options around lenders who would finance these investment opportunities. According to recent figures, the average yearly commercial rental property yield is 4.5%, meaning that this type of investment can offer a significant return - and that's before you consider the building's overall appreciation over time. Our experts can search buy-to-let mortgage deals from all of the UK's major lenders to find you the best option.",
     ],
@@ -289,7 +289,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "MapPin"
       },
     ],
-    benefitsImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/Buy-to-Let-Finance/buy-to-let-finance1.webp",   // Copied from whyChooseImage
     
     offerDescription:"",
     features: [],
@@ -316,7 +316,7 @@ export const commercialLendingServices: ServiceItem[] = [
     heroSubtitle: "Commercial Lending",
     heroDescription: "Unlock growth opportunities with commercial mortgages. Access financing for business premises, whether owner-occupied or investment properties, with competitive rates and flexible terms.",
     whyTitle: "Why Choose Phoenix Finserv for Commercial Mortgages?",
-    heroImage: "/images/commercial-mortgage/commercial-mortgage.jpg",
+    heroImage: "/images/commercial-mortgage/commercial-mortgage.webp",
     whyContent: [
       "A commercial loan is a financing solution designed specifically to support businesses in meeting their larger financial needs, such as purchasing property, funding expansion or investing in major assets. Unlike personal loans, commercial loans are structured to suit the scale and complexity of business operations, often offering flexible repayment terms and competitive rates. They provide companies with the capital required to grow, innovate, and remain resilient in a competitive marketplace. At Phoenix Financial Advisers, we guide businesses through the process of securing the right commercial loan, ensuring they have the financial foundation to achieve their goals.",
     ],
@@ -344,7 +344,7 @@ export const commercialLendingServices: ServiceItem[] = [
         icon: "TrendingUp"
       },
     ],
-    benefitsImage: "/images/commercial-mortgage/commercial-mortgage1.jpg",   // Copied from whyChooseImage
+    benefitsImage: "/images/commercial-mortgage/commercial-mortgage1.webp",   // Copied from whyChooseImage
     offerDescription:"",
     features: [],
   faqs: [

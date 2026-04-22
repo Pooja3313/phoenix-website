@@ -78,7 +78,7 @@ const DedicatedTeam = () => {
       <div className="container mx-auto px-4 relative z-10 pt-8">
         
         {/* Heading */}
-        <AnimatedSection delay={0.1}>
+        <AnimatedSection delay={0.1} animation="fade-up">
           <div className="text-center mb-16">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
               Our Dedicated and Friendly Team
@@ -121,6 +121,7 @@ const DedicatedTeam = () => {
                 <AnimatedSection
                   key={member.name}
                   delay={0.2 + index * 0.12}
+                  animation="fade-up"
                   className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3 flex"
                 >
                   <div className="group relative bg-card rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-500 hover:border-primary/30 flex flex-col h-full w-full">

@@ -114,14 +114,14 @@
 //                 aria-label="Phoenix Finserv - Home"
 //               >
 //                 <img
-//                   src="/images/Phoenix-Finserv.png"
+//                   src="/images/Phoenix-Finserv.webp"
 //                   alt="Phoenix Finserv"
 //                   className="h-full w-auto max-h-[100px] min-h-[70px] object-contain object-left"
 //                 />
 //               </NavLink>
 //               <NavLink to="/" className="flex lg:hidden items-center pr-3">
 //                 <img
-//                   src="/images/Phoenix-Finserv.png"
+//                   src="/images/Phoenix-Finserv.webp"
 //                   alt="Phoenix Finserv"
 //                   className="h-12 sm:h-14 w-auto object-contain object-left"
 //                 />
@@ -835,14 +835,14 @@ const Header = () => {
                 aria-label="Phoenix Finserv - Home"
               >
                 <img
-                  src="/images/Phoenix-Finserv.png"
+                  src="/images/Phoenix-Finserv.webp"
                   alt="Phoenix Finserv"
                   className="h-full w-auto max-h-[100px] min-h-[70px] object-contain object-left"
                 />
               </NavLink>
               <NavLink to="/" className="flex lg:hidden items-center pr-3">
                 <img
-                  src="/images/Phoenix-Finserv.png"
+                  src="/images/Phoenix-Finserv.webp"
                   alt="Phoenix Finserv"
                   className="h-12 sm:h-14 w-auto object-contain object-left"
                 />

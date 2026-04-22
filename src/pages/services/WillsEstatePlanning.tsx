@@ -43,11 +43,12 @@ const WillsEstatePlanning = () => {
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/Wills&Estate_Planning/wills&Estate-planning1.jpg')`,
-            }}
+          <img
+            src="/images/Wills&Estate_Planning/wills&Estate-planning1.webp"
+            alt="Wills and estate planning"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay - Ensures text is readable */}
@@ -56,9 +57,9 @@ const WillsEstatePlanning = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
-          {/* Floating � Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            £
+             ?
           </div>
           <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
             <div className="max-w-3xl xl:max-w-4xl">
@@ -107,7 +108,7 @@ const WillsEstatePlanning = () => {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Despite this fact, figures show more than 60% of people in the
-                  UK don't have a current will â something that puts their
+                  UK don't have a current will ????? something that puts their
                   beneficiaries at risk. Failing to set up a trust or will and
                   testament can have a major impact on your loved ones, so it's
                   prudent to have a plan. Legal and tax rules may change. Advice
@@ -119,7 +120,7 @@ const WillsEstatePlanning = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
                     <img
-                      src="/images/Wills&Estate_Planning/wills&Estate-planning2.jpg"
+                      src="/images/Wills&Estate_Planning/wills&Estate-planning2.webp"
                       alt="Family reviewing important documents together"
                       className="w-full h-full object-cover"
                     />

@@ -20,8 +20,8 @@ export interface WillsServiceItem {
   ctaTitle: string;
   ctaDescription: string;
   heroImage: string;
-  offerDescription:string;
-  
+  offerDescription: string;
+
 }
 
 export const willsEstatePlanningServices: WillsServiceItem[] = [
@@ -31,7 +31,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     heroSubtitle: "Wills & Estate Planning",
     heroDescription: "Safeguard your assets and intentions with tailored will writing guidance, giving your loved ones clarity and security",
     whyTitle: "Why Write a Will?",
-    heroImage: "/images/Will-Writing/Will_Writing.jpg",
+    heroImage: "/images/Will-Writing/Will_Writing.webp",
     whyContent: [
       "Writing a will is a key part of estate planning. It ensures your assets are passed on to the people you choose, rather than being distributed under intestacy laws. Despite its importance, around 60% of UK adults do not have a will in place. Creating a will?and where appropriate, setting up a trust?allows you to name specific beneficiaries, decide how your assets are distributed, and appoint guardians for your children. This helps ensure your wishes are respected and your loved ones are looked after. At Phoenix Financial Advisers, we have extensive experience in trust and will services. We guide you through the process, helping you make informed decisions that protect your legacy and provide peace of mind. Legal and tax rules may change. Advice should be tailored to your individual circumstances to ensure suitability and compliance.",
     ],
@@ -59,8 +59,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "PoundSterling"
       },
     ],
-    benefitsImage: "/images/Will-Writing/Will_Writing1.jpg",   
-   offerDescription:"While it's possible to write a will yourself, there are several reasons to seek professional support. These include:",
+    benefitsImage: "/images/Will-Writing/Will_Writing1.webp",
+    offerDescription: "While it's possible to write a will yourself, there are several reasons to seek professional support. These include:",
     features: [
       { title: "Legal Expertise", description: "Professionals understand the intricacies of writing a will and ensure your document complies with all legal requirements.", icon: "Scale" },
       { title: "Complex Situations", description: "We can help with more complex circumstances such as business ownership, blended families or overseas assets so every aspect is addressed.", icon: "Users" },
@@ -85,13 +85,13 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     ctaTitle: "Looking for Will Writing?",
     ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   },
-   {
+  {
     slug: "inheritance-tax-planning",
     title: "Inheritance Tax Planning",
     heroSubtitle: "Wills & Estate Planning",
     heroDescription: "Ensure your estate is passed on efficiently and thoughtfully with professional Inheritance Tax Planning tailored to your unique circumstances",
     whyTitle: "Why Choose Inheritance Tax Planning?",
-    heroImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning.jpg",
+    heroImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning.webp",
     whyContent: [
       "Tax treatment depends on individual circumstances and may change in future. Advice should be tailored to your specific needs and objectives. Despite less than 4% of estates in the UK typically being subject to inheritance tax, HMRC still gathered more than £6.8 billion in revenue in 2023. Without inheritance tax planning in place, your loved one?s legacy could subject to major tax liabilities, meaning that they end up with much less financial support than you intended. Inadequate inheritance tax planning can also lead to errors or oversights that add to your liabilities, in addition to complications and delays during the probate process. You can avoid all the associated distress and financial strain these holdups can cause by talking to a Phoenix advisor, who can help you mitigate these risks and preserve your family?s inheritance. Inheritance Tax Planning is a valuable step to ensure your hard-earned wealth is passed on to your loved ones. With the right strategy, you can reduce tax exposure and protect your estate for future generations.",
     ],
@@ -124,8 +124,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Heart"
       },
     ],
-    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.jpg",   
-     offerDescription:"",
+    benefitsImage: "/images/Inheritance-Tax-Planning/Inheritance-Tax-Planning2.webp",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -150,7 +150,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     heroSubtitle: "Wills & Estate Planning",
     heroDescription: "Protect your assets and secure your legacy with tailored Trust Planning solutions designed to safeguard your wealth for generations",
     whyTitle: "Why Trust Planning Matters?",
-    heroImage: "/images/Trust_planning/trust-planning5.jpg",
+    heroImage: "/images/Trust_planning/trust-planning5.webp",
     whyContent: [
       "Around 60% of UK people die intestate, which can make things very complicated for your beneficiaries when it comes to distributing your property or assets as you wish. However, when Phoenix assists you in setting up a trust, you can avoid the delays and increased costs that occur when adequate inheritance tax planning isn?t carried out. When trusts are established, they not only provide clear instructions regarding who receives your assets or property but also how they?re passed on. For example, without a trust, the beneficiary may simply receive a lump sum, which can lead to irresponsible spending and disputes among family members. Our experts can help you in setting up a trust in which trustees hold your assets for the benefit of your heirs. They offer a flexible way to transfer your assets while retaining control over how they?re distributed. This also protects your assets from creditors and inheritance tax by reducing the overall size of your estate. Tax treatment depends on individual circumstances. Professional advice is recommended to ensure suitability.",
     ],
@@ -178,8 +178,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Shield"
       },
     ],
-    benefitsImage: "/images/Trust_planning/trust-planning3.jpg",  
-    offerDescription:"",
+    benefitsImage: "/images/Trust_planning/trust-planning3.webp",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -200,7 +200,7 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     heroSubtitle: "Wills & Estate Planning",
     heroDescription: "Plan for the unexpected with Lasting Power of Attorney services that protect your choices and provide peace of mind for you and your loved ones",
     whyTitle: "Why Set Up a Lasting Power of Attorney?",
-    heroImage: "images/Lasting Power of Attorney/lasting-power-attorney2.jpg",
+    heroImage: "/images/Lasting-Power-of-Attorney/lasting-power-attorney2.webp",
     whyContent: [
       "At Phoenix, we understand the importance of planning for the unexpected. According to government statistics, around 100,000 people experience strokes each year, and this is just one of the many ways in which you might become incapacitated. Without a Lasting Power of Attorney (LPA) in place, your loved ones may have a great deal of difficulty in managing your affairs, making critical medical decisions or accessing bank accounts. Our LPA services allow you to appoint trusted individuals to act on your behalf, making sure your affairs are handled smoothly during difficult times.",
     ],
@@ -238,8 +238,8 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
         icon: "Gift"
       },
     ],
-    benefitsImage: "/images/Lasting Power of Attorney/lasting-power-attorney5.jpg",   
-    offerDescription:"",
+    benefitsImage: "/images/Lasting-Power-of-Attorney/lasting-power-attorney5.webp",
+    offerDescription: "",
     features: [],
     faqs: [
       {
@@ -258,5 +258,5 @@ export const willsEstatePlanningServices: WillsServiceItem[] = [
     ctaTitle: "Looking for Lasting Power of Attorney?",
     ctaDescription: "Phoenix is here to help. Our advisers are experienced in wills and estate planning and have access to a wide range of estate planning options. Contact us today to discuss your estate planning requirements and secure the ideal planning solution.",
   }
- 
+
 ];

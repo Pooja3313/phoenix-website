@@ -25,7 +25,7 @@ const MissionVision = () => {
           <div
             className= "group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-primary/30 overflow-hidden "
           >
-            <AnimatedSection delay={0.4} animation="animate-fade-left">
+            <AnimatedSection delay={0.4} animation="fade-left">
             {/* Animated corner accent */}
             <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-br-[60px] group-hover:w-32 group-hover:h-32 transition-all duration-500" />
             
@@ -59,7 +59,7 @@ const MissionVision = () => {
           <div
             className= "group relative bg-card rounded-3xl border border-border p-10 hover:shadow-2xl transition-all duration-700 hover:border-accent/30 overflow-hidden "
           >
-             <AnimatedSection delay={0.4} animation="animate-fade-right">
+             <AnimatedSection delay={0.4} animation="fade-right">
             {/* Animated corner accent */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent/10 to-transparent rounded-bl-[60px] group-hover:w-32 group-hover:h-32 transition-all duration-500" />
             

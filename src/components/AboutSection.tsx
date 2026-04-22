@@ -1,6 +1,6 @@
 import { ArrowRight, Award, Users, Globe } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import AnimatedSection from "./AnimatedSection";   // ? Yeh import zaroori hai
+import AnimatedSection from "./AnimatedSection";   
 
 const badges = [
   { icon: Award, label: "Living Wage Employer" },
@@ -98,7 +98,7 @@ const AboutSection = () => {
                 {/* Main Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[4/3]">
                   <img
-                    src="/images/website_images/young-pregnant-woman-work.jpg"
+                    src="/images/website_images/young-pregnant-woman-work.webp"
                     alt="Phoenix Finserv Team"
                     className="w-full h-full object-cover"
                   />

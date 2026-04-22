@@ -48,11 +48,11 @@ const ValuesSection = () => {
       {/* Decorative background elements */}
       <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-primary/5 animate-pound-morph pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" style={{ animationDelay: '4s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/[0.03] text-[300px] font-bold select-none pointer-events-none animate-pound-rotate">£</div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/[0.03] text-[300px] font-bold select-none pointer-events-none animate-pound-rotate"> Â£</div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Heading */}
-        <AnimatedSection className="text-center mb-16" delay={0.1}>
+        <AnimatedSection className="text-center mb-16" delay={0.3}>
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-3">
             Our Core Values
           </p>
@@ -74,8 +74,8 @@ const ValuesSection = () => {
             return (
               <AnimatedSection
                 key={value.letter}
-                delay={0.15 + index * 0.12}
-                animation="animate-fade-scale"
+                delay={0.15 + index * 0.2}
+                animation="fade-scale"
               >
                 <div
                   className={`group relative bg-card border border-border rounded-2xl p-6 transition-all duration-500 h-full flex flex-col overflow-hidden

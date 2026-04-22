@@ -32,11 +32,12 @@ const NetworkIntroducer = () => {
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
           {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/website_images/colleagues-work.jpg')`
-            }}
+          <img
+            src="/images/website_images/colleagues-work.webp"
+            alt="Network introducer"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay */}

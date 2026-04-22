@@ -27,11 +27,12 @@ const Mortgage = () => {
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/mortgage/mortgage2.jpg')`,
-            }}
+          <img
+            src="/images/mortgage/mortgage2.webp"
+            alt="Mortgage solutions"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay - Ensures text is readable */}
@@ -40,9 +41,9 @@ const Mortgage = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
-          {/* Floating £ Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            Â£
+             ?
           </div>
 
           <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
@@ -106,8 +107,9 @@ const Mortgage = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
                     <img
-                      src="/images/mortgage/mortgage-main.jpg"
+                      src="/images/mortgage/mortgage-main.webp"
                       alt="Family reviewing important documents together"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -153,7 +155,7 @@ const Mortgage = () => {
                   </h3>
                   <p className="text-muted-foreground text-sm">
                     Compare mortgage rates with top lenders and find the
-                    mortgage deal that?s right for you.
+                    mortgage deal that's right for you.
                   </p>
                   <div className="flex items-center justify-center gap-1 mt-4 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                     Try Now <ChevronRight size={16} />

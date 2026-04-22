@@ -38,7 +38,7 @@ const RightSidebar = ({ open, onClose }: RightSidebarProps) => {
           {/* Logo */}
           <div className="mb-8 mt-2 ml-[-15px]">
             <img
-              src="/images/Phoenix-Finserv.png"
+              src="/images/Phoenix-Finserv.webp"
               alt="Phoenix Finserv"
               className="h-17 w-auto"
             />

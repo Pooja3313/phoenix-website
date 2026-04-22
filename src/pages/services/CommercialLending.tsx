@@ -29,11 +29,12 @@ const CommercialLending = () => {
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/Commercial-Lending/Commercial-Lending2.jpg')`,
-            }}
+          <img
+            src="/images/Commercial-Lending/Commercial-Lending2.webp"
+            alt="Commercial lending"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay - Ensures text is readable */}
@@ -42,9 +43,9 @@ const CommercialLending = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
-          {/* Floating £ Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            Â£
+             ?
           </div>
 
           <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
@@ -122,7 +123,7 @@ const CommercialLending = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-2xl">
                     <img
-                      src="/images/Commercial-Lending/Commercial-Lending1.jpg"
+                      src="/images/Commercial-Lending/Commercial-Lending1.webp"
                       alt="Commercial lending handshake"
                       className="w-full h-full object-cover"
                     />

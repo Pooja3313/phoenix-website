@@ -73,11 +73,12 @@ const Contact = () => {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/website_images/contact_us1.jpg')`,
-            }}
+          <img
+            src="/images/website_images/contact_us1.webp"
+            alt="Contact Phoenix"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_60%)]" />
@@ -116,7 +117,7 @@ const Contact = () => {
                 <AnimatedSection 
                   key={method.title} 
                   delay={0.1 + i * 0.15}
-                  animation="animate-fade-scale"
+                  animation="fade-scale"
                 >
                   <NavLink
                     to={method.href}
@@ -148,7 +149,7 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
               {/* Form */}
-              <AnimatedSection delay={0.1} animation="animate-fade-left">
+              <AnimatedSection delay={0.1} animation="fade-left">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   Send Us a{" "}
                   <span className="text-accent highlighter-mark">Message</span>
@@ -203,7 +204,7 @@ const Contact = () => {
                       </label>
                       <input
                         type="text"
-                        placeholder=" Â£500,000"
+                        placeholder="£500,000"
                         value={form.propertyValue}
                         onChange={(e) => setForm({ ...form, propertyValue: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
@@ -215,7 +216,7 @@ const Contact = () => {
                       </label>
                       <input
                         type="text"
-                        placeholder=" Â£350,000"
+                        placeholder="£350,000"
                         value={form.loanValue}
                         onChange={(e) => setForm({ ...form, loanValue: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
@@ -295,7 +296,7 @@ const Contact = () => {
               </AnimatedSection>
 
               {/* Contact Information */}
-              <AnimatedSection delay={0.4} animation="animate-fade-right">
+              <AnimatedSection delay={0.4} animation="fade-right">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   Contact{" "}
                   <span className="font-handwritten text-3xl text-primary">

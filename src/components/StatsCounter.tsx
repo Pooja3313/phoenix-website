@@ -53,23 +53,32 @@ const StatItem = ({ stat, index, isSectionVisible }: {
 const StatsCounter = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   // Automatic Counting Trigger - Jab section viewport mein aaye
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          timeoutRef.current = window.setTimeout(() => {
+            setIsVisible(true);
+          }, 180);
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }   // 30% section dikhne par trigger
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   return (

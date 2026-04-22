@@ -1,14 +1,14 @@
 const logos = [
-  { name: "Logo 1", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 2", src: "/images/phoenix-e-favicon.png" },
-  { name: "Logo 3", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 4", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 5", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 6", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 7", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 8", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 9", src: "/images/Phoenix-Finserv.png" },
-  { name: "Logo 10", src: "/images/Phoenix-Finserv.png" },
+  { name: "Logo 1", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 2", src: "/images/phoenix-e-favicon.webp" },
+  { name: "Logo 3", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 4", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 5", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 6", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 7", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 8", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 9", src: "/images/Phoenix-Finserv.webp" },
+  { name: "Logo 10", src: "/images/Phoenix-Finserv.webp" },
 ];
 
 const LogoSlider = () => {

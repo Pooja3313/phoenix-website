@@ -88,11 +88,12 @@ const Network = () => {
         {/* Hero Section */}
         <section className="relative min-h-[85vh] flex items-center overflow-hidden">
           {/* Background Image - Full Cover (Responsive) */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-[center_40%]"
-            style={{
-              backgroundImage: `url('/images/website_images/group-businesspeople-using-laptop-workplace.jpg')`,
-            }}
+          <img
+            src="/images/website_images/group-businesspeople-using-laptop-workplace.webp"
+            alt="Join our network"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover md:object-[center_40%]"
           />
 
           {/* Dark Overlay for better text visibility */}
@@ -112,7 +113,7 @@ const Network = () => {
 
           {/* Main Content */}
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection delay={0.05}>
               <p className="text-primary font-semibold text-sm uppercase tracking-[0.25em] mb-4">
                 JOIN OUR NETWORK
               </p>

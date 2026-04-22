@@ -68,16 +68,12 @@ const OurJourney = () => {
         {/* Hero - Your Journey */}
         <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[85vh] xl:min-h-[90vh] flex items-center overflow-hidden">
           {/* Background Image - Full Cover + Responsive Positioning */}
-          <div
-            className="absolute inset-0 bg-cover bg-no-repeat 
-               bg-center           
-               sm:bg-center 
-               md:bg-[center_35%]   
-               lg:bg-center         
-               xl:bg-center"
-            style={{
-              backgroundImage: `url('/images/website_images/colleagues-discussing-plans-smartphone.jpg')`,
-            }}
+          <img
+            src="/images/website_images/colleagues-discussing-plans-smartphone.webp"
+            alt="Your business journey"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover object-center sm:object-center md:object-[center_35%] lg:object-center xl:object-center"
           />
 
           {/* Dark Overlay for Text Readability */}

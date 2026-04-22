@@ -27,11 +27,12 @@ const Newsletter = () => {
       <main>
         {/* Hero */}
         <section className="relative py-24  min-h-[85vh] md:min-h-[90vh] bg-gradient-to-br from-phoenix-gray-light via-background to-phoenix-green-light overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/images/Newsletter_hero_image.jpg')`,
-        }}
+      <img
+        src="/images/Newsletter_hero_image.webp"
+        alt="Newsletter"
+        loading="eager"
+        fetchpriority="high"
+        className="absolute inset-0 w-full h-full object-cover"
       />
           
         
@@ -41,7 +42,7 @@ const Newsletter = () => {
       {/* Subtle Accent Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--phoenix-green)/0.10),transparent_60%)]" />
-          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none"> £</div>
+          <div className="absolute bottom-10 right-20 text-primary/5 text-[150px] font-bold animate-pound-rotate select-none pointer-events-none">?</div>
           <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
             <AnimatedSection>
               <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">Stay Informed</p>

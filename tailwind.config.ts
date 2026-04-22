@@ -46,6 +46,8 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+           primary: "hsl(var(--primary))",
+
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -135,6 +137,10 @@ export default {
         "fade-in-up": {
           "0%": { opacity: "0", transform: "translateY(110px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "float-up": {
+          "0%": { opacity: "0", transform: "translateY(140px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
         }
       },
       animation: {
@@ -148,6 +154,7 @@ export default {
         "fade-right": "fade-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
         "fade-left": "fade-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
         "fade-in-up": "fade-in-up 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
+        "float-up": "float-up 0.8s ease-out forwards",
       },
     },
   },

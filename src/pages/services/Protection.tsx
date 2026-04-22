@@ -19,7 +19,7 @@ import {
   personalProtectionServices,
   businessProtectionServices,
   homeInsuranceServices,
-} from "@/data/protectionData";
+} from "../../data/protectionData";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const tabs = [
@@ -55,22 +55,25 @@ const Protection = () => {
       <main>
         {/* ==================== HERO SECTION ==================== */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/protection/protection-main.jpg')` }}
+          <img
+            src="/images/protection/protection-main.webp"
+            alt="Protection services"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            £
+             £
           </div>
 
           <div className="absolute bottom-10 left-10 w-4 h-4 rounded-full bg-white/30" />
 
           <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         <div className="max-w-3xl xl:max-w-4xl">
-            <AnimatedSection delay={0.15}>
+            <AnimatedSection delay={0.06}>
               <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
                 Our Services
               </p>
@@ -118,8 +121,9 @@ const Protection = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
                     <img
-                      src="/images/protection/life-cover2.jpg"
+                      src="/images/protection/life-cover2.webp"
                       alt="Family reviewing important documents together"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>

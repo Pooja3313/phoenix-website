@@ -10,9 +10,9 @@ import {
 import { PHOENIX_LINKEDIN_URL } from "@/constants/social";
 
 const footerNavClass =
-  "text-sm text-primary-foreground/60 hover:text-primary transition-colors flex items-center gap-2 group";
+  "text-md text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2 group";
 
-const PHOENIX_LOGO_SRC = "/images/Phoenix-Finserv.png";
+const PHOENIX_LOGO_SRC = "/images/Phoenix-Finserv.webp";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-4">
           {/* Company Info £ column + logo nudge so graphic lines up with paragraph / icons (PNG often has soft left bleed) */}
           <div className="flex min-w-0 flex-col items-start text-left">
             <NavLink
@@ -76,7 +76,7 @@ const Footer = () => {
                 loading="lazy"
               />
             </NavLink>
-            <p className="w-full text-sm text-primary-foreground/60 leading-relaxed mb-6">
+            <p className="w-full text-md text-primary-foreground/70 leading-relaxed mb-6">
               Trusted financial services providing expert advice in protection,
               mortgages, pensions, and estate planning across the United
               Kingdom.
@@ -166,53 +166,98 @@ const Footer = () => {
             <div className="space-y-4 mb-6">
               <NavLink
                 to="mailto:dreams@phoenixfinserv.co.uk"
-                className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+                className="flex items-start gap-3 text-md text-primary-foreground/70 hover:text-primary transition-colors"
               >
                 <Mail size={16} className="mt-0.5 shrink-0" />
                 dreams@phoenixfinserv.co.uk
               </NavLink>
               <NavLink
                 to="tel:+442079932737"
-                className="flex items-start gap-3 text-sm text-primary-foreground/60 hover:text-primary transition-colors"
+                className="flex items-start gap-3 text-md text-primary-foreground/70 hover:text-primary transition-colors"
               >
                 <Phone size={16} className="mt-0.5 shrink-0" />
                 +44 (0) 2079 932 737
               </NavLink>
-              <div className="flex items-start gap-3 text-sm text-primary-foreground/60">
+              <div className="flex items-start gap-3 text-md text-primary-foreground/70">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 21 Heath Drive, Romford, Essex, RM2 5QH
               </div>
             </div>
 
-            <h4 className="font-semibold text-sm mb-3">Newsletter</h4>
+            <h4 className="font-semibold text-md mb-3">Newsletter</h4>
             <div className="flex gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="flex-1 px-3 py-2 bg-primary-foreground/10 rounded-lg text-sm text-primary-foreground placeholder:text-primary-foreground/30 border border-primary-foreground/10 focus:border-primary outline-none transition-colors"
+                className="flex-1 px-3 py-2 bg-primary-foreground/10 rounded-lg text-md text-primary-foreground placeholder:text-primary-foreground/30 border border-primary-foreground/10 focus:border-primary outline-none transition-colors"
               />
               <button className="px-4 py-2 bg-primary rounded-lg text-primary-foreground hover:bg-phoenix-orange-dark transition-colors">
                 <ArrowRight size={16} />
               </button>
             </div>
           </div>
+        </div>
+        {/* === Regulatory / Disclaimer Section (WealthMax Style - Improved) === */}
+        <div className="  p-6 md:p-8 mb-3 mt-0">
+          <div className="max-w-6xl mx-auto text-md leading-relaxed tracking-[0.01em] text-primary-foreground/70 space-y-3 text-justify">
+            <p>
+              Phoenix Advisers is a trading style of
+              Phoenix Finserv Limited. Phoenix Financial Advisers
+              Limited is authorised and regulated by the Financial Conduct
+              Authority, FRN No 766509. Registered company in England & Wales,
+              Company No 10501962. (ICO Registration Reference 28925674).
+            </p>
 
+            <p>
+              Your Insurance policies may lapse if you do not keep up to date
+              with regular premium payments and you may not be cover if a claim
+              is made.
+            </p>
+
+            <p>
+              A pension is a long-term investment. The fund value may fluctuate
+              and can go down" and "Your eventual income may depend on the size
+              of fund when accessed, interest rates and legislation.
+            </p>
+
+            <p>
+              Your Home may be repossessed if you do not keep up repayment on
+              your mortgages.
+            </p>
+
+            <p>
+              Some Commercial and Buy to Let mortgages are not regulated by the
+              Financial Conduct Authority. We are a credit broker, not a lender.
+              We work with a panel of providers and lenders; we will typically
+              receive commission from lenders. Different lenders pay different
+              amounts depending on different commission models. For transparency
+              we work with the following commission models: fixed application
+              and completion fee and percentage of the amount you borrow and
+              rate for risk.
+            </p>
+
+            <p>
+              Wills & Estate planning services are provided through Wealthmax
+              Estate Planning Limited and are not regulated by the Financial
+              Conduct Authority.
+            </p>
+          </div>
         </div>
 
         {/* Policy Links Bar */}
-        <div className="border-t border-primary-foreground/10 pt-6 pb-4">
+        <div className="border-t border-primary-foreground/10 pt-2 pb-2">
           <div className="flex flex-wrap items-center justify-center gap-6">
             {policyLinksInternal.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 text-xs transition-colors ${
+                  `flex items-center gap-2 text-sm transition-colors ${
                     isActive
                       ? "text-primary"
-                      : "text-primary-foreground/50 hover:text-primary"
+                      : "text-primary-foreground/70 hover:text-primary"
                   }`
                 }
               >
@@ -225,11 +270,11 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-primary-foreground/40">
+          <p className="text-xs text-primary-foreground/70">
             {"\u00A9"} {new Date().getFullYear()} Phoenix Finserv. All rights
             reserved.
           </p>
-          <p className="text-xs text-primary-foreground/40">
+          <p className="text-xs text-primary-foreground/70">
             Authorised and Regulated by the Financial Conduct Authority
           </p>
         </div>

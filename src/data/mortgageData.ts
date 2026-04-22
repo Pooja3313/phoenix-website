@@ -44,7 +44,7 @@ export const mortgageServices: ServiceItem[] = [
     heroSubtitle: "Mortgage",
     heroDescription: "Unlock the potential of property investment with tailored buy to let mortgage solutions designed to grow your portfolio and maximise returns",
     whyTitle: "Why have Buy to Let Mortgage?",
-    heroImage: "/images/mortgage/buy-to-let-mortgage.jpg",
+    heroImage: "/images/mortgage/buy-to-let-mortgage.webp",
     whyContent: [
       "Do you have an existing mortgage rate you're not happy with? Do you need to release equity to access funds for home improvements? There can be multiple reasons why a remortgage might be the path for you, but it's important to know the ramifications of doing so. That's where Phoenix Financial advisers can assist. Our team can help you compare mortgage deals and advise you on associated aspects like valuations, the fees involved and whether it makes financial sense for you. Remortgaging offers financial flexibility and we can give you the reassurance that it's the right decision for your unique set of circumstances.",
 
@@ -68,7 +68,7 @@ export const mortgageServices: ServiceItem[] = [
         icon: "Award"
       }
     ],
-    benefitsImage: "/images/mortgage/buy-to-let-mortgage1.jpg",
+    benefitsImage: "/images/mortgage/buy-to-let-mortgage1.webp",
     offerDescription:"",
     features: [],
     faqs: [
@@ -78,7 +78,7 @@ export const mortgageServices: ServiceItem[] = [
       },
       {
         question: "Do I need to have a minimum income?",
-        answer: "Yes, most lenders require a minimum personal income (typically £25,000?£30,000 per year) in addition to the rental income from the property. This helps demonstrate your ability to manage the mortgage if the property is vacant."
+        answer: "Yes, most lenders require a minimum personal income (typically Â£25,000 - Â£30,000 per year) in addition to the rental income from the property. This helps demonstrate your ability to manage the mortgage if the property is vacant."
       },
       {
         question: "Can I get a buy to let mortgage as a first-time buyer?",
@@ -99,7 +99,7 @@ export const mortgageServices: ServiceItem[] = [
     heroSubtitle: "Mortgage",
     heroDescription: "Looking for your first mortgage to get onto the property ladder? We can search across lenders using sourcing technology and give you tailored mortgage advice to suit your needs",
     whyTitle: "Why Choose First Time Buyer Mortgage?",
-    heroImage: "/images/mortgage/first-time-buyer-mortgage.jpg",
+    heroImage: "/images/mortgage/first-time-buyer-mortgage.webp",
     whyContent: [
       "Buying your first home can feel both exciting and overwhelming, which is why having expert guidance can make the process easier. At Phoenix, we provide mortgage advice for first time buyers and will take the time to explain your options clearly, based on your circumstances.We work with a wide range of lenders, including many of the UK?s largest mortgage providers, to help identify products that may be suitable for your needs. Our aim is to support you in navigating the mortgage process with confidence, so you can take your next steps toward home ownership.",
     ],
@@ -147,7 +147,7 @@ export const mortgageServices: ServiceItem[] = [
         icon: "Building"
       }
     ],
-    benefitsImage: "/images/mortgage/first-time-buyer-mortgage1.jpg",
+    benefitsImage: "/images/mortgage/first-time-buyer-mortgage1.webp",
     offerDescription:"First time buyer mortgages come in variety of forms. Each caters to different set of financial situations and preferences.They include",
     features: [
       {
@@ -199,8 +199,8 @@ export const mortgageServices: ServiceItem[] = [
     heroSubtitle: "Mortgage",
     heroDescription: "Start your journey to home ownership with support from Phoenix Finserv. We work with a wide range of UK lenders to help you find a suitable mortgage and guide you through the process with confidence.",
     whyTitle: "Why Choose Residential Mortgage?",
-    heroImage: "/images/mortgage/residential-mortgage.jpg",
-    // whyChooseImage: "/images/mortgage/residential-mortgage1.jpg",
+    heroImage: "/images/mortgage/residential-mortgage.webp",
+    // whyChooseImage: "/images/mortgage/residential-mortgage1.webp",
 
     whyContent: [
       "If you're looking to enter the residential property market, you need guidance to help you navigate your way past the pitfalls that many fall into. Whether you're a first time buyer or looking to remortgage, the Phoenix team can find the ideal solution for your needs.With so many options available, it can be very confusing and difficult to find the option that suits your circumstances and goals. However, with our experts by your side, we'll be with you every step of the way to ensure you make the right decision when securing your new home."
@@ -241,7 +241,7 @@ export const mortgageServices: ServiceItem[] = [
         icon: "Award"
       }
     ],
-    benefitsImage: "/images/mortgage/residential-mortgage1.jpg",
+    benefitsImage: "/images/mortgage/residential-mortgage1.webp",
     offerDescription:"Whether you're stepping onto the property ladder or moving home, our residential mortgages provide flexibility and guidance at every stage.",
    features: [
   { 
@@ -285,7 +285,7 @@ export const mortgageServices: ServiceItem[] = [
     heroSubtitle: "Mortgage",
     heroDescription: "Optimise your finances with a remortgage. The Phoenix Finserv team can help you find competitive rates, flexible terms and expert guidance to achieve your financial goals.",
     whyTitle: "Why Remortgaging?",
-    heroImage: "/images/mortgage/remortgage.jpg",
+    heroImage: "/images/mortgage/remortgage.webp",
     whyContent: [
       "Homeowners may consider remortgaging for a variety of reasons, such as securing a more competitive rate, gaining greater flexibility, borrowing additional funds, or paying off their mortgage sooner. Changes in personal circumstances, like divorce, consolidating debts or an increase in property value, can also make remortgaging a suitable option. It can help you review your mortgage choices and manage potential interest rate changes, but it's important to carefully consider your individual circumstances.",
 
@@ -319,7 +319,7 @@ export const mortgageServices: ServiceItem[] = [
         icon: "Users"
       }
     ],
-    benefitsImage: "/images/mortgage/remortgage1.jpg",
+    benefitsImage: "/images/mortgage/remortgage1.webp",
     offerDescription:"",
     features: [],
     faqs: [

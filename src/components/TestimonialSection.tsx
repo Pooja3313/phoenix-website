@@ -53,7 +53,7 @@ const TestimonialSection = () => {
       <div className="container mx-auto px-4">
         
         {/* Heading */}
-        <AnimatedSection delay={0.1}>
+        <AnimatedSection delay={0.1} animation="fade-up">
           <div className="text-center mb-14">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
               Testimonials
@@ -69,7 +69,7 @@ const TestimonialSection = () => {
         </AnimatedSection>
 
         {/* Testimonial Card */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection delay={0.3} animation="fade-up">
           <div className="relative bg-card rounded-3xl p-10 md:p-14 border border-border shadow-lg max-w-3xl mx-auto">
             
             {/* Large Quote Icon */}

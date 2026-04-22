@@ -112,7 +112,6 @@
 :where(*):not(html):not(body) {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  scroll-behavior: smooth;
 }
 
 :where(*):not(html):not(body)::-webkit-scrollbar {
@@ -166,7 +165,7 @@
     bottom: -50px;
     width: 140%;
     height: 140px;
-    background-image: url('/images/oranage-green-highlight.png');
+    background-image: url('/images/oranage-green-highlight.webp');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -199,7 +198,7 @@
     height: 50%;
     width: 120%;
     min-height: 1.75rem;
-    background-image: url(/images/Mixup_color_highlighte.png);
+    background-image: url(/images/Mixup_color_highlighte.webp);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -236,7 +235,7 @@
   bottom: -10px;
   width: 30%;
   height: 90px;
-  background-image: url('/images/oranage-green-highlight.png');
+  background-image: url('/images/oranage-green-highlight.webp');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -272,7 +271,7 @@
   height: 250%;
   transform: translateY(-50%) scaleX(0);
   transform-origin: left center;
-  background-image: url('/images/round_circle.png');
+  background-image: url('/images/round_circle.webp');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -300,7 +299,7 @@
   height: 118%;
   transform: translateY(-50%) scaleX(0);
   transform-origin: left center;
-  background-image: url('/images/green-chroma-brush-stroke-paiting-isolated-background-canvas-watercolor-texture-removebg-preview.png');
+  background-image: url('/images/green-chroma-brush-stroke-paiting-isolated-background-canvas-watercolor-texture-removebg-preview.webp');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -330,7 +329,7 @@
   min-height: 44px;
   transform: scaleX(0);
   transform-origin: left center;
-  background-image: url('/images/green_highlighte.png');
+  background-image: url('/images/green_highlighte.webp');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -432,15 +431,6 @@
     25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
     50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
     75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-  }
-
-  @keyframes float-up {
-    0% { opacity: 0; transform: translateY(140px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  .animate-float-up {
-    animation: float-up 0.8s ease-out forwards;
   }
 
   .animate-pound-rotate {

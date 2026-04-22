@@ -52,21 +52,22 @@ const NetworkSelfEmployedAdviser = () => {
       <main>
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[600px] flex items-center">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/website_images/front-view-young-busy-confused-clerical-workers-discussing-one-issue-documents-office.jpg')`,
-            }}
+          <img
+            src="/images/website_images/front-view-young-busy-confused-clerical-workers-discussing-one-issue-documents-office.webp"
+            alt="Self employed adviser network"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_70%)]" />
 
           <div className="absolute bottom-12 left-8 md:left-16 text-white/10 text-[140px] md:text-[180px] lg:text-[220px] font-bold select-none pointer-events-none">
-            £
+            ?
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection delay={0.6}>
+            <AnimatedSection delay={0.08}>
               <p className="text-white/90 font-semibold text-sm uppercase tracking-[0.25em] mb-4">
                 Self Employed Adviser
               </p>
@@ -91,7 +92,7 @@ const NetworkSelfEmployedAdviser = () => {
         {/* About Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection delay={0.3}>
               <div className="bg-card border border-border rounded-2xl p-10">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
                   A Network Built to{" "}
@@ -120,7 +121,7 @@ const NetworkSelfEmployedAdviser = () => {
                 <AnimatedSection 
                   key={item.title} 
                   delay={0.1 + i * 0.15}
-                  animation="animate-fade-scale"
+                  animation="fade-scale"
                 >
                   <div className="group bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">

@@ -63,7 +63,7 @@ const ProtectionSubServiceDetailPage = ({
                 service.category === "Home Insurance") &&
               [
                 "life-cover",
-                "critical-illness",
+                "critical-illness-cover",
                 "income-protection",
                 "buildings-and-contents",
               ].includes(service.slug)

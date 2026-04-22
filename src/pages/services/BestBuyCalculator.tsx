@@ -223,11 +223,12 @@ export default function BestBuyCalculator() {
         {/* Hero - simplified, orange/green theme */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/mortgage/Best-Buy-Calculator.jpg')`,
-            }}
+          <img
+            src="/images/mortgage/Best-Buy-Calculator.webp"
+            alt="Best buy calculator"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay - Ensures text is readable */}
@@ -236,9 +237,9 @@ export default function BestBuyCalculator() {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
-          {/* Floating £ Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            Â£
+             ?
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <AnimatedSection delay={0.3}>
@@ -264,7 +265,7 @@ export default function BestBuyCalculator() {
         {/* Content */}
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-6xl px-4">
-            <AnimatedSection animation="animate-fade-scale" delay={0.3}>
+            <AnimatedSection animation="fade-scale" delay={0.3}>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900">

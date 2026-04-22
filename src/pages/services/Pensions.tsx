@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "Do I need financial advice on how to cash in my pension pot?",
     answer:
-      "If your pension pot is worth £30,000 or more, it's strongly recommended to seek regulated financial advice before making any withdrawal decisions. Our advisers can help you understand tax implications and ensure you make the most of your savings.",
+      "If your pension pot is worth ?30,000 or more, it's strongly recommended to seek regulated financial advice before making any withdrawal decisions. Our advisers can help you understand tax implications and ensure you make the most of your savings.",
   },
   {
     question: "What is the difference between an SIPP and a personal pension?",
@@ -60,11 +60,12 @@ const Pensions = () => {
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/pension/pension1.jpg')`,
-            }}
+          <img
+            src="/images/pension/pension1.webp"
+            alt="Pensions planning"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay - Ensures text is readable */}
@@ -73,9 +74,9 @@ const Pensions = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
 
-          {/* Floating � Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            £
+             ?
           </div>
              <div className="relative z-10 px-4 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         <div className="max-w-3xl xl:max-w-4xl">
@@ -134,7 +135,7 @@ const Pensions = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-xl">
                     <img
-                      src="/images/pension/pension2.jpg"
+                      src="/images/pension/pension2.webp"
                       alt="Family reviewing important documents together"
                       className="w-full h-full object-cover"
                     />

@@ -17,13 +17,13 @@ const PoundAnimation = () => {
     <section className="py-20 bg-muted/30 overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Animated £ */}
+          {/* Animated  £ */}
           <div className={`flex-1 flex justify-center ${visible ? 'animate-float-up' : 'opacity-0'}`}>
             <div className="relative">
               {/* Background morphing shape */}
               <div className="w-48 h-48 md:w-64 md:h-64 bg-primary/10 animate-pound-morph flex items-center justify-center">
                 <span className="text-8xl md:text-9xl font-bold text-primary animate-pound-rotate select-none" style={{ perspective: '600px' }}>
-                  £
+                   £
                 </span>
               </div>
 
@@ -56,10 +56,10 @@ const PoundAnimation = () => {
             </p>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "£50M+", label: "Funds Managed" },
+                { value: " £50M+", label: "Funds Managed" },
                 { value: "99.5%", label: "Success Rate" },
                 { value: "24/7", label: "Support Available" },
-                { value: "5★", label: "Client Rating" },
+                { value: "5\u2605", label: "Client Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="p-4 bg-card rounded-xl border border-border">
                   <p className="text-2xl font-bold text-primary">{stat.value}</p>

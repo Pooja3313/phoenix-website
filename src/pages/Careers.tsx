@@ -75,11 +75,12 @@ const Careers = () => {
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/website_images/young-business.jpg')`,
-            }}
+          <img
+            src="/images/website_images/young-business.webp"
+            alt="Careers at Phoenix"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay for Text Readability */}
@@ -88,13 +89,13 @@ const Careers = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.12),transparent_70%)]" />
 
-          {/* Floating £ Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-20 left-20 text-white/10 text-[140px] md:text-[160px] lg:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            Â£
+             ?
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection delay={0.6}>
+            <AnimatedSection delay={0.08}>
               <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
                 Careers
               </p>
@@ -118,7 +119,7 @@ const Careers = () => {
         {/* Perks Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="text-center mb-14" delay={0.1}>
+            <AnimatedSection className="text-center mb-14" delay={0.3}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
                 Why Work With Us
               </p>
@@ -134,7 +135,7 @@ const Careers = () => {
               {perks.map((perk, i) => (
                 <AnimatedSection
                   key={perk.title}
-                  delay={0.2 + i * 0.15}
+                  delay={0.2 + i * 0.3}
                   animation="animate-fade-scale"
                 >
                   <div className="group text-center p-6 rounded-2xl border border-border bg-card hover:shadow-xl hover:border-primary/30 transition-all duration-500">
@@ -160,7 +161,7 @@ const Careers = () => {
         {/* Open Positions Section */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="text-center mb-14" delay={0.1}>
+            <AnimatedSection className="text-center mb-14" delay={0.4}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
                 Open Positions
               </p>
@@ -174,7 +175,7 @@ const Careers = () => {
 
             <div className="max-w-3xl mx-auto space-y-5">
               {openings.map((job, i) => (
-                <AnimatedSection key={job.title} delay={0.2 + i * 0.2}>
+                <AnimatedSection key={job.title} delay={0.2 + i * 0.3}>
                   <div className="group bg-card border border-border rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 transition-all duration-500">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div>

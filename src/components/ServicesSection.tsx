@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ShieldCheck, Home, Building2, PiggyBank, FileText, ArrowRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import AnimatedSection from "./AnimatedSection";   // ? Import karna zaroori hai
+import AnimatedSection from "./AnimatedSection";   
 
 const services = [
   {
@@ -63,7 +63,7 @@ const ServicesSection = () => {
                 Solutions
               </span>
             </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mt-4 max-w-2xl xl:max-w-3xl mx-auto">
               It's sometimes not that easy to deal with the complexities involved with personal finances. 
               With a professional financial adviser by your side, it becomes truly easy.
             </p>

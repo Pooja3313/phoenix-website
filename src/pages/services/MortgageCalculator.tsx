@@ -40,11 +40,12 @@ const MortgageCalculator = () => {
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/mortgage/mortgage_calculator.jpg')`
-            }}
+          <img
+            src="/images/mortgage/mortgage_calculator.webp"
+            alt="Mortgage calculator"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           
           {/* Dark Overlay - Ensures text is readable */}
@@ -53,9 +54,9 @@ const MortgageCalculator = () => {
           {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
           
-          {/* Floating £ Symbol */}
+          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-            Â£
+             ?
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <AnimatedSection delay={0.2}>

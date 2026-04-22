@@ -63,11 +63,12 @@ const OurBegining = () => {
         {/* Hero Section */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
           {/* Full Cover Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/website_images/about-us.jpg')`,
-            }}
+          <img
+            src="/images/website_images/about-us.webp"
+            alt="About Phoenix"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay */}
@@ -104,7 +105,7 @@ const OurBegining = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center gap-16 max-w-5xl mx-auto">
-              <AnimatedSection delay={0.15} animation="animate-fade-left" className="flex-1">
+              <AnimatedSection delay={0.15} animation="fade-left" className="flex-1">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
                   Our{" "}
                   <span className="text-primary highlighter-mark">
@@ -145,11 +146,12 @@ const OurBegining = () => {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection delay={0.3} animation="animate-fade-scale" className="flex-1">
+              <AnimatedSection delay={0.3} animation="fade-scale" className="flex-1 lg:order-1">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[4/5]">
                   <img
-                    src="/images/website_images/group-businesspeople-using-laptop-while-working-document.jpg"
+                    src="/images/website_images/group-businesspeople-using-laptop-while-working-document.webp"
                     alt="Our Journey"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-phoenix-gray-dark/80 to-transparent flex items-end p-8">

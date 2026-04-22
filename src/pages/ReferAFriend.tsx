@@ -54,9 +54,12 @@ const ReferAFriend = () => {
       <main>
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[620px] flex items-center">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('/images/website_images/middle-age-business-woman-giving-charts-her-young-colleague-conference-room.jpg')` }}
+          <img
+            src="/images/website_images/middle-age-business-woman-giving-charts-her-young-colleague-conference-room.webp"
+            alt="Refer a friend"
+            loading="eager"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/65" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(var(--primary)/0.12),transparent_70%)]" />
@@ -66,7 +69,7 @@ const ReferAFriend = () => {
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <AnimatedSection delay={0.3}>
+            <AnimatedSection delay={0.08}>
               <p className="text-white font-semibold text-sm uppercase tracking-[0.25em] mb-4">
                 Referral Programme
               </p>
@@ -90,7 +93,7 @@ const ReferAFriend = () => {
         {/* Rewards Section - Uses default float-up */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <AnimatedSection className="text-center mb-14 " delay={0.3}>
+            <AnimatedSection className="text-center mb-14 " delay={0.08}>
               <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">
                 Rewards
               </p>
@@ -104,7 +107,7 @@ const ReferAFriend = () => {
 
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {rewards.map((reward, i) => (
-                <AnimatedSection key={reward.title} delay={0.2 + i * 0.15} animation="animate-fade-scale">
+                <AnimatedSection key={reward.title} delay={0.2 + i * 0.05} animation="animate-fade-scale">
                   <div className="group relative bg-card border border-border rounded-2xl p-8 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                     <div className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${reward.color === "primary" ? "bg-primary/10 group-hover:bg-primary" : "bg-accent/10 group-hover:bg-accent"}`}>
@@ -158,7 +161,7 @@ const ReferAFriend = () => {
               ].map((item, i) => (
                 <AnimatedSection
                   key={item.step}
-                  delay={0.2 + i * 0.25}
+                  delay={0.2 + i * 0.5}
                   animation="animate-fade-scale"
                 >
                   <div className="group text-center bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-500 relative h-full">

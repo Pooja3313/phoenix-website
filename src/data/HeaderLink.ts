@@ -26,7 +26,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
         title: "Personal Protection",
         items: [
           { name: "Life Cover", href: "/protection/life-cover" },
-          { name: "Critical Illness", href: "/protection/critical-illness" },
+          { name: "Critical Illness", href: "/protection/critical-illness-cover" },
           { name: "Income Protection", href: "/protection/income-protection" }
           
         ],
@@ -35,7 +35,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
          {
         title: "Business Protection",
         items: [
-          { name: "Keyman Cover", href: "/protection/keyman-cover" },
+          { name: "Key Person Protection", href: "/protection/keyman-protection" },
           { name: "Shareholder Protection", href: "/protection/shareholder-protection" },
           { name: "Relevant Life Cover", href: "/protection/relevant-life-cover" },
           { name: "Business Loan Protection", href: "/protection/business-loan-protection"},
@@ -47,7 +47,7 @@ export const serviceGroupsNav: ServiceGroup[] = [
        {
         title: "Home Insurance",
         items: [
-          { name: "Buildings & Contents", href: "/protection/buildings-and-contents" },
+          { name: "Buildings & Contents", href: "/protection/buildings-contents" },
          
         ],
       },
