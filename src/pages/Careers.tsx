@@ -90,7 +90,7 @@ const Careers = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.12),transparent_70%)]" />
 
           {/* Floating ? Symbol */}
-          <div className="absolute top-20 left-20 text-white/10 text-[140px] md:text-[160px] lg:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
+          <div className="absolute top-20 right-20 text-white/10 text-[140px] md:text-[160px] lg:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
               £
           </div>
 
