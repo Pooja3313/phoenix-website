@@ -75,7 +75,7 @@ const ValuesSection = () => {
               <AnimatedSection
                 key={value.letter}
                 delay={0.15 + index * 0.2}
-                animation="fade-scale"
+                animation="animate-fade-scale"
               >
                 <div
                   className={`group relative bg-card border border-border rounded-2xl p-6 transition-all duration-500 h-full flex flex-col overflow-hidden
