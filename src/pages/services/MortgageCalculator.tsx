@@ -70,8 +70,8 @@ const MortgageCalculator = () => {
                     Calculator
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-                  Use our calculator to estimate your monthly mortgage repayments and understand what you could afford.
+                <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mx-auto text-center">
+                  Our mortgage calculators can give you an idea of how much you could borrow, your monthly repayments, stamp duty costs, overpayments, and more
                 </p>
               </div>
             </AnimatedSection>

@@ -253,9 +253,8 @@ export default function BestBuyCalculator() {
                     Calculator
                   </span>
                 </h1>
-                <p className="text-white/90 text-xl max-w-2xl leading-relaxed">
-                  Compare potential deals based on your inputs. Ready for live
-                  API integration.
+                <p className="text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed mx-auto text-center">
+                Our mortgage calculators can give you an idea of how much you could borrow, your monthly repayments, stamp duty costs, overpayments, and more
                 </p>
               </div>
             </AnimatedSection>
@@ -268,13 +267,10 @@ export default function BestBuyCalculator() {
             <AnimatedSection animation="fade-scale" delay={0.3}>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    Enter Your Details
-                  </h2>
-                  <p className="text-gray-600 mt-3 max-w-2xl">
-                    Adjust values ? click Search to see estimated deals (mock
-                    mode).
-                  </p>
+                  <h3 className="text-3xl md:text-3xl font-bold text-accent">
+                    Calculate your Mortgage Rates Now!
+                  </h3>
+                
                 </div>
               </div>
 

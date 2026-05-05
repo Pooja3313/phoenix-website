@@ -214,7 +214,7 @@ export default function StampDutyCalculator() {
                     Calculator
                   </span>
                 </h1>
-                <p className="text-white/90 text-lg max-w-2xl leading-relaxed">
+                <p className="text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed mx-auto text-center">
                   Get a fast estimate of stamp duty based on current SDLT / LTT
                   bands (April 2025).
                 </p>

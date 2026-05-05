@@ -9,19 +9,24 @@ import { NavLink } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const RepaymentCalculator = () => {
-  const [propertyValue, setPropertyValue] = useState(250000);
-  const [deposit, setDeposit] = useState(50000);
+  const [loanAmount, setLoanAmount] = useState(250000);
   const [interestRate, setInterestRate] = useState(5.5);
   const [term, setTerm] = useState(25);
   const [repaymentType, setRepaymentType] = useState<
     "repayment" | "interest-only"
   >("repayment");
 
-  const loanAmount = propertyValue - deposit;
-  const ltv =
-    propertyValue > 0 ? ((loanAmount / propertyValue) * 100).toFixed(1) : "0";
+  // Validation limits ? calculation still runs, sirf warning dikhti hai
+  const MAX_LOAN = 99999999;
+  const MAX_TERM = 40;
+  const MAX_RATE = 50;
 
-  // Monthly repayment calculation
+  const loanWarning = loanAmount < 1 ? "Loan amount must be at least  £1" : loanAmount > MAX_LOAN ? "Loan amount cannot exceed  £99,999,999" : "";
+  const termWarning = term < 1 ? "Term must be between 1 year and 40 years" : term > MAX_TERM ? "Maximum term is 40 years" : "";
+  const rateWarning = interestRate < 0 ? "Interest rate must be between 0% and 50%" : interestRate > MAX_RATE ? "Maximum interest rate is 50%" : "";
+
+  // Monthly repayment calculation ? standard amortisation formula
+  // (same formula used by WealthMax: M = P * [r(1+r)^n] / [(1+r)^n - 1])
   const monthlyRate = interestRate / 100 / 12;
   const totalPayments = term * 12;
 
@@ -29,13 +34,13 @@ const RepaymentCalculator = () => {
   let totalRepaid = 0;
   let totalInterest = 0;
 
-  if (repaymentType === "repayment" && monthlyRate > 0) {
+  if (repaymentType === "repayment" && monthlyRate > 0 && loanAmount > 0) {
     monthlyPayment =
       (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) /
       (Math.pow(1 + monthlyRate, totalPayments) - 1);
     totalRepaid = monthlyPayment * totalPayments;
     totalInterest = totalRepaid - loanAmount;
-  } else if (repaymentType === "interest-only") {
+  } else if (repaymentType === "interest-only" && loanAmount > 0) {
     monthlyPayment = loanAmount * monthlyRate;
     totalInterest = monthlyPayment * totalPayments;
     totalRepaid = totalInterest + loanAmount;
@@ -45,8 +50,8 @@ const RepaymentCalculator = () => {
     new Intl.NumberFormat("en-GB", {
       style: "currency",
       currency: "GBP",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(n);
 
   return (
@@ -54,7 +59,6 @@ const RepaymentCalculator = () => {
       <main>
         {/* Hero */}
         <section className="relative py-20 md:py-28 overflow-hidden min-h-[600px] flex items-center">
-          {/* Full Cover Background Image */}
           <img
             src="/images/mortgage/Repayments Calculator.webp"
             alt="Repayment calculator"
@@ -62,31 +66,24 @@ const RepaymentCalculator = () => {
             fetchpriority="high"
             className="absolute inset-0 w-full h-full object-cover"
           />
-
-          {/* Dark Overlay - Ensures text is readable */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/70" />
-
-          {/* Subtle Accent Gradient */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_70%)]" />
-
-          {/* Floating ? Symbol */}
           <div className="absolute top-10 right-10 text-white/10 text-[160px] md:text-[200px] font-bold animate-pound-rotate select-none pointer-events-none">
-              £
+             £
           </div>
-
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center text-center">
               <AnimatedSection delay={0.3}>
                 <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
                   Tools
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#ffd700] mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#ffd700] mb-4">
                   Mortgage{" "}
                   <span className="font-handwritten text-5xl md:text-6xl lg:text-7xl text-primary pen-underline2">
                     Repayments Calculator
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mx-auto text-center">
                   Use our calculator to estimate your monthly mortgage
                   repayments and understand what you could afford.
                 </p>
@@ -99,16 +96,17 @@ const RepaymentCalculator = () => {
         <section className="py-16 bg-background">
           <AnimatedSection delay={0.2} animation="animate-fade-scale">
             <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {/* Inputs */}
                 <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
                   <h2 className="text-2xl font-bold text-foreground mb-2">
-                    Enter Your Details
+                    Calculate your Mortgage Rates and Repayments Now!
                   </h2>
 
+                  {/* Loan Amount */}
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Property Value
+                      Loan Amount
                     </label>
                     <div className="relative">
                       <PoundSterling
@@ -117,38 +115,20 @@ const RepaymentCalculator = () => {
                       />
                       <input
                         type="number"
-                        value={propertyValue}
-                        onChange={(e) =>
-                          setPropertyValue(Number(e.target.value))
-                        }
-                        className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
+                        value={loanAmount}
+                        onChange={(e) => setLoanAmount(Number(e.target.value))}
+                        className={`w-full pl-9 pr-4 py-3 border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all ${
+                          loanWarning ? "border-red-500" : "border-border"
+                        }`}
                       />
                     </div>
-                    <input
-                      type="range"
-                      min={50000}
-                      max={2000000}
-                      step={5000}
-                      value={propertyValue}
-                      onChange={(e) => setPropertyValue(Number(e.target.value))}
-                      className="w-full mt-2 accent-primary"
-                    />
+                    {loanWarning && (
+                      <p className="text-red-500 text-xs mt-1">{loanWarning}</p>
+                    )}
+                  
                   </div>
 
-                  {/* <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Deposit</label>
-                  <div className="relative">
-                    <PoundSterling size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      type="number"
-                      value={deposit}
-                      onChange={e => setDeposit(Number(e.target.value))}
-                      className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
-                    />
-                  </div>
-                  <input type="range" min={0} max={propertyValue} step={5000} value={deposit} onChange={e => setDeposit(Number(e.target.value))} className="w-full mt-2 accent-accent" />
-                </div> */}
-
+                  {/* Interest Rate */}
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
                       Interest Rate (%)
@@ -162,14 +142,18 @@ const RepaymentCalculator = () => {
                         type="number"
                         step={0.1}
                         value={interestRate}
-                        onChange={(e) =>
-                          setInterestRate(Number(e.target.value))
-                        }
-                        className="w-full pl-9 pr-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
+                        onChange={(e) => setInterestRate(Number(e.target.value))}
+                        className={`w-full pl-9 pr-4 py-3 border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all ${
+                          rateWarning ? "border-red-500" : "border-border"
+                        }`}
                       />
                     </div>
+                    {rateWarning && (
+                      <p className="text-red-500 text-xs mt-1">{rateWarning}</p>
+                    )}
                   </div>
 
+                  {/* Mortgage Term */}
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
                       Mortgage Term (years)
@@ -179,41 +163,27 @@ const RepaymentCalculator = () => {
                         type="number"
                         value={term}
                         onChange={(e) => setTerm(Number(e.target.value))}
-                        className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
+                        className={`w-full px-4 py-3 border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all ${
+                          termWarning ? "border-red-500" : "border-border"
+                        }`}
                       />
                       <span className="text-muted-foreground text-sm whitespace-nowrap">
                         {term} years
                       </span>
                     </div>
+                    {termWarning && (
+                      <p className="text-red-500 text-xs mt-1">{termWarning}</p>
+                    )}
                     <input
                       type="range"
                       min={5}
                       max={40}
                       step={1}
-                      value={term}
+                      value={Math.min(term, 40)}
                       onChange={(e) => setTerm(Number(e.target.value))}
                       className="w-full mt-2 accent-primary"
                     />
                   </div>
-
-                  {/* <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Repayment Type</label>
-                  <div className="flex gap-3">
-                    {(["repayment", "interest-only"] as const).map(type => (
-                      <button
-                        key={type}
-                        onClick={() => setRepaymentType(type)}
-                        className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                          repaymentType === type
-                            ? 'bg-primary text-primary-foreground shadow-lg'
-                            : 'bg-muted text-foreground hover:bg-primary/10'
-                        }`}
-                      >
-                        {type === 'repayment' ? 'Repayment' : 'Interest Only'}
-                      </button>
-                    ))}
-                  </div>
-                </div> */}
                 </div>
 
                 {/* Results */}
@@ -225,25 +195,6 @@ const RepaymentCalculator = () => {
                     <p className="text-4xl md:text-5xl font-bold mb-6">
                       {formatCurrency(monthlyPayment)}
                     </p>
-
-                    {/* <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Loan Amount</p>
-                      <p className="text-lg font-bold">{formatCurrency(loanAmount)}</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">LTV Ratio</p>
-                      <p className="text-lg font-bold">{ltv}%</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Total Interest</p>
-                      <p className="text-lg font-bold">{formatCurrency(totalInterest)}</p>
-                    </div>
-                    <div className="bg-primary-foreground/10 rounded-xl p-4">
-                      <p className="text-primary-foreground/70 text-xs mb-1">Total Repaid</p>
-                      <p className="text-lg font-bold">{formatCurrency(totalRepaid)}</p>
-                    </div>
-                  </div> */}
                   </div>
 
                   {/* Visual bar */}
@@ -281,12 +232,9 @@ const RepaymentCalculator = () => {
                     </div>
                   </div>
 
-                  <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6">
+                  {/* <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6">
                     <div className="flex items-start gap-3">
-                      <TrendingUp
-                        size={20}
-                        className="text-accent shrink-0 mt-1"
-                      />
+                      <TrendingUp size={20} className="text-accent shrink-0 mt-1" />
                       <div>
                         <h4 className="font-bold text-foreground mb-1">
                           Important Note
@@ -299,7 +247,7 @@ const RepaymentCalculator = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <NavLink
                     to="/contact"
@@ -318,3 +266,5 @@ const RepaymentCalculator = () => {
 };
 
 export default RepaymentCalculator;
+
+

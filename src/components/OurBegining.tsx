@@ -147,9 +147,10 @@ const OurBegining = () => {
               </AnimatedSection>
 
               <AnimatedSection delay={0.3} animation="fade-scale" className="flex-1 lg:order-1">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[4/5]">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-muted aspect-[5/5]">
                   <img
-                    src="/images/website_images/group-businesspeople-using-laptop-while-working-document.webp"
+                    // src="/images/website_images/group-businesspeople-using-laptop-while-working-document.webp"
+                    src="/images/website_images/Company_teams.webp"
                     alt="Our Journey"
                     loading="lazy"
                     className="w-full h-full object-cover"

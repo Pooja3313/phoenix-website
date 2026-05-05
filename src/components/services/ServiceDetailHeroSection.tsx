@@ -51,7 +51,7 @@ const ServiceDetailHeroSection = ({
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-4xl">
             <span className={titleClassName}>{title}</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mx-auto text-center">
             {heroDescription}
           </p>
           <NavLink
