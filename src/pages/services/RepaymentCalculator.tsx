@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   PoundSterling,
-  TrendingUp,
   Percent,
 } from "lucide-react";
 import { useState } from "react";
@@ -16,7 +15,7 @@ const RepaymentCalculator = () => {
     "repayment" | "interest-only"
   >("repayment");
 
-  // Validation limits ? calculation still runs, sirf warning dikhti hai
+
   const MAX_LOAN = 99999999;
   const MAX_TERM = 40;
   const MAX_RATE = 50;
