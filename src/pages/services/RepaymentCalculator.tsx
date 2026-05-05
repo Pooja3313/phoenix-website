@@ -84,8 +84,7 @@ const RepaymentCalculator = () => {
                   </span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mx-auto text-center">
-                  Use our calculator to estimate your monthly mortgage
-                  repayments and understand what you could afford.
+                  Our mortgage calculators can give you an idea of how much you could borrow, your monthly repayments, stamp duty costs, overpayments, and more
                 </p>
               </AnimatedSection>
             </div>
@@ -189,8 +188,8 @@ const RepaymentCalculator = () => {
                 {/* Results */}
                 <div className="space-y-6">
                   <div className="bg-gradient-to-br from-primary to-phoenix-orange-dark text-primary-foreground rounded-2xl p-8">
-                    <p className="text-primary-foreground/70 text-sm mb-1">
-                      Monthly Repayment
+                    <p className="text-primary-foreground/90 text-lg mb-1">
+                      Your monthly mortgage repayment could be
                     </p>
                     <p className="text-4xl md:text-5xl font-bold mb-6">
                       {formatCurrency(monthlyPayment)}
