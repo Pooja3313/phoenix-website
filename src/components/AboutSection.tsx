@@ -14,7 +14,7 @@ const AboutSection = () => {
       {/* Decorative floating elements */}
       <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary/5 animate-pound-morph pointer-events-none" />
       <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-accent/5 animate-pound-morph pointer-events-none" style={{ animationDelay: '3s' }} />
-      <div className="absolute top-1/2 right-10 text-primary/[0.03] text-[180px] font-bold animate-pound-rotate select-none pointer-events-none">£</div>
+      <div className="absolute top-1/2 right-10 text-primary/[0.03] text-[180px] font-bold animate-pound-rotate select-none pointer-events-none"> Â£</div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
